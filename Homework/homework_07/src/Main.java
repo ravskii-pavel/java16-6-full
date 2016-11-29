@@ -11,15 +11,17 @@ public class Main {
         notOnlyMonday(365);
         convertNumToString(7);
         reverseString("abc");
+        validityOString("ravskii.pavel@gmail.com");
 
     }
 
-    /* Составить программу, которая в зависимости от порядкового номера месяца (1, 2, ..., 12) выводит
+    /* 1) Составить программу, которая в зависимости от порядкового номера месяца (1, 2, ..., 12) выводит
     на экран количество дней в этом месяце. Рассмотреть два случая:
         1) год не является високосным;
         2) год может быть високосным (информация об этом вводится в аргументы при запуске программы).*/
     /*-----------------------------------------------------------------------------------------*/
     public static void daysOfMonth(int month, String[] args) {
+        System.out.println("1) Количество дней в указанном месяце высокосного / невысокосного года");
         int year = Integer.valueOf(args[0]);
         switch (month) {
             case 1:
@@ -56,6 +58,7 @@ public class Main {
     "девятка" и т. п.). По заданным номеру масти m (1 <= m <=  4) и номеру достоинства карты k (6 <= k <= 14)
     определить полное название (масть и достоинство) соответствующей карты в виде "Дама пик", "Шестерка бубен" и т. п.*/
     public static void playingCards(int suitCard, int valueCard) {
+        System.out.println("2) Игральные карты: ");
         String fullNameOfCard = "";
         switch (valueCard) {
             case 6:
@@ -234,23 +237,53 @@ public class Main {
                 break;
         }
     }
+    /* 5) Дана строка. Написать программу, которая возвращает строку, написанную в обратном порядке. */
     public static void reverseString(String name) {
-        //String reverseName = new StringBuffer(name).reverse().toString();
-        String reverseName=" ";
+        String reverseName1 = new StringBuffer(name).reverse().toString();
+        String reverseName2;
         int i,j;
         char[] arrName = name.toCharArray();
         int count = arrName.length;
-        System.out.println(arrName);
         char[] arrRevers = new char[arrName.length];
         for(i = count-1, j = 0; i >= 0 && j<=arrName.length-1; i--, j++){
             arrRevers[j] = arrName[i];
-           // System.out.print(arrRevers[j]);
         }
-        i=0;
-        j=0;
-        //reverseName = String.valueOf(arrRevers);
-        reverseName = new String(arrRevers);
-        //reverseName = arrRevers.toString();
-        System.out.println(reverseName);
+        System.out.println(arrName);
+        reverseName2 = new String(arrRevers);
+        System.out.print("5) Строка: ");
+        System.out.println(arrName);
+        System.out.print("Строка в обратном порядке: ");
+        System.out.println(arrRevers);
+    }
+
+    /* 6) Дан email в виде строки. Написать программу для проверки email на валидность. email должен соответствовать
+    условию (пример - emailaddr@domain.zone)
+    1)	emailaddr > 4 символов
+    2)	1 < domain < 10
+    3)	2 <= zone < 5
+    При любом несовпадении с условием выводим в консоль сообщение с указанием на конкретную ошибку.*/
+    public static void validityOString(String email) {
+
+        System.out.println("6) Проверка email адреса: ");
+        String emailaddr, domain, zone;
+        emailaddr = email.substring(0, email.indexOf('@'));
+        domain = email.substring(emailaddr.length()+1, email.indexOf('.', emailaddr.length()+1));
+        zone = email.substring((emailaddr.length()+1)+(domain.length()+1), email.length());
+
+        if(emailaddr.length() <= 4){
+            System.out.println("Email адрес должен быть больше 4 символов: " + emailaddr);
+        }
+        if((domain.length() <= 1) || (domain.length() >=10)){
+            System.out.println("Название домена дожно быть другой длины: от 1 до 10 символов: " + domain);
+        }
+        if(zone.length() < 2 || zone.length() >= 5){
+            System.out.println("Доменная зона должна быть другой длины: от 2 до 5 символов: " + zone);
+        }
+        else {
+            System.out.println("email адрес прошел валидность ");
+            System.out.println("Название адреса: " + emailaddr);
+            System.out.println("Название домена: " + domain);
+            System.out.println("Название доменной зоны: " + zone);
+        }
     }
 }
