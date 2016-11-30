@@ -5,6 +5,7 @@ public class Main {
         float[] usd = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
         int grade[] = {3, 5, 2, 5, 5, 5, 5, 2, 3, 5, 3};
         int numbers[] = {0, 5, 2, 5, 5, 5, 5, 2, 3, 5, 3, 15, 15, 16, 25, 20, 405, 455};
+        String [] arr = {"123","456","789","123","123","000","789","abcd","cdef"};
         daysOfMonth(2, args);
         playingCards(1, 8);
         dayOfWeek(364);
@@ -12,6 +13,8 @@ public class Main {
         convertNumToString(7);
         reverseString("abc");
         validityOString("ravskii.pavel@gmail.com");
+        stringOnDisplay(arr, 3);
+        stringNotRepeat(arr);
 
     }
 
@@ -264,7 +267,7 @@ public class Main {
     При любом несовпадении с условием выводим в консоль сообщение с указанием на конкретную ошибку.*/
     public static void validityOString(String email) {
 
-        System.out.println("6) Проверка email адреса: ");
+        System.out.println("6) Проверка email адреса на валидность: ");
         String emailaddr, domain, zone;
         emailaddr = email.substring(0, email.indexOf('@'));
         domain = email.substring(emailaddr.length()+1, email.indexOf('.', emailaddr.length()+1));
@@ -275,6 +278,7 @@ public class Main {
         }
         if((domain.length() <= 1) || (domain.length() >=10)){
             System.out.println("Название домена дожно быть другой длины: от 1 до 10 символов: " + domain);
+
         }
         if(zone.length() < 2 || zone.length() >= 5){
             System.out.println("Доменная зона должна быть другой длины: от 2 до 5 символов: " + zone);
@@ -284,6 +288,36 @@ public class Main {
             System.out.println("Название адреса: " + emailaddr);
             System.out.println("Название домена: " + domain);
             System.out.println("Название доменной зоны: " + zone);
+        }
+    }
+    /* 7) Дан массив строк. Написать программу, которая:
+    а) выводит на экран значение всех строк через запятую, длина которых больше n.
+    б) выводит на экран значение всех неповторяющихся строк через запятую.
+    а) выводит на экран значение всех строк через запятую, длина которых больше n.
+    ------------------------------------------------------------------------------------------*/
+    public static void stringOnDisplay(String [] arrString, int n){
+        int count = arrString.length;
+        for (int i = 0; i < count; i++){
+            if (arrString[i].length() > n){
+                System.out.print(arrString[i] + ", ");
+            }
+        }
+    }
+    /*б) выводит на экран значение всех неповторяющихся строк через запятую.
+    ------------------------------------------------------------------------------------------*/
+    public static void stringNotRepeat(String [] arrString){
+        int count = arrString.length;
+        String [] result;
+        int k=0;
+        for (int i = 0; i < count; i++) {
+            for (int j = i+1; j < count; j++) {
+
+                if (arrString[i].equals(arrString[j]) == true) {
+                    System.out.print(arrString[i] + ", ");
+                    i++;
+                }
+            }
+           //result[k] = arrString[i];
         }
     }
 }
