@@ -307,16 +307,20 @@ public class Main {
     ------------------------------------------------------------------------------------------*/
     public static void stringNotRepeat(String [] arrString){
         int count = arrString.length;
-        String [] result;
-        int k=0;
-        for (int i = 0; i < count; i++) {
-            for (int j = i+1; j < count; j++) {
-
-                if (arrString[i].equals(arrString[j]) == true) {
-                    System.out.print(arrString[i] + ", ");
-                    i++;
+        String[] result = new String [count];
+        int i, j;
+        int countOfRepeat = 1;
+        //result = arrString;
+        for (i = 0; i < count; i++){
+            for(j = i+1; j < count; j++){
+                if (arrString[i].equals(arrString[j])) {
+                    countOfRepeat++;
                 }
             }
+            if(countOfRepeat == 1) {
+                System.out.println(arrString[i]);
+            }
+            countOfRepeat = 1;
            //result[k] = arrString[i];
         }
     }
