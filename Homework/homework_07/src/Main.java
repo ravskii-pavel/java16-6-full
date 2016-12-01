@@ -15,6 +15,7 @@ public class Main {
         validityOString("ravskii.pavel@gmail.com");
         stringOnDisplay(arr, 3);
         stringNotRepeat(arr);
+        stringNotRepeat1(arr);
 
     }
 
@@ -303,16 +304,13 @@ public class Main {
             }
         }
     }
-    /*б) выводит на экран значение всех неповторяющихся строк через запятую.
+    /*б) выводит на экран значение всех неповторяющихся строк через запятую (С учетом строк, которые имеют дубликаты).
     ------------------------------------------------------------------------------------------*/
     public static void stringNotRepeat(String [] arrString){
         int count = arrString.length;
-        String[] result = new String [count];
-        int i, j;
         int countOfRepeat = 1;
-        //result = arrString;
-        for (i = 0; i < count; i++){
-            for(j = i+1; j < count; j++){
+        for(int i = 0; i < count; i++){
+            for(int j = i+1; j < count; j++){
                 if (arrString[i].equals(arrString[j])) {
                     countOfRepeat++;
                 }
@@ -321,7 +319,45 @@ public class Main {
                 System.out.println(arrString[i]);
             }
             countOfRepeat = 1;
-           //result[k] = arrString[i];
         }
     }
+    /*б) выводит на экран значение всех неповторяющихся строк через запятую (БЕЗ учета строк, которые имеют дубликаты).
+    ------------------------------------------------------------------------------------------*/
+    public static void stringNotRepeat1(String [] arrString){
+        int count = arrString.length;
+        int countOfRepeat = 0;
+        for(int i = 0; i < count; i++){
+            for(int j = 1; j < count; j++){
+                if (arrString[i].equals(arrString[j])) {
+                    countOfRepeat++;
+                }
+            }
+            if(countOfRepeat == 1) {
+                System.out.println(arrString[i]);
+            }
+            countOfRepeat = 0;
+        }
+    }
+    /* 8) Опишите с помощью enum тип данных для хранения месяцев. У каждого месяца должны быть следующие свойства:
+    номер месяца, название на английском, название на русском, количество дней. Написать конструктор со
+    всеми параметрами, а также геттеры.*/
+    public enum months{
+        January(),
+        February(),
+        March(),
+        April(),
+        May(),
+        June(),
+        July(),
+        Auguest(),
+        September(),
+        October(),
+        November(),
+        December();
+
+        
+    }
+
+
+
 }
