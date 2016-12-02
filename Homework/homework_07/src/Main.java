@@ -22,11 +22,13 @@ public class Main {
         System.out.println("\n");
         stringNotRepeat1(arr);
         System.out.println("\n");
-       /* for (MonthsInYear m : MonthsInYear.values()){
+        /*MonthsInYear [] month = MonthsInYear.values();
+        for (MonthsInYear m : month){
+        for (MonthsInYear m : MonthsInYear.values()){
             System.out.print(m + ", ");
             System.out.println(m.ruNameMonth);
         }*/
-
+        Book book1 = new Book(bookType.DRAMA, "Мастер и Маргарита", "Булгаков", 1937);
 
     }
 
