@@ -6,16 +6,27 @@ public class Main {
         int grade[] = {3, 5, 2, 5, 5, 5, 5, 2, 3, 5, 3};
         int numbers[] = {0, 5, 2, 5, 5, 5, 5, 2, 3, 5, 3, 15, 15, 16, 25, 20, 405, 455};
         String [] arr = {"123","456","789","123","123","000","789","abcd","cdef"};
+
         daysOfMonth(2, args);
         playingCards(1, 8);
+        System.out.println("3.a) Определить, каким днем недели является k-й день невисокосного года");
         dayOfWeek(364);
+        System.out.println("3.б) i-й день недели (если 1 января — понедельник, то d=1 , если вторник — d=2, ...");
         notOnlyMonday(365);
         convertNumToString(7);
         reverseString("abc");
         validityOString("ravskii.pavel@gmail.com");
         stringOnDisplay(arr, 3);
+        System.out.println("\n");
         stringNotRepeat(arr);
+        System.out.println("\n");
         stringNotRepeat1(arr);
+        System.out.println("\n");
+       /* for (MonthsInYear m : MonthsInYear.values()){
+            System.out.print(m + ", ");
+            System.out.println(m.ruNameMonth);
+        }*/
+
 
     }
 
@@ -158,11 +169,9 @@ public class Main {
         }
     }
 
-    /*б) i-й день недели (если 1 января — понедельник, то d=1 , если вторник — d=2, ..., если воскресенье —  d= 7).*/
+    /*3.б) i-й день недели (если 1 января — понедельник, то d=1 , если вторник — d=2, ..., если воскресенье —  d= 7).*/
     public static void notOnlyMonday(int numOfDay) {
-        String nameOfDay = "";
         String firstDay = "Суббота";
-
         switch (firstDay) {
             case "Понедельник":
                 dayOfWeek(numOfDay);
@@ -194,6 +203,7 @@ public class Main {
     для числа 1 результатом будет строка “one”.*/
     public static void convertNumToString(int numOfDay) {
         String nameOfNum = String.valueOf(numOfDay);
+        System.out.println("4) Перевод чисел от 1 до 10 в строковое значение");
 
         switch (numOfDay) {
             case 1:
@@ -252,7 +262,6 @@ public class Main {
         for(i = count-1, j = 0; i >= 0 && j<=arrName.length-1; i--, j++){
             arrRevers[j] = arrName[i];
         }
-        System.out.println(arrName);
         reverseName2 = new String(arrRevers);
         System.out.print("5) Строка: ");
         System.out.println(arrName);
@@ -298,6 +307,7 @@ public class Main {
     ------------------------------------------------------------------------------------------*/
     public static void stringOnDisplay(String [] arrString, int n){
         int count = arrString.length;
+        System.out.println("7.a) Значение всех строк через запятую длина которых больше n");
         for (int i = 0; i < count; i++){
             if (arrString[i].length() > n){
                 System.out.print(arrString[i] + ", ");
@@ -308,6 +318,7 @@ public class Main {
     ------------------------------------------------------------------------------------------*/
     public static void stringNotRepeat(String [] arrString){
         int count = arrString.length;
+        System.out.println("7.б) Значение всех неповторяющихся строк через запятую (С учетом строк, которые имеют дубликаты)");
         int countOfRepeat = 1;
         for(int i = 0; i < count; i++){
             for(int j = i+1; j < count; j++){
@@ -316,7 +327,7 @@ public class Main {
                 }
             }
             if(countOfRepeat == 1) {
-                System.out.println(arrString[i]);
+                System.out.print(arrString[i] + ", ");
             }
             countOfRepeat = 1;
         }
@@ -326,6 +337,7 @@ public class Main {
     public static void stringNotRepeat1(String [] arrString){
         int count = arrString.length;
         int countOfRepeat = 0;
+        System.out.println("7.б) Значение всех неповторяющихся строк через запятую (БЕЗ учета строк, которые имеют дубликаты)");
         for(int i = 0; i < count; i++){
             for(int j = 1; j < count; j++){
                 if (arrString[i].equals(arrString[j])) {
@@ -333,31 +345,9 @@ public class Main {
                 }
             }
             if(countOfRepeat == 1) {
-                System.out.println(arrString[i]);
+                System.out.print(arrString[i] + ", ");
             }
             countOfRepeat = 0;
         }
     }
-    /* 8) Опишите с помощью enum тип данных для хранения месяцев. У каждого месяца должны быть следующие свойства:
-    номер месяца, название на английском, название на русском, количество дней. Написать конструктор со
-    всеми параметрами, а также геттеры.*/
-    public enum months{
-        January(),
-        February(),
-        March(),
-        April(),
-        May(),
-        June(),
-        July(),
-        Auguest(),
-        September(),
-        October(),
-        November(),
-        December();
-
-        
-    }
-
-
-
 }
