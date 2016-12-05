@@ -7,7 +7,6 @@ public class Main {
         float[] mass2 = {-50.76F, -8.7F, -7F, -7.9F, -1F, 1, 8, 6, 8, 66, 65, 7, 8, 0, 0};
         int num = 11;
 
-
         averageWhile(mass);
         averageForEach(mass);
         averageLowerWhile(mass, 20);
@@ -18,6 +17,8 @@ public class Main {
         sequenceFloat(mass2);
         countMaxNum(num);
         reverseNum(1357);
+        System.out.println(intToString(-12));
+        System.out.println(setGrade(55));
 
     }
     /*1) Найти среднее арифметическое элементов массива, больших числа 10.
@@ -108,7 +109,7 @@ public class Main {
         //Поиск различных чисел в массиве.
         repeat = k = i = 0;
         while (k < countDifferent) {
-            System.out.println(result[k]);
+            //System.out.println(result[k]);
             temp = result[k];
             while (i < countDifferent) {
                 if(temp == result[i+1]){
@@ -210,11 +211,79 @@ public class Main {
     }
     /* 9) Дано двузначное число. Необходимо написать программу, которая вернет строковое представление данного числа.
     Например, дано число 34, его строковое представление - thirty four.*/
-
-
-
-
-
+    public static String intToString(int num){
+        String result = "";
+        String [] units = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+        String [] dozens = {"ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
+        if (num < 0){
+            result = "minus ";
+            num = -1*num;
+        }
+        int div = num/10;
+        int mod = num%10;
+        switch (div){
+            case 1:
+            switch (mod){
+                case 0:
+                    result = result + dozens[mod];
+                    break;
+                case 1:
+                    result = result + "eleven";
+                    break;
+                case 2:
+                    result = result + "twelve";
+                    break;
+                case 4:
+                    result = result + units[mod-1] + "teen";
+                    break;
+                case 3:case 5:case 6:case 7:case 8:case 9:
+                    result = result + dozens[mod-1].substring(0, dozens[mod-1].indexOf('y')) + "een";
+                    break;
+            }
+            break;
+            case 2:case 3:case 4:case 5:case 6:case 7:case 8:case 9:
+                switch (mod) {
+                    case 0:
+                        result = result + dozens[div - 1];
+                        break;
+                    default:
+                        result = result + dozens[div - 1] + " " + units[mod - 1];
+                        break;
+                }
+                break;
+            default:
+                System.out.println("Введены неверные данные! Введите двузначное число: ");
+                result = "";
+                break;
+        }
+        return result;
+    }
+    /*10) Написать программу определения оценки студента по его рейтингу, на основе правил:*/
+    public static String setGrade(int rating){
+        String grade = "";
+        if(rating <= 19 && rating >=0){
+            grade = "Оценка студента с рейтингом " + rating + " - F";
+        }
+        else if(rating <= 39 && rating >=20){
+            grade = "Оценка студента с рейтингом " + rating + " - E";
+        }
+        else if(rating <= 59 && rating >=40){
+            grade = "Оценка студента с рейтингом " + rating + " - D";
+        }
+        else if(rating <= 74 && rating >=60){
+            grade = "Оценка студента с рейтингом " + rating + " - C";
+        }
+        else if(rating <= 89 && rating >=75){
+            grade = "Оценка студента с рейтингом " + rating + " - B";
+        }
+        else if(rating <= 100 && rating >=90){
+            grade = "Оценка студента с рейтингом " + rating + " - A";
+        }
+        else {
+            grade = "Введены неверные данные. Нет оценок с таким рейтингом: " + rating;
+        }
+        return grade;
+    }
 }
 
 
