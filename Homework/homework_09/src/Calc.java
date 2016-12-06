@@ -1,23 +1,15 @@
+import java.util.Objects;
+
 /**
  * Created by java on 02.12.2016.
  */
 
 public class Calc {
 
-    public static Object typeData(Object a){
+    public static Object setType(String s){
 
-        if (a instanceof String){
-            return "String";
-        }
-        else if (a instanceof Double){
-            return "Double";
-        }
-        else if (a instanceof Integer){
-            return "Integer";
-        }
-        else {
-            return "Введите корректные данные";
-        }
+        return Integer.parseInt(s);
+
     }
     public static int sum(int num1, int num2) {
 
@@ -49,7 +41,7 @@ public class Calc {
     }
     public static int diff(String num1, String num2) {
 
-        int result = Integer.parseInt(num1) + Integer.parseInt(num2);
+        int result = Integer.parseInt(num1) - Integer.parseInt(num2);
         return result;
     }
 
