@@ -1,8 +1,24 @@
 /**
  * Created by java on 02.12.2016.
  */
+
 public class Calc {
 
+    public static Object typeData(Object a){
+
+        if (a instanceof String){
+            return "String";
+        }
+        else if (a instanceof Double){
+            return "Double";
+        }
+        else if (a instanceof Integer){
+            return "Integer";
+        }
+        else {
+            return "Введите корректные данные";
+        }
+    }
     public static int sum(int num1, int num2) {
 
         int result = num1 + num2;
