@@ -1,59 +1,67 @@
-import java.util.Objects;
+import java.util.Random;
 import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        /*System.out.println(Calc.sum("123", "22"));
-        System.out.println(Calc.sum(12.33F, 12.4F));*/
-       // Faculty student = new Faculty (Faculty.GRYFFINDOR, "");
-       // student ();
 
-        Student stud = new Student (Lang.RU, "Harry", "Potter", 28, Faculty.SLYTHERIN);
+        calculator();
+        Student stud = new Student (Lang.RU, "Harry", "Potter", 28, Faculty.RAVENCLAW);
         stud.toString();
-
         System.out.println(stud.toString());
-        //stud = stud (Lang.EN, "Harry", "Potter", 28, Faculty.GRYFFINDOR);
-        //Scanner scanner = new Scanner(System.in);
-       /* while (true) {
+        System.out.println("Random Faculty is: " + Faculty.getRandomFaculty());
+        Student[]students = new Student[20];
+
+        /*Для проверки 6 задания*/
+        for (int i = 0; i < students.length; i++){
+            students[i] = new Student (Lang.EN, "Harry", "Potter", 28, Faculty.values()[i%4]);
+        }
+        Student.choiceFaculty(students);
+    }
+
+/*  1)  Доделать консольный калькулятор, таким образом, чтобы была возможность применять базовые операции (+,-,/,*)
+для разных типов входных данных, таких как:
+    - Integer a, Integer b
+    - Double a, Double b
+    - String a, String b
+    * Реализовать такую функциональность можно при помощи оператора instanceof. Например, у нас есть два целых числа
+    * Integer a и Integer b, применив к ним оператор instanceof
+      (а instanceof Integer) мы получим булевское выражение(true), и сможем подобрать необходимую перегрузку метода.
+    **  Разбить функциональность на отдельные методы.*/
+
+    public static void calculator() {
+        boolean isExit = false;
+        String result = null;
+        Scanner scanner = new Scanner(System.in);
+
+        while (!isExit) {
             System.out.print("Enter operator:  ");
             String operator = scanner.next();
-            Object k = new Object();
-            Object z = new Object();
-            z=887;
-            int y = 98;
-            //k = Calc.setType(z);
-            //= scanner;
-            System.out.println(k.getClass());
 
-
-
-
-            *//*System.out.print("Enter first operand:  ");
-            String a = scanner.next();
+            System.out.print("Enter first operand:  ");
+            Object firstOperand = Calc.setType((result != null) ? result : scanner.next());
+            if (null != result) {
+                System.out.println(result);
+            }
             System.out.print("Enter second operand:  ");
-            String b = scanner.next();
-*//*
-            *//*switch (operator) {
-                case "+":
-                    System.out.print((a + " " + operator + " " + b) + " = " + Calc.sum(a, b));
-                    break;
-                case "-":
-                    System.out.print((a + " " + operator + " " + b) + " = " + Calc.diff(a, b));
-                    break;
-                case "*":
-                    System.out.print((a + " " + operator + " " + b) + " = " + Calc.multiplication(a, b));
-                    break;
-                case "/":
-                    System.out.print((a + " " + operator + " " + b) + " = " + Calc.div(a, b));
-                    break;
-            }*//*
+            Object secondOperand = Calc.setType(scanner.next());
+
+            if ((firstOperand instanceof Double) || (secondOperand instanceof Double)) {
+                firstOperand = Calc.setType(firstOperand);
+                secondOperand = Calc.setType(secondOperand);
+            } else {
+                firstOperand = Calc.setTypeInt(firstOperand);
+                secondOperand = Calc.setTypeInt(secondOperand);
+            }
+
+            result = Calc.getResult(operator, firstOperand, secondOperand);
             System.out.println("Would you like to continue? Enter y/n: ");
             String exitWord = scanner.next();
-            System.out.println(exitWord);
-            if (exitWord != null && exitWord.length() > 0 && !exitWord.equalsIgnoreCase("y")){
+
+            if (exitWord != null && exitWord.length() > 0 && !exitWord.equalsIgnoreCase("y")) {
                 break;
-            }*/
-
-
+            }
+        }
     }
+
+
 }

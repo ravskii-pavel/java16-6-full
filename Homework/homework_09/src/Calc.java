@@ -1,81 +1,77 @@
 import java.util.Objects;
 
-/**
- * Created by java on 02.12.2016.
- */
-
 public class Calc {
 
-    public static Object setType(String s){
-
-        return Integer.parseInt(s);
-
+    public static Object setType(String s1){
+        if (s1.contains(".")){
+                return Double.parseDouble(s1);
+        }
+        else {
+            return Integer.parseInt(s1);
+        }
     }
-    public static int sum(int num1, int num2) {
-
-        int result = num1 + num2;
+    public static Object setType(Object s1){
+        String str = Objects.toString(s1);
+        return Double.parseDouble(str);
+    }
+    public static Object setTypeInt(Object s1){
+        Object result = (Integer) s1;
         return result;
     }
 
-    public static float sum(float num1, float num2) {
-
-        float result = num1 + num2;
-        return result;
+    public static String getResult(String operator, Object a, Object b){
+        switch (operator) {
+            case "+":
+                System.out.println((a + " " + operator + " " + b) + " = " + sum(a, b));
+                return sum(a, b);
+            case "-":
+                System.out.println((a + " " + operator + " " + b) + " = " + diff(a, b));
+                return diff(a, b);
+            case "*":
+                System.out.println((a + " " + operator + " " + b) + " = " + multiplication(a, b));
+                return multiplication(a, b);
+            case "/":
+                System.out.println((a + " " + operator + " " + b) + " = " + div(a, b));
+                return div(a, b);
+        }
+        return null;
     }
 
-    public static int sum(String num1, String num2) {
-
-        int result = Integer.parseInt(num1) + Integer.parseInt(num2);
-        return result;
+    public static String sum(Object num1, Object num2) {
+        if((num1 instanceof Double) || (num2 instanceof Double)){
+            return (Double)num1 + (Double)num2 + "";
+        }
+        return (Integer)num1 + (Integer)num2 + "";
     }
 
-    public static int diff(int num1, int num2) {
-
-        int result = num1 - num2;
-        return result;
-    }
-    public static float diff(float num1, float num2) {
-
-        float result = num1 - num2;
-        return result;
-    }
-    public static int diff(String num1, String num2) {
-
-        int result = Integer.parseInt(num1) - Integer.parseInt(num2);
-        return result;
+    public static String diff(Object num1, Object num2) {
+        if((num1 instanceof Double) || (num2 instanceof Double))
+        {
+            return (Double)num1 - (Double)num2 + "";
+        }
+        return (Integer)num1 - (Integer)num2 + "";
     }
 
-    public static int div(String num1, String num2) {
-
-        int result = Integer.parseInt(num1) / Integer.parseInt(num2);
-        return result;
+    public static String div(Object num1, Object num2) {
+        if((num1 instanceof Double) || (num2 instanceof Double))
+        {
+            return (Double)num1 / (Double)num2 + "";
+        }
+        else{
+            String str1 = Objects.toString (num1);
+            String str2 = Objects.toString(num2);
+            double n1 = Double.parseDouble(str1);
+            double n2 = Double.parseDouble(str2);
+            return n1 / n2 + "";
+        }
     }
 
-    public static float div(float num1, float num2) {
-
-        float result = num1 / num2;
-        return result;
+    public static String multiplication(Object num1, Object num2) {
+        if((num1 instanceof Double) || (num2 instanceof Double))
+        {
+            return (Double)num1 * (Double)num2 + "";
+        }
+        return (Integer)num1 * (Integer)num2 + "";
     }
-    public static int div(int num1, int num2) {
-
-        int result = num1 / num2;
-        return result;
-    }
-    public static int multiplication(int num1, int num2) {
-
-        int result = num1 * num2;
-        return result;
-    }
-    public static float multiplication(float num1, float num2) {
-
-        float result = num1 * num2;
-        return result;
-    }
-    public static int multiplication(String num1, String num2) {
-
-        int result = Integer.parseInt(num1) * Integer.parseInt(num2);
-        return result;
-    }
-
 }
 
