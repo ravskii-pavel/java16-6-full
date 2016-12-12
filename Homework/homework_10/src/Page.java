@@ -3,25 +3,21 @@
  */
 public class Page {
 
-    int numberPage = 0;
+    int numberPhoto = 0;
     int countOfPhotoes;
+    int countPhotoesOnPage;
     int countAdds = 0;
-    Photo [] photoes = new Photo[countOfPhotoes];
+    Photo [] photoes = new Photo[countPhotoesOnPage];
 
-    Page(int numberPage, String namePhoto) {
-        this.numberPage = numberPage;
-        this.photoes = photoes;
+    Page(int countPhotoesOnPage) {
+        this.countPhotoesOnPage = countPhotoesOnPage;
+        this.photoes = new Photo[countPhotoesOnPage];
     }
 
-    //public void setNumberOfPage(int numberOfPage) {
-        this.numberPage = numberOfPage;
-    }
+    public void addPhoto(String namePhoto, int numberPage, int countOfPhotoesonPage){
 
-    public void addPhoto(String namePhoto){
-
-        if (countAdds < countOfPhotoes){
-            photoes[number]= new Photo (numberPage, "New photo");
+        if (photoes[numberPhoto] == null && numberPhoto < photoes.length){
+            photoes[numberPhoto]= new Photo (numberPhoto, "New photo");
         }
-        setNummberPage(numberPage);
     }
 }

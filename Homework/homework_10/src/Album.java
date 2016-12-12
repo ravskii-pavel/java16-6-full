@@ -7,6 +7,10 @@ public class Album {
     int countPagesAll;
     Page []pages = new Page[countPagesAll];
 
+    Album (int countPagesAll, int countPhotoesOnPage){
+        this.countPhotoesOnPage = countPhotoesOnPage;
+        this.countPagesAll = countPagesAll;
+    }
     public void setCountPages(int countPages) {
         this.countPagesAll = countPages;
     }
@@ -27,14 +31,13 @@ public class Album {
     }
 
     public void addPhoto(String namePhoto){
+        if (this.pages != null){
 
-       /* countPhotoesAdd < countPhotoesOnPage * countPagesAll && countPhotoesAdd > 0 &&*/
-        if (pages[numberPage]!= null) {
-            pages[numberPage].addPhoto();
+            this.pages[numberPage] = new Page(getCountPhotoesOnPage());
+            //numberPage++;.addPhoto(namePhoto, numberPage, countPhotoesOnPage);
         }
-        else {
-                System.out.println("Введите др. количество фотографий");
-            }
+        else{
+            System.out.println("Нет места для фото");
         }
     }
 }
