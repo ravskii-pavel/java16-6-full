@@ -1,5 +1,7 @@
 import com.sun.org.apache.bcel.internal.generic.LAND;
 
+import java.util.Objects;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -14,9 +16,12 @@ public class Main {
         puppy.jump();
         puppy.movement();
         Album album = new Album(5);
-        album.addPhoto("My FAMILY");
-        album.addPhoto("My Dog");
-        album.addPhoto("My Cat");
+        album.setPhoto("My FAMILY");
+        album.setPhoto("My Dog");
+        album.setPhoto("My Cat");
+        /*for(int i = 0; i < album.pages[0].photoes.length; i++) {*/
+            System.out.println(album.pages[0].photoes[0].photoName);
+        /*}*/
 
        /* 2) Создать объект класса Фотоальбом, используя классы Фотография, Страница. Методы: задать название фотографии,
        дополнить фотоальбом фотографией, вывести на консоль количество фотографий.*/

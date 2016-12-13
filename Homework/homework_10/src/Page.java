@@ -15,14 +15,21 @@ public class Page {
     public void addPhoto(Photo photo, int numberPhoto){
         photoes[numberPhoto] = photo;
     }
-    public void setPhoto(String namePhoto){
+
+
+    public void setNumberPhoto(int numberPhoto) {
+        this.numberPhoto = numberPhoto;
+    }
+
+    public void setPhoto(String namePhoto, int numberPhoto){
         if (this.photoes != null) {
-            this.photoes[numberPhoto] = Photo(namePhoto) ;
-            numberPage++;
+            this.photoes[numberPhoto] = new Photo(namePhoto);
+          /*  numberPhoto++;
+            setNumberPhoto(numberPhoto);*/
+
         }
         else{
             System.out.println("Нет места для фото");
         }
     }
-
 }
