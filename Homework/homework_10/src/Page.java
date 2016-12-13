@@ -3,21 +3,26 @@
  */
 public class Page {
 
-    int numberPhoto = 0;
-    int countOfPhotoes;
-    int countPhotoesOnPage;
-    int countAdds = 0;
-    Photo [] photoes = new Photo[countPhotoesOnPage];
+    int numberPhoto;
+    int numberPage;
+    Photo [] photoes;
 
-    Page(int countPhotoesOnPage) {
-        this.countPhotoesOnPage = countPhotoesOnPage;
+    Page(int countPhotoesOnPage, int numberPage) {
+        this.numberPage = numberPage;
         this.photoes = new Photo[countPhotoesOnPage];
     }
 
-    public void addPhoto(String namePhoto, int numberPage, int countOfPhotoesonPage){
-
-        if (photoes[numberPhoto] == null && numberPhoto < photoes.length){
-            photoes[numberPhoto]= new Photo (numberPhoto, "New photo");
+    public void addPhoto(Photo photo, int numberPhoto){
+        photoes[numberPhoto] = photo;
+    }
+    public void setPhoto(String namePhoto){
+        if (this.photoes != null) {
+            this.photoes[numberPhoto] = Photo(namePhoto) ;
+            numberPage++;
+        }
+        else{
+            System.out.println("Нет места для фото");
         }
     }
+
 }

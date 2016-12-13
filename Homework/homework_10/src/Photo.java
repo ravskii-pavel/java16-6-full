@@ -3,12 +3,11 @@
  */
 public class Photo{
 
-    int numberOfPage;
     String photoName;
 
-    Photo(int numberOfPage, String photoName) {
-        this.numberOfPage = numberOfPage;
-        this.photoName = photoName + " - Фото на " + numberOfPage + " странице";
+    Photo(String photoName) {
+
+        this.photoName = photoName + " - Фото на странице";
     }
 
 }

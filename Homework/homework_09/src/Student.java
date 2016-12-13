@@ -35,7 +35,6 @@ public class Student {
     Также факультеты могут быть определены только случайным образом.*/
 
     public static void choiceFaculty(Student [] students){
-
         Random random = new Random();
         int i, j;
         i = j = 0;
