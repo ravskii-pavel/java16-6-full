@@ -5,15 +5,15 @@ public class Page {
 
     int numberPhoto;
     int numberPage;
-    Photo [] photoes;
+    Photo [] photos;
 
     Page(int countPhotoesOnPage, int numberPage) {
         this.numberPage = numberPage;
-        this.photoes = new Photo[countPhotoesOnPage];
+        this.photos = new Photo[countPhotoesOnPage];
     }
 
     public void addPhoto(Photo photo, int numberPhoto){
-        photoes[numberPhoto] = photo;
+        photos[numberPhoto] = photo;
     }
 
 
@@ -21,12 +21,17 @@ public class Page {
         this.numberPhoto = numberPhoto;
     }
 
-    public void setPhoto(String namePhoto, int numberPhoto){
-        if (this.photoes != null) {
-            this.photoes[numberPhoto] = new Photo(namePhoto);
-          /*  numberPhoto++;
-            setNumberPhoto(numberPhoto);*/
+    public int countAddPhotos(){
+        int i = 0;
+        while (photos[i] != null && i <= photos.length){
+            i++;
+        }
+        return i;
+    }
 
+    public void setPhoto(String namePhoto, int numberPhoto){
+        if (this.photos != null) {
+            this.photos[numberPhoto] = new Photo(namePhoto);
         }
         else{
             System.out.println("Нет места для фото");

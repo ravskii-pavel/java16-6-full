@@ -12,18 +12,18 @@ public class Album {
         this.numberPage = 0;
     }
 
-    public int getNumberPhoto() {
-        return numberPhoto;
-    }
-
     public void setPhoto(String namePhoto){
-        if (this.pages != null) {
-            pages[numberPage] = new Page(countPhotoesOnPage, numberPage);
-            pages[numberPage].setPhoto(namePhoto, getNumberPhoto());
-            this.numberPhoto++;
-        }
-        else{
-            System.out.println("Нет места для фото");
+        if (numberPage < pages.length) {
+            if(pages[numberPage] != null && pages[numberPage].countAddPhotos() != pages[numberPage].photos.length){
+                pages[numberPage].setPhoto(namePhoto, numberPhoto);
+            }
+            else {
+                pages[numberPage] = new Page(countPhotoesOnPage, numberPage);
+                pages[numberPage].setPhoto(namePhoto, numberPhoto);
+            }
+            if(pages[numberPage].countAddPhotos() == pages[numberPage].photos.length){
+                this.numberPage++;
+            }
         }
     }
 }
