@@ -21,14 +21,20 @@ public class Page {
         }
         return i;
     }
+    public boolean isFullPage(Page page){
+        if(page.countAddPhotos() == page.photos.length){
+            return true;
+        }
+        return false;
+    }
 
     public void setPhoto(String namePhoto){
-        int numberPhoto = this.countAddPhotos();
+        int numberPhoto = countAddPhotos();
         if (this.photos != null) {
             this.photos[numberPhoto] = new Photo(namePhoto);
         }
-        else{
-            System.out.println("Нет места для фото");
+        else {
+            System.out.println("ет места на сранице");
         }
     }
 }

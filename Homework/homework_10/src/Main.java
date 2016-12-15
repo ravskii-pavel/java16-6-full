@@ -15,22 +15,21 @@ public class Main {
         puppy.bite();
         puppy.jump();
         puppy.movement();
-        Album album = new Album(5);
+        Album album = new Album(0);
         album.setPhoto("My FAMILY");
         album.setPhoto("My Dog");
         album.setPhoto("My Cat");
         album.setPhoto("My Cat");
         album.setPhoto("My Cat");
         album.setPhoto("My Cat+++++++++++++");
-        //album.setPhoto("My Cat");
-        //album.setPhoto("My Ca================t");
-        /*for(int i = 0; i < album.pages[0].photoes.length; i++) {*/
+        album.setPhoto("NEW photo");
+
             System.out.println(album.pages[0].photos[0].photoName);
             System.out.println(album.pages[0].photos[1].photoName);
             System.out.println(album.pages[0].photos[2].photoName);
-            System.out.println(album.pages[0].photos[3].photoName);
-            System.out.println(album.pages[0].photos[4].photoName);
-        /*}*/
+            System.out.println(album.pages[1].photos[0].photoName);
+            System.out.println(album.pages[1].photos[1].photoName);
+            System.out.println(album.pages[1].photos[2].photoName);
 
        /* 2) Создать объект класса Фотоальбом, используя классы Фотография, Страница. Методы: задать название фотографии,
        дополнить фотоальбом фотографией, вывести на консоль количество фотографий.*/

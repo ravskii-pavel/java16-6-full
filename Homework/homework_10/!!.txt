@@ -1,0 +1,16 @@
+/* public boolean isFull(Object obj) {
+        if ((Page) obj == pages[this.numberPage]){
+            Page page = (Page)obj;
+            if (page.countAddPhotos() == page.photos.length){
+                return true;
+            }
+            return false;
+        }
+       else {
+            Photo photo = (Photo)obj;
+            if (photo.countAddPhotos() == page.photos.length){
+                return true;
+            }
+            return false;
+        }
+*/
