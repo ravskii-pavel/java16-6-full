@@ -3,7 +3,6 @@
  */
 public class Page {
 
-    int numberPhoto;
     int numberPage;
     Photo [] photos;
 
@@ -12,24 +11,19 @@ public class Page {
         this.photos = new Photo[countPhotoesOnPage];
     }
 
-    public void addPhoto(Photo photo, int numberPhoto){
-        photos[numberPhoto] = photo;
-    }
-
-
-    public void setNumberPhoto(int numberPhoto) {
-        this.numberPhoto = numberPhoto;
-    }
-
     public int countAddPhotos(){
         int i = 0;
         while (photos[i] != null && i <= photos.length){
             i++;
+            if (i == photos.length) {
+                return i;
+            }
         }
         return i;
     }
 
-    public void setPhoto(String namePhoto, int numberPhoto){
+    public void setPhoto(String namePhoto){
+        int numberPhoto = this.countAddPhotos();
         if (this.photos != null) {
             this.photos[numberPhoto] = new Photo(namePhoto);
         }

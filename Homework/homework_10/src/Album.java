@@ -11,18 +11,29 @@ public class Album {
         this.countPhotoesOnPage = countPhotoesOnPage;
         this.numberPage = 0;
     }
+    public boolean isFull(int numberPage) {
+        if(pages[numberPage].countAddPhotos() == pages[numberPage].photos.length) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
 
     public void setPhoto(String namePhoto){
-        if (numberPage < pages.length) {
-            if(pages[numberPage] != null && pages[numberPage].countAddPhotos() != pages[numberPage].photos.length){
-                pages[numberPage].setPhoto(namePhoto, numberPhoto);
+        if (this.numberPage < pages.length) {
+            if(pages[numberPage] != null){
+                if (numberPage == 0){
+                    pages[numberPage] = new Page(countPhotoesOnPage, numberPage);
+                }
+                pages[numberPage].setPhoto(namePhoto);
             }
-            else {
-                pages[numberPage] = new Page(countPhotoesOnPage, numberPage);
-                pages[numberPage].setPhoto(namePhoto, numberPhoto);
-            }
-            if(pages[numberPage].countAddPhotos() == pages[numberPage].photos.length){
+            if(pages[numberPage].countAddPhotos() == pages[numberPage].photos.length) {
                 this.numberPage++;
+            }
+                pages[numberPage] = new Page(countPhotoesOnPage, numberPage);
+                pages[numberPage].setPhoto(namePhoto);
             }
         }
     }

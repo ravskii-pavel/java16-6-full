@@ -19,8 +19,17 @@ public class Main {
         album.setPhoto("My FAMILY");
         album.setPhoto("My Dog");
         album.setPhoto("My Cat");
+        album.setPhoto("My Cat");
+        album.setPhoto("My Cat");
+        album.setPhoto("My Cat+++++++++++++");
+        //album.setPhoto("My Cat");
+        //album.setPhoto("My Ca================t");
         /*for(int i = 0; i < album.pages[0].photoes.length; i++) {*/
             System.out.println(album.pages[0].photos[0].photoName);
+            System.out.println(album.pages[0].photos[1].photoName);
+            System.out.println(album.pages[0].photos[2].photoName);
+            System.out.println(album.pages[0].photos[3].photoName);
+            System.out.println(album.pages[0].photos[4].photoName);
         /*}*/
 
        /* 2) Создать объект класса Фотоальбом, используя классы Фотография, Страница. Методы: задать название фотографии,
