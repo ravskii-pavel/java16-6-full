@@ -28,13 +28,13 @@ public class Page {
         return false;
     }
 
-    public void setPhoto(String namePhoto){
+    public void addPhoto(String namePhoto){
         int numberPhoto = countAddPhotos();
         if (this.photos != null) {
             this.photos[numberPhoto] = new Photo(namePhoto);
         }
         else {
-            System.out.println("ет места на сранице");
+            System.out.println("Нет места на сранице");
         }
     }
 }

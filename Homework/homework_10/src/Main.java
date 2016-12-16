@@ -15,24 +15,23 @@ public class Main {
         puppy.bite();
         puppy.jump();
         puppy.movement();
-        Album album = new Album(0);
-        album.setPhoto("My FAMILY");
-        album.setPhoto("My Dog");
-        album.setPhoto("My Cat");
-        album.setPhoto("My Cat");
-        album.setPhoto("My Cat");
-        album.setPhoto("My Cat+++++++++++++");
-        album.setPhoto("NEW photo");
 
-            System.out.println(album.pages[0].photos[0].photoName);
-            System.out.println(album.pages[0].photos[1].photoName);
-            System.out.println(album.pages[0].photos[2].photoName);
-            System.out.println(album.pages[1].photos[0].photoName);
-            System.out.println(album.pages[1].photos[1].photoName);
-            System.out.println(album.pages[1].photos[2].photoName);
-
-       /* 2) Создать объект класса Фотоальбом, используя классы Фотография, Страница. Методы: задать название фотографии,
+       /* 2 Создать объект класса Фотоальбом, используя классы Фотография, Страница. Методы: задать название фотографии,
        дополнить фотоальбом фотографией, вывести на консоль количество фотографий.*/
+        Album album = new Album(3, 4);
+        album.addPhoto("My FAMILY");
+        album.addPhoto("Pink Floyd");
+        album.addPhoto("Pink Floyd");
+        System.out.println(album.pages[0].photos[0].photoName);
+        album.changeNamePhoto(0, 0, "HAPPY FAMILY");
+        album.countPhotoOnDisplay();
+
+        System.out.println(album.pages[0].photos[0].photoName);
+
+        /*3) Создать объект класса Звездная система, используя классы Планета, Звезда, Луна.
+        Методы: вывести на консоль количество планет в звездной системе, название звезды,
+        добавление планеты в систему.*/
+
 
 
 
