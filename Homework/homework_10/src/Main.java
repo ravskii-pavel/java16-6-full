@@ -22,17 +22,24 @@ public class Main {
         album.addPhoto("My FAMILY");
         album.addPhoto("Pink Floyd");
         album.addPhoto("Pink Floyd");
-        System.out.println(album.pages[0].photos[0].photoName);
-        album.changeNamePhoto(0, 0, "HAPPY FAMILY");
-        album.countPhotoOnDisplay();
+        album.addPhoto("Pink Floyd");
+        album.addPhoto("Pink Floyd");
+        album.addPhoto("Pink Floyd");
+        album.addPhoto("Pink Floyd");
+        album.addPhoto("Pink Floyd");
+        album.addPhoto("Pink Floyd");
 
         System.out.println(album.pages[0].photos[0].photoName);
+        album.changeNamePhoto(0, 0, "HAPPY FAMILY");
+        album.countPhotoInAlbum();
+
+        //System.out.println(album.pages[0].photos[0].photoName);
 
         /*3) Создать объект класса Звездная система, используя классы Планета, Звезда, Луна.
         Методы: вывести на консоль количество планет в звездной системе, название звезды,
         добавление планеты в систему.*/
 
-
+        StarSystem starSystem = new StarSystem("SolarSystem", "Sun", 10);
 
 
     }
