@@ -33,14 +33,18 @@ public class Main {
         album.changeNamePhoto(0, 0, "HAPPY FAMILY");
         album.countPhotoInAlbum();
 
-        //System.out.println(album.pages[0].photos[0].photoName);
 
         /*3) Создать объект класса Звездная система, используя классы Планета, Звезда, Луна.
         Методы: вывести на консоль количество планет в звездной системе, название звезды,
         добавление планеты в систему.*/
 
-        StarSystem solarSystem = new StarSystem("SolarSystem", "Sun", 10);
+        StarSystem solarSystem = new StarSystem("SolarSystem", "Sun", 1);
         solarSystem.addPlanet("Earth", 1);
+        solarSystem.countPlanetsInStarSystem();
+        solarSystem.nameStar();
+
+
+
 
     }
 

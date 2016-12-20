@@ -19,11 +19,11 @@ public class Star {
     }
     public int countAddPlanets(){
         int i = 0;
-        while(planets[i] != null){
+        while(planets[i] != null && i <= planets.length){
+            i++;
             if (i == planets.length) {
                 return i;
             }
-            i++;
         }
         return i;
     }

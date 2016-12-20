@@ -26,4 +26,11 @@ public class StarSystem {
             System.out.println(this.nameStarSystem + " - заполнена");
         }
     }
+
+    public void countPlanetsInStarSystem(){
+        System.out.println("Количество планет в системе: " + star.countAddPlanets());
+    }
+    public void nameStar(){
+        System.out.println("Название звезды: " + star.nameStar);
+    }
 }
