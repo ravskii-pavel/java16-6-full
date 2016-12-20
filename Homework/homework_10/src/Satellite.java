@@ -3,4 +3,8 @@
  */
 public class Satellite {
     String nameSatellite;
+
+    Satellite(String nameSatellite){
+        this.nameSatellite = nameSatellite;
+    }
 }

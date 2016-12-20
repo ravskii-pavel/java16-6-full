@@ -6,7 +6,6 @@ public class Photo{
     String photoName;
 
     Photo(String photoName) {
-
         this.photoName = photoName + " - Фото на странице";
     }
 

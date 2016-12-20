@@ -15,7 +15,8 @@ public class Album {
 
     public boolean isFullAlbum(Object []obj) {
         Page[] page = (Page[])obj;
-        if (page.length == this.numberPage+1 && page[this.numberPage].countAddPhotos() == page[this.numberPage].photos.length && this.countPhotosOnPage !=0){
+        if (page.length == this.numberPage+1 && page[this.numberPage].countAddPhotos() == page[this.numberPage].photos.length &&
+            this.countPhotosOnPage != 0){
             return true;
         }
         return false;

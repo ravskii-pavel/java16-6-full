@@ -6,8 +6,12 @@ public class Planet {
     String namePlanet;
     Satellite[] satellites;
 
-    public void addPlanet(){
-
+    public Planet(String namePlanet, int countSatellites){
+        this.namePlanet = namePlanet;
+        this.satellites = new Satellite[countSatellites];
+    }
+    public Planet(String namePlanet){
+        this.namePlanet = namePlanet;
     }
 
 }

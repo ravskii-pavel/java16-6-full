@@ -39,8 +39,8 @@ public class Main {
         Методы: вывести на консоль количество планет в звездной системе, название звезды,
         добавление планеты в систему.*/
 
-        StarSystem starSystem = new StarSystem("SolarSystem", "Sun", 10);
-
+        StarSystem solarSystem = new StarSystem("SolarSystem", "Sun", 10);
+        solarSystem.addPlanet("Earth", 1);
 
     }
 
