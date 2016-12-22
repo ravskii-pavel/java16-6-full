@@ -3,4 +3,6 @@
  */
 public class Waiter {
 
+    String name;
+    int age;
 }
