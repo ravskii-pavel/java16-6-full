@@ -11,6 +11,7 @@ public class Bar {
     Bar(){
         this.initialSize = 3;
         this.typeDrinks = new TypeDrink[initialSize];
+		this.orders = new Order[initialSize];
     }
     Bar(int initialSize){
         this.initialSize = initialSize;
