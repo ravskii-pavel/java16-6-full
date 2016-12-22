@@ -9,7 +9,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="groovy-2.4.7" level="application" />
     <orderEntry type="library" name="api" level="project" />
-    <orderEntry type="library" name="spock-core-1.0-groovy-2.4" level="project" />
     <orderEntry type="library" name="groovy-2.4.7" level="application" />
+    <orderEntry type="library" name="spock-core-1.0-groovy-2.4" level="project" />
   </component>
 </module>

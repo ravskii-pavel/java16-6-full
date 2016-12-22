@@ -2,11 +2,11 @@
  * Created by Pavel on 20.12.2016.
  */
 public class Bar {
-    int initialSize;
+    static int initialSize;
     String barName;
-    float quantityTips;
-    TypeDrink [] typeDrinks;
-    Order [] orders;
+    public static float allTips = 0;
+    static TypeDrink [] typeDrinks;
+    public static Order [] orders;
 
     Bar(){
         this.initialSize = 3;
@@ -17,11 +17,11 @@ public class Bar {
         this.typeDrinks = new TypeDrink[initialSize];
     }
 
-    public int currentLoadArray(TypeDrink[] typeDrinks){
+    public static int currentLoadArray(Object[] objects){
         int size = 0;
-        while (typeDrinks[size] != null) {
+        while (objects[size] != null) {
             size++;
-            if (size == typeDrinks.length) {
+            if (size == objects.length) {
                 return size;
             }
         }
@@ -30,7 +30,7 @@ public class Bar {
 
     public int checkDrinkAnalog(String nameDrink){
         for(int i = 0; i < typeDrinks.length && typeDrinks[i] != null; i++){
-            if (typeDrinks[i].nameDrink == nameDrink) {
+            if (typeDrinks[i].nameDrink.equals(nameDrink)) {
                 return i;
             }
         }
@@ -39,6 +39,8 @@ public class Bar {
 
     public void addNewDrinkInBar(String nameDrink, int quantityMlLitres){
         int size = 0;
+        nameDrink = nameDrink.trim().toLowerCase();
+
         Object [] obj = (Object[])typeDrinks;
         if (checkDrinkAnalog(nameDrink) < 0) {
             size = currentLoadArray(typeDrinks);
@@ -52,20 +54,20 @@ public class Bar {
         }
     }
 
-    public Object[] changeSizeArray(Object []objects, int size){
-        int initialSize = this.initialSize;
+    public static Object[] changeSizeArray(Object []objects, int size){
+        //int initialSize;
         float maxLoad = 0.65f;
         float minLoad = 0.6f;
         float currentLoad = size/(initialSize*1.0f);
         if(currentLoad >= maxLoad){
-            this.initialSize = (int)(size * 1.5);
+            Bar.initialSize = (int)(size * 1.5);
             if (objects == typeDrinks){
-                Object[] tmp = new TypeDrink[this.initialSize];
+                Object[] tmp = new TypeDrink[Bar.initialSize];
             }
             else{
-                Object[] tmp = new Order[this.initialSize];
+                Object[] tmp = new Order[Bar.initialSize];
             }
-            Object[] tmp = new TypeDrink[this.initialSize];
+            Object[] tmp = new TypeDrink[Bar.initialSize];
             for (int i = 0; i < size; i++){
                 tmp[i] = objects[i];
             }

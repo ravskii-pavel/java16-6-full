@@ -7,13 +7,24 @@ public class Main {
         uglyCoyote.addNewDrinkInBar("Whiskey", 1250);
         uglyCoyote.addNewDrinkInBar("Whiskey", 1250);
         uglyCoyote.addNewDrinkInBar("Whiskey", 1250);
+        uglyCoyote.addNewDrinkInBar("Whiskey1", 1250);
+        uglyCoyote.addNewDrinkInBar("Whiskey3", 1250);
         uglyCoyote.addNewDrinkInBar("Whiskey", 1250);
+        uglyCoyote.addNewDrinkInBar("Whiskey1", 1250);
+        uglyCoyote.addNewDrinkInBar("Whiskey2", 1250);
+        uglyCoyote.addNewDrinkInBar("Whiskey3", 1250);
+        uglyCoyote.addNewDrinkInBar("Whiskey4", 1250);
+        uglyCoyote.addNewDrinkInBar("Whiskey5", 1250);
+        uglyCoyote.addNewDrinkInBar("Whiskey6", 1250);
+        uglyCoyote.addNewDrinkInBar("Rom", 1259);
         uglyCoyote.addNewDrinkInBar("Rom", 2000);
 
         System.out.println(uglyCoyote.typeDrinks[0].nameDrink);
         System.out.println(uglyCoyote.typeDrinks[0].quantityMlLitres);
         System.out.println(uglyCoyote.typeDrinks[1].nameDrink);
         System.out.println(uglyCoyote.typeDrinks[1].quantityMlLitres);
+        System.out.println(uglyCoyote.typeDrinks[7].nameDrink);
+        System.out.println(uglyCoyote.typeDrinks[7].quantityMlLitres);
         /*System.out.println("Hello World!");
 
         public class AList {
