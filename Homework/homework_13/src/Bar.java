@@ -18,18 +18,7 @@ public class Bar {
         this.typeDrinks = new TypeDrink[initialSize];
     }
 
-    public static int currentLoadArray(Object[] objects){
-        int size = 0;
-        while (objects[size] != null) {
-            size++;
-            if (size == objects.length) {
-                return size;
-            }
-        }
-        return size;
-    }
-
-    public int checkDrinkAnalog(String nameDrink){
+    public static int checkDrinkAnalog(String nameDrink){
         for(int i = 0; i < typeDrinks.length && typeDrinks[i] != null; i++){
             if (typeDrinks[i].nameDrink.equals(nameDrink)) {
                 return i;
@@ -37,6 +26,16 @@ public class Bar {
         }
         return (-1);
     }
+    public static boolean isDrinkEnough(String nameDrink, int quantityMlLitres){
+        if(typeDrinks[checkDrinkAnalog(nameDrink)].quantityMlLitres >= quantityMlLitres){
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    }
+
 
     public void addNewDrinkInBar(String nameDrink, int quantityMlLitres){
         int size = 0;
@@ -53,6 +52,17 @@ public class Bar {
             size = checkDrinkAnalog(nameDrink);
             typeDrinks[size].quantityMlLitres += quantityMlLitres;
         }
+    }
+
+    public static int currentLoadArray(Object[] objects){
+        int size = 0;
+        while (objects[size] != null) {
+            size++;
+            if (size == objects.length) {
+                return size;
+            }
+        }
+        return size;
     }
 
     public static Object[] changeSizeArray(Object []objects, int size){
