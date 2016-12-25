@@ -3,33 +3,39 @@
  */
 public class Waiter {
 
-    String name;
     int age;
+    float tipsInDay;
+    String name;
+    Bar bar;
 
-   public void takeTips(float allTipss){
-        Bar.allTips += allTipss;
-   }
-   public void takeOrder(String nameDrink, int quantityMlLitres) {
-       nameDrink = nameDrink.trim().toLowerCase();
-       int i = 0;
-       int size = 0;
-
-       Object[] obj = (Object[])Bar.orders;
-       size = Bar.currentLoadArray(Bar.orders);
-       obj = Bar.changeSizeArray(Bar.orders, size);
-       Bar.orders = (Order[]) obj;
-       if(Bar.isDrinkEnough(nameDrink, quantityMlLitres)) {
-           Bar.orders[size] = new Order(nameDrink, quantityMlLitres);
-           //Bar.orders[Bar.checkDrinkAnalog(nameDrink)].quantityMlLitres -= quantityMlLitres;
-       }
-       else{
-           System.out.println("К сожалению, нет такого количества " + Bar.typeDrinks[Bar.checkDrinkAnalog(nameDrink)].nameDrink + ", у нас осталось - " +
-           Bar.typeDrinks[Bar.checkDrinkAnalog(nameDrink)].quantityMlLitres);
-       }
-   }
-    public void isDrinkEnough(String nameDrinkInOrder, int quantityMlLitresInOrder){
-        Bar.howMuchQuantity(nameDrinkInOrder, quantityMlLitresInOrder);
-
+    public Waiter(String name, int age, Bar bar) {
+        this.age = age;
+        this.name = name;
+        this.bar = bar;
     }
+
+    public void takeTips(float allTips){
+        bar.allTips += allTips;
+    }
+    public void takeOrder(String nameDrink, int quantityMlLitres) {
+       nameDrink = nameDrink.trim().toLowerCase();
+       if (bar.isNameDrink(nameDrink)){
+           if(bar.isDrinkEnough(nameDrink, quantityMlLitres)) {
+               int size = bar.currentLoadArray(bar.orders);
+               Object[] obj = (Object[])bar.orders;
+               obj = bar.changeSizeArray(bar.orders, size);
+               bar.orders = (Order[]) obj;
+               bar.orders[size] = new Order(size, nameDrink, quantityMlLitres);
+               //Bar.orders[Bar.checkDrinkAnalog(nameDrink)].quantityMlLitres -= quantityMlLitres;
+           }
+           else{
+               System.out.println("К сожалению, нет такого количества " + bar.typeDrinks[bar.whichDrinkAnalog(nameDrink)].nameDrink + ", у нас осталось - " +
+               (bar.typeDrinks[bar.whichDrinkAnalog(nameDrink)].quantityMlLitres - (bar.quantityDrinkInNotCompleateOrders(nameDrink))));
+           }
+       }
+       else {
+           System.out.println("В баре " + bar.barName + " нет такого напитка");
+       }
+   }
 }
 

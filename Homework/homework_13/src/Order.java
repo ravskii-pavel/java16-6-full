@@ -4,7 +4,8 @@
 public class Order extends TypeDrink{
 
     int numOrder;
-    Order(String nameDrinkInOrder, int quantityMlLitres){
+    Order(int numOrder, String nameDrinkInOrder, int quantityMlLitres){
         super(nameDrinkInOrder, quantityMlLitres);
+        this.numOrder = numOrder;
     }
 }

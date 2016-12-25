@@ -2,91 +2,49 @@ public class Main {
 
     public static void main(String[] args) {
 
-
         Bar uglyCoyote = new Bar();
-        uglyCoyote.addNewDrinkInBar("Whiskey", 1250);
-        uglyCoyote.addNewDrinkInBar("Whiskey", 1250);
-        uglyCoyote.addNewDrinkInBar("Whiskey", 1250);
-        uglyCoyote.addNewDrinkInBar("Whiskey1", 1250);
-        uglyCoyote.addNewDrinkInBar("Whiskey3", 1250);
-        uglyCoyote.addNewDrinkInBar("Whiskey", 1250);
-        uglyCoyote.addNewDrinkInBar("Whiskey1", 1250);
-        uglyCoyote.addNewDrinkInBar("Whiskey2", 1250);
-        uglyCoyote.addNewDrinkInBar("Whiskey3", 1250);
-        uglyCoyote.addNewDrinkInBar("Whiskey4", 1250);
-        uglyCoyote.addNewDrinkInBar("Whiskey5", 1250);
-        uglyCoyote.addNewDrinkInBar("Whiskey6", 1250);
-        uglyCoyote.addNewDrinkInBar("Rom", 1259);
-        uglyCoyote.addNewDrinkInBar("Rom", 2000);
-
-        System.out.println(uglyCoyote.typeDrinks[0].nameDrink);
-        System.out.println(uglyCoyote.typeDrinks[0].quantityMlLitres);
-        System.out.println(uglyCoyote.typeDrinks[1].nameDrink);
-        System.out.println(uglyCoyote.typeDrinks[1].quantityMlLitres);
-        System.out.println(uglyCoyote.typeDrinks[7].nameDrink);
-        System.out.println(uglyCoyote.typeDrinks[7].quantityMlLitres);
-        /*System.out.println("Hello World!");
-
-        public class AList {
-            private int initialSize;
-            private int size = 0;
-            private float maxLoad = 0.8f;
-            private float minLoad = 0.6f;
-            private int[] array;
-            private static final int MIN_SIZE = 10;
+        uglyCoyote.addDrinkInBar("Whiskey", 1250);
+        uglyCoyote.addDrinkInBar("Whiskey", 1150);
+        uglyCoyote.addDrinkInBar("Rom", 1259);
+        uglyCoyote.addDrinkInBar("Tequila", 2000);
+        uglyCoyote.addEmployee("Tom", 24, "waiter", uglyCoyote);
+        uglyCoyote.addEmployee("Tom", 24, "waiter", uglyCoyote);
+        uglyCoyote.addEmployee("John", 24, "waiter", uglyCoyote);
+        uglyCoyote.addEmployee("John1", 24, "waiter", uglyCoyote);
+        uglyCoyote.addEmployee("Alex", 30, "barman", uglyCoyote);
+        uglyCoyote.addEmployee("Michal", 30, "barman", uglyCoyote);
 
 
+        boolean is = uglyCoyote.waiters[0].equals(uglyCoyote.waiters[1]);
+        System.out.println("standart equals - " + is);
 
-            public AList() {
-                this.initialSize = 10;
-                this.array = new int[initialSize];
-            }
-            public AList(int initialSize) {
-                this.initialSize = initialSize;
-                this.array = new int[initialSize];
-            }
+        int hCode0 = uglyCoyote.waiters[0].hashCode();
+        System.out.println(hCode0);
 
-            public int size(){
-                return size;
-            }
+        int hCode1 = uglyCoyote.waiters[1].hashCode();
+        System.out.println(hCode1);
 
-            public void add(int n){
-                float currentLoad = size/(initialSize*1.0f);
-                if(currentLoad >= maxLoad){
-                    initialSize = (int)(size * 1.5);
-                    int[] tmp = new int[initialSize];
-                    for (int i = 0; i < size; i++){
-                        tmp[i] = array[i];
-                    }
-                    array = tmp; //меняем ссылку на новый увеличенный массив
-                }
-                array[size++] = n;
-            }
+        //System.out.println(hCode == hCode1);
+
+        uglyCoyote.waiters[0].takeOrder("Whiskey", 2230);
+        uglyCoyote.waiters[0].takeOrder("Whiskey", 1230);
+        uglyCoyote.waiters[0].takeOrder("Whiskey", 100);
+        uglyCoyote.waiters[0].takeOrder("Tequila", 1880);
+        uglyCoyote.waiters[1].takeOrder("Tequila", 108);
+        uglyCoyote.waiters[0].takeTips(654);
+        uglyCoyote.waiters[0].takeTips(67);
+        System.out.println(uglyCoyote.allTips);
+
+        //uglyCoyote.delEmployee("John", 24, "waiter");
+
+        uglyCoyote.barmen[0].compleateOrder(1);
+        uglyCoyote.shareAllTips();
 
 
-            public void remove(){
-                if(size > 0) {
-                    array[--size] = 0;
-                }
-                float currentLoad = size/initialSize;
-                if(currentLoad <=  minLoad && array.length > MIN_SIZE){
-                    initialSize = (int)(size * 1.5);
-                    int[] tmp = new int[initialSize];
-                    for (int i = 0; i < size; i++){
-                        tmp[i] = array[i];
-                    }
-                    array = tmp; //меняем ссылку на новый уменьшенный массив
-                }
-            }
-            public int get(int index){
-                if(index < 0 || index >= size)throw new IllegalArgumentException();
-                return array[index];
-            }
 
-            public int getArrayLength(){
-                return array.length;
-            }
-        }
-    }*/
+        System.out.println(uglyCoyote.waiters[0].tipsInDay);
+
+
     }
+
 }
