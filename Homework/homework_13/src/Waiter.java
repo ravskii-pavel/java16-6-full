@@ -4,7 +4,7 @@
 public class Waiter {
 
     int age;
-    float tipsInDay;
+    double tipsInDay;
     String name;
     Bar bar;
 
@@ -37,5 +37,43 @@ public class Waiter {
            System.out.println("В баре " + bar.barName + " нет такого напитка");
        }
    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public double getTipsInDay() {
+        return tipsInDay;
+    }
+
+    @Override
+    public int hashCode(){
+        final int PRIME = 31;
+        int result = 37;
+        result = PRIME * result + getAge();
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) { return false; }
+        if (obj == this) { return true; }
+        if (obj instanceof Waiter) { //если есть унаследованные классы
+            Waiter waiter = (Waiter) obj;
+            if (this.name != null && waiter.getName() != null) {
+                return waiter.getName().equals(this.name) && waiter.age == this.age && waiter.tipsInDay == this.tipsInDay;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        return "age: " + age + "\ntipsInDay: " + tipsInDay + "\nName: " + name;
+    }
 }
 

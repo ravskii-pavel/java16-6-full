@@ -2,7 +2,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Bar uglyCoyote = new Bar();
+        Bar uglyCoyote = new Bar("uglyCoyote");
+        Bar uglyCoyote1 = new Bar("uglyCoyote1");
         uglyCoyote.addDrinkInBar("Whiskey", 1250);
         uglyCoyote.addDrinkInBar("Whiskey", 1150);
         uglyCoyote.addDrinkInBar("Rom", 1259);
@@ -14,9 +15,13 @@ public class Main {
         uglyCoyote.addEmployee("Alex", 30, "barman", uglyCoyote);
         uglyCoyote.addEmployee("Michal", 30, "barman", uglyCoyote);
 
+        System.out.println("bar equals - " + uglyCoyote.equals(uglyCoyote1));
+
 
         boolean is = uglyCoyote.waiters[0].equals(uglyCoyote.waiters[1]);
         System.out.println("standart equals - " + is);
+        boolean is1 = uglyCoyote.waiters[0].equals(uglyCoyote.waiters[1]);
+        System.out.println("Overraide equals - " + is1);
 
         int hCode0 = uglyCoyote.waiters[0].hashCode();
         System.out.println(hCode0);
@@ -44,7 +49,5 @@ public class Main {
 
         System.out.println(uglyCoyote.waiters[0].tipsInDay);
 
-
     }
-
 }

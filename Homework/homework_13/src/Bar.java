@@ -3,15 +3,17 @@
  */
 public class Bar {
     int initialSize;
-    float allTips = 0;
+    float allTips;
     String barName;
     TypeDrink [] typeDrinks;
     Order [] orders;
     Waiter [] waiters;
     Barman [] barmen;
 
-    Bar(){
+    Bar(String barName){
         this.initialSize = 3;
+        this.allTips = 0;
+        this.barName = barName;
         this.typeDrinks = new TypeDrink[initialSize];
 		this.orders = new Order[initialSize];
         this.waiters = new  Waiter[initialSize];
