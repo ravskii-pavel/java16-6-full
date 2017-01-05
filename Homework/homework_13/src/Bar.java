@@ -104,7 +104,7 @@ public class Bar {
         }
     }
 
-    public void addEmployee (String employeeName, int age, String position, Bar bar){
+    public String addEmployee (String employeeName, int age, String position, Bar bar){
         position = position.toLowerCase().trim();
         if(position == "waiter"){
             int numWaiters = currentLoadArray(waiters);
@@ -112,6 +112,8 @@ public class Bar {
             obj = changeSizeArray(waiters, numWaiters);
             waiters = (Waiter[])obj;
             waiters[numWaiters] = new Waiter(employeeName, age, bar);
+
+            return position;
         }
         else if(position == "barman"){
             int numBarman = currentLoadArray(barmen);
@@ -119,9 +121,11 @@ public class Bar {
             obj = changeSizeArray(barmen, numBarman);
             barmen = (Barman [])obj;
             barmen[numBarman] = new Barman(employeeName, age, bar);
+            return position;
         }
         else {
-            System.out.println("Нет такой должности - "+ position );
+            //System.out.println("Нет такой должности - "+ position);
+            return "Нет такой должности - " + position;
         }
     }
     public int isEmployee(String employeeName, int age, String position){
