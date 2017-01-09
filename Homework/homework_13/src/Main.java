@@ -2,7 +2,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Bar uglyCoyote = new Bar("uglyCoyote");
+        /*Bar uglyCoyote = new Bar("uglyCoyote");
         Bar uglyCoyote1 = new Bar("uglyCoyote1");
         uglyCoyote.addDrinkInBar("Whiskey", 1250);
         uglyCoyote.addDrinkInBar("Whiskey", 1150);
@@ -42,12 +42,10 @@ public class Main {
 
         //uglyCoyote.delEmployee("John", 24, "waiter");
 
-        uglyCoyote.barmen[0].compleateOrder(1);
-        uglyCoyote.shareAllTips();
+        uglyCoyote.barmen[0].compleateOrder(1);*/
+        //uglyCoyote.shareAllTips();
 
-
-
-        System.out.println(uglyCoyote.waiters[0].tipsInDay);
+        //System.out.println(uglyCoyote.shareAllTips());
 
     }
 }

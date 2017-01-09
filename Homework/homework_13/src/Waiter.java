@@ -4,7 +4,7 @@
 public class Waiter {
 
     int age;
-    double tipsInDay;
+    double tipsInDay = 0;
     String name;
     Bar bar;
 
@@ -15,12 +15,18 @@ public class Waiter {
     }
 
     public void takeTips(float allTips){
+        if (allTips < 0){
+            allTips = 0;
+        }
         bar.allTips += allTips;
     }
     public void takeOrder(String nameDrink, int quantityMlLitres) {
        nameDrink = nameDrink.trim().toLowerCase();
        if (bar.isNameDrink(nameDrink)){
-           if(bar.isDrinkEnough(nameDrink, quantityMlLitres)) {
+           if(bar.isPositiveNum(quantityMlLitres) == false){
+               System.out.println("Введитеп положительное количество напитка");
+           }
+           else if(bar.isDrinkEnough(nameDrink, quantityMlLitres)) {
                int size = bar.currentLoadArray(bar.orders);
                Object[] obj = (Object[])bar.orders;
                obj = bar.changeSizeArray(bar.orders, size);

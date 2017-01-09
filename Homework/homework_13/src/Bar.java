@@ -21,35 +21,43 @@ public class Bar {
     }
 
     // Разделить чаевые поровну, между официантами
-    public void shareAllTips(){
+    public double shareAllTips(){
+        double tipsInDay = 0;
         int quantityWaiters = quantityEmployeesInBar(waiters);
         int quantityBarmen = quantityEmployeesInBar(barmen);
         int quantityAllEmployees = quantityWaiters + quantityBarmen;
-        for (int i = 0; i < waiters.length; i++){
-            if(waiters[i] != null) {
-                waiters[i].tipsInDay = this.allTips / quantityAllEmployees;
-            }
+        if (barmen == null || waiters == null){
+            return 0;
         }
-        for (int i = 0; i < barmen.length; i++){
-            if(barmen[i] != null){
-                barmen[i].tipsInDay = this.allTips / quantityAllEmployees;
+        else {
+            for (int i = 0; i < waiters.length; i++) {
+                if (waiters[i] != null) {
+                    tipsInDay = waiters[i].tipsInDay = this.allTips / quantityAllEmployees;
+                }
             }
+            for (int i = 0; i < barmen.length;  i++) {
+                if(barmen[i] != null){
+                    barmen[i].tipsInDay = this.allTips / quantityAllEmployees;
+                }
+            }
+            this.allTips = 0;
+            return tipsInDay;
         }
     }
     //Количество работников в Баре
     public int quantityEmployeesInBar(Object[] objects){
         int quantityEmployees = 0;
-        for (int i = 0; i < objects.length; i++){
-            if(objects[i] != null){
-                quantityEmployees++;
+            for (int i = 0; objects != null && i < objects.length; i++) {
+                if (objects[i] != null) {
+                    quantityEmployees++;
+                }
             }
-        }
         return quantityEmployees;
     }
     // поиск элемента массиаа совпадающего напитка
     public int whichDrinkAnalog(String nameDrink){
         int i = 0;
-        for(i = 0; i < typeDrinks.length && typeDrinks[i] != null; i++){
+        for(i = 0; nameDrink != null && typeDrinks[i] != null && i < typeDrinks.length; i++){
             if (typeDrinks[i].nameDrink.equals(nameDrink)) {
                 break;
             }
@@ -58,10 +66,23 @@ public class Bar {
     }
     // Проверяет существует ли такой напиток в баре
     public boolean isNameDrink(String nameDrink){
-        for (int i = 0; i < typeDrinks.length && typeDrinks[i] != null; i++) {
+        for (int i = 0; nameDrink != null && i < typeDrinks.length && typeDrinks[i] != null; i++) {
             if (typeDrinks[i].nameDrink.equals(nameDrink)) {
                 return true;
             }
+        }
+        return false;
+    }
+    // Проверяет существует ли такой заказ в баре
+    public boolean isOrderExist(int numOrder){
+        if (numOrder >= 0 && numOrder < orders.length && orders[numOrder] != null) {
+           return true;
+        }
+        return false;
+    }
+    public boolean isPositiveNum(int num){
+        if (num > 0) {
+            return true;
         }
         return false;
     }
@@ -69,7 +90,7 @@ public class Bar {
     //количество заказываемого напитка в необработанных заказах
     public int quantityDrinkInNotCompleateOrders(String nameDrink){
         int quantityDrinkInOrders = 0;
-        for (int i = 0; i < orders.length && orders[i] != null; i++) {
+        for (int i = 0; i < orders.length && orders[i] != null;  i++) {
             if (orders[i].nameDrink.equals(nameDrink)) {
                 quantityDrinkInOrders += orders[i].quantityMlLitres;
             }
@@ -78,7 +99,7 @@ public class Bar {
     }
     // Достаточно ли количества заказываемого напитка в баре и не превышает ли количество этого напитка в необработанных заказах
     public boolean isDrinkEnough(String nameDrink, int quantityMlLitres){
-        if(typeDrinks[whichDrinkAnalog(nameDrink)].quantityMlLitres >= quantityMlLitres + quantityDrinkInNotCompleateOrders(nameDrink)){
+        if(quantityMlLitres > 0 && typeDrinks[whichDrinkAnalog(nameDrink)].quantityMlLitres >= quantityMlLitres + quantityDrinkInNotCompleateOrders(nameDrink)){
             return true;
         }
         else {
@@ -90,9 +111,11 @@ public class Bar {
     public void addDrinkInBar(String nameDrink, int quantityMlLitres){
         int numDrink = 0;
         nameDrink = nameDrink.trim().toLowerCase();
-
         Object [] obj = (Object[])typeDrinks;
-        if (isNameDrink(nameDrink) == false) {
+        if(isPositiveNum(quantityMlLitres) == false){
+            System.out.println("Введитеп положительное количество напитка");
+        }
+        else if (isNameDrink(nameDrink) == false) {
             numDrink = currentLoadArray(typeDrinks);
             obj = changeSizeArray(typeDrinks, numDrink);
             typeDrinks = (TypeDrink[])obj;
@@ -105,10 +128,13 @@ public class Bar {
     }
 
     public String addEmployee (String employeeName, int age, String position, Bar bar){
+        if (position == null) {
+            position = "null";
+        }
         position = position.toLowerCase().trim();
         if(position == "waiter"){
             int numWaiters = currentLoadArray(waiters);
-            Object [] obj = (Object[])waiters;
+            Object [] obj = (Object[]) waiters;
             obj = changeSizeArray(waiters, numWaiters);
             waiters = (Waiter[])obj;
             waiters[numWaiters] = new Waiter(employeeName, age, bar);
@@ -124,7 +150,6 @@ public class Bar {
             return position;
         }
         else {
-            //System.out.println("Нет такой должности - "+ position);
             return "Нет такой должности - " + position;
         }
     }
@@ -146,6 +171,12 @@ public class Bar {
         return -1;
     }
     public void delEmployee (String employeeName, int age, String position){
+        if (position == null) {
+            position = "null";
+        }
+        if (employeeName == null){
+            employeeName = "null";
+        }
         position = position.toLowerCase().trim();
         if(isEmployee(employeeName, age, position) >= 0){
             if (position == "waiter") {

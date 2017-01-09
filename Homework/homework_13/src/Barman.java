@@ -7,14 +7,13 @@ public class Barman extends Waiter {
         super(name, age, bar);
     }
 
-    public void compleateOrder(int numOrder){
-        if(bar.orders[numOrder] != null){
+    public String compleateOrder(int numOrder){
+        if(bar.isOrderExist(numOrder)){
             bar.typeDrinks[bar.whichDrinkAnalog(bar.orders[numOrder].nameDrink)].quantityMlLitres -= bar.orders[numOrder].quantityMlLitres;
             bar.orders[numOrder] = null;
+            return "Заказ " + numOrder + " - выполнен";
         }
-        else {
-            System.out.println("Нет заказа с таким №: " + numOrder);
-        }
+        return "Нет заказа с таким №: " + numOrder;
     }
 
     @Override
