@@ -10,6 +10,7 @@ public class Bar {
     Waiter [] waiters;
     Barman [] barmen;
 
+
     Bar(String barName){
         this.initialSize = 3;
         this.allTips = 0;
