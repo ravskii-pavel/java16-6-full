@@ -19,6 +19,8 @@ public class Main {
 
         BorderLayout layout = new BorderLayout();
         MainPanel mainPanel = new MainPanel();
+
+
         //LabelPanel labelPanel = new LabelPanel();
         Menu menu = new Menu();
 

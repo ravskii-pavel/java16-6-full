@@ -9,15 +9,15 @@ import java.awt.*;
 public class MainPanel extends JPanel {
 
     public MainPanel() {
-        GridLayout gridLayout = new GridLayout(2,1);
+        GridLayout gridLayout = new GridLayout();
 
         NumberPanel numberPanel = new NumberPanel();
         gridLayout.addLayoutComponent("NumberPanel", numberPanel);
         add(numberPanel);
 
-        OperationPanel operationPanel =  new OperationPanel();
-        gridLayout.addLayoutComponent("NumberPanel", numberPanel);
-        add(numberPanel);
+        //OperationPanel operationPanel =  new OperationPanel();
+        //gridLayout.addLayoutComponent("NumberPanel", numberPanel);
+        //add(numberPanel);
 
 
 
