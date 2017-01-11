@@ -1,6 +1,7 @@
 package calculator;
 
 import javax.swing.*;
+import javax.swing.border.EtchedBorder;
 import java.awt.*;
 
 /**
@@ -13,8 +14,18 @@ public class Calculator {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Calculator");
         frame.setSize(500, 500);
-        BorderLayout borderLayout = new BorderLayout();
-        frame.setLayout(borderLayout);
+        JPanel panel1 = new JPanel();
+        JPanel panel2 = new JPanel();
+
+        frame.add(panel1);
+        frame.add(panel2);
+        panel1.setSize(200, 170);
+        panel1.setBackground(Color.blue);
+        //panel1.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.RAISED));
+        //panel1.setBorder(BorderFactory.createLineBorder(1,2,5,1,Color.red));
+        panel1.setBorder(BorderFactory.createMatteBorder(1,2,5,1,Color.red));
+        //BorderLayout borderLayout = new BorderLayout();
+        //frame.setLayout(borderLayout);
         //frame.setResizable(false);
 
         //frame.setLocationRelativeTo(null);
@@ -27,10 +38,11 @@ public class Calculator {
         Button aButton = new Button("Enter");
         Button aButton1 = new Button("Enter1");
         MainPanel mainPanel= new MainPanel();
-        frame.add(mainPanel, "South");
+
+        panel1.add(mainPanel, "South");
         //frame.add(aButton, "South");
-        frame.add(aButton1, "West");
-        frame.add(textField, borderLayout.NORTH);
+        panel2.add(aButton1, "West");
+        //frame.add(textField, borderLayout.NORTH);
 
 
         //BorderLayout borderLayout = new BorderLayout();

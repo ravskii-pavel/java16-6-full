@@ -15,9 +15,9 @@ public class MainPanel extends JPanel {
         gridLayout.addLayoutComponent("NumberPanel", numberPanel);
         add(numberPanel);
 
-        //OperationPanel operationPanel =  new OperationPanel();
-        //gridLayout.addLayoutComponent("NumberPanel", numberPanel);
-        //add(numberPanel);
+        OperationPanel operationPanel =  new OperationPanel();
+        gridLayout.addLayoutComponent("NumberPanel", numberPanel);
+        add(numberPanel);
 
 
 
