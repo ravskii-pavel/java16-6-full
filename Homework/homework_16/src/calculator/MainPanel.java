@@ -9,18 +9,16 @@ import java.awt.*;
 public class MainPanel extends JPanel {
 
     public MainPanel() {
-        GridLayout gridLayout = new GridLayout();
+        //GridLayout gridLayout = new GridLayout();
 
         NumberPanel numberPanel = new NumberPanel();
-        gridLayout.addLayoutComponent("NumberPanel", numberPanel);
+        //gridLayout.addLayoutComponent("NumberPanel", numberPanel);
+        numberPanel.setBorder(BorderFactory.createMatteBorder(1,2,5,1,Color.blue));
         add(numberPanel);
 
         OperationPanel operationPanel =  new OperationPanel();
-        gridLayout.addLayoutComponent("NumberPanel", numberPanel);
-        add(numberPanel);
-
-
-
+        //gridLayout.addLayoutComponent("OperationPanel", operationPanel);
+        add(operationPanel);
 
     }
 }
