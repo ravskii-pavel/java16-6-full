@@ -6,19 +6,21 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Created by java on 27.12.2016.
+ * Created by Ravskiy Pavel on 09.01.2017.
  */
-public class OperationPanel extends JPanel {
+public class NumberPanel extends JPanel{
+    public NumberPanel() {
+        GridLayout gridLayout = new GridLayout(4, 3, 4, 4);
 
-    public OperationPanel() {
-        GridLayout gridLayout = new GridLayout(3, 2, 5, 5);
-
-        String[] opS = {"/", "*", "+", "-", "=", "C"};
+        String[] opS = {"7", "8", "9", "4", "5","6", "1", "2", "3", "0", "."};
 
         JButton button;
+
         for (String s : opS) {
             button = new JButton(s);
+            button.setPreferredSize(new Dimension(45, 40));
             button.addActionListener(getCLickListener());
+
             gridLayout.addLayoutComponent(s, button);
             add(button);
         }
@@ -30,11 +32,11 @@ public class OperationPanel extends JPanel {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String operation = e.getActionCommand();
+                if(e.getActionCommand().equals(".")) {
 
-                switch (operation) {
-                    case "C" :
-                        Calculator.textField.setText("0");
+                } else {
+                    String txt = Calculator.textField.getText();
+                    Calculator.textField.setText(txt + e.getActionCommand());
                 }
             }
         };

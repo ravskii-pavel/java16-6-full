@@ -34,7 +34,7 @@ public class OperationPanel extends JPanel {
 
                 switch (operation) {
                     case "C" :
-                        Calculator.textField.setText("0");
+                        Calculator.textField.setText("");
                 }
             }
         };
