@@ -11,6 +11,8 @@ public class Main {
 
     public static void main(String[] args) {
 
+        //System.out.println(-1.7);
+
         JFrame frame = new JFrame("This is my title");
         frame.setSize(500, 500);
         frame.setLocationRelativeTo(null); //разместить по центру экрана

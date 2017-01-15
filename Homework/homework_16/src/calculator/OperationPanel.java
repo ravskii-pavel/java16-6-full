@@ -22,8 +22,24 @@ public class OperationPanel extends JPanel {
             gridLayout.addLayoutComponent(s, button);
             add(button);
         }
-
         setLayout(gridLayout);
+    }
+    public boolean ifExistOperation(String textFieldLine){
+        if (textFieldLine.endsWith("-") || textFieldLine.endsWith("+") || textFieldLine.endsWith("/") || textFieldLine.endsWith("*")){
+            return true;
+        }
+        return false;
+    }
+    public boolean ifSecondOperation(String textFieldLine){
+        if (textFieldLine.startsWith("-")){
+            textFieldLine = (textFieldLine.substring(1, textFieldLine.length()));
+        }
+        if (textFieldLine.contains("-") || textFieldLine.contains("+") || textFieldLine.contains("/") || textFieldLine.contains("*")){
+           return true;
+        }
+        else {
+           return  false;
+        }
     }
 
     public ActionListener getCLickListener() {
@@ -31,10 +47,54 @@ public class OperationPanel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String operation = e.getActionCommand();
-
+                String txt = Calculator.textField.getText();
+                String foundOperation;
                 switch (operation) {
                     case "C" :
                         Calculator.textField.setText("0");
+                        break;
+                    case "=" :
+                        if(txt.equals("0")) {
+                        }
+                        else {
+                            if (ifExistOperation(txt)){
+
+                            }
+                            txt = Calculator.textField.getText();
+                        }
+                        break;
+                    case "+" :
+                        if (ifSecondOperation(txt)){
+
+                        }
+                        else {
+                            Calculator.textField.setText(txt + operation);
+                        }
+                        break;
+                    case "-" :
+                        if(ifSecondOperation(txt)){
+
+                        }
+                        else {
+                            Calculator.textField.setText(txt + operation);
+                        }
+                        break;
+                    case "*" :
+                        if(ifSecondOperation(txt)){
+
+                        }
+                        else {
+                            Calculator.textField.setText(txt + operation);
+                        }
+                        break;
+                    case "/" :
+                        if(ifSecondOperation(txt)){
+
+                        }
+                        else {
+                            Calculator.textField.setText(txt + operation);
+                        }
+                        break;
                 }
             }
         };
