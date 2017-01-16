@@ -41,6 +41,23 @@ public class OperationPanel extends JPanel {
            return  false;
         }
     }
+    public String whichIsOperation(String textFieldLine){
+        char [] text = textFieldLine.toCharArray();
+        if (ifSecondOperation(textFieldLine)) {
+            for (int i = 0; i < text.length; i++) {
+                if ((text[i] == '-' || text[i] == '+' || text[i] == '/' || text[i] == '*') && i!=0) {
+                    return String.valueOf(text[i]);
+                }
+            }
+        }
+        return "operator is missing";
+    }
+    public boolean isDotExist(String textField){
+        if(textField.contains(".")){
+            return true;
+        }
+        return  false;
+    }
 
     public ActionListener getCLickListener() {
         return new ActionListener() {
@@ -48,7 +65,19 @@ public class OperationPanel extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 String operation = e.getActionCommand();
                 String txt = Calculator.textField.getText();
-                String foundOperation;
+                String firstOperand = "";
+                String secondOperand = "";
+                Object firstOp;
+                Object secondOp;
+                if(ifSecondOperation(txt)){
+
+                    firstOperand = txt.substring(0, txt.lastIndexOf(whichIsOperation(txt)));
+                    secondOperand = txt.substring(txt.lastIndexOf(whichIsOperation(txt))+1, txt.length());
+                }
+                else{
+                    firstOperand = txt;
+                }
+                String op = whichIsOperation(txt);
                 switch (operation) {
                     case "C" :
                         Calculator.textField.setText("0");
@@ -57,10 +86,19 @@ public class OperationPanel extends JPanel {
                         if(txt.equals("0")) {
                         }
                         else {
-                            if (ifExistOperation(txt)){
+                            if (ifSecondOperation(txt) && secondOperand.equals("") == false){
+                                if(isDotExist(firstOperand) || isDotExist(secondOperand)){
+                                    firstOp = Double.parseDouble(firstOperand);
+                                    secondOp = Double.parseDouble(secondOperand);
+                                }
+                                else {
+                                    firstOp = Integer.parseInt(firstOperand);
+                                    secondOp = Integer.parseInt(secondOperand);
+                                }
 
+                                Calculator.textField.setText(Calc.getResult(op, firstOp, secondOp));
                             }
-                            txt = Calculator.textField.getText();
+
                         }
                         break;
                     case "+" :
@@ -68,6 +106,9 @@ public class OperationPanel extends JPanel {
 
                         }
                         else {
+                            if (txt.endsWith(".")){
+                                txt = txt.substring(0, txt.length()-1);
+                            }
                             Calculator.textField.setText(txt + operation);
                         }
                         break;
@@ -76,6 +117,9 @@ public class OperationPanel extends JPanel {
 
                         }
                         else {
+                            if (txt.endsWith(".")){
+                                txt = txt.substring(0, txt.length()-1);
+                            }
                             Calculator.textField.setText(txt + operation);
                         }
                         break;
@@ -84,6 +128,9 @@ public class OperationPanel extends JPanel {
 
                         }
                         else {
+                            if (txt.endsWith(".")){
+                                txt = txt.substring(0, txt.length()-1);
+                            }
                             Calculator.textField.setText(txt + operation);
                         }
                         break;
@@ -92,6 +139,9 @@ public class OperationPanel extends JPanel {
 
                         }
                         else {
+                            if (txt.endsWith(".")){
+                                txt = txt.substring(0, txt.length()-1);
+                            }
                             Calculator.textField.setText(txt + operation);
                         }
                         break;

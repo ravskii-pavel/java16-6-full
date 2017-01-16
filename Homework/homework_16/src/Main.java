@@ -1,3 +1,4 @@
+import calculator.Calc;
 import calculator.MainPanel;
 
 import javax.swing.*;
@@ -85,7 +86,7 @@ public class Main {
 
             System.out.print("Enter first operand:  ");
             Object firstOperand = Calc.setType(scanner.next());
-            //Object firstOperand = Calc.setType((result != null) ? result : scanner.next());
+            //Object firstOperand = calculator.Calc.setType((result != null) ? result : scanner.next());
             /*if (null != result) {
                 System.out.println(result);
             }*/
