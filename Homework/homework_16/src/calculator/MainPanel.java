@@ -15,7 +15,7 @@ public class MainPanel extends JPanel {
         NumberPanel numberPanel = new NumberPanel();
 
         //borderLayout.addLayoutComponent(numberPanel, borderLayout.CENTER);
-        numberPanel.setBorder(BorderFactory.createMatteBorder(1,2,5,1,Color.blue));
+        //numberPanel.setBorder(BorderFactory.createMatteBorder(1,2,5,1,Color.blue));
         add(numberPanel);
 
         OperationPanel operationPanel =  new OperationPanel();

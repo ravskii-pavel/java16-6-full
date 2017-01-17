@@ -1,4 +1,4 @@
-import calculator.Calc;
+import calculator.ArithmeticalOperations;
 import calculator.MainPanel;
 
 import javax.swing.*;
@@ -85,23 +85,23 @@ public class Main {
             String operator = scanner.next();
 
             System.out.print("Enter first operand:  ");
-            Object firstOperand = Calc.setType(scanner.next());
-            //Object firstOperand = calculator.Calc.setType((result != null) ? result : scanner.next());
+            Object firstOperand = ArithmeticalOperations.setType(scanner.next());
+            //Object firstOperand = calculator.ArithmeticalOperations.setType((result != null) ? result : scanner.next());
             /*if (null != result) {
                 System.out.println(result);
             }*/
             System.out.print("Enter second operand:  ");
-            Object secondOperand = Calc.setType(scanner.next());
+            Object secondOperand = ArithmeticalOperations.setType(scanner.next());
 
             if ((firstOperand instanceof Double) || (secondOperand instanceof Double)) {
-                firstOperand = Calc.setType(firstOperand);
-                secondOperand = Calc.setType(secondOperand);
+                firstOperand = ArithmeticalOperations.setType(firstOperand);
+                secondOperand = ArithmeticalOperations.setType(secondOperand);
             } else {
-                firstOperand = Calc.setTypeInt(firstOperand);
-                secondOperand = Calc.setTypeInt(secondOperand);
+                firstOperand = ArithmeticalOperations.setTypeInt(firstOperand);
+                secondOperand = ArithmeticalOperations.setTypeInt(secondOperand);
             }
 
-            result = Calc.getResult(operator, firstOperand, secondOperand);
+            result = ArithmeticalOperations.getResult(operator, firstOperand, secondOperand);
             System.out.println("Would you like to continue? Enter y/n: ");
             String exitWord = scanner.next();
 

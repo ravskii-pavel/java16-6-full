@@ -2,7 +2,7 @@ package calculator;
 
 import java.util.Objects;
 
-public class Calc {
+public class ArithmeticalOperations {
 
     public static Object setType(String s1){
         if (s1.contains(".")){

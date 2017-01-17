@@ -12,7 +12,7 @@ import java.util.Arrays;
  */
 public class NumberPanel extends JPanel{
     public NumberPanel() {
-        GridLayout gridLayout = new GridLayout(4, 3, 4, 4);
+        GridLayout gridLayout = new GridLayout(4, 3, 2, 2);
 
         String[] opS = {"7", "8", "9", "4", "5","6", "1", "2", "3", "0", ".", "+/-"};
 
@@ -20,7 +20,8 @@ public class NumberPanel extends JPanel{
 
         for (String s : opS) {
             button = new JButton(s);
-            button.setPreferredSize(new Dimension(50, 45));
+            button.setFont(new Font("",Font.PLAIN, 14));
+            button.setPreferredSize(new Dimension(55, 45));
             button.addActionListener(getCLickListener());
 
             gridLayout.addLayoutComponent(s, button);
@@ -29,35 +30,7 @@ public class NumberPanel extends JPanel{
 
         setLayout(gridLayout);
     }
-    public boolean isDotExist(String textField){
-        if(textField.contains(".")){
-            return true;
-        }
-        return  false;
-    }
-    public String whichIsOperation(String textFieldLine){
-        char [] text = textFieldLine.toCharArray();
-        if (isOperation(textFieldLine)) {
-            for (int i = 0; i < text.length; i++) {
-                if (text[i] == '-' || text[i] == '+' || text[i] == '/' || text[i] == '*' && i!=0) {
-                    return String.valueOf(text[i]);
-                }
-            }
-        }
-        return "operator is missing";
-    }
 
-    public boolean isOperation(String textFieldLine){
-        if (textFieldLine.startsWith("-")){
-            textFieldLine = (textFieldLine.substring(1, textFieldLine.length()));
-        }
-        if (textFieldLine.contains("-") || textFieldLine.contains("+") || textFieldLine.contains("/") || textFieldLine.contains("*")){
-            return true;
-        }
-        else {
-            return  false;
-        }
-    }
     public ActionListener getCLickListener() {
         return new ActionListener() {
 
@@ -65,20 +38,22 @@ public class NumberPanel extends JPanel{
             public void actionPerformed(ActionEvent e) {
                 String operation = e.getActionCommand();
                 String txt = Calculator.textField.getText();
+                txt = Operations.isError(txt);
                 String firstOperand = "";
                 String secondOperand = "";
-                if(isOperation(txt)){
-                    firstOperand = txt.substring(0, txt.indexOf(whichIsOperation(txt)));
-                    secondOperand = txt.substring(txt.indexOf(whichIsOperation(txt))+1, txt.length());
+                String op = Operations.whichIsOperation(txt);
+                if(Operations.isOperation(txt)){
+                    firstOperand = txt.substring(0, txt.indexOf(Operations.whichIsOperation(txt)));
+                    secondOperand = txt.substring(txt.indexOf(Operations.whichIsOperation(txt))+1, txt.length());
                 }
                 else{
                     firstOperand = txt;
                 }
                 switch (operation) {
                     case "+/-":
-                        if ((txt.startsWith("-") && !isOperation(txt))) {
+                        if ((txt.startsWith("-") && !Operations.isOperation(txt))) {
                             Calculator.textField.setText(txt.substring(1, txt.length()));
-                        } else if (isOperation(txt) || txt.equals("0")) {
+                        } else if (Operations.isOperation(txt) || txt.equals("0")) {
 
                         } else {
                             Calculator.textField.setText("-" + txt);
@@ -86,7 +61,7 @@ public class NumberPanel extends JPanel{
                         break;
 
                     case ".":
-                        if ((!firstOperand.contains(".") || !txt.contains(".")) && !isOperation(txt) && secondOperand.equals("")) {
+                        if ((!firstOperand.contains(".") || !txt.contains(".")) && !Operations.isOperation(txt) && secondOperand.equals("")) {
                             Calculator.textField.setText(txt + operation);
                         } else {
                             if (!secondOperand.contains(".") && !secondOperand.equals("")) {    //!txt.contains(".") && !isOperation(txt)
@@ -95,18 +70,23 @@ public class NumberPanel extends JPanel{
                         }
                         break;
                     case "0":
-                        if (txt.equals("0") || secondOperand.equals("0")) {
+                        if (txt.equals("0") || secondOperand.equals("0") || (Operations.isError(txt.substring(0, txt.length()-1)).equals("0") && !firstOperand.equals("0"))) {
 
-                        } else {
+                        }
+                        else {
                             Calculator.textField.setText(txt + operation);
                         }
                         break;
                     default:
-                        String op = whichIsOperation(txt);
                         if (txt.equals("0")) {
                             Calculator.textField.setText("");
                         }
-                        if (!txt.substring(txt.length() - 1, txt.length() - 1).equals(op) && !secondOperand.equals("0")) {
+                        if(Operations.isError(txt.substring(0, txt.length()-1)).equals("0")){
+                            txt = "0";
+                            Calculator.textField.setText(txt + op);
+                            Calculator.textField.setText(Calculator.textField.getText() + operation);
+                        }
+                        else if (!txt.substring(txt.length() - 1, txt.length() - 1).equals(op) && !secondOperand.equals("0")) {
                             txt = Calculator.textField.getText();
                             Calculator.textField.setText(txt + operation);
                         }
