@@ -72,7 +72,7 @@ public class Operations{
         }
     }
     public static void result(String txt){
-        //txt = Calculator.textField.getText();
+
         String result ="";
         String firstOperand = "";
         String secondOperand = "";

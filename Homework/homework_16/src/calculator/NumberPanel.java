@@ -64,14 +64,19 @@ public class NumberPanel extends JPanel{
                         if ((!firstOperand.contains(".") || !txt.contains(".")) && !Operations.isOperation(txt) && secondOperand.equals("")) {
                             Calculator.textField.setText(txt + operation);
                         } else {
-                            if (!secondOperand.contains(".") && !secondOperand.equals("")) {    //!txt.contains(".") && !isOperation(txt)
+                            if (!secondOperand.contains(".") && !secondOperand.equals("")) {    //!txt.contains(".") && !isOperation(txt) Operations.isError(txt.substring(0, txt.length()-1)).equals("0")
                                 Calculator.textField.setText(txt + operation);
                             }
                         }
                         break;
                     case "0":
-                        if (txt.equals("0") || secondOperand.equals("0") || (Operations.isError(txt.substring(0, txt.length()-1)).equals("0") && !firstOperand.equals("0"))) {
+                        if (txt.equals("0") || secondOperand.equals("0") || (!firstOperand.equals("0")) && !firstOperand.contains(".")) {
 
+                        }
+                        if(txt.substring(0, txt.length()-1).equals("Error")){
+                            txt = "0";
+                            Calculator.textField.setText(txt + op);
+                            Calculator.textField.setText(Calculator.textField.getText() + operation);
                         }
                         else {
                             Calculator.textField.setText(txt + operation);
@@ -81,7 +86,7 @@ public class NumberPanel extends JPanel{
                         if (txt.equals("0")) {
                             Calculator.textField.setText("");
                         }
-                        if(Operations.isError(txt.substring(0, txt.length()-1)).equals("0")){
+                        if(Operations.isError(txt.substring(0, txt.length()-1)).equals("0") && !txt.contains(".")){
                             txt = "0";
                             Calculator.textField.setText(txt + op);
                             Calculator.textField.setText(Calculator.textField.getText() + operation);
