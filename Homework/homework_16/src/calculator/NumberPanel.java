@@ -37,8 +37,7 @@ public class NumberPanel extends JPanel{
             @Override
             public void actionPerformed(ActionEvent e) {
                 String operation = e.getActionCommand();
-                String txt = Calculator.textField.getText();
-                txt = Operations.isError(txt);
+                String txt = Operations.isError(Calculator.textField.getText());
                 String firstOperand = "";
                 String secondOperand = "";
                 String op = Operations.whichIsOperation(txt);
@@ -64,34 +63,16 @@ public class NumberPanel extends JPanel{
                         if ((!firstOperand.contains(".") || !txt.contains(".")) && !Operations.isOperation(txt) && secondOperand.equals("")) {
                             Calculator.textField.setText(txt + operation);
                         } else {
-                            if (!secondOperand.contains(".") && !secondOperand.equals("")) {    //!txt.contains(".") && !isOperation(txt) Operations.isError(txt.substring(0, txt.length()-1)).equals("0")
+                            if (!secondOperand.contains(".") && !secondOperand.equals("")) {
                                 Calculator.textField.setText(txt + operation);
                             }
-                        }
-                        break;
-                    case "0":
-                        if (txt.equals("0") || secondOperand.equals("0") || (!firstOperand.equals("0")) && !firstOperand.contains(".")) {
-
-                        }
-                        if(txt.substring(0, txt.length()-1).equals("Error")){
-                            txt = "0";
-                            Calculator.textField.setText(txt + op);
-                            Calculator.textField.setText(Calculator.textField.getText() + operation);
-                        }
-                        else {
-                            Calculator.textField.setText(txt + operation);
                         }
                         break;
                     default:
                         if (txt.equals("0")) {
                             Calculator.textField.setText("");
                         }
-                        if(Operations.isError(txt.substring(0, txt.length()-1)).equals("0") && !txt.contains(".")){
-                            txt = "0";
-                            Calculator.textField.setText(txt + op);
-                            Calculator.textField.setText(Calculator.textField.getText() + operation);
-                        }
-                        else if (!txt.substring(txt.length() - 1, txt.length() - 1).equals(op) && !secondOperand.equals("0")) {
+                        if (!txt.substring(txt.length() - 1, txt.length() - 1).equals(op) && !secondOperand.equals("0")) {
                             txt = Calculator.textField.getText();
                             Calculator.textField.setText(txt + operation);
                         }

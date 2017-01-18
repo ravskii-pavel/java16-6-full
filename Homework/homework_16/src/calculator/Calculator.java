@@ -21,6 +21,7 @@ public class Calculator {
         textField.setFont(new Font("",Font.PLAIN, 20));
         BorderLayout borderLayout = new BorderLayout();
         frame.setLayout(borderLayout);
+        frame.setResizable(false);
         //borderLayout.addLayoutComponent(textField, BorderLayout.NORTH);
 
         frame.add(textField, borderLayout.NORTH);
@@ -29,6 +30,7 @@ public class Calculator {
         //borderLayout.addLayoutComponent(mainPanel, BorderLayout.CENTER);
         frame.add(mainPanel, borderLayout.WEST);
         frame.setVisible(true);
+		textField.setFocusable(false);
 
     }
 }

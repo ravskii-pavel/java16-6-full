@@ -33,28 +33,27 @@ public class OperationPanel extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 String operation = e.getActionCommand();
                 String txt = Calculator.textField.getText();
-                String result="";
-                txt = Operations.isError(txt);
-
-                switch (operation) {
-                    case "C" :
-                        Calculator.textField.setText("0");
-                        break;
-                    case "=" :
-                        Operations.result(txt);
-                        break;
-                    case "+" :
-                        Operations.resultAndSecondOperation(txt, operation);
-                        break;
-                    case "-" :
-                        Operations.resultAndSecondOperation(txt, operation);
-                        break;
-                    case "*" :
-                        Operations.resultAndSecondOperation(txt, operation);
-                        break;
-                    case "/" :
-                        Operations.resultAndSecondOperation(txt, operation);
-                        break;
+                if (txt.equals("Error") == false || operation.equals("C") == true) {
+                    switch (operation) {
+                        case "C":
+                            Calculator.textField.setText("0");
+                            break;
+                        case "=":
+                            Operations.result(txt);
+                            break;
+                        case "+":
+                            Operations.resultAndSecondOperation(txt, operation);
+                            break;
+                        case "-":
+                            Operations.resultAndSecondOperation(txt, operation);
+                            break;
+                        case "*":
+                            Operations.resultAndSecondOperation(txt, operation);
+                            break;
+                        case "/":
+                            Operations.resultAndSecondOperation(txt, operation);
+                            break;
+                    }
                 }
             }
         };

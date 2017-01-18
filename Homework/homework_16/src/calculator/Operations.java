@@ -59,8 +59,12 @@ public class Operations{
         if (Operations.isOperation(txt) && Operations.isSecondOperandExist(txt) == true){
             Operations.result(txt);
             result = Calculator.textField.getText();
-            //result = isError(result);
-            Calculator.textField.setText(result + operation);
+            if(result.equals("Error")){
+                Calculator.textField.setText(result);
+            }
+            else {
+                Calculator.textField.setText(result + operation);
+            }
         }
         else if (Operations.isOperation(txt)){}
 
