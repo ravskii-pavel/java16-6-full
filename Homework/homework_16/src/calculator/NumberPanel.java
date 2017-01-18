@@ -11,6 +11,7 @@ import java.util.Arrays;
  * Created by Ravskiy Pavel on 09.01.2017.
  */
 public class NumberPanel extends JPanel{
+    public static int maxLength = 12;
     public NumberPanel() {
         GridLayout gridLayout = new GridLayout(4, 3, 2, 2);
 
@@ -38,44 +39,46 @@ public class NumberPanel extends JPanel{
             public void actionPerformed(ActionEvent e) {
                 String operation = e.getActionCommand();
                 String txt = Operations.isError(Calculator.textField.getText());
+                String textField = Calculator.textField.getText();
                 String firstOperand = "";
                 String secondOperand = "";
                 String op = Operations.whichIsOperation(txt);
-                if(Operations.isOperation(txt)){
+                if (Operations.isOperation(txt)) {
                     firstOperand = txt.substring(0, txt.indexOf(Operations.whichIsOperation(txt)));
-                    secondOperand = txt.substring(txt.indexOf(Operations.whichIsOperation(txt))+1, txt.length());
-                }
-                else{
+                    secondOperand = txt.substring(txt.indexOf(Operations.whichIsOperation(txt)) + 1, txt.length());
+                } else {
                     firstOperand = txt;
                 }
-                switch (operation) {
-                    case "+/-":
-                        if ((txt.startsWith("-") && !Operations.isOperation(txt))) {
-                            Calculator.textField.setText(txt.substring(1, txt.length()));
-                        } else if (Operations.isOperation(txt) || txt.equals("0")) {
+                if (textField.length() < maxLength) {
+                    switch (operation) {
+                        case "+/-":
+                            if ((txt.startsWith("-") && !Operations.isOperation(txt))) {
+                                Calculator.textField.setText(txt.substring(1, txt.length()));
+                            } else if (Operations.isOperation(txt) || txt.equals("0")) {
 
-                        } else {
-                            Calculator.textField.setText("-" + txt);
-                        }
-                        break;
+                            } else {
+                                Calculator.textField.setText("-" + txt);
+                            }
+                            break;
 
-                    case ".":
-                        if ((!firstOperand.contains(".") || !txt.contains(".")) && !Operations.isOperation(txt) && secondOperand.equals("")) {
-                            Calculator.textField.setText(txt + operation);
-                        } else {
-                            if (!secondOperand.contains(".") && !secondOperand.equals("")) {
+                        case ".":
+                            if ((!firstOperand.contains(".") || !txt.contains(".")) && !Operations.isOperation(txt) && secondOperand.equals("")) {
+                                Calculator.textField.setText(txt + operation);
+                            } else {
+                                if (!secondOperand.contains(".") && !secondOperand.equals("")) {
+                                    Calculator.textField.setText(txt + operation);
+                                }
+                            }
+                            break;
+                        default:
+                            if (txt.equals("0")) {
+                                Calculator.textField.setText("");
+                            }
+                            if (!txt.substring(txt.length() - 1, txt.length() - 1).equals(op) && !secondOperand.equals("0")) {
+                                txt = Calculator.textField.getText();
                                 Calculator.textField.setText(txt + operation);
                             }
-                        }
-                        break;
-                    default:
-                        if (txt.equals("0")) {
-                            Calculator.textField.setText("");
-                        }
-                        if (!txt.substring(txt.length() - 1, txt.length() - 1).equals(op) && !secondOperand.equals("0")) {
-                            txt = Calculator.textField.getText();
-                            Calculator.textField.setText(txt + operation);
-                        }
+                    }
                 }
             }
         };
