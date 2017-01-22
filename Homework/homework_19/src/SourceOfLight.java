@@ -3,9 +3,15 @@
  */
 public interface SourceOfLight {
 
-    public void turnOn();
-    public void calculateLifeTime();
-    public void isItWorks();
+    void turnOn();
+    //public void calculateLifeTime();
+    void isItWorks();
+    void showName(String name);
+    String getName();
 
+    /* String nameSourceOfLight;
+         ArtificialLight(String nameSourceOfLight){
+             this.nameSourceOfLight = nameSourceOfLight;
+         }*/
 
 }

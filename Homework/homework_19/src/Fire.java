@@ -6,14 +6,23 @@ public class Fire extends NaturalLight {
     public void turnOn() {
 
     }
+    String name;
 
-    @Override
-    public void calculateLifeTime() {
-
+    Fire(String name){
+        this.name = name;
     }
+//    @Override
+//    public void calculateLifeTime() {
+//
+//    }
 
     @Override
     public void isItWorks() {
 
+    }
+
+    @Override
+    public String getName() {
+        return this.name;
     }
 }

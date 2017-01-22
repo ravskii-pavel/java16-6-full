@@ -7,13 +7,18 @@ public class Sun extends NaturalLight {
 
     }
 
-    @Override
+    /*@Override
     public void calculateLifeTime() {
 
-    }
+    }*/
 
     @Override
     public void isItWorks() {
 
+    }
+
+    @Override
+    public String getName() {
+        return null;
     }
 }
