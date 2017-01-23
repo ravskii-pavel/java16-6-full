@@ -3,13 +3,20 @@
  */
 public class Lamp extends ArtificialLight {
 
-    String name;
+
+   private static int count = 0;
 
    Lamp(String name){
-       this.name = name;
+       super(name);
+       count++;
    }
 
-   public String getName() {
+    public int getQuantity(){
+        return count;
+    }
+
+    @Override
+    public String getName(){
         return this.name;
     }
 
@@ -22,5 +29,6 @@ public class Lamp extends ArtificialLight {
     public void isItWorks() {
 
     }
+
 
 }

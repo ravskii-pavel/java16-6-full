@@ -3,14 +3,21 @@
  */
 public abstract class NaturalLight implements SourceOfLight{
 
-/*    String name;
-    @Override
-    public String getName(){
-        return this.name;
-    }*/
-    @Override
-    public void showName(String name) {
-       // return "NaturalLight - " + name;
-        System.out.println("NaturalLight - " + name);
+    boolean isDay;
+    String sourceName, action;
+
+   public NaturalLight(boolean isDay, String sourceName, String action) {
+        this.isDay = isDay;
+        this.sourceName = sourceName;
+        this.action = action;
     }
+/*    NaturalLight(String sourceName){
+        this.sourceName = sourceName;
+    }*/
+
+    @Override
+    public void showName(SourceOfLight sourceOfLight) {
+       System.out.println("NaturalLight - " + sourceOfLight.getName());
+    }
+
 }

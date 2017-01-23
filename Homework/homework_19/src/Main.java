@@ -4,19 +4,14 @@ public class Main {
 
         Lamp lamp = new Lamp("NITECORE");
         Flashlight flashlight = new Flashlight("BLACK DIAMOND");
-        Fire fire = new Fire("Big Fire");
+        TableLamp tableLamp = new TableLamp("Table Lamp");
+        //Fire fire = new Fire("Big Fire");
 
-        print(lamp);
-        print(flashlight);
-        print(fire);
-
-
-
-
-        //first.showName(first.getName());
+        lamp.showName(lamp);
+        flashlight.showName(flashlight);
+        tableLamp.showName(tableLamp);
+        //fire.showName(fire);
+        System.out.println(lamp.getQuantity());
     }
-    public static void print(SourceOfLight sourceOfLight){
 
-        sourceOfLight.showName(sourceOfLight.getName());
-    }
 }

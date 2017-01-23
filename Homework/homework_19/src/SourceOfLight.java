@@ -6,12 +6,8 @@ public interface SourceOfLight {
     void turnOn();
     //public void calculateLifeTime();
     void isItWorks();
-    void showName(String name);
+    void showName(SourceOfLight sourceOfLight);
     String getName();
 
-    /* String nameSourceOfLight;
-         ArtificialLight(String nameSourceOfLight){
-             this.nameSourceOfLight = nameSourceOfLight;
-         }*/
 
 }
