@@ -3,7 +3,6 @@
  */
 public class Lamp extends ArtificialLight {
 
-
    private static int count = 0;
 
    Lamp(String name){
@@ -20,15 +19,9 @@ public class Lamp extends ArtificialLight {
         return this.name;
     }
 
-    @Override
-    public void turnOn() {
-
-    }
 
     @Override
     public void isItWorks() {
 
     }
-
-
 }

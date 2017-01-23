@@ -9,12 +9,6 @@ public class Flashlight extends Lamp {
 
 
     @Override
-    public void turnOn() {
-
-    }
-
-
-    @Override
     public void isItWorks() {
 
     }

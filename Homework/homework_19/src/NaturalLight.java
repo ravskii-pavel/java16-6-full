@@ -20,4 +20,8 @@ public abstract class NaturalLight implements SourceOfLight{
        System.out.println("NaturalLight - " + sourceOfLight.getName());
     }
 
+/*    @Override
+    public void turnOn(boolean isTurnedOn) {
+
+    }*/
 }

@@ -2,23 +2,22 @@
  * Created by Ravskiy Pavel on 19.01.2017.
  */
 public class Fire extends NaturalLight {
-    String name;
 
+    boolean isTurnedOn, isItStuffCanBurn, isFire;
+
+    String name;
     public Fire(boolean isDay, String sourceName, String action) {
         super(isDay, sourceName, action);
     }
-  /*  Fire(String name){
-        this.name = name;
-    }*/
 
-
-    //    @Override
-//    public void calculateLifeTime() {
-//
-//    }
     @Override
-    public void turnOn() {
-
+    public void turnOn(boolean isTurnedOn) {
+        if (isTurnedOn == true && isItStuffCanBurn == true && isFire == true){
+            this.isTurnedOn = true;
+        }
+        else{
+            this.isTurnedOn = false;
+        }
     }
 
     @Override
