@@ -10,7 +10,7 @@ public class Fire extends NaturalLight {
         super(isDay, sourceName, action);
     }
 
-    @Override
+    //@Override
     public void turnOn(boolean isTurnedOn) {
         if (isTurnedOn == true && isItStuffCanBurn == true && isFire == true){
             this.isTurnedOn = true;

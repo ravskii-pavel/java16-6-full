@@ -7,13 +7,7 @@ public class Sun extends NaturalLight {
         super(isDay, "Sun", isDay ? "is shining" : "is not shining");
     }
 
-
-    /*@Override
-    public void calculateLifeTime() {
-
-    }*/
-
-    @Override
+    //@Override
     public void turnOn(boolean isTurnedOn) {
         if (super.isDay == true){
             this.isTurnedOn = true;

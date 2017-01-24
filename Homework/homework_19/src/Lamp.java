@@ -9,19 +9,11 @@ public class Lamp extends ArtificialLight {
        super(name);
        count++;
    }
+    Lamp(){
+        super();
+    }
 
     public int getQuantity(){
         return count;
-    }
-
-    @Override
-    public String getName(){
-        return this.name;
-    }
-
-
-    @Override
-    public void isItWorks() {
-
     }
 }

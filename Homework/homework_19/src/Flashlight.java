@@ -6,10 +6,4 @@ public class Flashlight extends Lamp {
     Flashlight(String name){
         super(name);
     }
-
-
-    @Override
-    public void isItWorks() {
-
-    }
 }

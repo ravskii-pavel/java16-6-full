@@ -11,17 +11,14 @@ public abstract class NaturalLight implements SourceOfLight{
         this.sourceName = sourceName;
         this.action = action;
     }
-/*    NaturalLight(String sourceName){
-        this.sourceName = sourceName;
-    }*/
 
     @Override
-    public void showName(SourceOfLight sourceOfLight) {
-       System.out.println("NaturalLight - " + sourceOfLight.getName());
+    public void showName() {
+       System.out.println("NaturalLight - " + getName());
     }
 
-/*    @Override
-    public void turnOn(boolean isTurnedOn) {
+    @Override
+    public void turnOn(boolean isTurnedOn, int voltage) {
 
-    }*/
+    }
 }
