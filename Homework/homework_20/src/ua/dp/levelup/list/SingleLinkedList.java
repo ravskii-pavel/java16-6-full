@@ -42,18 +42,25 @@ public class SingleLinkedList extends AbstractList {
     @Override
     public void addNode(Node node, int index) {
         if(index < 0 || index > size || null == node) return;
+        size++;
         if (null == root){
             root = node;
         }
         else {
             Node current = root;
-            Node previous = root;
+            Node tmp = root;
+            Node prev = null;
             for(int currentIndex = 0; currentIndex < size; currentIndex++){
-                if (currentIndex == index){
-                    previous = current.previous();
+                if (index == currentIndex){
+                    tmp = current;
+                    current = node;
+                    prev = tmp.previous();
+                    prev = tmp.previous();
+                    current.setNext(current);
                     current = node;
                     break;
                 }
+                prev = current;
                 current = current.next();
             }
             while(tmp.next() != null){
