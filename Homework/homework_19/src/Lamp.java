@@ -3,17 +3,13 @@
  */
 public class Lamp extends ArtificialLight {
 
-   private static int count = 0;
+   protected static int count = 0;
 
    Lamp(String name){
        super(name);
-       count++;
    }
-    Lamp(){
-        super();
-    }
 
-    public int getQuantity(){
-        return count;
+    protected void getQuantity(){
+        System.out.println("Количество источников искусственного света " + getName() + " - " + count);
     }
 }

@@ -5,5 +5,6 @@ public class TableLamp extends Lamp{
 
     TableLamp(String name) {
         super(name);
+        count++;
     }
 }

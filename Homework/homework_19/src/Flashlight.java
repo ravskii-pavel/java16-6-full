@@ -5,5 +5,6 @@ public class Flashlight extends Lamp {
 
     Flashlight(String name){
         super(name);
+        count++;
     }
 }

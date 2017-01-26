@@ -3,30 +3,22 @@
  */
 public class Fire extends NaturalLight {
 
-    boolean isTurnedOn, isItStuffCanBurn, isFire;
+    boolean isItStuffCanBurn, isFire;
 
-    String name;
-    public Fire(boolean isDay, String sourceName, String action) {
-        super(isDay, sourceName, action);
-    }
-
-    //@Override
-    public void turnOn(boolean isTurnedOn) {
-        if (isTurnedOn == true && isItStuffCanBurn == true && isFire == true){
-            this.isTurnedOn = true;
-        }
-        else{
-            this.isTurnedOn = false;
-        }
+    Fire (String name, boolean isTurnedOn, boolean isItStuffCanBurn, boolean isFire) {
+        this.name = name;
+        this.isTurnedOn = isTurnedOn;
+        this.isItStuffCanBurn = isItStuffCanBurn;
+        this.isFire = isFire;
     }
 
     @Override
     public void isItWorks() {
-
-    }
-
-    @Override
-    public String getName() {
-        return this.name;
+        if(this.isTurnedOn == true && this.isItStuffCanBurn == true && this.isFire == true){
+            System.out.println(getName() + " is burning");
+        }
+        else{
+            System.out.println(getName() + " is not burning");
+        }
     }
 }

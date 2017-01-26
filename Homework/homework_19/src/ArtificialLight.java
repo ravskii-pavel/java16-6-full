@@ -3,12 +3,11 @@
  */
 public abstract class ArtificialLight implements SourceOfLight {
     boolean isTurnedOn = true;
-    String name, action;
-    int voltage = 15;
+    String name;
+    int voltage;
     ArtificialLight(String name){
         this.name = name;
     }
-
     ArtificialLight(){}
 
     @Override
@@ -18,10 +17,12 @@ public abstract class ArtificialLight implements SourceOfLight {
 
     @Override
     public String getName() {
-        return name;
+        return this.name;
     }
 
     @Override
+    public boolean turnOn(boolean isTurnedOn) {return isTurnedOn;}
+
     public void turnOn(boolean isTurnedOn, int voltage) {
         this.isTurnedOn = isTurnedOn;
         this.voltage = voltage;
@@ -32,14 +33,14 @@ public abstract class ArtificialLight implements SourceOfLight {
     public void isItWorks() {
         if ((this.isTurnedOn == true || this.isTurnedOn == false) && this.voltage <= 20){
             if(this.voltage >= 10){
-                System.out.println(getName() + " - работает");
+                System.out.println(getName() + " - исправен");
             }
             else {
-                System.out.println(getName() + " - не работает, недостаточное напряжение");
+                System.out.println(getName() + " - исправен, " + this.voltage + "В - недостаточное напряжение");
             }
         }
         else {
-            System.out.println(getName() + " - не работает, неисправен");
+            System.out.println(getName() + " - неисправен");
         }
     }
 }
