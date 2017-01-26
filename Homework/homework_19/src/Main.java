@@ -6,17 +6,15 @@ public class Main {
         Flashlight flashlight = new Flashlight("BLACK DIAMOND");
         TableLamp tableLamp = new TableLamp("Table Lamp");
         Sun sun = new Sun("Sun");
-        sun.turnOn(true);
+        sun.turnOn(false);
         sun.isDay();
-        //sun.isItWorks();
-        lamp.getQuantity();
+
         Fire fire = new Fire("Fire", true,true,true);
-        fire.turnOn(false);
+        fire.turnOn(true);
         fire.isItWorks();
         fire.showName();
         flashlight.turnOn(false, 17);
         flashlight.isItWorks();
-
+        lamp.getQuantity();
     }
-
 }
