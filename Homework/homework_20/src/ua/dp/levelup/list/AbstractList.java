@@ -13,9 +13,8 @@ public abstract class AbstractList {
         return size;
     }
     public abstract void addFirst(Node node);
-    //public abstract void addLast();
-
     public abstract void addLast(Node node);
+    public abstract void addNode(Node node, int index);
 
     public abstract void removeFirst();
     public abstract void removeLast();

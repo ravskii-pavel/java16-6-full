@@ -10,6 +10,7 @@ class SingleLinkedListTest extends spock.lang.Specification {
 
         when: 'add node element'
         list.addFirst(new Node(1));
+        //list.addNode(new Node(1), 3);
 
         then: 'check size'
         list.size() == 1;
@@ -27,6 +28,27 @@ class SingleLinkedListTest extends spock.lang.Specification {
         then: 'check size'
         list.size() == 0;
         !list.getFirst().isPresent(); //ifPresent() - метод Optional проверяет есть null или нет
+
+    }
+    def "Add Node by index"() {
+        SingleLinkedList list = new SingleLinkedList();
+
+        when: 'add node element'
+        //list.addFirst(new Node(55));
+        list.addFirst(new Node(29));
+        list.addNode(new Node(73),1);
+
+        //list.myNode
+
+
+
+        then: 'check size'
+        //list.size() == 0;
+        list.get(0).get().value == 29;
+        list.get(1).get().value == 73;
+        //list.getFirst().value.next == 90;
+
+        //!list.getFirst().isPresent(); //ifPresent() - метод Optional проверяет есть null или нет
 
     }
 }
