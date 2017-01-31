@@ -35,8 +35,10 @@ class SingleLinkedListTest extends spock.lang.Specification {
 
         when: 'add node element'
         //list.addFirst(new Node(55));
-        list.addFirst(new Node(29));
+        list.addNode(new Node(29),0);
         list.addNode(new Node(73),1);
+        list.addNode(new Node(88),2);
+        list.addNode(new Node(555),1);
 
         //list.myNode
 
