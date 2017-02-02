@@ -18,6 +18,8 @@ public abstract class AbstractList {
 
     public abstract void removeFirst();
     public abstract void removeLast();
+    public abstract void removeNode();
+
     public abstract Optional<Node> getFirst();
     public abstract Optional<Node> getLast();
     public abstract Optional<Node> get(int index);

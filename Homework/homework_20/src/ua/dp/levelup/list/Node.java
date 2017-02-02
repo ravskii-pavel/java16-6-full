@@ -14,7 +14,7 @@ public class Node {
         return next;
     }
 
-    public Node previous() {
+    public Node getPrevious() {
         return previous;
     }
 
