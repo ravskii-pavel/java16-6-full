@@ -45,6 +45,7 @@ class SingleLinkedListTest extends spock.lang.Specification {
         list.addNode(new Node(555),3);
         list.addFirst(new Node("first Node"));
         list.addLast(new Node("last Node"));
+        list.removeNode(5);
 
         //list.myNode
 
@@ -54,11 +55,11 @@ class SingleLinkedListTest extends spock.lang.Specification {
         list.get(2).get().value == 73;
         list.get(3).get().value == 88;
         list.get(4).get().value == 555;
-        list.get(5).get().value == 99;
-        list.get(6).get().value == 111;
-        list.get(7).get().value == 222;
-        list.get(8).get().value == 333;
-        list.get(9).get().value == "last Node";
+        //list.get(5).get().value == 99;
+        list.get(5).get().value == 111;
+        list.get(6).get().value == 222;
+        list.get(7).get().value == 333;
+        list.get(8).get().value == "last Node";
         //!list.getFirst().isPresent(); //ifPresent() - метод Optional проверяет есть null или нет
 
     }

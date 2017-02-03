@@ -97,8 +97,23 @@ public class SingleLinkedList extends AbstractList {
     }
 
     @Override
-    public void removeNode() {
-
+    public void removeNode(int index) {
+        if (index < 0 || index >= size || null == start) return;
+        if (null == start.next()) removeFirst();
+        else {
+            Node current = start;
+            Node prev = null;
+            for (int currentIndex = 0; currentIndex < size; currentIndex++) {
+                if (index == currentIndex) {
+                    prev.setNext(current.next());
+                    break;
+                } else {
+                    prev = current;
+                    current = current.next();
+                }
+            }
+        }
+        size--;
     }
 
     @Override
