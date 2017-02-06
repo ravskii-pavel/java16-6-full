@@ -1,5 +1,5 @@
 package collections
-
+import java.util.ArrayList;
 /*
 import java.util.Arrays;
 import java.util.Collections;
@@ -11,19 +11,26 @@ import java.util.Collections;
 class ArraysTest extends spock.lang.Specification {
 
     def "copyOf() test1"() {
-        Collection list1 = new ArrayList<>();
-        Collection result;
 
-        for (int i = 0; i < 10; i++){
-            list1.add(i);
+        Integer[] array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        //List list = Arrays.asList(array);
+        ArrayList<Integer> list1 = new ArrayList<>(Arrays.asList(array));
+        //ArrayList<Integer> arrayList = new ArrayList<>(list);
+
+        /*ArrayList l1 = new ArrayList<>();
+        ArrayList res = new ArrayList<>();
+        for (int i = 1; i <= 10; i++) {
+            l1.add(i);
         }
+*/
 
+      when:
 
-        when:
-        result = Arrays.copyOf(list1, 4);
+      ArrayList res = Arrays.copyOf(list1,4);
+
 
         then:
-        result == [0, 1, 2, 3];
+        res == [0, 1, 2, 3];
 
     }
 
