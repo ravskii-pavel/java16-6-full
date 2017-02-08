@@ -12,20 +12,30 @@ import java.util.Collections;
 class ArraysTest extends Specification {
 
     def "copyOf() test1"() {
-        //Integer res[] =  new Integer();
         ArrayList<Integer> list = new ArrayList<>();
 
         for (int i =0; i <  10; i++){
             list.add(i);
         }
 
-
     when:
       Integer[] res = Arrays.copyOf(list.toArray(new Integer[list.size()]), 5);
 
-
     then:
       res == [0, 1, 2, 3, 4];
+    }
+    def "copyOf() test2"() {
+        ArrayList<String> list = new ArrayList<>();
+
+        for (int i =0; i <  10; i++){
+            list.add(i);
+        }
+
+        when:
+        Integer[] res = Arrays.copyOf(list.toArray(new Integer[list.size()]), 5);
+
+        then:
+        res == [0, 1, 2, 3, 4];
     }
 
 
