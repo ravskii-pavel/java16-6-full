@@ -113,11 +113,25 @@ class ArraysTest extends Specification {
         when:
         Integer [] res = list.toArray(new Integer[list.size()]);
         Arrays.fill(res, 777);
-        //int result1 = Arrays.binarySearch(list.toArray(new Integer[list.size()]), 37);
 
         then:
-        res.equals([777, 777, 777, 777, 777]);
-        //result1 == -4; // порядковый номер на который мог бы стать ненайденный искомый элемент
+        //res.equals([777, 777, 777, 777, 777]);
+        res == [777, 777, 777, 777, 777];
+    }
+    def "equals() test1 - Integer"() {
+
+        ArrayList<Integer> list = [44, 11, 33, 44, 88];
+        ArrayList<Integer> list1 = [44, 11, 33, 44, 88];
+        ArrayList<Integer> list2 = list;
+
+        when:
+        boolean res = list1.equals(list);
+        boolean res1 = list2.equals(list);
+
+        then:
+        res == true;
+        res1 == true;
+
     }
 
 
