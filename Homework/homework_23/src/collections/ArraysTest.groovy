@@ -115,7 +115,6 @@ class ArraysTest extends Specification {
         Arrays.fill(res, 777);
 
         then:
-        //res.equals([777, 777, 777, 777, 777]);
         res == [777, 777, 777, 777, 777];
     }
     def "equals() test1 - Integer"() {
@@ -131,16 +130,5 @@ class ArraysTest extends Specification {
         then:
         res == true;
         res1 == true;
-
     }
-
-
-
-    /* Arrays.sort(list.toArray(new String[list.size()]), new Comparator<String>() {
-         public int compare(String str1, String str2) {
-             return str1.compareTo(str2.toString());
-         }
-     });*/
-
-
 }
