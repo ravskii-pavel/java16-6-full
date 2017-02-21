@@ -23,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.4174107">
+              <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -53,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomeFiltersTest.groovy" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HomeFiltersTest.groovy" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/HomeFiltersTest.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37388393">
-              <caret line="69" column="13" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="83" column="13" selection-start-line="83" selection-start-column="13" selection-end-line="83" selection-end-column="13" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -82,10 +82,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Home.java" />
         <option value="$PROJECT_DIR$/src/HomeFilters.java" />
         <option value="$PROJECT_DIR$/src/HomeFiltersTest.groovy" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
   </component>
@@ -717,14 +717,11 @@
       <workItem from="1487520114127" duration="945000" />
       <workItem from="1487522034394" duration="14424000" />
       <workItem from="1487621658334" duration="6198000" />
-      <workItem from="1487677001338" duration="2774000" />
+      <workItem from="1487677001338" duration="2921000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="HomeFiltersTest_chek_streetName_(HashSet) - 2017.02.21 at 14h 16m 12s.xml">
-      <configuration name="HomeFiltersTest.chek streetName (HashSet)" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="HomeFiltersTest_chek_streetName_(HashSet) - 2017.02.21 at 14h 21m 21s.xml">
       <configuration name="HomeFiltersTest.chek streetName (HashSet)" configurationId="JUnit" />
     </history-entry>
@@ -743,6 +740,9 @@
     <history-entry file="HomeFiltersTest_chek_streetName_(HashSet) - 2017.02.21 at 14h 31m 31s.xml">
       <configuration name="HomeFiltersTest.chek streetName (HashSet)" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="HomeFiltersTest_chek_streetName_(HashSet) - 2017.02.21 at 14h 32m 33s.xml">
+      <configuration name="HomeFiltersTest.chek streetName (HashSet)" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="HomeFiltersTest_chek_streetName_(LinkedHashSet) - 2017.02.21 at 14h 16m 25s.xml">
       <configuration name="HomeFiltersTest.chek streetName (LinkedHashSet)" configurationId="JUnit" />
     </history-entry>
@@ -754,7 +754,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24341000" />
+    <option name="totallyTimeSpent" value="24488000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -994,26 +994,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/src.zip!/java/util/TreeSet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.7020649">
           <caret line="139" column="11" selection-start-line="139" selection-start-column="11" selection-end-line="139" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Home.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1025,13 +1009,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Home.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/HomeFiltersTest.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37388393">
-          <caret line="69" column="13" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="83" column="13" selection-start-line="83" selection-start-column="13" selection-end-line="83" selection-end-column="13" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4174107">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
