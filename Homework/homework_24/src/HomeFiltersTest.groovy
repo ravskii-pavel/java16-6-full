@@ -64,19 +64,33 @@ class HomeFiltersTest extends spock.lang.Specification {
         homeSet.size() == 10;
     }
 
-    def 'chek streetName (HashSet) comparator'(){
+    def 'chek streetName (HashSet)'(){
+        Collections.sort(list, streetComparator());
 
         when:
         Set<Home> homeSet = new HashSet<>();
-        //Set<Home> homeSet = new TreeSet<>();
-        //homeSet.addAll(list.sort(streetComparator()));
         homeSet.addAll(list);
-        streetComparator(homeSet);
+
         for (Home s : homeSet){
             System.out.println(s);
         }
 
         then:
-        homeSet.size() == 11;
+        homeSet.size() == 12;
+    }
+    def 'chek streetName (LinkedHashSet)'(){
+        Collections.sort(list, homeNumbersComparator());
+
+        when:
+        Set<Home> homeSet = new LinkedHashSet<>();
+
+        homeSet.addAll(list);
+
+        for (Home s : homeSet){
+            System.out.println(s);
+        }
+
+        then:
+        homeSet.size() == 12;
     }
 }

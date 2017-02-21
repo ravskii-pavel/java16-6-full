@@ -3,7 +3,7 @@ import java.util.Comparator;
 /**
  * Created by Ravskiy Pavel on 19.02.2017.
  */
-public class HomeFilters implements Comparable<Home> {
+public class HomeFilters {
     public static Comparator<Home> streetComparator() {
         return new Comparator<Home>() {
             @Override
@@ -53,10 +53,5 @@ public class HomeFilters implements Comparable<Home> {
                 }
             }
         };
-    }
-
-    @Override
-    public int compareTo(Home o) {
-        return 0;
     }
 }
