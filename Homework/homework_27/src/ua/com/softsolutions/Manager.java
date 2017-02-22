@@ -5,4 +5,7 @@ package ua.com.softsolutions;
  */
 public class Manager extends Employee {
 
+    public Manager(int employeeId, String firstName, String lastName, double salary) {
+        super(employeeId, firstName, lastName, salary);
+    }
 }

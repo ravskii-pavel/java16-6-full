@@ -9,8 +9,7 @@ public class Main {
 
         Company soft = new Company("Soft Solutions");
 
-        soft.addDepartment("DesignDepartment");
-
+        soft.addEmployee("development", "23", "Kurt", "Cobain", "4000");
         Department department1 = new Department("Dev");
         Department department2 = new Department("Des");
         Department department3 = new Department("Manager");

@@ -2,25 +2,53 @@ package ua.com.softsolutions;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.StringJoiner;
 
 /**
  * Created by ravskiy on 21.02.2017.
  */
 public class Company {
     String companyName;
-    Map<Department, Department> map = new HashMap<>();
+    private Map<String, Department<? extends Employee>> map = new HashMap<>();
 
-    /*String companyName;
-    Department <HashMap<Integer, String>> department;
-*/
     public Company(String companyName) {
         this.companyName = companyName;
+        Department<Developer> developerDepartment = new Department<>("development");
+        map.put(developerDepartment.getNameDepartment(), developerDepartment);
+
+        Department<Manager> managerDepartment = new Department<>("management");
+        map.put(managerDepartment.getNameDepartment(), managerDepartment);
+
+        Department<Designer> designDepartment = new Department<>("design");
+        map.put(designDepartment.getNameDepartment(), designDepartment);
     }
 
-    public void addDepartment(String nameDepartment) {
-        Department department = new Department(nameDepartment);
-        map.put(department, department);
-        /*department = new Department<>(nameDepartment);*/
+    public void addEmployee (String... params) {
+
+        String departmentName = params[0];
+
+        Department<? extends Employee> department = map.get(departmentName);
+
+        Employee employee = createEmployee(params);
+        //employee.
+        department.map.put(4, employee);
+       // department.addEmployee(employee);
+    }
+
+    private Employee createEmployee(String [] params) {
+
+        switch (params[0]){
+            case "development": {
+                return new Developer(Integer.parseInt(params[1]), params[2], params[3], Integer.parseInt(params[4]));
+            }
+            case "management": {
+                return new Manager(Integer.parseInt(params[1]), params[2], params[3], Integer.parseInt(params[4]));
+            }
+            case "design": {
+                return new Designer(Integer.parseInt(params[1]), params[2], params[3], Integer.parseInt(params[4]));
+            }
+        }
+        return null;
 
     }
    /* public void getAll(){
