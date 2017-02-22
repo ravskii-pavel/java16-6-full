@@ -23,13 +23,17 @@ public class Department <T>{
         return map;
     }
 
-    public void setMap(Map<Integer, T> map) {
-        this.map = map;
+    public void addEmployee(int employeeId, T employee) {
+        map.put(employeeId, employee);
     }
-
-    public void addEmployee(T employee){
-        Integer integer = 2;
-        map.put(integer,employee);
+    public void getIdEmployee() {
+        for(Integer i : map.keySet()){
+            System.out.print(i + ", ");
+        }
     }
-
+    public void getIdEmployee2() {
+        for(Map.Entry entry : map.entrySet()){
+            System.out.print( + ", ");
+        }
+    }
 }

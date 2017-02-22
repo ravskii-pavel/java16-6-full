@@ -8,4 +8,5 @@ public class Designer extends Employee {
     public Designer(int employeeId, String firstName, String lastName, double salary) {
         super(employeeId, firstName, lastName, salary);
     }
+
 }

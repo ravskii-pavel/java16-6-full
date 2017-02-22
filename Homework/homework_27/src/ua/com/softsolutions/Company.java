@@ -27,12 +27,9 @@ public class Company {
 
         String departmentName = params[0];
 
-        Department<? extends Employee> department = map.get(departmentName);
-
+        Department department = map.get(departmentName);
         Employee employee = createEmployee(params);
-        //employee.
-        department.map.put(4, employee);
-       // department.addEmployee(employee);
+        department.addEmployee(employee.getEmployeeId(), employee);
     }
 
     private Employee createEmployee(String [] params) {
@@ -49,11 +46,23 @@ public class Company {
             }
         }
         return null;
-
     }
-   /* public void getAll(){
-        for (Map.Entry entry : department){
 
+    public void getAllDepartments() {
+        for(String s : map.keySet()){
+            System.out.print(s + ", ");
         }
-    }*/
+    }
+    public void getIdEmployeeFromDepartment(String... params) {
+        String departmentName = params[0];
+        Department department = map.get(departmentName);
+        department.getIdEmployee();
+    }
+    public void getIdEmployeeFromDepartment2(String... params) {
+        String departmentName = params[0];
+        Department department = map.get(departmentName);
+        department.getIdEmployee2();
+    }
+
+
 }
