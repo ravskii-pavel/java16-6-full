@@ -32,8 +32,18 @@ public class Department <T>{
         }
     }
     public void getIdEmployee2() {
-        for(Map.Entry entry : map.entrySet()){
-            System.out.print( + ", ");
+        for(T val : map.values()){
+            System.out.print(((Employee)val).employeeId + ", ");     //Employee emp = (Employee) val;   //System.out.print(emp.employeeId + ", ");
+        }
+        /*for(Map.Entry entry : map.entrySet()){
+            System.out.print(entry.getValue() + ", ");
+        }*/
+    }
+    public void getDataEmployee(int idEmployee) {
+        for(T val : map.values()){
+            if (idEmployee == ((Employee)val).employeeId){
+                System.out.println(((Employee)val).toString());     //Employee emp = (Employee) val;   //System.out.print(emp.employeeId + ", ");
+            }
         }
     }
 }

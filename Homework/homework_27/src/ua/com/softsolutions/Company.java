@@ -25,7 +25,7 @@ public class Company {
 
     public void addEmployee (String... params) {
 
-        String departmentName = params[0];
+        String departmentName = params[1];
 
         Department department = map.get(departmentName);
         Employee employee = createEmployee(params);
@@ -34,15 +34,15 @@ public class Company {
 
     private Employee createEmployee(String [] params) {
 
-        switch (params[0]){
+        switch (params[1]){
             case "development": {
-                return new Developer(Integer.parseInt(params[1]), params[2], params[3], Integer.parseInt(params[4]));
+                return new Developer(Integer.parseInt(params[2]), params[3], params[4], Integer.parseInt(params[5]));
             }
             case "management": {
-                return new Manager(Integer.parseInt(params[1]), params[2], params[3], Integer.parseInt(params[4]));
+                return new Manager(Integer.parseInt(params[2]), params[3], params[4], Integer.parseInt(params[5]));
             }
             case "design": {
-                return new Designer(Integer.parseInt(params[1]), params[2], params[3], Integer.parseInt(params[4]));
+                return new Designer(Integer.parseInt(params[2]), params[3], params[4], Integer.parseInt(params[5]));
             }
         }
         return null;
@@ -63,6 +63,10 @@ public class Company {
         Department department = map.get(departmentName);
         department.getIdEmployee2();
     }
-
+    public void getDataEmployeeFromDepartment(String... params) {
+        String departmentName = params[0];
+        Department department = map.get(departmentName);
+        department.getDataEmployee(Integer.parseInt(params[1]));
+    }
 
 }

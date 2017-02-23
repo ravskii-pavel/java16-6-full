@@ -14,6 +14,12 @@ public class Main {
         soft.addEmployee("management", "27", "Alex", "Rose", "4700");
         soft.addEmployee("design", "22", "Alice", "Cooper", "3500");
         soft.getAllDepartments();
+        System.out.println();
         soft.getIdEmployeeFromDepartment("development");
+        System.out.println();
+        soft.getIdEmployeeFromDepartment2("development");
+        System.out.println();
+        soft.getDataEmployeeFromDepartment("development", "245");
+        soft.getDataEmployeeFromDepartment("design", "22");
     }
 }
