@@ -24,12 +24,13 @@ public class Company {
     }
 
     public void addEmployee (String... params) {
-
         String departmentName = params[1];
-
         Department department = map.get(departmentName);
-        Employee employee = createEmployee(params);
-        department.addEmployee(employee.getEmployeeId(), employee);
+        if(department == null || params.length < 6){checkToexistsName();}
+        else {
+            Employee employee = createEmployee(params);
+            department.addEmployee(employee.getEmployeeId(), employee);
+        }
     }
 
     private Employee createEmployee(String [] params) {
@@ -51,23 +52,31 @@ public class Company {
     public void getAllDepartments() {
         for(String s : map.keySet()){
             System.out.print(s + ", ");
-            System.out.println();
         }
+        System.out.println();
     }
     public void getIdEmployeeFromDepartment(String... params) {
-        String departmentName = params[0];
+        String departmentName = params[1];
         Department department = map.get(departmentName);
-        department.getIdEmployee();
+        if(department == null) checkToexistsName();
+        else department.getIdEmployee();
+        System.out.println();
     }
     public void getIdEmployeeFromDepartment2(String... params) {
-        String departmentName = params[0];
+        String departmentName = params[1];
         Department department = map.get(departmentName);
-        department.getIdEmployee2();
+        if(department == null) checkToexistsName();
+        else department.getIdEmployee2();
+        System.out.println();
     }
     public void getDataEmployeeFromDepartment(String... params) {
-        String departmentName = params[0];
+        String departmentName = params[1];
         Department department = map.get(departmentName);
-        department.getDataEmployee(Integer.parseInt(params[1]));
+        if(department == null) checkToexistsName();
+        else department.getDataEmployee(Integer.parseInt(params[2]));
+    }
+    private void checkToexistsName(){
+        System.out.println("нет такого отдела или неверно введены данные");
     }
 
 }

@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
  * Created by ravskiy on 23.02.2017.
  */
 public class App {
-    public static void main(String[] args) {
+    public static void main (String[] args) {
         Company soft = new Company("Soft Solutions");
         Scanner scanner = new Scanner(System.in);
         String result = "";
@@ -18,20 +18,25 @@ public class App {
             if(line.equalsIgnoreCase("exit")) break;
 
             if (line.startsWith("add")){
-                soft.addEmployee(result.split(" "));
+                soft.addEmployee(result.split("\\s+"));
             }
             else if (line.startsWith("get")){
                 if (line.contains("all")) {
                     soft.getAllDepartments();
                 }
                 else if (line.contains("[") && line.contains("]")){
-                    //if (line.matches("(.+?)\\[(.+?)"))  //можно без круглых скобок
-                    if (line.matches("^(.+?)\\[(.+?)\\[(.+?)$")){
-                        soft.getDataEmployeeFromDepartment(result.split(" ")); //!!! поставить рег для split
+                    if (line.endsWith("ls")){
+                        soft.getIdEmployeeFromDepartment2(result.split("\\s+"));
+                    }
+                    else{
+                        soft.getDataEmployeeFromDepartment(result.split("\\s+"));
                     }
                 }
+                //if (line.matches("(.+?)\\[(.+?)"))  //можно без круглых скобок
+                //if (line.matches("^(.+?)\\[(.+?)\\[(.+?)$")){
+                //soft.getDataEmployeeFromDepartment(result.split(" "));
+                //}
             }
-
         }
     }
 
