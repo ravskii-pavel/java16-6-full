@@ -51,6 +51,7 @@ public class Company {
     public void getAllDepartments() {
         for(String s : map.keySet()){
             System.out.print(s + ", ");
+            System.out.println();
         }
     }
     public void getIdEmployeeFromDepartment(String... params) {
