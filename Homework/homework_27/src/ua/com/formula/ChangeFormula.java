@@ -27,14 +27,24 @@ public class ChangeFormula {
     public static void checkFormula(String formula){
 
         char[] sourceFormula = formula.toCharArray();
-        char[] resultFormula = new char[sourceFormula.length];
+        char[] resultFormula = fillSpaces(sourceFormula);
         int j = 0;
         for (int i = 0; i < sourceFormula.length; i++ ){
-            while(j > 0){
-
+            if(sourceFormula[i] == '('){
+                resultFormula[i] = '^';
+                j = i;
+            }
+            else if (sourceFormula[i] == ')'){
+                for (int i = 0; i < sourceFormula.length; i++ ){
             }
         }
 
+    }
+    public static char [] fillSpaces(char [] arr) {
+        for (int i = 0; i < arr.length; i++ ){
+            arr[i] = ' ';
+        }
+        return arr;
     }
 
 
