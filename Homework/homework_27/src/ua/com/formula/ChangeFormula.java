@@ -1,51 +1,62 @@
 package ua.com.formula;
-
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 
 /**
  * Created by ravskiy on 27.02.2017.
  */
 public class ChangeFormula {
-    public static void main(String[] args) {
-        System.out.println(args);
+    public static void main(String[] args) throws IOException {
+        ioFormula(args[0], args[1]);
     }
 
-    public static void takingFormula(String filename) throws IOException {
+    public static void ioFormula(String inputFilename, String outputFilename) throws IOException {
 
-        InputStream input = new FileInputStream(filename);
-        StringBuilder result = new StringBuilder();
+        InputStream input = new FileInputStream(inputFilename);
+        OutputStream out = new FileOutputStream(outputFilename);
+        String formula = "";
         int data;
         while ((data = input.read()) >= 0) {
-            result.append((char) data);
+            formula = formula + String.valueOf((char) data);
         }
+        out.write((formula + "\r\n").getBytes());
+        out.write(checkFormula(formula).getBytes());
         input.close();
-        System.out.println(result.toString());
+        out.close();
     }
-    public static void checkFormula(String formula){
-
+    public static String checkFormula(String formula) {
         char[] sourceFormula = formula.toCharArray();
-        char[] resultFormula = fillSpaces(sourceFormula);
-        int j = 0;
-        for (int i = 0; i < sourceFormula.length; i++ ){
-            if(sourceFormula[i] == '('){
-                resultFormula[i] = '^';
-                j = i;
+        char[] resultFormula = (fillSpaces(sourceFormula.length));
+        for (int i = 0; i < sourceFormula.length; i++) {
+            if (sourceFormula[i] == '(') {
+                resultFormula[i] = '(';
             }
-            else if (sourceFormula[i] == ')'){
-                for (int i = 0; i < sourceFormula.length; i++ ){
+            else if (sourceFormula[i] == ')') {
+                if(!new String(resultFormula).contains("(")){
+                    resultFormula[i] = ')';
+                }
+                else {
+                    for (int k = i; k >=0; k--) {
+                        if (resultFormula[k] == '(') {
+                            resultFormula[k] = ' ';
+                            break;
+                        }
+                    }
+                }
             }
         }
-
+        return String.valueOf(fillHead(resultFormula));
     }
-    public static char [] fillSpaces(char [] arr) {
-        for (int i = 0; i < arr.length; i++ ){
+    public static char[] fillSpaces(int length){
+        char arr[] = new char [length];
+        for (int i = 0; i < arr.length; i++) {
             arr[i] = ' ';
         }
         return arr;
     }
-
-
+    public static char[] fillHead(char arr[]){
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == '(' || arr[i] == ')') arr[i] = '^';
+        }
+        return arr;
+    }
 }
