@@ -1,0 +1,46 @@
+package com.levelup;
+
+import com.levelup.dao.DAO;
+import com.levelup.dao.DataProvider;
+import com.levelup.dao.impl.CitizenCSVDAOImpl;
+import com.levelup.dao.impl.CitizenJSONDAOImpl;
+import com.levelup.dao.impl.FileDataProviderImpl;
+import com.levelup.dao.impl.StreetCSVDAOImpl;
+import com.levelup.entity.Citizen;
+import com.levelup.entity.Street;
+import com.levelup.view.MyDataTableFrame;
+import com.levelup.view.impl.CitizenTablePanel;
+
+import javax.swing.*;
+import java.util.ArrayList;
+
+/**
+ * Created by java on 10.01.2017.
+ */
+public class Main {
+
+    public static void main(String[] args) {
+       // new MyDataTableFrame();
+
+//~~~~~~~~~~~~~~~~~~~~~~~ CSV ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        //FileDataProviderImpl provider = new FileDataProviderImpl("");
+        //DAO<Street> streetDAO = new StreetCSVDAOImpl(provider, "street.csv");
+        //DAO<Citizen> streetDAO = new CitizenCSVDAOImpl(provider, "citizen.csv");
+        //provider.openConnection();
+        //streetDAO.create(new Citizen("John", "Doe", 38, 3L));
+
+//~~~~~~~~~~~~~~~~~~~~~~~ JSON ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        String citizen = "\t{\"id\": 1, \"firstName\": \"John\", \"lastName\": \"Doe\", \"age\": 46, \"streetId\": 21},";
+
+        System.out.println(citizen.trim().replaceAll("[\",\\s{}]|id|firstName|lastName|age|streetId", ""));
+
+        FileDataProviderImpl provider = new FileDataProviderImpl("");
+        DAO<Citizen> citizenDAO = new CitizenJSONDAOImpl(provider, "citizen.json");
+        provider.openConnection();
+        citizenDAO.create(new Citizen("John", "Doe", 38, 3L));
+
+        //streetDAO.create(new Street("Kirova"));
+    }
+
+}
