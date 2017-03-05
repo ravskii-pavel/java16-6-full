@@ -1,6 +1,7 @@
 package com.levelup.dao.impl;
 
 import com.levelup.dao.AbstractCSVDAO;
+import com.levelup.entity.Citizen;
 import com.levelup.entity.Street;
 
 import java.io.IOException;
@@ -29,13 +30,4 @@ public class StreetCSVDAOImpl extends AbstractCSVDAO<Street> {
         return entity.getId() + ";" + entity.getStreetName() + "\r\n";
     }
 
-    @Override
-    public void update(Street street) {
-
-    }
-
-    @Override
-    public void delete(Street street) {
-
-    }
 }

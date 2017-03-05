@@ -22,14 +22,28 @@ public class Main {
         FileDataProviderImpl provider = new FileDataProviderImpl("");
 
         DAO<Street> streetDAO = new StreetCSVDAOImpl(provider, "street.csv");
-
+        //StreetCSVDAOImpl streetDAO = new StreetCSVDAOImpl(provider, "street.csv");
         provider.openConnection();
 
-        streetDAO.create(new Street(88L, "Topolia_1"));
+        //streetDAO.create(new Street(8968L, "Topolia_11"));
+        //streetDAO.create(new Street(1L, "Gagarina"));
+        //streetDAO.create(new Street(2L, "Lenina"));
+        //streetDAO.create(new Street(3L, "Plehanova"));
+        //streetDAO.create(new Street(4L, "Artema"));
+        streetDAO.create(new Street("Lenina"));
+        //streetDAO.create(new Street(77L, "Titova"));
+        //Street street = new Street(4L, "Artema");
+        //streetDAO.delete(new Street(4L, "Artema"));
+        //streetDAO.create(new Street(89L, "Topolia_1"));
+        //streetDAO.create(new Street(99L, "Topolia_2"));
+        /*streetDAO.update(new Street(4L, "NewNewNew"));
+        streetDAO.update(new Street(2L, "---------------------"));
+        streetDAO.delete(new Street(2L, ""));*/
+        //streetDAO.
+        //streetDAO.
+//        ArrayList<Street> streets = streetDAO.read();
 
-        ArrayList<Street> streets = streetDAO.read();
-
-        System.out.println(streets);
+  //      System.out.println(streets);
     }
 
 }

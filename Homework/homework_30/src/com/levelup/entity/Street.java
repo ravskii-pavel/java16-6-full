@@ -23,4 +23,9 @@ public class Street extends Entity {
     public void setStreetName(String streetName) {
         this.streetName = streetName;
     }
+
+    @Override
+    public String toString() {
+        return (super.getId() + this.streetName);
+    }
 }
