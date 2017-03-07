@@ -61,7 +61,7 @@ public class Citizen extends Entity {
     public String toString() {
         return "Citizen{" +
                 "id=" + getId() +
-                ", fistName='" + fistName + '\'' +
+                ", fistName=\"" + fistName + '\"' +
                 ", lastName='" + lastName + '\'' +
                 ", age=" + age +
                 ", streetId=" + streetId +

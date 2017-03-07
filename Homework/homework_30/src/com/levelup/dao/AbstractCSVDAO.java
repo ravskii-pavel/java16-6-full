@@ -14,7 +14,7 @@ import java.util.Locale;
 /**
  * Created by java on 28.02.2017.
  */
-public abstract class AbstractCSVDAO<T extends Street> extends AbstractFileDAO<T> {
+public abstract class AbstractCSVDAO<T extends Entity> extends AbstractFileDAO<T> {
 
     private final String HEADER_CSV;
 
@@ -73,8 +73,11 @@ public abstract class AbstractCSVDAO<T extends Street> extends AbstractFileDAO<T
 
         try {
             RandomAccessFile file = getDataFile();
-            file.seek(file.length());
-
+            if (file.length() < (HEADER_CSV.length())) {
+                file.write((HEADER_CSV + "\r\n").getBytes());
+            } else {
+                file.seek(file.length());
+            }
             file.write(viewEntity(entity).getBytes());
         } catch (IOException e) {
             e.printStackTrace();
@@ -119,12 +122,12 @@ public abstract class AbstractCSVDAO<T extends Street> extends AbstractFileDAO<T
             e.printStackTrace();
         }
     }
-
     public Long getMaxId(ArrayList<T> list){
         Long maxId = 0L;
         for (int i = 0; !list.isEmpty() && i < list.size(); i++) {
             if(list.get(i).getId() > maxId) maxId = list.get(i).getId();
         }
-       return maxId + 1L;
+        return maxId + 1L;
     }
+
 }

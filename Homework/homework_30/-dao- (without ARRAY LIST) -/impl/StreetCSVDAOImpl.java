@@ -30,4 +30,13 @@ public class StreetCSVDAOImpl extends AbstractCSVDAO<Street> {
         return entity.getId() + ";" + entity.getStreetName() + "\r\n";
     }
 
+    @Override
+    public void update(Street street) {
+
+    }
+
+    @Override
+    public void delete(Street street) {
+
+    }
 }
