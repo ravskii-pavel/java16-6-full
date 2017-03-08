@@ -41,17 +41,19 @@ public abstract class AbstractJSONDAO<T extends Entity> extends AbstractFileDAO<
                 file.write((viewEntity(entity)+ "\r\n").getBytes());
                 file.write((FOOTER_JSON).getBytes());
             } else {
-                file.seek(file.length()-("\r\n" + FOOTER_JSON).length());
-                file.write((",\r\n").getBytes());
-                file.write((viewEntity(entity) + "\r\n").getBytes());
-                file.write((FOOTER_JSON).getBytes());
+                file.setLength(file.length() - (("\n"+FOOTER_JSON).length()));
+                //file.seek(file.length());//-("\n" + FOOTER_JSON).length());
+                file.write((",\n").getBytes());
+                file.write((viewEntity(entity) + "\n" + FOOTER_JSON).getBytes());
+                //file.write((FOOTER_JSON).getBytes());
             }
+            //file.close();
 
         } catch (IOException ex) {
             LOG.log(Level.INFO, "create entity error", ex);
         }
-    }
 
+    }
 
     @Override
     public ArrayList<T> read() {
@@ -74,35 +76,36 @@ public abstract class AbstractJSONDAO<T extends Entity> extends AbstractFileDAO<
     }
 
     @Override
-    public void update(final T t) {
+    public void update(final T entity) {
         try {
             RandomAccessFile file = getDataFile();
             String buffer = "";
             file.seek(0);
             String str;
-            int[] startAndEndOfStr = getStartAndEndOfStr(file, t);
+            int[] startAndEndOfStr = getStartAndEndOfStr(file, entity);
             int start = startAndEndOfStr[0];
             int end = startAndEndOfStr[1];
-            file.seek(end);
+            file.seek(end - 1);
             while ((str = file.readLine()) != null) {
                 buffer += str + "\n";
             }
-            file.seek(start);
+            file.setLength(start);
+            file.write((viewEntity(entity) + "\r\n").getBytes());
             file.write(buffer.getBytes());
-            file.setLength(start + buffer.length());
+            file.setLength(start + viewEntity(entity).length() +  buffer.length());
         } catch (IOException e) {
             System.out.println("Error get info from file JSON (Street)");
         }
     }
 
     @Override
-    public void delete(final T t) {
+    public void delete(final T entity) {
         try {
             RandomAccessFile file = getDataFile();
             String buffer = "";
-            file.seek(0);
             String str;
-            int startAndEndOfStr[] = getStartAndEndOfStr(file, t);
+            file.seek(0);
+            int startAndEndOfStr[] = getStartAndEndOfStr(file, entity);
             int start = startAndEndOfStr[0];
             int end = startAndEndOfStr[1];
             file.seek(end);
@@ -143,12 +146,12 @@ public abstract class AbstractJSONDAO<T extends Entity> extends AbstractFileDAO<
         return maxId + 1L;
     }
 
-    public int[] getStartAndEndOfStr(RandomAccessFile file, T t) throws IOException {
+    public int[] getStartAndEndOfStr(RandomAccessFile file, T entity) throws IOException {
         int[] arr = new int[2];
         int start = 0;
         String str = "";
-        while ((str = file.readLine()) != null && !(str.startsWith("\t{\"id\":" + t.getId() + ","))) {
-            arr[0] = arr[0] + str.length() + 1 ;
+        while ((str = file.readLine()) != null && !(str.startsWith("\t{\"id\":" + entity.getId() + ","))) {
+            arr[0] = arr[0] + str.length() + 1;
         }
         arr[1] = arr[0] + str.length() + "\r\n".length();
         return arr;

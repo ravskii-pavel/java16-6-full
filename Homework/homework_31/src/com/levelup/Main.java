@@ -31,15 +31,16 @@ public class Main {
 
 //~~~~~~~~~~~~~~~~~~~~~~~ JSON ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-        String citizen = "\t{\"id\": 1, \"firstName\": \"John\", \"lastName\": \"Doe\", \"age\": 46, \"streetId\": 21},";
+        //String citizen = "\t{\"id\": 1, \"firstName\": \"John\", \"lastName\": \"Doe\", \"age\": 46, \"streetId\": 21},";
 
-        System.out.println(citizen.trim().replaceAll("[\",\\s{}]|id|firstName|lastName|age|streetId", ""));
+        //System.out.println(citizen.trim().replaceAll("[\",\\s{}]|id|firstName|lastName|age|streetId", ""));
 
         FileDataProviderImpl provider = new FileDataProviderImpl("");
         DAO<Citizen> citizenDAO = new CitizenJSONDAOImpl(provider, "citizen.json");
         provider.openConnection();
-        //citizenDAO.create(new Citizen("John", "Doe", 375558, 3L));
-        citizenDAO.delete(new Citizen(10L, "new", "NEWNEW", 901111, 5555L));
+        citizenDAO.create(new Citizen("John", "Doe", 11, 81L));
+        //citizenDAO.delete(new Citizen(2L, "new", "NEWNEW", 901111, 5555L));
+        //citizenDAO.update(new Citizen(4L, "Silvester", "Stalone", 377, 90L));
 
         //streetDAO.create(new Street("Kirova"));id":5, "firstName": "John", "lastName": "Doe", "age":38, "streetId":3
     }
