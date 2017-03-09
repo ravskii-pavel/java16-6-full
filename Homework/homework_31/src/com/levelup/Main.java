@@ -39,8 +39,9 @@ public class Main {
         DAO<Citizen> citizenDAO = new CitizenJSONDAOImpl(provider, "citizen.json");
         provider.openConnection();
         citizenDAO.create(new Citizen("John", "Doe", 11, 81L));
-        //citizenDAO.delete(new Citizen(2L, "new", "NEWNEW", 901111, 5555L));
-        //citizenDAO.update(new Citizen(4L, "Silvester", "Stalone", 377, 90L));
+        //citizenDAO.delete(new Citizen(25L, "new", "NEWNEW", 901111, 5555L));
+        //citizenDAO.update(new Citizen(31L, "tqqqqqqq", "yyyyy", 377, 90L));
+        //citizenDAO.update(new Citizen(24L, "Silvester", "Stalone", 377, 90L));
 
         //streetDAO.create(new Street("Kirova"));id":5, "firstName": "John", "lastName": "Doe", "age":38, "streetId":3
     }
