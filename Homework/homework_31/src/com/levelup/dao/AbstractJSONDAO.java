@@ -38,12 +38,12 @@ public abstract class AbstractJSONDAO<T extends Entity> extends AbstractFileDAO<
             }
             if (file.length() == 0) {
                 file.write((HEADER_JSON + "\r\n").getBytes());
-                file.write((viewEntity(entity)+ "\r\n").getBytes());
+                file.write((viewEntity(entity) + "\r\n").getBytes());
                 file.write((FOOTER_JSON).getBytes());
             } else {
                 file.setLength(file.length() - (("\n"+FOOTER_JSON).length()));
                 //file.seek(file.length());//-("\n" + FOOTER_JSON).length());
-                file.write((",\r\n").getBytes());
+                file.write((",\n").getBytes());
                 file.write((viewEntity(entity) + "\n" + FOOTER_JSON).getBytes());
                 //file.write((FOOTER_JSON).getBytes());
             }
@@ -52,7 +52,6 @@ public abstract class AbstractJSONDAO<T extends Entity> extends AbstractFileDAO<
         } catch (IOException ex) {
             LOG.log(Level.INFO, "create entity error", ex);
         }
-
     }
 
     @Override
@@ -83,9 +82,9 @@ public abstract class AbstractJSONDAO<T extends Entity> extends AbstractFileDAO<
             file.seek(0);
             String str;
             int[] startAndEndOfStr = getStartAndEndOfStr(file, entity);
-            long start = startAndEndOfStr[0];
+            long start = startAndEndOfStr[0]; ///jgjgjhgjhghjgjggjgjgjhjgjnewbewnew
             long end = startAndEndOfStr[1];
-            file.seek(end - 1);
+            file.seek(end - "\t".length());
             while ((str = file.readLine()) != null) {
                 buffer += str + "\n";
             }
@@ -119,18 +118,23 @@ public abstract class AbstractJSONDAO<T extends Entity> extends AbstractFileDAO<
             int startAndEndOfStr[] = getStartAndEndOfStr(file, entity);
             int start = startAndEndOfStr[0];
             int end = startAndEndOfStr[1];
-            file.seek(end);
+            file.seek(end - "\t".length());
             while ((str = file.readLine()) != null) {
                 buffer += str + "\n";
             }
             file.seek(start);
-            if (start == end){
-                file.write((buffer).getBytes());
-                file.setLength(start + buffer.length() - 1);
-            }
+            if (start == end){}
             else {
-                file.write(("\t" + buffer).getBytes());
-                file.setLength(start + buffer.length());
+                long lengthBuffer = (file.length() - (FOOTER_JSON).length());
+                if (lengthBuffer == (end - "\t".length())){
+                    file.seek(start - ",\n".length());
+                    file.write(("\n" + buffer).getBytes());
+                    file.setLength(start + buffer.length() - "\t\n".length());
+                }
+                else {
+                    file.write((buffer).getBytes());
+                    file.setLength(start + buffer.length() - "\n".length());
+                }
             }
         } catch (IOException e) {
             System.out.println("Error get info from file JSON (Street)");
@@ -171,6 +175,7 @@ public abstract class AbstractJSONDAO<T extends Entity> extends AbstractFileDAO<
             arr[0] = arr[0] + str.length() + "\t".length();
         }
         if(str == null){
+            arr[0] = 0;
             arr[1] = arr[0];
         }
         else {

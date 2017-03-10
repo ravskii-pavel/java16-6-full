@@ -36,6 +36,5 @@ public class CitizenJSONDAOImpl extends AbstractJSONDAO<Citizen> {
                 "\"age\":" + entity.getAge() + ", " +
                 "\"streetId\":" + entity.getStreetId() +
                 "}";
-
     }
 }
