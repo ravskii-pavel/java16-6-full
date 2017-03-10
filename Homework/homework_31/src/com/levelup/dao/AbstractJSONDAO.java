@@ -41,14 +41,11 @@ public abstract class AbstractJSONDAO<T extends Entity> extends AbstractFileDAO<
                 file.write((viewEntity(entity) + "\r\n").getBytes());
                 file.write((FOOTER_JSON).getBytes());
             } else {
-                file.setLength(file.length() - (("\n"+FOOTER_JSON).length()));
-                //file.seek(file.length());//-("\n" + FOOTER_JSON).length());
-                file.write((",\n").getBytes());
-                file.write((viewEntity(entity) + "\n" + FOOTER_JSON).getBytes());
-                //file.write((FOOTER_JSON).getBytes());
+                file.setLength(file.length() - (("\r\n"+FOOTER_JSON).length()));
+                file.write((",\r\n").getBytes());
+                file.write((viewEntity(entity) + "\r\n" + FOOTER_JSON).getBytes());
             }
-            //file.close();
-
+            file.seek(file.length());
         } catch (IOException ex) {
             LOG.log(Level.INFO, "create entity error", ex);
         }
@@ -86,23 +83,22 @@ public abstract class AbstractJSONDAO<T extends Entity> extends AbstractFileDAO<
             long end = startAndEndOfStr[1];
             file.seek(end - "\t".length());
             while ((str = file.readLine()) != null) {
-                buffer += str + "\n";
+                buffer += str + "\r\n";
             }
             long lengthBuffer = (file.length() - (FOOTER_JSON).length());
-            if (lengthBuffer == (end - "\t".length())){
+            if (lengthBuffer == (end - ",".length())){
                 file.setLength(start);
-                file.write((viewEntity(entity) + "\n").getBytes());
+                file.write((viewEntity(entity) + "\r\n").getBytes());
                 file.write(buffer.getBytes());
                 file.setLength(start + viewEntity(entity).length() +  buffer.length());
             }
             else {
                 file.setLength(start);
-                file.write((viewEntity(entity) + ",\n").getBytes());
+                file.write((viewEntity(entity) + ",\r\n").getBytes());
                 file.write(buffer.getBytes());
                 file.setLength(start + (viewEntity(entity) + ",").length() +  buffer.length());
             }
-
-
+        file.seek(file.length());
         } catch (IOException e) {
             System.out.println("Error get info from file JSON (Street)");
         }
@@ -120,20 +116,20 @@ public abstract class AbstractJSONDAO<T extends Entity> extends AbstractFileDAO<
             int end = startAndEndOfStr[1];
             file.seek(end - "\t".length());
             while ((str = file.readLine()) != null) {
-                buffer += str + "\n";
+                buffer += str + "\r\n";
             }
             file.seek(start);
             if (start == end){}
             else {
                 long lengthBuffer = (file.length() - (FOOTER_JSON).length());
                 if (lengthBuffer == (end - "\t".length())){
-                    file.seek(start - ",\n".length());
-                    file.write(("\n" + buffer).getBytes());
-                    file.setLength(start + buffer.length() - "\t\n".length());
+                    file.seek(start - ",\r\n".length());
+                    file.write(("\r\n" + buffer).getBytes());
+                    file.setLength(start + buffer.length() - ",\r\n".length());
                 }
                 else {
                     file.write((buffer).getBytes());
-                    file.setLength(start + buffer.length() - "\n".length());
+                    file.setLength(start + buffer.length() - "\r\n".length());
                 }
             }
         } catch (IOException e) {
@@ -172,14 +168,14 @@ public abstract class AbstractJSONDAO<T extends Entity> extends AbstractFileDAO<
         int start = 0;
         String str = "";
         while ((str = file.readLine()) != null && !(str.startsWith("\t{\"id\":" + entity.getId() + ","))) {
-            arr[0] = arr[0] + str.length() + "\t".length();
+            arr[0] = arr[0] + str.length() + "\t\n".length();
         }
         if(str == null){
             arr[0] = 0;
             arr[1] = arr[0];
         }
         else {
-            arr[1] = arr[0] + str.length() + "\t\n".length();
+            arr[1] = arr[0] + str.length() + ",\r\n".length();
         }
         return arr;
     }

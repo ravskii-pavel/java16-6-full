@@ -38,9 +38,9 @@ public class Main {
         FileDataProviderImpl provider = new FileDataProviderImpl("");
         DAO<Citizen> citizenDAO = new CitizenJSONDAOImpl(provider, "citizen.json");
         provider.openConnection();
-        citizenDAO.create(new Citizen("John", "Doe", 11, 81L));
-        //citizenDAO.delete(new Citizen(44L, "1", "2", 901111, 5555L));
-        //citizenDAO.update(new Citizen(46L, "------", "+++++++", 377, 90L));
+        //citizenDAO.create(new Citizen("John", "Doe", 11, 81L));
+        citizenDAO.delete(new Citizen(11L, "1", "2", 901111, 5555L));
+        //citizenDAO.update(new Citizen(10L, "1", "2", 377, 90L));
         //citizenDAO.update(new Citizen(44L, "Silvester", "Stalone", 377, 90L));
 
         //streetDAO.create(new Street("Kirova"));id":5, "firstName": "John", "lastName": "Doe", "age":38, "streetId":3
