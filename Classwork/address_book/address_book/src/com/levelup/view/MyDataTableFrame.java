@@ -29,7 +29,7 @@ public class MyDataTableFrame extends JFrame {
         Properties properties = new Properties();
         properties.load(new FileInputStream("config.properties"));
 
-        String citizenDaoClass = properties.getProperty("citizen.json.dao");
+        String citizenDaoClass = properties.getProperty("citizen.csv.dao");
 
         Constructor<?> constructor = Class.forName(citizenDaoClass).getConstructor(DataProvider.class, String.class);
 
@@ -38,7 +38,7 @@ public class MyDataTableFrame extends JFrame {
         TabbedPane tabbedPane = new TabbedPane();
 
         DataProvider provider = new FileDataProviderImpl();
-        DAO<Citizen> citizenDAO = (DAO<Citizen>) constructor.newInstance(provider, properties.getProperty("citizen.json.file.name"));
+        DAO<Citizen> citizenDAO = (DAO<Citizen>) constructor.newInstance(provider, properties.getProperty("citizen.csv.file.name"));
 
         CitizenTablePanel citizenTablePanel = new CitizenTablePanel(citizenDAO);
         tabbedPane.add(citizenTablePanel);

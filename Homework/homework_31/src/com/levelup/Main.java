@@ -19,8 +19,8 @@ import java.util.ArrayList;
  */
 public class Main {
 
-    public static void main(String[] args) {
-       // new MyDataTableFrame();
+    public static void main(String[] args) throws Exception {
+        new MyDataTableFrame();
 
 //~~~~~~~~~~~~~~~~~~~~~~~ CSV ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         //FileDataProviderImpl provider = new FileDataProviderImpl("");
@@ -35,11 +35,11 @@ public class Main {
 
         //System.out.println(citizen.trim().replaceAll("[\",\\s{}]|id|firstName|lastName|age|streetId", ""));
 
-        FileDataProviderImpl provider = new FileDataProviderImpl("");
-        DAO<Citizen> citizenDAO = new CitizenJSONDAOImpl(provider, "citizen.json");
-        provider.openConnection();
+        //FileDataProviderImpl provider = new FileDataProviderImpl("");
+        //DAO<Citizen> citizenDAO = new CitizenJSONDAOImpl(provider, "citizen.json");
+        //provider.openConnection();
         //citizenDAO.create(new Citizen("John", "Doe", 11, 81L));
-        citizenDAO.delete(new Citizen(11L, "1", "2", 901111, 5555L));
+        //citizenDAO.delete(new Citizen(12L, "1", "2", 901111, 5555L));
         //citizenDAO.update(new Citizen(10L, "1", "2", 377, 90L));
         //citizenDAO.update(new Citizen(44L, "Silvester", "Stalone", 377, 90L));
 
