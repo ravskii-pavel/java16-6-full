@@ -1,5 +1,6 @@
 package parser;
 
+import java.io.RandomAccessFile;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
@@ -9,10 +10,14 @@ import java.util.Random;
  */
 public class GenerateNumbers {
 
-    /*public RandomAccessFile searchNumber() {
+    public int searchNumber(ArrayList<Integer> list) {
 
-        return generationYAMLFile(generationNumbers(oddNum));
-    }*/
+        int i =0;
+        while (Collections.frequency(list, list.get(i)) >= 2){
+            i++;
+        }
+        return list.get(i);
+    }
 
 
     public ArrayList<Integer> generateNumbers(int oddNum) {

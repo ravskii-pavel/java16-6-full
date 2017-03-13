@@ -27,7 +27,7 @@ public class FindNumberYAML extends GenerateNumbers{
     }
 
     public void findNumber(){
-
+        System.out.println(searchNumber(readFromYAML()));
     }
 
     public RandomAccessFile parseToYAML (ArrayList<Integer> list){
@@ -52,7 +52,7 @@ public class FindNumberYAML extends GenerateNumbers{
         ArrayList<Integer> list = new ArrayList();
         try {
             int i = 0;
-            file.seek(header.length() + 1);
+            file.seek(header.length());
             String str = file.readLine();
             str = str.substring(0, str.length()-1);
             String[] params = str.split(", ");
