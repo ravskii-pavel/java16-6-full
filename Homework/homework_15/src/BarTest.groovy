@@ -1,8 +1,9 @@
+//import org.apache.tools.ant.taskdefs.optional.extension.Specification
 import spock.lang.Shared
 import spock.lang.Specification;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
+//import static org.junit.Assert.assertArrayEquals;
+//import static org.junit.Assert.assertEquals;
 /**
  * Created by Pavel on 20.12.2016.
  */

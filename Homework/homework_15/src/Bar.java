@@ -21,6 +21,14 @@ public class Bar {
         this.barmen = new  Barman[initialSize];
     }
 
+    public Bar() {
+        this.initialSize = 3;
+        this.typeDrinks = new TypeDrink[initialSize];
+        this.orders = new Order[initialSize];
+        this.waiters = new  Waiter[initialSize];
+        this.barmen = new  Barman[initialSize];
+    }
+
     // Разделить чаевые поровну, между официантами
     public double shareAllTips(){
         double tipsInDay = 0;
@@ -128,31 +136,33 @@ public class Bar {
         }
     }
 
-    public String addEmployee (String employeeName, int age, String position, Bar bar){
-        if (position == null) {
-            position = "null";
-        }
-        position = position.toLowerCase().trim();
-        if(position == "waiter"){
-            int numWaiters = currentLoadArray(waiters);
-            Object [] obj = (Object[]) waiters;
-            obj = changeSizeArray(waiters, numWaiters);
-            waiters = (Waiter[])obj;
-            waiters[numWaiters] = new Waiter(employeeName, age, bar);
+    public String addEmployee (String employeeName, int age, String position, Bar bar) {
+        try {
+            if (position == null) {
+                position = "null";
+            }
+            position = position.toLowerCase().trim();
+            if(position == "waiter"){
+                int numWaiters = currentLoadArray(waiters);
+                Object [] obj = (Object[]) waiters;
+                obj = changeSizeArray(waiters, numWaiters);
+                waiters = (Waiter[])obj;
+                if(bar == null) waiters[numWaiters] = new Waiter(employeeName, age, bar);
 
-            return position;
+                return position;
+            }
+            else if(position == "barman"){
+                int numBarman = currentLoadArray(barmen);
+                Object [] obj = (Object[])barmen;
+                obj = changeSizeArray(barmen, numBarman);
+                barmen = (Barman [])obj;
+                barmen[numBarman] = new Barman(employeeName, age, bar);
+                return position;
+            }
+        } catch (NotExistBarException e) {
+            e.printStackTrace();
         }
-        else if(position == "barman"){
-            int numBarman = currentLoadArray(barmen);
-            Object [] obj = (Object[])barmen;
-            obj = changeSizeArray(barmen, numBarman);
-            barmen = (Barman [])obj;
-            barmen[numBarman] = new Barman(employeeName, age, bar);
-            return position;
-        }
-        else {
-            return "Нет такой должности - " + position;
-        }
+        return "Нет такой должности - " + position;
     }
     public int isEmployee(String employeeName, int age, String position){
         if(position == "waiter"){
@@ -254,6 +264,24 @@ public class Bar {
 
     public float getAllTips() {
         return allTips;
+    }
+
+    public int getDrinkCount(String nameDrink) {
+       if (isNameDrink(nameDrink)){
+           int i = 0;
+           while(!typeDrinks[i].getNameDrink().equals(nameDrink)) i++;
+           return (typeDrinks[i].getQuantityMlLitres() != 0) ? typeDrinks[i].getQuantityMlLitres() : -1;
+       }
+       else return -1;
+    }
+
+    public TypeDrink getDrinkByName(String nameDrink){
+        if (isNameDrink(nameDrink)){
+            int i = 0;
+            while(!typeDrinks[i].getNameDrink().equals(nameDrink)) i++;
+            return typeDrinks[i];
+        }
+        else return null;
     }
 
     @Override

@@ -12,13 +12,15 @@ public class Main {
         uglyCoyote.addEmployee("Tom", 24, "waiter", uglyCoyote);
         uglyCoyote.addEmployee("John", 24, "waiter", uglyCoyote);
         uglyCoyote.addEmployee("John1", 24, "waiter", uglyCoyote);
-        uglyCoyote.addEmployee("Alex", 30, "barman", uglyCoyote);
+        uglyCoyote.addEmployee("Alex", 30, "barman", uglyCoyote);*/
+
+        Bar uglyCoyote = new Bar();
         uglyCoyote.addEmployee("Michal", 30, "barman", uglyCoyote);
 
-        System.out.println("bar equals - " + uglyCoyote.equals(uglyCoyote1));
+        //System.out.println();
 
 
-        boolean is = uglyCoyote.waiters[0].equals(uglyCoyote.waiters[1]);
+       /* boolean is = uglyCoyote.waiters[0].equals(uglyCoyote.waiters[1]);
         System.out.println("standart equals - " + is);
         boolean is1 = uglyCoyote.waiters[0].equals(uglyCoyote.waiters[1]);
         System.out.println("Overraide equals - " + is1);

@@ -3,7 +3,7 @@
  */
 public class Barman extends Waiter {
 
-    public Barman(String name, int age,  Bar bar) {
+    public Barman(String name, int age,  Bar bar) throws NotExistBarException {
         super(name, age, bar);
     }
 
