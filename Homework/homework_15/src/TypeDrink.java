@@ -4,6 +4,8 @@
 public class TypeDrink {
     String nameDrink;
     int quantityMlLitres;
+    double costBottle;
+
     TypeDrink(String nameDrink, int quantityMlLitres){
         this.nameDrink = nameDrink;
         this.quantityMlLitres = quantityMlLitres;

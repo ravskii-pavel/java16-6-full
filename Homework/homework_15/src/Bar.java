@@ -28,6 +28,7 @@ public class Bar {
         this.waiters = new  Waiter[initialSize];
         this.barmen = new  Barman[initialSize];
     }
+    //Bar(){}
 
     // Разделить чаевые поровну, между официантами
     public double shareAllTips(){
@@ -136,8 +137,8 @@ public class Bar {
         }
     }
 
-    public String addEmployee (String employeeName, int age, String position, Bar bar) {
-        try {
+    public String addEmployee (String employeeName, int age, String position, Bar bar) throws NotExistBarException{
+            if (bar == null || bar.barName == null)
             if (position == null) {
                 position = "null";
             }
@@ -159,9 +160,7 @@ public class Bar {
                 barmen[numBarman] = new Barman(employeeName, age, bar);
                 return position;
             }
-        } catch (NotExistBarException e) {
-            e.printStackTrace();
-        }
+
         return "Нет такой должности - " + position;
     }
     public int isEmployee(String employeeName, int age, String position){

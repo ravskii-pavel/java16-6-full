@@ -10,11 +10,9 @@ public class Waiter {
 
     public Waiter(String name, int age, Bar bar) throws NotExistBarException {
         if (bar == null) throw new NotExistBarException("Creating new barman is not possible. Please create bar object");
-        else {
             this.age = age;
             this.name = name;
             this.bar = bar;
-        }
     }
 
     public void takeTips(float allTips){

@@ -14,8 +14,14 @@ public class Main {
         uglyCoyote.addEmployee("John1", 24, "waiter", uglyCoyote);
         uglyCoyote.addEmployee("Alex", 30, "barman", uglyCoyote);*/
 
-        Bar uglyCoyote = new Bar();
-        uglyCoyote.addEmployee("Michal", 30, "barman", uglyCoyote);
+        //Bar uglyCoyote = new Bar();
+        try {
+            Bar uglyCoyote = new Bar("ugly");
+            Bar uglyCoyote1 = null;
+            uglyCoyote.addEmployee("Michal", 30, "barman", uglyCoyote1);
+        }catch (NotExistBarException ex){
+            System.out.println(ex.getMessage());
+        }
 
         //System.out.println();
 
