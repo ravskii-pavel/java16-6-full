@@ -1,0 +1,22 @@
+Select * from forum.users;
+
+Select * from theme;
+
+ 
+Select * from message;
+
+
+select * from users
+where id in (select author_id from message
+where author_id in (15,3)) 
+and email rlike '^kansas' or email rlike '^pink';
+
+
+
+insert into users
+(user_name, email, password)
+values ('Bon Jovi','bon@gmail.com', 5545);
+
+
+delete from users
+where id = 13;
