@@ -43,66 +43,61 @@ insert into street
 (street_name) 
 values ('Komsomolskaya');
 
-/*Общее число жителей*/
+/* 1) Общее число жителей*/
 select count(*) from citizen;
 
-/*Средний возраст жителей*/
+/*  2) Средний возраст жителей*/
 select avg(age) from citizen;
 
-/*отсортированный по алфавиту список фамилий без повторений - 1*/
+/*  3) отсортированный по алфавиту список фамилий без повторений - 1*/
 
 select last_name
 from citizen
 group by last_name;
 
-/*отсортированный по алфавиту список фамилий без повторений - 2*/
+/* 3) отсортированный по алфавиту список фамилий без повторений - 2*/
 
 select distinct last_name
 from citizen
 order by last_name;
 
-/*Вывести список фамилий, с указанием количества повторений этих фамилий в общем списке*/
+/* 4) Вывести список фамилий, с указанием количества повторений этих фамилий в общем списке*/
 
 select last_name, count(last_name) as COUNT
 from citizen
 group by last_name;
 
-/*фамилии, которые содержат в середине букву «н»*/
+/* 5) фамилии, которые содержат в середине букву «н»*/
 
 select last_name
 from citizen
 where last_name like '%н%';
 
-/*Вывести список «бомжей»*/
+/* 6) Вывести список «бомжей»*/
 
 select last_name
 from citizen
 where street_id is null;
 
-/*Вывести список несовершеннолетних, проживающих на улице*/
+/* 7) Вывести список несовершеннолетних, проживающих на улице*/
 
 select last_name, age
 from citizen
 where street_id is null and age < 18;
 
-/*Вывести упорядоченный по алфавиту список всех улиц с указанием, сколько жильцов живет на улице*/
-
-select street_name, count(street_id) as count_citizens
-from street, citizen
-where street.id = citizen.street_id
-group by street_name;
+/* 8) Вывести упорядоченный по алфавиту список всех улиц с указанием, сколько жильцов живет на улице*/
 
 select street_name, count(street_id) as count_citizens
 from street left JOIN citizen on(street.id = citizen.street_id)
 group by street_name;
 
-/* Вывести список улиц, название которых состоит из 6-ти букв*/
+/* 9) Вывести список улиц, название которых состоит из 6-ти букв*/
 
 select street_name
 from street
 where length(street_name) = 6;
 
-/*Вывести список улиц с количеством жильцов на них меньше 3*/
+/* 10) Вывести список улиц с количеством жильцов на них меньше 3*/
 
 select street_name, count(street_id) as count_citizens
 from street left JOIN citizen on(street.id = citizen.street_id)
