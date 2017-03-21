@@ -58,7 +58,6 @@ CREATE TABLE IF NOT EXISTS `employees` (
 -- Dumping data for table company.employees: ~0 rows (approximately)
 /*!40000 ALTER TABLE `employees` DISABLE KEYS */;
 INSERT INTO `employees` (`name_first`, `name_last`, `name_second`, `salary`, `department_id`, `post_id`, `date_create`) VALUES
-	('Василий', 'Удод', 'Иванович', 5500.00, 4, 10, '2015-09-09 01:53:18'),
 	('Марк', 'Цукенберг', '', 1.00, 1, 9, '2015-09-09 01:54:56'),
 	('Хью', 'Джекман', '', 10000.00, 2, 14, '2015-09-09 01:55:50');
 /*!40000 ALTER TABLE `employees` ENABLE KEYS */;
@@ -89,7 +88,9 @@ CREATE TABLE IF NOT EXISTS `employees_courses` (
 INSERT INTO `employees_courses` (`employee_id`, `course_id`, `date_start`, `date_finish`, `is_organization_paid`, `date_create`) VALUES
 	(8, 2, '2015-09-09', NULL, 1, '2015-09-09 01:56:47'),
 	(8, 3, '2015-07-09', '2015-09-09', 0, '2015-09-09 01:57:17'),
-	(9, 1, '2014-09-09', '2014-10-09', 0, '2015-09-09 01:57:56');
+	(8, 1, '2015-10-09', '2015-11-09', 0, '2015-09-09 01:57:17'),
+	(9, 1, '2014-09-09', '2014-10-09', 0, '2015-09-09 01:57:56'),
+	(9, 2, '2014-09-09', '2014-11-09', 0, '2015-09-09 01:57:56');
 /*!40000 ALTER TABLE `employees_courses` ENABLE KEYS */;
 
 select * from employees_courses;
