@@ -10,7 +10,7 @@ public class Main {
 
         Class.forName("com.mysql.jdbc.Driver");
 
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/forum","root","qwerty");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/forum","root","Canada020888");
 
         Statement statement = connection.createStatement();
 
