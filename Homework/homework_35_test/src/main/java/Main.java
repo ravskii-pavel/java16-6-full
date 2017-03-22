@@ -11,8 +11,8 @@ public class Main {
 
     try {
       Class.forName("com.mysql.jdbc.Driver");
-      Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/forum", "root", "qwerty");
-     /* Statement statement = connection.createStatement();
+      Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/forum", "root", "Canada020888");
+      Statement statement = connection.createStatement();
       ResultSet resultSet = statement.executeQuery("SELECT * FROM USERS");
 
       ArrayList<User> users = new ArrayList();
@@ -23,13 +23,13 @@ public class Main {
         id = resultSet.getLong("id");
         user_name = resultSet.getString("user_name");
         email = resultSet.getString("email");
-        users.add(new User(id, user_name, email));
+        users.add(new User(user_name, email));
         System.out.println(resultSet.getLong("id")
                 + " " + resultSet.getString("user_name")
                 + " " + resultSet.getString("email"));
-      }*/
+      }
 
-      PreparedStatement preparedStatement = connection.prepareStatement
+      /*PreparedStatement preparedStatement = connection.prepareStatement
               ("INSERT INTO users (user_name, email) VALUES (?, ?, ?)");
 
       User user = new User("John_Doe", "john@yahoo.com");
@@ -38,7 +38,7 @@ public class Main {
       preparedStatement.setString(2, user.getUser_name());
       preparedStatement.setString(3, user.getUser_name());
 
-      preparedStatement.execute();
+      preparedStatement.execute();*/
 
 
 

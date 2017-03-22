@@ -58,8 +58,8 @@ CREATE TABLE IF NOT EXISTS `employees` (
 -- Dumping data for table company.employees: ~0 rows (approximately)
 /*!40000 ALTER TABLE `employees` DISABLE KEYS */;
 INSERT INTO `employees` (`name_first`, `name_last`, `name_second`, `salary`, `department_id`, `post_id`, `date_create`) VALUES
-	('Марк', 'Цукенберг', '', 1.00, 1, 9, '2015-09-09 01:54:56'),
-	('Хью', 'Джекман', '', 10000.00, 2, 14, '2015-09-09 01:55:50');
+	('Майк', 'Тайсон', '', 777.00, 1, 9, '2015-09-09 01:54:56'),
+	('Хью', 'Лори', '', 2200.00, 2, 14, '2015-09-09 01:55:50');
 /*!40000 ALTER TABLE `employees` ENABLE KEYS */;
 
 select * from employees;
