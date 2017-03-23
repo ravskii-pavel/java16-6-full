@@ -91,10 +91,41 @@ SELECT T.id as title_id, T.title as title_name, count(ET.tangible_id) as tangibl
     order by tangibles_often desc
     limit 1 offset 0;
 
-
 /*10. найти департамент, сотрудники которого имеют самую большую сумму материальных ценностей*/
 
-	select
+	select * From departments;
+	select * From employees;
+	select * From employees_tangibles;
+	select * From tangibles;
+    
+    select D.id, D.title
+    FROM departments as D left join 
+		(select E.department_id, E.id 
+		from employees as E left join employees_tangibles as ET ON (E.id = ET.employee_id)) as department_name on (D.id = department_name.E.department_id);
+
+
+	select D.id, D.title, sum_empl_tangibles_by_Department
+		FROM departments as D left join 
+		(select E.department_id as department_id, sum(sum_tangibles) as sum_empl_tangibles_by_Department
+			FROM (
+					select ET.employee_id as employee_id, sum(T.price) as sum_tangibles
+					FROM employees_tangibles as ET left join tangibles as T ON (ET.tangible_id = T.id)
+					group by ET.employee_id
+				 )  as sum_tangibles_by_Emp left join employees as E ON (sum_tangibles_by_Emp.employee_id = E.id)
+		group by E.department_id
+        ) as sum_tangibles_by_Department on (D.id = sum_tangibles_by_Department.department_id) 
+	order by sum_empl_tangibles_by_Department desc
+	limit 1 offset 0;
+    
+    
+    
+    Select E.department_id as department_id, sum(sum_tangibles) as sum_empl_tangibles_by_Department
+		From (select ET.employee_id as employee_id, sum(T.price) as sum_tangibles
+			From employees_tangibles as ET left join tangibles as T ON (ET.tangible_id = T.id)
+			group by ET.employee_id) as sum_tangibles_by_Emp 
+		left join employees as E ON (sum_tangibles_by_Emp.employee_id = E.id)
+		group by E.department_id;
+    
 
 /* 11.  ***********
 Супер игра: сформировать выборку по сотрудникам за 2015 год в которой будет: фио сотрудника, суммарная зарплата за год, 
