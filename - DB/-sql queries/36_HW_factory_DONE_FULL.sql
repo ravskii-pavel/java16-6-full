@@ -21,10 +21,12 @@ having count_employees > 1;
 
 select E.id, E.name_first, E.name_last, sum(SP.salary) as biggest_salary_2015
 from employees as E left join salaries_paid as SP ON (E.id = SP.employee_id)
-where date_pay >= '2015-01-01' and date_pay < '2016-01-01'
+where date_pay like '%2015%'
 group by E.id
 order by biggest_salary_2015 desc
 limit 2 offset 0;
+
+/*date_pay >= '2015-01-01' and date_pay < '2016-01-01'*/
 
 /*5. вывести сотрудников, кто не ходил ни на один курс*/
 
@@ -93,17 +95,6 @@ SELECT T.id as title_id, T.title as title_name, count(ET.tangible_id) as tangibl
 
 /*10. найти департамент, сотрудники которого имеют самую большую сумму материальных ценностей*/
 
-	select * From departments;
-	select * From employees;
-	select * From employees_tangibles;
-	select * From tangibles;
-    
-    select D.id, D.title
-    FROM departments as D left join 
-		(select E.department_id, E.id 
-		from employees as E left join employees_tangibles as ET ON (E.id = ET.employee_id)) as department_name on (D.id = department_name.E.department_id);
-
-
 	select D.id, D.title, sum_empl_tangibles_by_Department
 		FROM departments as D left join 
 		(select E.department_id as department_id, sum(sum_tangibles) as sum_empl_tangibles_by_Department
@@ -116,18 +107,33 @@ SELECT T.id as title_id, T.title as title_name, count(ET.tangible_id) as tangibl
         ) as sum_tangibles_by_Department on (D.id = sum_tangibles_by_Department.department_id) 
 	order by sum_empl_tangibles_by_Department desc
 	limit 1 offset 0;
-    
-    
-    
-    Select E.department_id as department_id, sum(sum_tangibles) as sum_empl_tangibles_by_Department
-		From (select ET.employee_id as employee_id, sum(T.price) as sum_tangibles
-			From employees_tangibles as ET left join tangibles as T ON (ET.tangible_id = T.id)
-			group by ET.employee_id) as sum_tangibles_by_Emp 
-		left join employees as E ON (sum_tangibles_by_Emp.employee_id = E.id)
-		group by E.department_id;
-    
 
 /* 11.  ***********
 Супер игра: сформировать выборку по сотрудникам за 2015 год в которой будет: фио сотрудника, суммарная зарплата за год, 
 количество отработанных часов за год, количество посещаемых курсов, количество материальных ценностей и их общая цена, 
 название должности и название департамента */
+
+SELECT emp_data_and_salary.id, emp_data_and_salary.first_name, emp_data_and_salary.last_name, emp_data_and_salary.sum_salary_2015, sum_tangibles, count_tangibles, 
+sum(TIMESTAMPDIFF(SECOND, day_start, day_finish)/3600) as sum_hours_by_year, count_courses_by_empl, name_department, name_post
+FROM (
+		select E.id as id, E.name_first as first_name, E.name_last as last_name, sum(SP.salary) as sum_salary_2015, E.department_id as department_id, E.post_id as post_id
+		from employees as E left join salaries_paid as SP ON (SP.employee_id = E.id and date_pay like ('%2015%'))
+		group by E.id
+) as emp_data_and_salary right join (
+				select ET.employee_id as employee_id, sum(T.price) as sum_tangibles, count(ET.tangible_id) as count_tangibles
+				FROM employees_tangibles as ET left join tangibles as T ON (ET.tangible_id = T.id)
+				group by ET.employee_id) as sum_tangibles_emp ON (emp_data_and_salary.id = sum_tangibles_emp.employee_id) 
+					left join (
+                    select *
+                    FROM working_days) as working_hours ON (emp_data_and_salary.id = working_hours.employee_id)
+						left join (
+						select count(EC.course_id) as count_courses_by_empl, EC.employee_id as employee_id
+                        FROM employees_courses as EC
+                        group by EC.employee_id) as count_courses ON (emp_data_and_salary.id = count_courses.employee_id)
+							left join (
+							select D.title as name_department, D.id as id
+							FROM departments as D) as departments_name ON (emp_data_and_salary.department_id = departments_name.id)
+								left join (
+								select P.title as name_post, P.id as id
+								FROM posts as P) as posts_name ON (emp_data_and_salary.post_id = posts_name.id)
+group by emp_data_and_salary.id;
