@@ -11,39 +11,43 @@ public class Main {
 
     try {
       Class.forName("com.mysql.jdbc.Driver");
-      Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/forum", "root", "Canada020888");
-      Statement statement = connection.createStatement();
-      ResultSet resultSet = statement.executeQuery("SELECT * FROM USERS");
+      Connection connectionMySQL = DriverManager.getConnection("jdbc:mysql://localhost:3306/address_book", "root", "Canada020888");
+      CitizenDAOImpl citizenDAO = new CitizenDAOImpl(connectionMySQL);
+      citizenDAO.create("John Doe", "john@yahoo.com", "doe1234");
+      Statement statement = connectionMySQL.createStatement();
+      ResultSet resultSet = statement.executeQuery("SELECT * FROM citizen");
 
-      ArrayList<User> users = new ArrayList();
+      ArrayList<Citizen> citizens = new ArrayList();
       long id;
-      String user_name, email;
+      String user_name, email, password;
 
       while (resultSet.next()) {
         id = resultSet.getLong("id");
         user_name = resultSet.getString("user_name");
         email = resultSet.getString("email");
-        users.add(new User(user_name, email));
+        password = resultSet.getString("password");
+        citizens.add(new Citizen(user_name, email, password));
         System.out.println(resultSet.getLong("id")
                 + " " + resultSet.getString("user_name")
                 + " " + resultSet.getString("email"));
       }
 
       /*PreparedStatement preparedStatement = connection.prepareStatement
-              ("INSERT INTO users (user_name, email) VALUES (?, ?, ?)");
+              ("INSERT INTO citizens (user_name, email) VALUES (?, ?, ?)");
 
-      User user = new User("John_Doe", "john@yahoo.com");
+      Citizen user = new Citizen("John_Doe", "john@yahoo.com");
 
       preparedStatement.setString(1, user.getUser_name());
       preparedStatement.setString(2, user.getUser_name());
       preparedStatement.setString(3, user.getUser_name());
 
-      preparedStatement.execute();*/
+      preparedStatement.execute();
+      */
 
 
 
 
-      connection.close();
+      connectionMySQL.close();
     } catch (SQLException e) {
       e.printStackTrace();
     } catch (ClassNotFoundException e) {
