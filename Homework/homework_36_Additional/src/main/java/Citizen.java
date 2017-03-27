@@ -7,9 +7,16 @@ public class Citizen {
     String first_name;
     String last_name;
     long age;
-    Long street_id;
+    long street_id;
 
-    public Citizen(long id, String first_name, String last_name, long age, Long street_id) {
+    public Citizen(long id, String first_name, String last_name, long age, long street_id) {
+        this.id = id;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.age = age;
+        this.street_id = street_id;
+    }
+    public Citizen(String first_name, String last_name, long age, Long street_id) {
         this.id = id;
         this.first_name = first_name;
         this.last_name = last_name;
@@ -49,11 +56,11 @@ public class Citizen {
         this.age = age;
     }
 
-    public Long getStreet_id() {
+    public long getStreet_id() {
         return street_id;
     }
 
-    public void setStreet_id(Long street_id) {
+    public void setStreet_id(long street_id) {
         this.street_id = street_id;
     }
 

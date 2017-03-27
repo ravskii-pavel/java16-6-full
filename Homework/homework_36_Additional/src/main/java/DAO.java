@@ -1,13 +1,12 @@
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public interface DAO {
 
-    void create (String s1, String s2, String s3) throws SQLException;
-    void update (int id, String s1);
-    void update (int id, String s1, String s2);
-    void update (int id, String s1, String s2, String s3) throws SQLException;
+    void create (String first_name, String last_name, long age, long street_id) throws SQLException;
+    void update (long id, long street_id) throws SQLException;
     void delete ();
-    void read ();
+    ArrayList read () throws SQLException;
     void readOneById ();
     void readOneByEmail  ();
 
