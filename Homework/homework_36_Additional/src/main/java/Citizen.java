@@ -23,7 +23,12 @@ public class Citizen {
         this.age = age;
         this.street_id = street_id;
     }
-
+    public Citizen(String first_name, String last_name, long age, Long street_id) {
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.age = age;
+        this.street_id = street_id;
+    }
     public long getId() {
         return id;
     }
