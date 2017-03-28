@@ -1,3 +1,5 @@
+import hiber.User;
+
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -23,7 +25,7 @@ public class Main {
         id = resultSet.getLong("id");
         user_name = resultSet.getString("user_name");
         email = resultSet.getString("email");
-        users.add(new User(user_name, email));
+        //users.add(new hiber.User(user_name, email));
         System.out.println(resultSet.getLong("id")
                 + " " + resultSet.getString("user_name")
                 + " " + resultSet.getString("email"));
@@ -32,7 +34,7 @@ public class Main {
       /*PreparedStatement preparedStatement = connection.prepareStatement
               ("INSERT INTO users (user_name, email) VALUES (?, ?, ?)");
 
-      User user = new User("John_Doe", "john@yahoo.com");
+      hiber.User user = new hiber.User("John_Doe", "john@yahoo.com");
 
       preparedStatement.setString(1, user.getUser_name());
       preparedStatement.setString(2, user.getUser_name());
