@@ -9,15 +9,13 @@ public class CitizenDAOImpl implements DAO {
         this.connection = connection;
     }
 
-<<<<<<< HEAD
     public void create(String first_name, String last_name, long age, long street_id) throws SQLException {
-=======
+
     public void create(String first_name, String last_name, int age, Long street_id) throws SQLException {
         PreparedStatement preparedStatement = connection.prepareStatement
                 ("INSERT INTO citizen (first_name, last_name, age, street_id) " +
                         "VALUES (?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
         Citizen citizen = new Citizen(first_name, last_name, age, street_id);
->>>>>>> 811f6c6662d32013127b7aabfc05c582ac1d1d96
 
         PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO citizen (first_name, last_name, age, street_id) VALUES (?, ?, ?, ?)");
         Citizen citizen = new Citizen(first_name, last_name, age, street_id);
@@ -29,17 +27,14 @@ public class CitizenDAOImpl implements DAO {
         preparedStatement.execute();
     }
 
-<<<<<<< HEAD
+
     public void update(long id, long street_id) throws SQLException  {
         PreparedStatement update = connection.prepareStatement("UPDATE citizen SET street_id = ? WHERE id = ?");
-=======
     public void create(String s1, String s2, String s3) throws SQLException {
 
     }
 
     public void update(int id, String s1) {
->>>>>>> 811f6c6662d32013127b7aabfc05c582ac1d1d96
-
         update.setLong(1, street_id);
         update.setLong(2, id);
         update.executeUpdate();
@@ -53,12 +48,10 @@ public class CitizenDAOImpl implements DAO {
         update.executeUpdate();
     }
 
-<<<<<<< HEAD
     public void update(long id, String last_name, long street_id) {}
 
     public void update(long id_new, String user_name, String email, String password){
     }
-=======
     public void update(int id, String s1, String s2, String s3) throws SQLException {
 
     }
@@ -74,7 +67,6 @@ public class CitizenDAOImpl implements DAO {
         preparedStatement.setInt(4, id_new);
         preparedStatement.executeUpdate();
     }*/
->>>>>>> 811f6c6662d32013127b7aabfc05c582ac1d1d96
 
     public void delete() {
 
