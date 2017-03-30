@@ -4,6 +4,11 @@ import java.util.List;
 
 public class CitizenDAOImpl implements DAO {
     Connection connection;
+    long id;
+    String firstName;
+    String lastName;
+    int age;
+    long streetId;
 
     public CitizenDAOImpl(Connection connection) {
         this.connection = connection;
@@ -46,18 +51,6 @@ public class CitizenDAOImpl implements DAO {
         update.executeUpdate();
     }
 
-    /*public void update(int id_new, String user_name, String email, String password) throws SQLException {
-        PreparedStatement preparedStatement = connection.prepareStatement("UPDATE citizen " +
-                "SET (first_name = ?, last_name = ?, age = ?, street_id = ?) WHERE id = ?");
-        Citizen citizen = new Citizen(user_name, email, password);
-
-        preparedStatement.setString(1, citizen.getUser_name());
-        preparedStatement.setString(2, citizen.getEmail());
-        preparedStatement.setString(3, citizen.getPassword());
-        preparedStatement.setInt(4, id_new);
-        preparedStatement.executeUpdate();
-    }*/
-
     public void delete(long id) throws SQLException {
         PreparedStatement update = connection.prepareStatement("DELETE citizen WHERE id = ?");
         update.setLong(1, id);
@@ -99,19 +92,18 @@ public class CitizenDAOImpl implements DAO {
         }
     }
 
-    public void readOneByEmail(String email) throws SQLException {
+    public Citizen readOneByEmail(String email) throws SQLException {
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery("SELECT * FROM CITIZEN WHERE email = ?");
 
         while (resultSet.next()) {
             long id = resultSet.getLong("ID");
-            String firstName = resultSet.getString("FIRST_NAME");
-            String lastName = resultSet.getString("LAST_NAME");
+            firstName = resultSet.getString("FIRST_NAME");
+            lastName = resultSet.getString("LAST_NAME");
             email = resultSet.getString("EMAIL");
-            int age = resultSet.getInt("AGE");
-            long streetId = resultSet.getLong("STREET_ID");
-
-            new Citizen(id, firstName, lastName, email, age, streetId);
+            age = resultSet.getInt("AGE");
+            streetId = resultSet.getLong("STREET_ID");
         }
+        return new Citizen(id, firstName, lastName, email, age, streetId);
     }
 }
