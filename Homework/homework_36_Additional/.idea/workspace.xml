@@ -27,11 +27,11 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.29310346">
-              <caret line="17" column="73" selection-start-line="17" selection-start-column="73" selection-end-line="17" selection-end-column="73" />
+            <state vertical-scroll-proportion="-0.050147492">
+              <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1490374981361" expanded="true" signature="664:685" placeholder="SELECT * FRO..citizen..." />
+                <marker date="1490916331522" expanded="true" signature="663:684" placeholder="SELECT * FRO... citizen" />
               </folding>
             </state>
           </provider>
@@ -52,22 +52,17 @@
       <file leaf-file-name="CitizenDAOImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/CitizenDAOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state vertical-scroll-proportion="0.24107143">
-              <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1490621569835" expanded="true" signature="424:503" placeholder="INSERT INTO citizen... " />
-                <marker date="1490621569835" expanded="true" signature="1011:1056" placeholder="UPDATE citiz... " />
-                <marker date="1490621569835" expanded="true" signature="1305:1350" placeholder="UPDATE citiz... " />
-                <marker date="1490621569835" expanded="true" signature="1837:1858" placeholder="SELECT * FRO... CITIZEN" />
-=======
-            <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding>
-                <marker date="1490379846822" expanded="true" signature="388:496" placeholder="INSERT INTO citizen..." />
-                <marker date="1490379846822" expanded="true" signature="1383:1491" placeholder="UPDATE citiz..." />
->>>>>>> 811f6c6662d32013127b7aabfc05c582ac1d1d96
+                <marker date="1490916169755" expanded="true" signature="588:706" placeholder="INSERT INTO citizen... " />
+                <marker date="1490916169755" expanded="true" signature="1316:1361" placeholder="UPDATE citiz... " />
+                <marker date="1490916169755" expanded="true" signature="1605:1646" placeholder="UPDATE citiz... " />
+                <marker date="1490916169755" expanded="true" signature="1908:1968" placeholder="UPDATE citiz... " />
+                <marker date="1490916169755" expanded="true" signature="2512:2533" placeholder="SELECT * FRO... CITIZEN" />
+                <marker date="1490916169755" expanded="true" signature="2938:2972" placeholder="SELECT * FRO... CITIZEN" />
+                <marker date="1490916169755" expanded="true" signature="3285:3322" placeholder="SELECT * FRO... CITIZEN" />
               </folding>
             </state>
           </provider>
@@ -77,11 +72,8 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/Citizen.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-<<<<<<< HEAD
-              <caret line="62" column="33" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
-=======
-              <caret line="18" column="83" selection-start-line="18" selection-start-column="83" selection-end-line="18" selection-end-column="83" />
->>>>>>> 811f6c6662d32013127b7aabfc05c582ac1d1d96
+              <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+              <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -111,6 +103,7 @@
         <option value="$PROJECT_DIR$/src/main/java/Citizen.java" />
         <option value="$PROJECT_DIR$/src/main/java/DAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/CitizenDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CitizenDAOImplTest.groovy" />
       </list>
     </option>
   </component>
@@ -132,9 +125,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="4" />
-    <option name="width" value="712" />
-    <option name="height" value="738" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -162,8 +156,8 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -206,13 +200,26 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="C:/Program Files/Java/spock-core-1.0-groovy-2.4.jar!/" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Spock" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15625" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="spock.lang.Specification" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -550,6 +557,18 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -661,57 +680,44 @@
       <updated>1490274487422</updated>
       <workItem from="1490274489228" duration="63000" />
       <workItem from="1490274575403" duration="2081000" />
-<<<<<<< HEAD
       <workItem from="1490358597337" duration="8499000" />
       <workItem from="1490606756507" duration="6579000" />
-=======
       <workItem from="1490358597337" duration="7901000" />
       <workItem from="1490378020704" duration="2221000" />
->>>>>>> 811f6c6662d32013127b7aabfc05c582ac1d1d96
+      <workItem from="1490917339925" duration="657000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-<<<<<<< HEAD
-    <option name="totallyTimeSpent" value="17222000" />
-=======
-    <option name="totallyTimeSpent" value="12266000" />
->>>>>>> 811f6c6662d32013127b7aabfc05c582ac1d1d96
+    <option name="totallyTimeSpent" value="12923000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="4" y="0" width="712" height="738" extended-state="1" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34415585" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-<<<<<<< HEAD
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39935064" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-=======
->>>>>>> 811f6c6662d32013127b7aabfc05c582ac1d1d96
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39934534" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34415585" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-<<<<<<< HEAD
-=======
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39935064" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
->>>>>>> 811f6c6662d32013127b7aabfc05c582ac1d1d96
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -753,14 +759,57 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1490916331522" expanded="true" signature="663:684" placeholder="SELECT * FRO... citizen" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CitizenDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1490916169755" expanded="true" signature="588:706" placeholder="INSERT INTO citizen... " />
+            <marker date="1490916169755" expanded="true" signature="1316:1361" placeholder="UPDATE citiz... " />
+            <marker date="1490916169755" expanded="true" signature="1605:1646" placeholder="UPDATE citiz... " />
+            <marker date="1490916169755" expanded="true" signature="1908:1968" placeholder="UPDATE citiz... " />
+            <marker date="1490916169755" expanded="true" signature="2512:2533" placeholder="SELECT * FRO... CITIZEN" />
+            <marker date="1490916169755" expanded="true" signature="2938:2972" placeholder="SELECT * FRO... CITIZEN" />
+            <marker date="1490916169755" expanded="true" signature="3285:3322" placeholder="SELECT * FRO... CITIZEN" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Citizen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="17" column="73" selection-start-line="17" selection-start-column="73" selection-end-line="17" selection-end-column="73" />
           <folding>
             <element signature="imports" expanded="true" />
-<<<<<<< HEAD
-            <marker date="1490369579771" expanded="true" signature="664:685" placeholder="SELECT * FRO... USERS" />
-=======
-            <marker date="1490374981361" expanded="true" signature="664:685" placeholder="SELECT * FRO..citizen..." />
->>>>>>> 811f6c6662d32013127b7aabfc05c582ac1d1d96
+            <marker date="1490916331522" expanded="true" signature="663:684" placeholder="SELECT * FRO... citizen" />
           </folding>
         </state>
       </provider>
@@ -769,13 +818,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-<<<<<<< HEAD
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-=======
-          <folding />
->>>>>>> 811f6c6662d32013127b7aabfc05c582ac1d1d96
         </state>
       </provider>
     </entry>
@@ -784,16 +829,14 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-<<<<<<< HEAD
             <element signature="imports" expanded="true" />
-            <marker date="1490621569835" expanded="true" signature="424:503" placeholder="INSERT INTO citizen... " />
-            <marker date="1490621569835" expanded="true" signature="1011:1056" placeholder="UPDATE citiz... " />
-            <marker date="1490621569835" expanded="true" signature="1305:1350" placeholder="UPDATE citiz... " />
-            <marker date="1490621569835" expanded="true" signature="1837:1858" placeholder="SELECT * FRO... CITIZEN" />
-=======
-            <marker date="1490379846822" expanded="true" signature="388:496" placeholder="INSERT INTO citizen..." />
-            <marker date="1490379846822" expanded="true" signature="1383:1491" placeholder="UPDATE citiz..." />
->>>>>>> 811f6c6662d32013127b7aabfc05c582ac1d1d96
+            <marker date="1490916169755" expanded="true" signature="588:706" placeholder="INSERT INTO citizen... " />
+            <marker date="1490916169755" expanded="true" signature="1316:1361" placeholder="UPDATE citiz... " />
+            <marker date="1490916169755" expanded="true" signature="1605:1646" placeholder="UPDATE citiz... " />
+            <marker date="1490916169755" expanded="true" signature="1908:1968" placeholder="UPDATE citiz... " />
+            <marker date="1490916169755" expanded="true" signature="2512:2533" placeholder="SELECT * FRO... CITIZEN" />
+            <marker date="1490916169755" expanded="true" signature="2938:2972" placeholder="SELECT * FRO... CITIZEN" />
+            <marker date="1490916169755" expanded="true" signature="3285:3322" placeholder="SELECT * FRO... CITIZEN" />
           </folding>
         </state>
       </provider>
@@ -820,7 +863,7 @@
           <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1490374981361" expanded="true" signature="664:685" placeholder="SELECT * FRO..citizen..." />
+            <marker date="1490916331522" expanded="true" signature="663:684" placeholder="SELECT * FRO... citizen" />
           </folding>
         </state>
       </provider>
@@ -840,16 +883,14 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
-<<<<<<< HEAD
             <element signature="imports" expanded="true" />
-            <marker date="1490621569835" expanded="true" signature="424:503" placeholder="INSERT INTO citizen... " />
-            <marker date="1490621569835" expanded="true" signature="1011:1056" placeholder="UPDATE citiz... " />
-            <marker date="1490621569835" expanded="true" signature="1305:1350" placeholder="UPDATE citiz... " />
-            <marker date="1490621569835" expanded="true" signature="1837:1858" placeholder="SELECT * FRO... CITIZEN" />
-=======
-            <marker date="1490379846822" expanded="true" signature="388:496" placeholder="INSERT INTO citizen..." />
-            <marker date="1490379846822" expanded="true" signature="1383:1491" placeholder="UPDATE citiz..." />
->>>>>>> 811f6c6662d32013127b7aabfc05c582ac1d1d96
+            <marker date="1490916169755" expanded="true" signature="588:706" placeholder="INSERT INTO citizen... " />
+            <marker date="1490916169755" expanded="true" signature="1316:1361" placeholder="UPDATE citiz... " />
+            <marker date="1490916169755" expanded="true" signature="1605:1646" placeholder="UPDATE citiz... " />
+            <marker date="1490916169755" expanded="true" signature="1908:1968" placeholder="UPDATE citiz... " />
+            <marker date="1490916169755" expanded="true" signature="2512:2533" placeholder="SELECT * FRO... CITIZEN" />
+            <marker date="1490916169755" expanded="true" signature="2938:2972" placeholder="SELECT * FRO... CITIZEN" />
+            <marker date="1490916169755" expanded="true" signature="3285:3322" placeholder="SELECT * FRO... CITIZEN" />
           </folding>
         </state>
       </provider>
@@ -882,7 +923,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-<<<<<<< HEAD
         </state>
       </provider>
     </entry>
@@ -902,37 +942,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Citizen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="62" column="33" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-=======
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/DAO.java">
->>>>>>> 811f6c6662d32013127b7aabfc05c582ac1d1d96
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Citizen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-<<<<<<< HEAD
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-=======
-          <caret line="18" column="83" selection-start-line="18" selection-start-column="83" selection-end-line="18" selection-end-column="83" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Citizen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -940,36 +965,107 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/CitizenDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
           <folding>
-            <marker date="1490379846822" expanded="true" signature="388:496" placeholder="INSERT INTO citizen..." />
-            <marker date="1490379846822" expanded="true" signature="1383:1491" placeholder="UPDATE citiz..." />
->>>>>>> 811f6c6662d32013127b7aabfc05c582ac1d1d96
+            <element signature="imports" expanded="true" />
+            <marker date="1490916169755" expanded="true" signature="588:706" placeholder="INSERT INTO citizen... " />
+            <marker date="1490916169755" expanded="true" signature="1316:1361" placeholder="UPDATE citiz... " />
+            <marker date="1490916169755" expanded="true" signature="1605:1646" placeholder="UPDATE citiz... " />
+            <marker date="1490916169755" expanded="true" signature="1908:1968" placeholder="UPDATE citiz... " />
+            <marker date="1490916169755" expanded="true" signature="2512:2533" placeholder="SELECT * FRO... CITIZEN" />
+            <marker date="1490916169755" expanded="true" signature="2938:2972" placeholder="SELECT * FRO... CITIZEN" />
+            <marker date="1490916169755" expanded="true" signature="3285:3322" placeholder="SELECT * FRO... CITIZEN" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state vertical-scroll-proportion="0.24107143">
-          <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+        <state vertical-scroll-proportion="-0.050147492">
+          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1490621569835" expanded="true" signature="424:503" placeholder="INSERT INTO citizen... " />
-            <marker date="1490621569835" expanded="true" signature="1011:1056" placeholder="UPDATE citiz... " />
-            <marker date="1490621569835" expanded="true" signature="1305:1350" placeholder="UPDATE citiz... " />
-            <marker date="1490621569835" expanded="true" signature="1837:1858" placeholder="SELECT * FRO... CITIZEN" />
-=======
-        <state vertical-scroll-proportion="0.29310346">
-          <caret line="17" column="73" selection-start-line="17" selection-start-column="73" selection-end-line="17" selection-end-column="73" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1490374981361" expanded="true" signature="664:685" placeholder="SELECT * FRO..citizen..." />
->>>>>>> 811f6c6662d32013127b7aabfc05c582ac1d1d96
+            <marker date="1490916331522" expanded="true" signature="663:684" placeholder="SELECT * FRO... citizen" />
           </folding>
         </state>
       </provider>
     </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>groovy-2.4.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>homework_36_Additional</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>spock-core-1.0-groovy-2.4</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

@@ -13,7 +13,7 @@ public class Main {
       Class.forName("com.mysql.jdbc.Driver");
       Connection connectionMySQL = DriverManager.getConnection("jdbc:mysql://localhost:3306/address_book", "root", "Canada020888");
       CitizenDAOImpl citizenDAO = new CitizenDAOImpl(connectionMySQL);
-      citizenDAO.create("John Doe", "john@yahoo.com", "doe1234");
+      citizenDAO.create("John", "Doe", "john@yahoo.com", 44, 5);
       Statement statement = connectionMySQL.createStatement();
       ResultSet resultSet = statement.executeQuery("SELECT * FROM citizen");
 
@@ -26,7 +26,7 @@ public class Main {
         user_name = resultSet.getString("user_name");
         email = resultSet.getString("email");
         password = resultSet.getString("password");
-        citizens.add(new Citizen(user_name, email, password));
+        //citizens.add(new Citizen(user_name, email, password));
         System.out.println(resultSet.getLong("id")
                 + " " + resultSet.getString("user_name")
                 + " " + resultSet.getString("email"));

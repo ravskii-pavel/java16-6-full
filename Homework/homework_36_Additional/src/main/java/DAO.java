@@ -7,7 +7,7 @@ public interface DAO<T> {
     void update (long id, String email) throws SQLException;
     void delete (long id) throws SQLException;
     ArrayList read () throws SQLException;
-    void readOneById (long id) throws SQLException;
+    T readOneById (long id) throws SQLException;
     T readOneByEmail (String email) throws SQLException;
 
 }
