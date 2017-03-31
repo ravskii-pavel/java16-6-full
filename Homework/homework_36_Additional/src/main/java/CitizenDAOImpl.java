@@ -16,7 +16,7 @@ public class CitizenDAOImpl implements DAO {
         this.connection = connection;
     }
 
-    public void create (String first_name, String last_name, String email, int age, long street_id) throws SQLException {
+    public Citizen create (String first_name, String last_name, String email, int age, long street_id) throws SQLException {
         PreparedStatement preparedStatement = connection.prepareStatement
                 ("INSERT INTO citizen (first_name, last_name, age, street_id, email) " +
                         "VALUES (?, ?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
@@ -29,6 +29,13 @@ public class CitizenDAOImpl implements DAO {
         preparedStatement.setLong(4, citizen.getStreet_id());
         preparedStatement.setString(5, citizen.getEmail());
         preparedStatement.execute();
+
+        ResultSet generatedKeys = preparedStatement.getGeneratedKeys();
+        if (generatedKeys.next()){
+            id = generatedKeys.getLong("GENERATED_KEY");
+            citizen.setId(id);
+        }
+        return citizen;
     }
 
     public void update(long id, long street_id) throws SQLException  {
