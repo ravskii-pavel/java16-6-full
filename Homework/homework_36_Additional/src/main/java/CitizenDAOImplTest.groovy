@@ -15,11 +15,14 @@ class CitizenDAOImplTest extends Specification {
             Connection connectionMySQL = DriverManager.getConnection("jdbc:mysql://localhost:3306/address_book", "root", "Canada020888");
             citizenDAO = new CitizenDAOImpl(connectionMySQL);
             Statement statement = connectionMySQL.createStatement();
-            connectionMySQL.close();
         }
         catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+    def @Shared connectionMySQL
+    def cleanupSpec() {
+        connectionMySQL.close();
     }
 
     def "ifAddedNewCitizen"() {
@@ -27,15 +30,19 @@ class CitizenDAOImplTest extends Specification {
         expect:
         Citizen citizen = (Citizen)(citizenDAO.create(actualFirstName, actualLastName, actualEmail, actualAge, actualStreetId));
 
-
         expectedFirstName == ((Citizen)citizenDAO.readOneById(citizen.getId())).first_name;
+        expectedLastName == ((Citizen)citizenDAO.readOneById(citizen.getId())).last_name;
+        expectedAge == ((Citizen)citizenDAO.readOneById(citizen.getId())).age;
+        expectedEmail == ((Citizen)citizenDAO.readOneById(citizen.getId())).email;
+        expectedStreetId == ((Citizen)citizenDAO.readOneById(citizen.getId())).street_id;
+
+
         expectedLastName == ((Citizen)citizenDAO.readOneById(citizen.getId())).last_name;
 
         where:
-        actualFirstName | actualLastName | actualEmail      | actualAge | actualStreetId | expectedFirstName | expectedLastName | expectedEmail | expectedAge | expectedStreetId
-        "Mark"          | "Walberg"      | "mark@yahoo.com" | 59        | 1              |
-        "scotch"   | 330            | "scotch"          | 440
-        "scotch"   | 1360           | "scotch"          | 1800
+        actualFirstName | actualLastName | actualEmail      | actualAge | actualStreetId | expectedFirstName | expectedLastName | expectedEmail   | expectedAge | expectedStreetId
+        "Mark"          | "Walberg"      | "mark@yahoo.com" | 59        | 1              | "Mark"            | "Walberg"        | "mark@yahoo.com"| 59L         | 1L
+
     }
 
 }
