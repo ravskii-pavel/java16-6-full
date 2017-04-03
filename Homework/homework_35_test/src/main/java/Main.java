@@ -1,7 +1,9 @@
-import hiber.User;
-
+import hiber.Employee;
+import java.security.*;
+import java.security.Timestamp;
 import java.sql.*;
-import java.util.ArrayList;
+import java.util.*;
+import java.util.Date;
 
 /**
  * Created by java on 17.03.2017.
@@ -11,7 +13,12 @@ public class Main {
 
   public static void main(String[] args) throws ClassNotFoundException, SQLException, IllegalAccessException {
 
-    try {
+    //Object date = 11-11-11;
+    Employee employee = new Employee("Axel","Rose","", 2300);
+
+
+
+    /*try {
       Class.forName("com.mysql.jdbc.Driver");
       Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/forum", "root", "Canada020888");
       Statement statement = connection.createStatement();
@@ -29,7 +36,8 @@ public class Main {
         System.out.println(resultSet.getLong("id")
                 + " " + resultSet.getString("user_name")
                 + " " + resultSet.getString("email"));
-      }
+      }*/
+
 
       /*PreparedStatement preparedStatement = connection.prepareStatement
               ("INSERT INTO users (user_name, email) VALUES (?, ?, ?)");
@@ -45,11 +53,12 @@ public class Main {
 
 
 
-      connection.close();
+     /* connection.close();
     } catch (SQLException e) {
       e.printStackTrace();
     } catch (ClassNotFoundException e) {
       e.printStackTrace();
     }
+  }*/
   }
 }
