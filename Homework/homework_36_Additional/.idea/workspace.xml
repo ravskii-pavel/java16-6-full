@@ -213,7 +213,7 @@
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="C:/Program Files/Java/spock-core-1.0-groovy-2.4.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../homework_36_Add_new" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Spock" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15625" />
@@ -718,12 +718,12 @@
       <workItem from="1490917339925" duration="657000" />
       <workItem from="1490948794741" duration="7001000" />
       <workItem from="1491213564187" duration="14000" />
-      <workItem from="1491255618285" duration="149000" />
+      <workItem from="1491255618285" duration="289000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20087000" />
+    <option name="totallyTimeSpent" value="20227000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />

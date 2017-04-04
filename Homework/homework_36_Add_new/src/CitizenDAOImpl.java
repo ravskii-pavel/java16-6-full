@@ -80,8 +80,7 @@ public class CitizenDAOImpl implements DAO {
 
     public Citizen readOneById(long id) throws SQLException {
         Statement statement = connection.createStatement();
-        ResultSet resultSet = statement.executeQuery("SELECT * FROM CITIZEN WHERE id = ?");
-
+        ResultSet resultSet = statement.executeQuery("SELECT * FROM CITIZEN WHERE id =" + id +"");
         while (resultSet.next()) {
             citizen = createCitizen(resultSet);
         }
@@ -90,7 +89,7 @@ public class CitizenDAOImpl implements DAO {
 
     public Citizen readOneByEmail(String email) throws SQLException {
         Statement statement = connection.createStatement();
-        ResultSet resultSet = statement.executeQuery("SELECT * FROM CITIZEN WHERE email = ?");
+        ResultSet resultSet = statement.executeQuery("SELECT * FROM CITIZEN WHERE email =" + email + "");
 
         while (resultSet.next()) {
             citizen = createCitizen(resultSet);

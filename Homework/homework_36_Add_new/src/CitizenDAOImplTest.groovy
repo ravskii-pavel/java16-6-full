@@ -9,6 +9,7 @@ import java.sql.Statement
 class CitizenDAOImplTest extends Specification {
 
     def @Shared DAO citizenDAO
+    def @Shared connectionMySQL
     def setupSpec() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -20,29 +21,30 @@ class CitizenDAOImplTest extends Specification {
             e.printStackTrace();
         }
     }
-    def @Shared connectionMySQL
-    def cleanupSpec() {
-        connectionMySQL.close();
-    }
+//       def cleanupSpec() {
+//             connectionMySQL.close();
+//       }
 
     def "ifAddedNewCitizen"() {
 
         expect:
         Citizen citizen = (Citizen)(citizenDAO.create(actualFirstName, actualLastName, actualEmail, actualAge, actualStreetId));
+        Citizen getCitizen = (Citizen)(citizenDAO.readOneById(citizen.getId()));
 
-        expectedFirstName == ((Citizen)citizenDAO.readOneById(citizen.getId())).first_name;
-        expectedLastName == ((Citizen)citizenDAO.readOneById(citizen.getId())).last_name;
-        expectedAge == ((Citizen)citizenDAO.readOneById(citizen.getId())).age;
-        expectedEmail == ((Citizen)citizenDAO.readOneById(citizen.getId())).email;
-        expectedStreetId == ((Citizen)citizenDAO.readOneById(citizen.getId())).street_id;
+        expectedFirstName == getCitizen.first_name;
+        expectedLastName == getCitizen.last_name;
+        expectedAge == getCitizen.age;
+        expectedEmail == getCitizen.email;
+        expectedStreetId == getCitizen.street_id;
 
 
         expectedLastName == ((Citizen)citizenDAO.readOneById(citizen.getId())).last_name;
 
         where:
         actualFirstName | actualLastName | actualEmail      | actualAge | actualStreetId | expectedFirstName | expectedLastName | expectedEmail   | expectedAge | expectedStreetId
-        "Mark"          | "Walberg"      | "mark@yahoo.com" | 59        | 1              | "Mark"            | "Walberg"        | "mark@yahoo.com"| 59L         | 1L
+        "Mark"          | "Walberg"      | "mark@yahoo.com" | 59        | 1L            | "Mark"            | "Walberg"        | "mark@yahoo.com"| 59           | 1L
 
     }
+
 
 }

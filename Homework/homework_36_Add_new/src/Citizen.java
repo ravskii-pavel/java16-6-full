@@ -6,7 +6,7 @@ public class Citizen {
     long id;
     String first_name;
     String last_name;
-    long age;
+    int age;
     String email;
     long street_id;
 
@@ -57,11 +57,11 @@ public class Citizen {
         this.last_name = last_name;
     }
 
-    public long getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(long age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
