@@ -40,14 +40,23 @@ public class Employee {
     @Column(name = "date_create")
     private Date creationDate = new Date();
 
+    @OneToOne(fetch = FetchType.EAGER, mappedBy = "employee")
+    private PhoneNumber phoneNumber;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "post_id", nullable = false)
+    private Post post;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "department_id", nullable = false)
     private Department department;
 
-    public Employee(String firstName, String lastName, String secondName, double salary) {
+    public Employee(String firstName, String lastName, String secondName, double salary, Department department, Post post) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.secondName = secondName;
         this.salary = salary;
+        this.department = department;
+        this.post = post;
     }
 }

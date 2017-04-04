@@ -15,10 +15,10 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-@ToString
+@ToString(exclude = "employees")
 @Entity
-@Table(name = "departments")
-public class Department {
+@Table(name = "posts")
+public class Post {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -28,10 +28,10 @@ public class Department {
     @Column(name = "date_create")
     private Date creationDate;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "stock")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "post")
     private List<Employee> employees;
 
-    public Department(String title, Date creationDate) {
+    public Post(String title, Date creationDate) {
         this.title = title;
         this.creationDate = creationDate;
     }
