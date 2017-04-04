@@ -8,8 +8,7 @@ import java.sql.Statement
 
 class CitizenDAOImplTest extends Specification {
 
-    def @Shared DAO citizenDAO
-    def @Shared connectionMySQL
+    def @Shared CitizenDAOImpl citizenDAO
     def setupSpec() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -21,29 +20,61 @@ class CitizenDAOImplTest extends Specification {
             e.printStackTrace();
         }
     }
-//       def cleanupSpec() {
-//             connectionMySQL.close();
-//       }
+    def cleanupSpec() {
+        citizenDAO.getConnection().close();
+    }
 
-    def "ifAddedNewCitizen"() {
+    def "isAddedNewCitizen"() {
 
         expect:
-        Citizen citizen = (Citizen)(citizenDAO.create(actualFirstName, actualLastName, actualEmail, actualAge, actualStreetId));
-        Citizen getCitizen = (Citizen)(citizenDAO.readOneById(citizen.getId()));
+        Citizen citizen = citizenDAO.create(actualFirstName, actualLastName, actualEmail, actualAge, actualStreetId);
 
-        expectedFirstName == getCitizen.first_name;
-        expectedLastName == getCitizen.last_name;
-        expectedAge == getCitizen.age;
-        expectedEmail == getCitizen.email;
-        expectedStreetId == getCitizen.street_id;
-
-
-        expectedLastName == ((Citizen)citizenDAO.readOneById(citizen.getId())).last_name;
+        Citizen citizenFromDB = citizenDAO.readOneById(citizen.getId());
+        expectedFirstName == citizenFromDB.first_name;
+        expectedLastName == citizenFromDB.last_name;
+        expectedAge == citizenFromDB.age;
+        expectedEmail == citizenFromDB.email;
+        expectedStreetId == citizenFromDB.street_id;
 
         where:
         actualFirstName | actualLastName | actualEmail      | actualAge | actualStreetId | expectedFirstName | expectedLastName | expectedEmail   | expectedAge | expectedStreetId
-        "Mark"          | "Walberg"      | "mark@yahoo.com" | 59        | 1L            | "Mark"            | "Walberg"        | "mark@yahoo.com"| 59           | 1L
+        "Mark"          | "Walberg"      | "mark@yahoo.com" | 59        | 1L             | "Mark"            | "Walberg"        | "mark@yahoo.com"| 59           | 1L
+        "John"          | "Travolta"     | "trav@gmail.com" | 47        | 3L             | "John"            | "Travolta"       | "trav@gmail.com"| 47           | 3L
+    }
 
+    def "isReadOneCitizenByID"() {
+
+        expect:
+
+        Citizen citizenFromDB = citizenDAO.readOneById(actualID);
+        expectedFirstName == citizenFromDB.first_name;
+        expectedLastName == citizenFromDB.last_name;
+        expectedAge == citizenFromDB.age;
+        expectedEmail == citizenFromDB.email;
+        expectedStreetId == citizenFromDB.street_id;
+
+        where:
+        actualID | expectedFirstName | expectedLastName | expectedEmail   | expectedAge | expectedStreetId
+        19L      | "Mark"            | "Walberg"        | "mark@yahoo.com"| 59          | 1L
+        4L       | "Анна"            | "Золотарева"     | ""              | 15          | 0
+        11L      | "Тимофей"         | "Ткаченко"       | ""              | 47          | 3L
+    }
+    def "isReadOneCitizenByEmail"() {
+
+        expect:
+
+        Citizen citizenFromDB = citizenDAO.readOneByEmail(actualEmail);
+        expectedFirstName == citizenFromDB.first_name;
+        expectedLastName == citizenFromDB.last_name;
+        expectedAge == citizenFromDB.age;
+        expectedEmail == citizenFromDB.email;
+        expectedStreetId == citizenFromDB.street_id;
+
+        where:
+        actualEmail      | expectedFirstName | expectedLastName | expectedEmail   | expectedAge | expectedStreetId
+        "mark@yahoo.com" | "Mark"            | "Walberg"        | "mark@yahoo.com"| 59          | 1L
+        "trav@gmail.com" | "John"            | "Travolta"       | "trav@gmail.com"| 47          | 3L
+        "john@yahoo.com" | "John"            | "Doe"            | "john@yahoo.com"| 44          | 5
     }
 
 

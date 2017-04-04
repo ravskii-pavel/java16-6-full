@@ -4,12 +4,6 @@ import java.util.List;
 
 public class CitizenDAOImpl implements DAO {
     Connection connection;
-    long id;
-    String firstName;
-    String lastName;
-    String email;
-    int age;
-    long streetId;
     Citizen citizen = null;
 
     public CitizenDAOImpl(Connection connection) {
@@ -21,7 +15,7 @@ public class CitizenDAOImpl implements DAO {
                 ("INSERT INTO citizen (first_name, last_name, age, street_id, email) " +
                         "VALUES (?, ?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
 
-        Citizen citizen = new Citizen(first_name, last_name, email, age, street_id);
+        citizen = new Citizen(first_name, last_name, email, age, street_id);
 
         preparedStatement.setString(1, citizen.getFirst_name());
         preparedStatement.setString(2, citizen.getLast_name());
@@ -32,7 +26,7 @@ public class CitizenDAOImpl implements DAO {
 
         ResultSet generatedKeys = preparedStatement.getGeneratedKeys();
         if (generatedKeys.next()){
-            id = generatedKeys.getLong("GENERATED_KEY");
+            long id = generatedKeys.getLong("GENERATED_KEY");
             citizen.setId(id);
         }
         return citizen;
@@ -66,6 +60,7 @@ public class CitizenDAOImpl implements DAO {
         update.executeUpdate();
     }
 
+
     public ArrayList<Citizen> read() throws SQLException {
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery("SELECT * FROM CITIZEN");
@@ -80,7 +75,7 @@ public class CitizenDAOImpl implements DAO {
 
     public Citizen readOneById(long id) throws SQLException {
         Statement statement = connection.createStatement();
-        ResultSet resultSet = statement.executeQuery("SELECT * FROM CITIZEN WHERE id =" + id +"");
+        ResultSet resultSet = statement.executeQuery("SELECT * FROM CITIZEN WHERE id =" + id);
         while (resultSet.next()) {
             citizen = createCitizen(resultSet);
         }
@@ -89,7 +84,7 @@ public class CitizenDAOImpl implements DAO {
 
     public Citizen readOneByEmail(String email) throws SQLException {
         Statement statement = connection.createStatement();
-        ResultSet resultSet = statement.executeQuery("SELECT * FROM CITIZEN WHERE email =" + email + "");
+        ResultSet resultSet = statement.executeQuery("SELECT * FROM CITIZEN WHERE email ='" + email + "'");
 
         while (resultSet.next()) {
             citizen = createCitizen(resultSet);
@@ -98,13 +93,17 @@ public class CitizenDAOImpl implements DAO {
     }
 
     public Citizen createCitizen(ResultSet resultSet) throws SQLException {
-        id = resultSet.getLong("ID");
-        firstName = resultSet.getString("FIRST_NAME");
-        lastName = resultSet.getString("LAST_NAME");
-        email = resultSet.getString("EMAIL");
-        age = resultSet.getInt("AGE");
-        streetId = resultSet.getLong("STREET_ID");
 
+        long  id = resultSet.getLong("ID");
+        String firstName = resultSet.getString("FIRST_NAME");
+        String lastName = resultSet.getString("LAST_NAME");
+        String email = resultSet.getString("EMAIL");
+        int age = resultSet.getInt("AGE");
+        long streetId = resultSet.getLong("STREET_ID");
         return new Citizen(id, firstName, lastName, email, age, streetId);
+    }
+
+    public Connection getConnection() {
+        return connection;
     }
 }
