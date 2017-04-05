@@ -19,13 +19,21 @@
       </profile>
       <profile default="false" name="Annotation profile for homework_38" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="homework_38" />
       </profile>
+      <profile default="false" name="Annotation profile for hibernate-homework_38" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="hibernate-homework_38" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
+      <module name="hibernate-homework_38" target="1.7" />
       <module name="homework_38" target="1.7" />
     </bytecodeTargetLevel>
   </component>

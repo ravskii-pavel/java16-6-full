@@ -59,4 +59,9 @@ public class Employee {
         this.department = department;
         this.post = post;
     }
+
+
+    public void setPhoneNumber(PhoneNumber phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 }
