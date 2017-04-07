@@ -1,6 +1,12 @@
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+//import java.util.Comparator;
 
-//import static HomeFilters.streetComparator;
+
+/*import static HomeFilters.homeNumbersComparator;
+import static HomeFilters.streetComparator;
+import static HomeFilters.peopleInHouseComparator;*/
 
 public class Main {
 
@@ -20,5 +26,9 @@ public class Main {
                 new Home("Kirova", 11, 5, 67),
                 new Home("Gagarina", 130, 9, 120)
         );
+        HomeFilters homeFilters = new HomeFilters();
+         Collections.sort(list, homeFilters.streetComparator());
+        System.out.println(list);
     }
+
 }

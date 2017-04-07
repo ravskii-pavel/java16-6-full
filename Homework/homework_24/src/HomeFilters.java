@@ -4,7 +4,7 @@ import java.util.Comparator;
  * Created by Ravskiy Pavel on 19.02.2017.
  */
 public class HomeFilters {
-    public static Comparator<Home> streetComparator() {
+    public Comparator<Home> streetComparator() {
         return new Comparator<Home>() {
             @Override
             public int compare(Home h1, Home h2) {

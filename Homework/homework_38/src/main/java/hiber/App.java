@@ -27,9 +27,7 @@ public class App {
 
             Query<Post> postQuery = session.createQuery("from Post where id = :id", Post.class);
             postQuery.setParameter("id", 9L);
-
             Post post = postQuery.uniqueResult();
-
             Employee employee = new Employee("Andrey", "Ivanov", "Robertovich", 55000, department, post);
 
             PhoneNumber phoneNumber = new PhoneNumber("380930000000", employee);
