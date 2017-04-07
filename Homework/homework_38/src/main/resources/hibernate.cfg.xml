@@ -13,5 +13,9 @@
         <mapping class="hiber.Department" />
         <mapping class="hiber.PhoneNumber" />
         <mapping class="hiber.Post" />
+        <mapping class="hiber.WorkDay" />
+        <mapping class="hiber.Tangible" />
+        <mapping class="hiber.Salary" />
+        <mapping class="hiber.Course" />
     </session-factory>
 </hibernate-configuration>
