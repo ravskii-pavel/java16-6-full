@@ -8,6 +8,8 @@ import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -20,9 +22,8 @@ public class Salary {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "emplloyee_id", nullable = false)
-    private Employee employee;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "salariesPaid")
+    private List<Employee> employees;
 
     @Column(name = "salary")
     private double salary;

@@ -51,8 +51,11 @@ public class Employee {
     @JoinColumn(name = "department_id", nullable = false)
     private Department department;
 
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "employee")
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Salary salariesPaid;
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private WorkDay workDays;
 
     public Employee(String firstName, String lastName, String secondName, double salary, Department department, Post post) {
         this.firstName = firstName;

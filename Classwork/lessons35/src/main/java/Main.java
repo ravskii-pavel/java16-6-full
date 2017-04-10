@@ -1,4 +1,7 @@
+import com.mysql.jdbc.*;
+
 import java.sql.*;
+import java.sql.Driver;
 //import com.mysql.cj.jdbc.Driver;
 
 /**
@@ -6,10 +9,9 @@ import java.sql.*;
  */
 public class Main {
 
-    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+    public static void main(String[] args) throws ClassNotFoundException, SQLException, IllegalAccessException, InstantiationException {
 
         Class.forName("com.mysql.jdbc.Driver");
-
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/forum","root","Canada020888");
 
         Statement statement = connection.createStatement();
