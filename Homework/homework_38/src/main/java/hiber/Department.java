@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -23,8 +24,11 @@ public class Department {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
     @Column
     private String title;
+
+    @Type(type = "timestamp")
     @Column(name = "date_create")
     private Date creationDate;
 

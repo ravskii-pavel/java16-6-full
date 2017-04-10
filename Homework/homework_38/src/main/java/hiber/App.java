@@ -22,13 +22,13 @@ public class App {
 
             Query<Department> departmentQuery = session.createQuery("from Department where id = :id", Department.class);
             departmentQuery.setParameter("id", 1L);
-
             Department department = departmentQuery.uniqueResult();
 
             Query<Post> postQuery = session.createQuery("from Post where id = :id", Post.class);
             postQuery.setParameter("id", 9L);
             Post post = postQuery.uniqueResult();
-            Employee employee = new Employee("Andrey", "Ivanov", "Robertovich", 55000, department, post);
+
+            Employee employee = new Employee("Andrey1", "Ivanov1", "Robertovich1", 55000, department, post);
 
             PhoneNumber phoneNumber = new PhoneNumber("380930000000", employee);
 
@@ -37,7 +37,7 @@ public class App {
             transaction.begin();
             session.save(employee);
             session.save(phoneNumber);
-            //employee.setPhoneNumber(phoneNumber);
+            employee.setPhoneNumber(phoneNumber);
 
             session.update(employee);
             transaction.commit();
