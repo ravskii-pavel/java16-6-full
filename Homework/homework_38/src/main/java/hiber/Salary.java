@@ -1,9 +1,6 @@
 package hiber;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
@@ -13,6 +10,7 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 @ToString(exclude = "employees")
 @Entity
 @Table(name = "salaries_paid")
@@ -22,7 +20,8 @@ public class Salary {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "salariesPaid")
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "employee_id")
     private List<Employee> employees;
 
     @Column(name = "salary")
@@ -35,4 +34,11 @@ public class Salary {
     @Type(type = "timestamp")
     @Column(name = "date_create")
     private Date dateCreate;
+
+    public Salary(List<Employee> employees, double salary, Date datePay, Date dateCreate) {
+        this.employees = employees;
+        this.salary = salary;
+        this.datePay = datePay;
+        this.dateCreate = dateCreate;
+    }
 }

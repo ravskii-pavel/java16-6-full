@@ -22,7 +22,8 @@ public class WorkDay {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "workDays")
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "employee_id", nullable = false)
     private List<Employee> employees;
 
     @Type(type = "timestamp")

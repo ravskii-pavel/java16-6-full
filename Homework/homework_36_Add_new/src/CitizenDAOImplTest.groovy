@@ -1,3 +1,4 @@
+import com.mysql.jdbc.Driver
 import spock.lang.Shared
 import spock.lang.Specification
 
@@ -11,7 +12,9 @@ class CitizenDAOImplTest extends Specification {
     def @Shared CitizenDAOImpl citizenDAO
     def setupSpec() {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class c = Class.forName("com.mysql.jdbc.Driver");
+           /* Driver driver = new com.mysql.jdbc.Driver();
+            Driver driver1 = new Driver();*/
             Connection connectionMySQL = DriverManager.getConnection("jdbc:mysql://localhost:3306/address_book", "root", "Canada020888");
             citizenDAO = new CitizenDAOImpl(connectionMySQL);
             Statement statement = connectionMySQL.createStatement();

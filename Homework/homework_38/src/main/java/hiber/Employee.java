@@ -40,7 +40,7 @@ public class Employee {
     @Column(name = "date_create")
     private Date creationDate = new Date();
 
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "employee")
+    @ManyToOne(fetch = FetchType.LAZY)
     private PhoneNumber phoneNumber;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -51,10 +51,10 @@ public class Employee {
     @JoinColumn(name = "department_id", nullable = false)
     private Department department;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Salary salariesPaid;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Salary salaryPaid;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
     private WorkDay workDays;
 
     public Employee(String firstName, String lastName, String secondName, double salary, Department department, Post post) {

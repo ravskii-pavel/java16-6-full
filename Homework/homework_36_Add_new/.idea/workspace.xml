@@ -15,6 +15,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/homework_36_Add_new$CitizenDAOImplTest.coverage" NAME="CitizenDAOImplTest Coverage Results" MODIFIED="1491854998789" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -27,10 +30,10 @@
       <file leaf-file-name="CitizenDAOImplTest.groovy" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CitizenDAOImplTest.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9811321">
-              <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.2724359">
+              <caret line="14" column="61" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
               <folding>
-                <element signature="e#0#24#0" expanded="true" />
+                <element signature="e#0#28#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -40,9 +43,9 @@
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="49" column="30" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="false" />
+                <marker date="1491854756729" expanded="true" signature="657:678" placeholder="SELECT * FRO... citizen" />
               </folding>
             </state>
           </provider>
@@ -73,7 +76,10 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
-              <folding />
+              <folding>
+                <element signature="e#1044#1045#0" expanded="true" />
+                <element signature="e#1072#1073#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -83,7 +89,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="79" column="47" selection-start-line="79" selection-start-column="47" selection-end-line="79" selection-end-column="47" />
-              <folding />
+              <folding>
+                <marker date="1491421624979" expanded="true" signature="485:603" placeholder="INSERT INTO citizen... " />
+                <marker date="1491421624979" expanded="true" signature="1440:1485" placeholder="UPDATE citiz... " />
+                <marker date="1491421624979" expanded="true" signature="1729:1770" placeholder="UPDATE citiz... " />
+                <marker date="1491421624979" expanded="true" signature="2032:2092" placeholder="UPDATE citiz... " />
+                <marker date="1491421624979" expanded="true" signature="2637:2658" placeholder="SELECT * FRO... CITIZEN" />
+                <marker date="1491421624979" expanded="true" signature="3063:3095" placeholder="SELECT * FRO... CITIZEN" />
+                <marker date="1491421624979" expanded="true" signature="3412:3462" placeholder="SELECT * FRO... CITIZEN" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -98,9 +112,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Citizen.java" />
         <option value="$PROJECT_DIR$/src/CitizenDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/CitizenDAOImplTest.groovy" />
       </list>
     </option>
@@ -200,91 +214,42 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="target" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="homework_36_Add_new" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="homework_36_Add_new" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../homework_38" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15625" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="JUnit.CitizenDAOImplTest.isReadOneCitizenByEmail">
-    <configuration default="false" name="CitizenDAOImplTest.ifAddedNewCitizen" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="homework_36_Add_new" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CitizenDAOImplTest" />
-      <option name="METHOD_NAME" value="ifAddedNewCitizen" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="CitizenDAOImplTest.isAddedNewCitizen" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="homework_36_Add_new" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CitizenDAOImplTest" />
-      <option name="METHOD_NAME" value="isAddedNewCitizen" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="CitizenDAOImplTest.isReadOneCitizen" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="homework_36_Add_new" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CitizenDAOImplTest" />
-      <option name="METHOD_NAME" value="isReadOneCitizen" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.CitizenDAOImplTest.isAddedNewCitizen">
     <configuration default="false" name="CitizenDAOImplTest.isReadOneCitizenByEmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="homework_36_Add_new" />
@@ -314,6 +279,63 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="CitizenDAOImplTest" />
       <option name="METHOD_NAME" value="isReadOneCitizenByID" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="homework_36_Add_new" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="CitizenDAOImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="homework_36_Add_new" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CitizenDAOImplTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="CitizenDAOImplTest.isAddedNewCitizen" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="homework_36_Add_new" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CitizenDAOImplTest" />
+      <option name="METHOD_NAME" value="isAddedNewCitizen" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -728,19 +750,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.CitizenDAOImplTest.ifAddedNewCitizen" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.CitizenDAOImplTest.isAddedNewCitizen" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.CitizenDAOImplTest.isReadOneCitizen" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.CitizenDAOImplTest.isReadOneCitizenByEmail" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.CitizenDAOImplTest.isReadOneCitizenByID" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.CitizenDAOImplTest.isReadOneCitizenByEmail" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.CitizenDAOImplTest.isReadOneCitizenByID" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.CitizenDAOImplTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.CitizenDAOImplTest.isAddedNewCitizen" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.CitizenDAOImplTest.isReadOneCitizenByEmail" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.CitizenDAOImplTest.isReadOneCitizenByID" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.CitizenDAOImplTest.isReadOneCitizen" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.CitizenDAOImplTest.isAddedNewCitizen" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.CitizenDAOImplTest.ifAddedNewCitizen" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.CitizenDAOImplTest.isAddedNewCitizen" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.CitizenDAOImplTest" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.CitizenDAOImplTest.isReadOneCitizenByEmail" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.CitizenDAOImplTest.isReadOneCitizenByID" />
       </list>
     </recent_temporary>
   </component>
@@ -764,24 +786,25 @@
       <workItem from="1491294607016" duration="4702000" />
       <workItem from="1491305778031" duration="5714000" />
       <workItem from="1491421859449" duration="615000" />
+      <workItem from="1491854324959" duration="2275000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CitizenDAOImplTest_isReadOneCitizen - 2017.04.04 at 15h 49m 09s.xml">
-      <configuration name="CitizenDAOImplTest.isReadOneCitizen" configurationId="JUnit" />
+    <history-entry file="CitizenDAOImplTest - 2017.04.10 at 21h 09m 30s.xml">
+      <configuration name="CitizenDAOImplTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CitizenDAOImplTest_isReadOneCitizen - 2017.04.04 at 15h 49m 21s.xml">
-      <configuration name="CitizenDAOImplTest.isReadOneCitizen" configurationId="JUnit" />
+    <history-entry file="CitizenDAOImplTest - 2017.04.10 at 21h 10m 30s.xml">
+      <configuration name="CitizenDAOImplTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CitizenDAOImplTest_isReadOneCitizen - 2017.04.04 at 15h 51m 17s.xml">
-      <configuration name="CitizenDAOImplTest.isReadOneCitizen" configurationId="JUnit" />
+    <history-entry file="CitizenDAOImplTest - 2017.04.10 at 21h 11m 43s.xml">
+      <configuration name="CitizenDAOImplTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CitizenDAOImplTest_isReadOneCitizen - 2017.04.04 at 15h 51m 35s.xml">
-      <configuration name="CitizenDAOImplTest.isReadOneCitizen" configurationId="JUnit" />
+    <history-entry file="CitizenDAOImplTest - 2017.04.10 at 21h 14m 57s.xml">
+      <configuration name="CitizenDAOImplTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CitizenDAOImplTest_isReadOneCitizenByEmail - 2017.04.04 at 15h 57m 20s.xml">
-      <configuration name="CitizenDAOImplTest.isReadOneCitizenByEmail" configurationId="JUnit" />
+    <history-entry file="CitizenDAOImplTest_isAddedNewCitizen - 2017.04.10 at 21h 15m 41s.xml">
+      <configuration name="CitizenDAOImplTest.isAddedNewCitizen" configurationId="JUnit" />
     </history-entry>
     <history-entry file="CitizenDAOImplTest_isReadOneCitizenByEmail - 2017.04.04 at 15h 59m 57s.xml">
       <configuration name="CitizenDAOImplTest.isReadOneCitizenByEmail" configurationId="JUnit" />
@@ -800,35 +823,36 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20106000" />
+    <option name="totallyTimeSpent" value="22381000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14069264" sideWeight="0.5042644" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44353518" sideWeight="0.49573562" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13918306" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13918306" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39770868" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32792208" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44372293" sideWeight="0.49573562" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3982684" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -846,13 +870,19 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/CitizenDAOImpl.java</url>
-          <line>90</line>
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>30</line>
           <properties />
-          <option name="timeStamp" value="8" />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/CitizenDAOImplTest.groovy</url>
+          <line>19</line>
+          <properties />
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="9" />
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -861,12 +891,39 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Citizen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
+          <folding>
+            <element signature="e#1044#1045#0" expanded="true" />
+            <element signature="e#1072#1073#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CitizenDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="79" column="47" selection-start-line="79" selection-start-column="47" selection-end-line="79" selection-end-column="47" />
+          <folding>
+            <marker date="1491421624979" expanded="true" signature="485:603" placeholder="INSERT INTO citizen... " />
+            <marker date="1491421624979" expanded="true" signature="1440:1485" placeholder="UPDATE citiz... " />
+            <marker date="1491421624979" expanded="true" signature="1729:1770" placeholder="UPDATE citiz... " />
+            <marker date="1491421624979" expanded="true" signature="2032:2092" placeholder="UPDATE citiz... " />
+            <marker date="1491421624979" expanded="true" signature="2637:2658" placeholder="SELECT * FRO... CITIZEN" />
+            <marker date="1491421624979" expanded="true" signature="3063:3095" placeholder="SELECT * FRO... CITIZEN" />
+            <marker date="1491421624979" expanded="true" signature="3412:3462" placeholder="SELECT * FRO... CITIZEN" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/CitizenDAOImplTest.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#24#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -876,7 +933,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="49" column="30" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <marker date="1491854756729" expanded="true" signature="657:678" placeholder="SELECT * FRO... citizen" />
           </folding>
         </state>
       </provider>
@@ -901,7 +958,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
-          <folding />
+          <folding>
+            <element signature="e#1044#1045#0" expanded="true" />
+            <element signature="e#1072#1073#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -909,7 +969,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="84" column="47" selection-start-line="84" selection-start-column="47" selection-end-line="84" selection-end-column="47" />
-          <folding />
+          <folding>
+            <marker date="1491421624979" expanded="true" signature="485:603" placeholder="INSERT INTO citizen... " />
+            <marker date="1491421624979" expanded="true" signature="1440:1485" placeholder="UPDATE citiz... " />
+            <marker date="1491421624979" expanded="true" signature="1729:1770" placeholder="UPDATE citiz... " />
+            <marker date="1491421624979" expanded="true" signature="2032:2092" placeholder="UPDATE citiz... " />
+            <marker date="1491421624979" expanded="true" signature="2637:2658" placeholder="SELECT * FRO... CITIZEN" />
+            <marker date="1491421624979" expanded="true" signature="3063:3095" placeholder="SELECT * FRO... CITIZEN" />
+            <marker date="1491421624979" expanded="true" signature="3412:3462" placeholder="SELECT * FRO... CITIZEN" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -918,7 +986,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding>
-            <element signature="e#0#24#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -928,7 +996,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="49" column="30" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <marker date="1491854756729" expanded="true" signature="657:678" placeholder="SELECT * FRO... citizen" />
           </folding>
         </state>
       </provider>
@@ -953,7 +1021,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#1044#1045#0" expanded="true" />
+            <element signature="e#1072#1073#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -961,7 +1032,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
-          <folding />
+          <folding>
+            <marker date="1491421624979" expanded="true" signature="485:603" placeholder="INSERT INTO citizen... " />
+            <marker date="1491421624979" expanded="true" signature="1440:1485" placeholder="UPDATE citiz... " />
+            <marker date="1491421624979" expanded="true" signature="1729:1770" placeholder="UPDATE citiz... " />
+            <marker date="1491421624979" expanded="true" signature="2032:2092" placeholder="UPDATE citiz... " />
+            <marker date="1491421624979" expanded="true" signature="2637:2658" placeholder="SELECT * FRO... CITIZEN" />
+            <marker date="1491421624979" expanded="true" signature="3063:3095" placeholder="SELECT * FRO... CITIZEN" />
+            <marker date="1491421624979" expanded="true" signature="3412:3462" placeholder="SELECT * FRO... CITIZEN" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -970,7 +1049,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <marker date="1491854756729" expanded="true" signature="657:678" placeholder="SELECT * FRO... citizen" />
           </folding>
         </state>
       </provider>
@@ -980,7 +1059,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
           <folding>
-            <element signature="e#0#24#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -997,7 +1076,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1491421624979" expanded="true" signature="485:603" placeholder="INSERT INTO citizen... " />
+            <marker date="1491421624979" expanded="true" signature="1440:1485" placeholder="UPDATE citiz... " />
+            <marker date="1491421624979" expanded="true" signature="1729:1770" placeholder="UPDATE citiz... " />
+            <marker date="1491421624979" expanded="true" signature="2032:2092" placeholder="UPDATE citiz... " />
+            <marker date="1491421624979" expanded="true" signature="2637:2658" placeholder="SELECT * FRO... CITIZEN" />
+            <marker date="1491421624979" expanded="true" signature="3063:3095" placeholder="SELECT * FRO... CITIZEN" />
+            <marker date="1491421624979" expanded="true" signature="3412:3462" placeholder="SELECT * FRO... CITIZEN" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1006,7 +1093,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <marker date="1491854756729" expanded="true" signature="657:678" placeholder="SELECT * FRO... citizen" />
           </folding>
         </state>
       </provider>
@@ -1016,7 +1103,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
           <folding>
-            <element signature="e#0#24#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1033,7 +1120,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
+          <folding>
+            <marker date="1491421624979" expanded="true" signature="485:603" placeholder="INSERT INTO citizen... " />
+            <marker date="1491421624979" expanded="true" signature="1440:1485" placeholder="UPDATE citiz... " />
+            <marker date="1491421624979" expanded="true" signature="1729:1770" placeholder="UPDATE citiz... " />
+            <marker date="1491421624979" expanded="true" signature="2032:2092" placeholder="UPDATE citiz... " />
+            <marker date="1491421624979" expanded="true" signature="2637:2658" placeholder="SELECT * FRO... CITIZEN" />
+            <marker date="1491421624979" expanded="true" signature="3063:3095" placeholder="SELECT * FRO... CITIZEN" />
+            <marker date="1491421624979" expanded="true" signature="3412:3462" placeholder="SELECT * FRO... CITIZEN" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1042,7 +1137,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <marker date="1491854756729" expanded="true" signature="657:678" placeholder="SELECT * FRO... citizen" />
           </folding>
         </state>
       </provider>
@@ -1052,7 +1147,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
           <folding>
-            <element signature="e#0#24#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1069,7 +1164,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
+          <folding>
+            <marker date="1491421624979" expanded="true" signature="485:603" placeholder="INSERT INTO citizen... " />
+            <marker date="1491421624979" expanded="true" signature="1440:1485" placeholder="UPDATE citiz... " />
+            <marker date="1491421624979" expanded="true" signature="1729:1770" placeholder="UPDATE citiz... " />
+            <marker date="1491421624979" expanded="true" signature="2032:2092" placeholder="UPDATE citiz... " />
+            <marker date="1491421624979" expanded="true" signature="2637:2658" placeholder="SELECT * FRO... CITIZEN" />
+            <marker date="1491421624979" expanded="true" signature="3063:3095" placeholder="SELECT * FRO... CITIZEN" />
+            <marker date="1491421624979" expanded="true" signature="3412:3462" placeholder="SELECT * FRO... CITIZEN" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1078,7 +1181,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <marker date="1491854756729" expanded="true" signature="657:678" placeholder="SELECT * FRO... citizen" />
           </folding>
         </state>
       </provider>
@@ -1088,7 +1191,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#24#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1098,7 +1201,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <marker date="1491854756729" expanded="true" signature="657:678" placeholder="SELECT * FRO... citizen" />
           </folding>
         </state>
       </provider>
@@ -1108,7 +1211,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <marker date="1491854756729" expanded="true" signature="657:678" placeholder="SELECT * FRO... citizen" />
           </folding>
         </state>
       </provider>
@@ -1170,37 +1273,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="30" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/spock-core-1.0-groovy-2.4.jar!/org/spockframework/util/ReflectionUtil.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.0740743">
-          <caret line="175" column="0" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/spock-core-1.0-groovy-2.4.jar!/org/spockframework/runtime/model/MethodInfo.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.62963">
-          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/spock-core-1.0-groovy-2.4.jar!/org/spockframework/runtime/BaseSpecRunner.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.1481482">
-          <caret line="303" column="0" selection-start-line="303" selection-start-column="0" selection-end-line="303" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/spock-core-1.0-groovy-2.4.jar!/org/spockframework/runtime/ParameterizedSpecRunner.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.407408">
@@ -1208,18 +1280,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Citizen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.41/mysql-connector-java-5.1.41.jar!/com/mysql/jdbc/ResultSetImpl.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.20253165">
           <caret line="1531" column="16" selection-start-line="1531" selection-start-column="16" selection-end-line="1531" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.41/mysql-connector-java-5.1.41.jar!/com/mysql/jdbc/Util.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3529412">
+          <caret line="276" column="0" selection-start-line="276" selection-start-column="0" selection-end-line="276" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Citizen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
+          <folding>
+            <element signature="e#1044#1045#0" expanded="true" />
+            <element signature="e#1072#1073#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1231,10 +1313,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.41/mysql-connector-java-5.1.41.jar!/com/mysql/jdbc/Util.class">
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3529412">
-          <caret line="276" column="0" selection-start-line="276" selection-start-column="0" selection-end-line="276" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <marker date="1491854756729" expanded="true" signature="657:678" placeholder="SELECT * FRO... citizen" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1242,16 +1327,64 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="79" column="47" selection-start-line="79" selection-start-column="47" selection-end-line="79" selection-end-column="47" />
+          <folding>
+            <marker date="1491421624979" expanded="true" signature="485:603" placeholder="INSERT INTO citizen... " />
+            <marker date="1491421624979" expanded="true" signature="1440:1485" placeholder="UPDATE citiz... " />
+            <marker date="1491421624979" expanded="true" signature="1729:1770" placeholder="UPDATE citiz... " />
+            <marker date="1491421624979" expanded="true" signature="2032:2092" placeholder="UPDATE citiz... " />
+            <marker date="1491421624979" expanded="true" signature="2637:2658" placeholder="SELECT * FRO... CITIZEN" />
+            <marker date="1491421624979" expanded="true" signature="3063:3095" placeholder="SELECT * FRO... CITIZEN" />
+            <marker date="1491421624979" expanded="true" signature="3412:3462" placeholder="SELECT * FRO... CITIZEN" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/spock-core-1.0-groovy-2.4.jar!/org/spockframework/runtime/BaseSpecRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.4568691">
+          <caret line="545" column="21" selection-start-line="545" selection-start-column="21" selection-end-line="545" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/spock-core-1.0-groovy-2.4.jar!/org/spockframework/runtime/model/MethodInfo.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.543131">
+          <caret line="64" column="18" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/spock-core-1.0-groovy-2.4.jar!/org/spockframework/util/ReflectionUtil.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36102235">
+          <caret line="173" column="25" selection-start-line="173" selection-start-column="25" selection-end-line="173" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.41/mysql-connector-java-5.1.41.jar!/com/mysql/jdbc/NonRegisteringDriver.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35789475">
+          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.41/mysql-connector-java-5.1.41.jar!/com/mysql/jdbc/Driver.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35789475">
+          <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CitizenDAOImplTest.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9811321">
-          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.2724359">
+          <caret line="14" column="61" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
           <folding>
-            <element signature="e#0#24#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>

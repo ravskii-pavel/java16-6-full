@@ -5,6 +5,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+import java.lang.reflect.Constructor;
 import java.util.Date;
 import java.util.List;
 
@@ -15,8 +16,8 @@ import static hiber.HibernateUtil.getSessionFactory;
  */
 public class App {
 
-    public static void main(String[] args) {
-        
+    public static void main(String[] args) throws ClassNotFoundException {
+
         try (SessionFactory sessionFactory = getSessionFactory();
              Session session = sessionFactory.openSession();) {
 

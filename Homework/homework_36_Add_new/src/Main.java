@@ -11,7 +11,8 @@ public class Main {
 
     try {
       Class.forName("com.mysql.jdbc.Driver");
-      Connection connectionMySQL = DriverManager.getConnection("jdbc:mysql://localhost:3306/address_book", "root", "Canada020888");
+
+      Connection connectionMySQL = DriverManager.getConnection("jdbc:mysql://localhost:3306/forum", "root", "Canada020888");
       CitizenDAOImpl citizenDAO = new CitizenDAOImpl(connectionMySQL);
       citizenDAO.create("John", "Doe", "john@yahoo.com", 44, 5);
       Statement statement = connectionMySQL.createStatement();
@@ -50,8 +51,8 @@ public class Main {
       connectionMySQL.close();
     } catch (SQLException e) {
       e.printStackTrace();
-    } catch (ClassNotFoundException e) {
+    } /*catch (ClassNotFoundException e) {
       e.printStackTrace();
-    }
+    }*/
   }
 }
