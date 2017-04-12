@@ -11,7 +11,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString(exclude = "employees")
+@ToString(exclude = "employee")
 @Entity
 @Table(name = "salaries_paid")
 public class Salary {
@@ -20,9 +20,9 @@ public class Salary {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "employee_id")
-    private List<Employee> employees;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "employee_id", nullable = false)
+    private Employee employee;
 
     @Column(name = "salary")
     private double salary;
@@ -35,8 +35,8 @@ public class Salary {
     @Column(name = "date_create")
     private Date dateCreate;
 
-    public Salary(List<Employee> employees, double salary, Date datePay, Date dateCreate) {
-        this.employees = employees;
+    public Salary(Employee employees, double salary, Date datePay, Date dateCreate) {
+        this.employee = employees;
         this.salary = salary;
         this.datePay = datePay;
         this.dateCreate = dateCreate;

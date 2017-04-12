@@ -29,26 +29,30 @@ public class App {
             postQuery.setParameter("id", 9L);
             Post post = postQuery.uniqueResult();
 
-            Query<WorkDay> workDayQuery = session.createQuery("from WorkDay where id = :id", WorkDay.class);
+           /* Query<WorkDay> workDayQuery = session.createQuery("from WorkDay where id = :id", WorkDay.class);
             workDayQuery.setParameter("id", 13L);
             WorkDay workDay = workDayQuery.uniqueResult();
 
             Query<Salary> salaryQuery = session.createQuery("from Salary where id = :id", Salary.class);
             salaryQuery.setParameter("id", 8L);
             Salary salary = salaryQuery.uniqueResult();
-
+*/
             Employee employee = new Employee("Andrey1", "Ivanov1", "Robertovich1", 55000, department, post);
 
             PhoneNumber phoneNumber = new PhoneNumber("380930000000", employee);
+            employee.setPhoneNumber(phoneNumber);
 
             Transaction transaction = session.getTransaction();
 
             transaction.begin();
+
             session.save(employee);
             session.save(phoneNumber);
+
+
             /*session.save(phoneNumber);
             session.save(phoneNumber);*/
-            employee.setPhoneNumber(phoneNumber);
+
 
             session.update(employee);
             transaction.commit();

@@ -15,7 +15,8 @@ import javax.persistence.*;
 @NoArgsConstructor
 @ToString(exclude = "employee")
 @Entity
-@Table(name = "PHONE_NUMBERS")
+@Table(name = "phone_numbers")
+
 public class PhoneNumber {
 
     @Id
@@ -26,7 +27,7 @@ public class PhoneNumber {
     private String number;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_employee")
+    @JoinColumn(name = "employee_id")
     private Employee employee;
 
     public PhoneNumber(String number, Employee employee) {

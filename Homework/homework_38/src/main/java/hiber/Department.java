@@ -16,7 +16,7 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-@ToString(exclude = "employees")
+@ToString (exclude = "employees")
 @Entity
 @Table(name = "departments")
 public class Department {

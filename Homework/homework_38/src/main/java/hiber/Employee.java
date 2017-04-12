@@ -6,18 +6,20 @@ import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Created by java on 31.03.2017.
  */
 
 @Entity
-@Table(name = "employees")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
+@ToString(exclude = "salariesPaid")
+@Table(name = "employees")
 public class Employee {
 
     @Id
@@ -40,7 +42,7 @@ public class Employee {
     @Column(name = "date_create")
     private Date creationDate = new Date();
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "employee")
     private PhoneNumber phoneNumber;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -51,11 +53,11 @@ public class Employee {
     @JoinColumn(name = "department_id", nullable = false)
     private Department department;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Salary salaryPaid;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "employee")
+    private List<Salary> salariesPaid;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    private WorkDay workDays;
+    /*@ManyToOne(fetch = FetchType.LAZY)
+    private WorkDay workDays;*/
 
     public Employee(String firstName, String lastName, String secondName, double salary, Department department, Post post) {
         this.firstName = firstName;
