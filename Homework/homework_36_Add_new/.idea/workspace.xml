@@ -30,8 +30,8 @@
       <file leaf-file-name="CitizenDAOImplTest.groovy" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CitizenDAOImplTest.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2724359">
-              <caret line="14" column="61" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
+            <state vertical-scroll-proportion="1.2532052">
+              <caret line="47" column="15" selection-start-line="47" selection-start-column="15" selection-end-line="47" selection-end-column="15" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -45,7 +45,7 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
-                <marker date="1491854756729" expanded="true" signature="657:678" placeholder="SELECT * FRO... citizen" />
+                <element signature="imports" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -56,7 +56,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -77,8 +79,28 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
               <folding>
-                <element signature="e#1044#1045#0" expanded="true" />
-                <element signature="e#1072#1073#0" expanded="true" />
+                <element signature="e#985#986#0" expanded="false" />
+                <element signature="e#1010#1011#0" expanded="false" />
+                <element signature="e#1109#1110#0" expanded="false" />
+                <element signature="e#1142#1143#0" expanded="false" />
+                <element signature="e#1194#1195#0" expanded="false" />
+                <element signature="e#1238#1239#0" expanded="false" />
+                <element signature="e#1274#1275#0" expanded="false" />
+                <element signature="e#1306#1307#0" expanded="false" />
+                <element signature="e#1356#1357#0" expanded="false" />
+                <element signature="e#1398#1399#0" expanded="false" />
+                <element signature="e#1425#1426#0" expanded="false" />
+                <element signature="e#1451#1452#0" expanded="false" />
+                <element signature="e#1486#1487#0" expanded="false" />
+                <element signature="e#1516#1517#0" expanded="false" />
+                <element signature="e#1550#1551#0" expanded="false" />
+                <element signature="e#1582#1583#0" expanded="false" />
+                <element signature="e#1630#1631#0" expanded="false" />
+                <element signature="e#1672#1673#0" expanded="false" />
+                <element signature="e#1704#1705#0" expanded="false" />
+                <element signature="e#1732#1733#0" expanded="false" />
+                <element signature="e#1774#1775#0" expanded="false" />
+                <element signature="e#1808#1809#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -90,13 +112,11 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="79" column="47" selection-start-line="79" selection-start-column="47" selection-end-line="79" selection-end-column="47" />
               <folding>
-                <marker date="1491421624979" expanded="true" signature="485:603" placeholder="INSERT INTO citizen... " />
-                <marker date="1491421624979" expanded="true" signature="1440:1485" placeholder="UPDATE citiz... " />
-                <marker date="1491421624979" expanded="true" signature="1729:1770" placeholder="UPDATE citiz... " />
-                <marker date="1491421624979" expanded="true" signature="2032:2092" placeholder="UPDATE citiz... " />
-                <marker date="1491421624979" expanded="true" signature="2637:2658" placeholder="SELECT * FRO... CITIZEN" />
-                <marker date="1491421624979" expanded="true" signature="3063:3095" placeholder="SELECT * FRO... CITIZEN" />
-                <marker date="1491421624979" expanded="true" signature="3412:3462" placeholder="SELECT * FRO... CITIZEN" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#221#222#0" expanded="false" />
+                <element signature="e#265#266#0" expanded="false" />
+                <element signature="e#4106#4107#0" expanded="false" />
+                <element signature="e#4139#4140#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -214,20 +234,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="target" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="homework_36_Add_new" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="homework_36_Add_new" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -249,7 +255,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="JUnit.CitizenDAOImplTest.isAddedNewCitizen">
+  <component name="RunManager" selected="JUnit.CitizenDAOImplTest.isReadOneCitizenByID">
     <configuration default="false" name="CitizenDAOImplTest.isReadOneCitizenByEmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="homework_36_Add_new" />
@@ -758,11 +764,11 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.CitizenDAOImplTest.isAddedNewCitizen" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.CitizenDAOImplTest" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.CitizenDAOImplTest.isReadOneCitizenByEmail" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.CitizenDAOImplTest.isReadOneCitizenByID" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.CitizenDAOImplTest.isReadOneCitizenByID" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.CitizenDAOImplTest.isAddedNewCitizen" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.CitizenDAOImplTest" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.CitizenDAOImplTest.isReadOneCitizenByEmail" />
       </list>
     </recent_temporary>
   </component>
@@ -787,13 +793,11 @@
       <workItem from="1491305778031" duration="5714000" />
       <workItem from="1491421859449" duration="615000" />
       <workItem from="1491854324959" duration="2275000" />
+      <workItem from="1492469802821" duration="163000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CitizenDAOImplTest - 2017.04.10 at 21h 09m 30s.xml">
-      <configuration name="CitizenDAOImplTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CitizenDAOImplTest - 2017.04.10 at 21h 10m 30s.xml">
       <configuration name="CitizenDAOImplTest" configurationId="JUnit" />
     </history-entry>
@@ -821,13 +825,16 @@
     <history-entry file="CitizenDAOImplTest_isReadOneCitizenByID - 2017.04.04 at 16h 01m 21s.xml">
       <configuration name="CitizenDAOImplTest.isReadOneCitizenByID" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="CitizenDAOImplTest_isReadOneCitizenByID - 2017.04.17 at 23h 59m 39s.xml">
+      <configuration name="CitizenDAOImplTest.isReadOneCitizenByID" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22381000" />
+    <option name="totallyTimeSpent" value="22544000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -837,7 +844,6 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44353518" sideWeight="0.49573562" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13918306" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -851,6 +857,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -896,8 +903,28 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
           <folding>
-            <element signature="e#1044#1045#0" expanded="true" />
-            <element signature="e#1072#1073#0" expanded="true" />
+            <element signature="e#985#986#0" expanded="false" />
+            <element signature="e#1010#1011#0" expanded="false" />
+            <element signature="e#1109#1110#0" expanded="false" />
+            <element signature="e#1142#1143#0" expanded="false" />
+            <element signature="e#1194#1195#0" expanded="false" />
+            <element signature="e#1238#1239#0" expanded="false" />
+            <element signature="e#1274#1275#0" expanded="false" />
+            <element signature="e#1306#1307#0" expanded="false" />
+            <element signature="e#1356#1357#0" expanded="false" />
+            <element signature="e#1398#1399#0" expanded="false" />
+            <element signature="e#1425#1426#0" expanded="false" />
+            <element signature="e#1451#1452#0" expanded="false" />
+            <element signature="e#1486#1487#0" expanded="false" />
+            <element signature="e#1516#1517#0" expanded="false" />
+            <element signature="e#1550#1551#0" expanded="false" />
+            <element signature="e#1582#1583#0" expanded="false" />
+            <element signature="e#1630#1631#0" expanded="false" />
+            <element signature="e#1672#1673#0" expanded="false" />
+            <element signature="e#1704#1705#0" expanded="false" />
+            <element signature="e#1732#1733#0" expanded="false" />
+            <element signature="e#1774#1775#0" expanded="false" />
+            <element signature="e#1808#1809#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -907,13 +934,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="79" column="47" selection-start-line="79" selection-start-column="47" selection-end-line="79" selection-end-column="47" />
           <folding>
-            <marker date="1491421624979" expanded="true" signature="485:603" placeholder="INSERT INTO citizen... " />
-            <marker date="1491421624979" expanded="true" signature="1440:1485" placeholder="UPDATE citiz... " />
-            <marker date="1491421624979" expanded="true" signature="1729:1770" placeholder="UPDATE citiz... " />
-            <marker date="1491421624979" expanded="true" signature="2032:2092" placeholder="UPDATE citiz... " />
-            <marker date="1491421624979" expanded="true" signature="2637:2658" placeholder="SELECT * FRO... CITIZEN" />
-            <marker date="1491421624979" expanded="true" signature="3063:3095" placeholder="SELECT * FRO... CITIZEN" />
-            <marker date="1491421624979" expanded="true" signature="3412:3462" placeholder="SELECT * FRO... CITIZEN" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#221#222#0" expanded="false" />
+            <element signature="e#265#266#0" expanded="false" />
+            <element signature="e#4106#4107#0" expanded="false" />
+            <element signature="e#4139#4140#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -933,7 +958,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="49" column="30" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
           <folding>
-            <marker date="1491854756729" expanded="true" signature="657:678" placeholder="SELECT * FRO... citizen" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -942,7 +967,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -959,8 +986,28 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
           <folding>
-            <element signature="e#1044#1045#0" expanded="true" />
-            <element signature="e#1072#1073#0" expanded="true" />
+            <element signature="e#985#986#0" expanded="false" />
+            <element signature="e#1010#1011#0" expanded="false" />
+            <element signature="e#1109#1110#0" expanded="false" />
+            <element signature="e#1142#1143#0" expanded="false" />
+            <element signature="e#1194#1195#0" expanded="false" />
+            <element signature="e#1238#1239#0" expanded="false" />
+            <element signature="e#1274#1275#0" expanded="false" />
+            <element signature="e#1306#1307#0" expanded="false" />
+            <element signature="e#1356#1357#0" expanded="false" />
+            <element signature="e#1398#1399#0" expanded="false" />
+            <element signature="e#1425#1426#0" expanded="false" />
+            <element signature="e#1451#1452#0" expanded="false" />
+            <element signature="e#1486#1487#0" expanded="false" />
+            <element signature="e#1516#1517#0" expanded="false" />
+            <element signature="e#1550#1551#0" expanded="false" />
+            <element signature="e#1582#1583#0" expanded="false" />
+            <element signature="e#1630#1631#0" expanded="false" />
+            <element signature="e#1672#1673#0" expanded="false" />
+            <element signature="e#1704#1705#0" expanded="false" />
+            <element signature="e#1732#1733#0" expanded="false" />
+            <element signature="e#1774#1775#0" expanded="false" />
+            <element signature="e#1808#1809#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -970,13 +1017,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="84" column="47" selection-start-line="84" selection-start-column="47" selection-end-line="84" selection-end-column="47" />
           <folding>
-            <marker date="1491421624979" expanded="true" signature="485:603" placeholder="INSERT INTO citizen... " />
-            <marker date="1491421624979" expanded="true" signature="1440:1485" placeholder="UPDATE citiz... " />
-            <marker date="1491421624979" expanded="true" signature="1729:1770" placeholder="UPDATE citiz... " />
-            <marker date="1491421624979" expanded="true" signature="2032:2092" placeholder="UPDATE citiz... " />
-            <marker date="1491421624979" expanded="true" signature="2637:2658" placeholder="SELECT * FRO... CITIZEN" />
-            <marker date="1491421624979" expanded="true" signature="3063:3095" placeholder="SELECT * FRO... CITIZEN" />
-            <marker date="1491421624979" expanded="true" signature="3412:3462" placeholder="SELECT * FRO... CITIZEN" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#221#222#0" expanded="false" />
+            <element signature="e#265#266#0" expanded="false" />
+            <element signature="e#4106#4107#0" expanded="false" />
+            <element signature="e#4139#4140#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -996,7 +1041,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="49" column="30" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
           <folding>
-            <marker date="1491854756729" expanded="true" signature="657:678" placeholder="SELECT * FRO... citizen" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1005,7 +1050,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1022,8 +1069,28 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1044#1045#0" expanded="true" />
-            <element signature="e#1072#1073#0" expanded="true" />
+            <element signature="e#985#986#0" expanded="false" />
+            <element signature="e#1010#1011#0" expanded="false" />
+            <element signature="e#1109#1110#0" expanded="false" />
+            <element signature="e#1142#1143#0" expanded="false" />
+            <element signature="e#1194#1195#0" expanded="false" />
+            <element signature="e#1238#1239#0" expanded="false" />
+            <element signature="e#1274#1275#0" expanded="false" />
+            <element signature="e#1306#1307#0" expanded="false" />
+            <element signature="e#1356#1357#0" expanded="false" />
+            <element signature="e#1398#1399#0" expanded="false" />
+            <element signature="e#1425#1426#0" expanded="false" />
+            <element signature="e#1451#1452#0" expanded="false" />
+            <element signature="e#1486#1487#0" expanded="false" />
+            <element signature="e#1516#1517#0" expanded="false" />
+            <element signature="e#1550#1551#0" expanded="false" />
+            <element signature="e#1582#1583#0" expanded="false" />
+            <element signature="e#1630#1631#0" expanded="false" />
+            <element signature="e#1672#1673#0" expanded="false" />
+            <element signature="e#1704#1705#0" expanded="false" />
+            <element signature="e#1732#1733#0" expanded="false" />
+            <element signature="e#1774#1775#0" expanded="false" />
+            <element signature="e#1808#1809#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1033,13 +1100,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
           <folding>
-            <marker date="1491421624979" expanded="true" signature="485:603" placeholder="INSERT INTO citizen... " />
-            <marker date="1491421624979" expanded="true" signature="1440:1485" placeholder="UPDATE citiz... " />
-            <marker date="1491421624979" expanded="true" signature="1729:1770" placeholder="UPDATE citiz... " />
-            <marker date="1491421624979" expanded="true" signature="2032:2092" placeholder="UPDATE citiz... " />
-            <marker date="1491421624979" expanded="true" signature="2637:2658" placeholder="SELECT * FRO... CITIZEN" />
-            <marker date="1491421624979" expanded="true" signature="3063:3095" placeholder="SELECT * FRO... CITIZEN" />
-            <marker date="1491421624979" expanded="true" signature="3412:3462" placeholder="SELECT * FRO... CITIZEN" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#221#222#0" expanded="false" />
+            <element signature="e#265#266#0" expanded="false" />
+            <element signature="e#4106#4107#0" expanded="false" />
+            <element signature="e#4139#4140#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1049,7 +1114,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
           <folding>
-            <marker date="1491854756729" expanded="true" signature="657:678" placeholder="SELECT * FRO... citizen" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1077,13 +1142,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1491421624979" expanded="true" signature="485:603" placeholder="INSERT INTO citizen... " />
-            <marker date="1491421624979" expanded="true" signature="1440:1485" placeholder="UPDATE citiz... " />
-            <marker date="1491421624979" expanded="true" signature="1729:1770" placeholder="UPDATE citiz... " />
-            <marker date="1491421624979" expanded="true" signature="2032:2092" placeholder="UPDATE citiz... " />
-            <marker date="1491421624979" expanded="true" signature="2637:2658" placeholder="SELECT * FRO... CITIZEN" />
-            <marker date="1491421624979" expanded="true" signature="3063:3095" placeholder="SELECT * FRO... CITIZEN" />
-            <marker date="1491421624979" expanded="true" signature="3412:3462" placeholder="SELECT * FRO... CITIZEN" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#221#222#0" expanded="false" />
+            <element signature="e#265#266#0" expanded="false" />
+            <element signature="e#4106#4107#0" expanded="false" />
+            <element signature="e#4139#4140#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1093,7 +1156,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
           <folding>
-            <marker date="1491854756729" expanded="true" signature="657:678" placeholder="SELECT * FRO... citizen" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1121,13 +1184,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding>
-            <marker date="1491421624979" expanded="true" signature="485:603" placeholder="INSERT INTO citizen... " />
-            <marker date="1491421624979" expanded="true" signature="1440:1485" placeholder="UPDATE citiz... " />
-            <marker date="1491421624979" expanded="true" signature="1729:1770" placeholder="UPDATE citiz... " />
-            <marker date="1491421624979" expanded="true" signature="2032:2092" placeholder="UPDATE citiz... " />
-            <marker date="1491421624979" expanded="true" signature="2637:2658" placeholder="SELECT * FRO... CITIZEN" />
-            <marker date="1491421624979" expanded="true" signature="3063:3095" placeholder="SELECT * FRO... CITIZEN" />
-            <marker date="1491421624979" expanded="true" signature="3412:3462" placeholder="SELECT * FRO... CITIZEN" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#221#222#0" expanded="false" />
+            <element signature="e#265#266#0" expanded="false" />
+            <element signature="e#4106#4107#0" expanded="false" />
+            <element signature="e#4139#4140#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1137,7 +1198,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
           <folding>
-            <marker date="1491854756729" expanded="true" signature="657:678" placeholder="SELECT * FRO... citizen" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1165,13 +1226,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding>
-            <marker date="1491421624979" expanded="true" signature="485:603" placeholder="INSERT INTO citizen... " />
-            <marker date="1491421624979" expanded="true" signature="1440:1485" placeholder="UPDATE citiz... " />
-            <marker date="1491421624979" expanded="true" signature="1729:1770" placeholder="UPDATE citiz... " />
-            <marker date="1491421624979" expanded="true" signature="2032:2092" placeholder="UPDATE citiz... " />
-            <marker date="1491421624979" expanded="true" signature="2637:2658" placeholder="SELECT * FRO... CITIZEN" />
-            <marker date="1491421624979" expanded="true" signature="3063:3095" placeholder="SELECT * FRO... CITIZEN" />
-            <marker date="1491421624979" expanded="true" signature="3412:3462" placeholder="SELECT * FRO... CITIZEN" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#221#222#0" expanded="false" />
+            <element signature="e#265#266#0" expanded="false" />
+            <element signature="e#4106#4107#0" expanded="false" />
+            <element signature="e#4139#4140#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1181,7 +1240,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
           <folding>
-            <marker date="1491854756729" expanded="true" signature="657:678" placeholder="SELECT * FRO... citizen" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1201,7 +1260,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1491854756729" expanded="true" signature="657:678" placeholder="SELECT * FRO... citizen" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1211,7 +1270,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1491854756729" expanded="true" signature="657:678" placeholder="SELECT * FRO... citizen" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1299,8 +1358,28 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
           <folding>
-            <element signature="e#1044#1045#0" expanded="true" />
-            <element signature="e#1072#1073#0" expanded="true" />
+            <element signature="e#985#986#0" expanded="false" />
+            <element signature="e#1010#1011#0" expanded="false" />
+            <element signature="e#1109#1110#0" expanded="false" />
+            <element signature="e#1142#1143#0" expanded="false" />
+            <element signature="e#1194#1195#0" expanded="false" />
+            <element signature="e#1238#1239#0" expanded="false" />
+            <element signature="e#1274#1275#0" expanded="false" />
+            <element signature="e#1306#1307#0" expanded="false" />
+            <element signature="e#1356#1357#0" expanded="false" />
+            <element signature="e#1398#1399#0" expanded="false" />
+            <element signature="e#1425#1426#0" expanded="false" />
+            <element signature="e#1451#1452#0" expanded="false" />
+            <element signature="e#1486#1487#0" expanded="false" />
+            <element signature="e#1516#1517#0" expanded="false" />
+            <element signature="e#1550#1551#0" expanded="false" />
+            <element signature="e#1582#1583#0" expanded="false" />
+            <element signature="e#1630#1631#0" expanded="false" />
+            <element signature="e#1672#1673#0" expanded="false" />
+            <element signature="e#1704#1705#0" expanded="false" />
+            <element signature="e#1732#1733#0" expanded="false" />
+            <element signature="e#1774#1775#0" expanded="false" />
+            <element signature="e#1808#1809#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1309,7 +1388,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1318,7 +1399,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <marker date="1491854756729" expanded="true" signature="657:678" placeholder="SELECT * FRO... citizen" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1328,13 +1409,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="79" column="47" selection-start-line="79" selection-start-column="47" selection-end-line="79" selection-end-column="47" />
           <folding>
-            <marker date="1491421624979" expanded="true" signature="485:603" placeholder="INSERT INTO citizen... " />
-            <marker date="1491421624979" expanded="true" signature="1440:1485" placeholder="UPDATE citiz... " />
-            <marker date="1491421624979" expanded="true" signature="1729:1770" placeholder="UPDATE citiz... " />
-            <marker date="1491421624979" expanded="true" signature="2032:2092" placeholder="UPDATE citiz... " />
-            <marker date="1491421624979" expanded="true" signature="2637:2658" placeholder="SELECT * FRO... CITIZEN" />
-            <marker date="1491421624979" expanded="true" signature="3063:3095" placeholder="SELECT * FRO... CITIZEN" />
-            <marker date="1491421624979" expanded="true" signature="3412:3462" placeholder="SELECT * FRO... CITIZEN" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#221#222#0" expanded="false" />
+            <element signature="e#265#266#0" expanded="false" />
+            <element signature="e#4106#4107#0" expanded="false" />
+            <element signature="e#4139#4140#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1343,7 +1422,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="3.4568691">
           <caret line="545" column="21" selection-start-line="545" selection-start-column="21" selection-end-line="545" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1351,7 +1429,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.543131">
           <caret line="64" column="18" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1359,7 +1436,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36102235">
           <caret line="173" column="25" selection-start-line="173" selection-start-column="25" selection-end-line="173" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1367,7 +1443,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35789475">
           <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1375,14 +1450,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35789475">
           <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CitizenDAOImplTest.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2724359">
-          <caret line="14" column="61" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
+        <state vertical-scroll-proportion="1.2532052">
+          <caret line="47" column="15" selection-start-line="47" selection-start-column="15" selection-end-line="47" selection-end-column="15" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
