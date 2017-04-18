@@ -18,7 +18,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString(exclude = "salariesPaid")
+@ToString
 @Table(name = "employees")
 public class Employee {
 
@@ -55,6 +55,9 @@ public class Employee {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "employee")
     private List<Salary> salariesPaid;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "employee")
+    private List<WorkDay> workingDays;
 
     /*@ManyToOne(fetch = FetchType.LAZY)
     private WorkDay workDays;*/

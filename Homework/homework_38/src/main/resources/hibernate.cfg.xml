@@ -9,6 +9,7 @@
         <property name="show_sql">true</property>
         <property name="hbm2ddl.auto">update</property>
         <property name="hibernate.connection.autocommit">true</property>
+        <!--<property name="generatedByDatabase" generated="always"/> />-->
         <mapping class="hiber.Employee" />
         <mapping class="hiber.Department" />
         <mapping class="hiber.PhoneNumber" />
@@ -16,6 +17,6 @@
         <mapping class="hiber.Tangible" />
         <mapping class="hiber.Salary" />
         <mapping class="hiber.Course" />
-        <!--<mapping class="hiber.WorkDay" />-->
+        <mapping class="hiber.WorkDay" />
     </session-factory>
 </hibernate-configuration>
