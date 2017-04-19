@@ -40,10 +40,13 @@ public class App {
             Employee employee = new Employee("Andrey2", "Ivanov2", "Robertovich2", 470, department, post);
 
             PhoneNumber phoneNumber = new PhoneNumber("380930000000", employee);
-            employee.setPhoneNumber(phoneNumber);
-            WorkDay workDay = new WorkDay(employee ,  new Date(), new Date(), new Date());
+            //employee.setPhoneNumber(phoneNumber);
+            WorkDay workDay = new WorkDay(employee, new Date(), new Date(), new Date());
 
             Salary salary = new Salary(employee, 8765D, new Date(), new Date());
+
+            Tangible tangible = new Tangible("Системный блок - Core i7",  8800, "new1", new Date());
+
 
             Transaction transaction = session.getTransaction();
 
@@ -53,6 +56,7 @@ public class App {
             session.save(workDay);
             session.save(salary);
             session.save(phoneNumber);
+            session.save(tangible);
 
 
             /*session.save(phoneNumber);
@@ -60,12 +64,20 @@ public class App {
 
 
             session.update(employee);
+            session.update(tangible);
             transaction.commit();
 
             Query<Employee> query = session.createQuery("from Employee", Employee.class);
             List<Employee> list = query.list();
 
             for (Employee e : list) {
+                System.out.println(e);
+            }
+
+            Query<Tangible> queryT = session.createQuery("from Tangible", Tangible.class);
+            List<Tangible> listT = queryT.list();
+
+            for (Tangible e : listT) {
                 System.out.println(e);
             }
 

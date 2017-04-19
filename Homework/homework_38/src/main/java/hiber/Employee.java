@@ -42,8 +42,8 @@ public class Employee {
     @Column(name = "date_create")
     private Date creationDate = new Date();
 
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "employee")
-    private PhoneNumber phoneNumber;
+    /*@OneToOne(fetch = FetchType.LAZY, mappedBy = "employee")
+    private PhoneNumber phoneNumber;*/
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "post_id", nullable = false)
@@ -57,10 +57,11 @@ public class Employee {
     private List<Salary> salariesPaid;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "employee")
-    private List<WorkDay> workingDays;
+    private Set<WorkDay> workingDays;
 
-    /*@ManyToOne(fetch = FetchType.LAZY)
-    private WorkDay workDays;*/
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "employee")
+    private Set<Tangible> tangibles;
+
 
     public Employee(String firstName, String lastName, String secondName, double salary, Department department, Post post) {
         this.firstName = firstName;
@@ -72,7 +73,7 @@ public class Employee {
     }
 
 
-    public void setPhoneNumber(PhoneNumber phoneNumber) {
+   /* public void setPhoneNumber(PhoneNumber phoneNumber) {
         this.phoneNumber = phoneNumber;
-    }
+    }*/
 }
