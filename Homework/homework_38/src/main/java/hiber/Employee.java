@@ -2,6 +2,8 @@ package hiber;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
@@ -61,6 +63,14 @@ public class Employee {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "employee")
     private Set<Tangible> tangibles;
+
+    @ManyToMany
+    @Fetch(FetchMode.JOIN)
+    @JoinTable(name = "employees_courses",
+            joinColumns = @JoinColumn(name="employee_id"),
+            inverseJoinColumns = @JoinColumn(name="course_id")
+    )
+    private Set<Course> courses;
 
 
     public Employee(String firstName, String lastName, String secondName, double salary, Department department, Post post) {

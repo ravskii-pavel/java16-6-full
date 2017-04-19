@@ -1,4 +1,5 @@
 package hiber;
+import javax.persistence.*;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

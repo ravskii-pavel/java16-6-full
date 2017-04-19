@@ -1,11 +1,14 @@
 package hiber;
 
 import lombok.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 
 @Entity
@@ -36,6 +39,11 @@ public class Course {
     @Column(name = "date_create")
     private Date dateCreate;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "post")
-    private List<Employee> employees;
+    @ManyToMany
+    @Fetch(FetchMode.JOIN)
+    @JoinTable(name = "employees_courses",
+            joinColumns = @JoinColumn(name="course_id"),
+            inverseJoinColumns = @JoinColumn(name="employee_id")
+    )
+    private Set<Employee> employee;
 }
