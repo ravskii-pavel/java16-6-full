@@ -45,7 +45,7 @@ public class App {
 
             Salary salary = new Salary(employee, 8765D, new Date(), new Date());
 
-            Tangible tangible = new Tangible("Системный блок - Core i7",  8800, "new1", new Date());
+            Tangible tangible = new Tangible("Системный блок - Core i7",  8800, "new1");
 
 
             Transaction transaction = session.getTransaction();

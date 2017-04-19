@@ -1,6 +1,8 @@
 package hiber;
 
 import lombok.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
@@ -28,21 +30,17 @@ public class Tangible {
     @Column(name = "description")
     private String description;
 
-    @Type(type = "timestamp")
-    @Column(name = "date_create")
-    private Date dateCreate;
-
     @ManyToOne
+    @Fetch(FetchMode.JOIN)
     @JoinTable(name = "employees_tangibles",
             joinColumns = @JoinColumn(name="tangible_id"),
             inverseJoinColumns = @JoinColumn(name="employee_id")
     )
     private Employee employee;
 
-    public Tangible(String title, double price, String description, Date dateCreate) {
+    public Tangible(String title, double price, String description) {
         this.title = title;
         this.price = price;
         this.description = description;
-        this.dateCreate = dateCreate;
     }
 }
