@@ -17,7 +17,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
+@ToString(exclude = "employee")
 public class Course {
 
     @Id
@@ -39,11 +39,6 @@ public class Course {
     @Column(name = "date_create")
     private Date dateCreate;
 
-    @ManyToMany
-    @Fetch(FetchMode.JOIN)
-    @JoinTable(name = "employees_courses",
-            joinColumns = @JoinColumn(name="course_id"),
-            inverseJoinColumns = @JoinColumn(name="employee_id")
-    )
-    private Set<Employee> employee;
+    @ManyToMany (mappedBy = "courses")
+    private List<Employee> employee;
 }

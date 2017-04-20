@@ -52,6 +52,7 @@ public class Employee {
     private Post post;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @Fetch(FetchMode.SELECT)
     @JoinColumn(name = "department_id", nullable = false)
     private Department department;
 
@@ -61,11 +62,10 @@ public class Employee {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "employee")
     private Set<WorkDay> workingDays;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "employee")
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "employee")
     private Set<Tangible> tangibles;
 
     @ManyToMany
-    @Fetch(FetchMode.JOIN)
     @JoinTable(name = "employees_courses",
             joinColumns = @JoinColumn(name="employee_id"),
             inverseJoinColumns = @JoinColumn(name="course_id")

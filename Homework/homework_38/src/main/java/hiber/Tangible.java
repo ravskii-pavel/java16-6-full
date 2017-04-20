@@ -31,7 +31,6 @@ public class Tangible {
     private String description;
 
     @ManyToOne
-    @Fetch(FetchMode.JOIN)
     @JoinTable(name = "employees_tangibles",
             joinColumns = @JoinColumn(name="tangible_id"),
             inverseJoinColumns = @JoinColumn(name="employee_id")
