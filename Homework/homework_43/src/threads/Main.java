@@ -4,8 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("Главный поток " + Thread.currentThread().getName() + " - стартовал.");
-       /*1) Создайте класс потока, который выводит в консоль «Hello world».*/
+       System.out.println("Главный поток " + Thread.currentThread().getName() + " - стартовал.");
+        /*1) Создайте класс потока, который выводит в консоль «Hello world».*/
 
         new MyThread(){
             @Override
@@ -30,7 +30,7 @@ public class Main {
         testManyThreads();
 
         /* 5) В отдельном методе, создайте программу, которая запускает поток с множественным выводом строки в консоль,
-        и после запуска этого потока выполните присоединение его к основному потоку (thread.join()).*/
+        и после запуска этого потока выполните присоединение его к основному потоку (thread.join()).*//*
         System.out.println(Thread.currentThread().getName());
         testJoinMethod();
 
