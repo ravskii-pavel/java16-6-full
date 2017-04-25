@@ -1,14 +1,12 @@
 package sender;
 
-import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
 import java.util.concurrent.ArrayBlockingQueue;
 
 /**
  * Created by java on 21.04.2017.
  */
-public class EmailConsumer {
+public class EmailConsumer extends Thread{
 
     private final ArrayBlockingQueue<EmailMessage> queue;
 
@@ -16,16 +14,15 @@ public class EmailConsumer {
         this.queue = queue;
     }
 
-    public void start() {
-        new Thread(() -> {
-            EmailMessage message = null;
+
+    @Override
+    public void run() {
+        EmailMessage message = null;
+        while (true){
             while ((message = queue.poll()) != null) {
                 System.out.println(new Date() + ": " + Thread.currentThread().getName() + " Send message to: " + message.getClientEmail());
                 EmailSender.INSTANCE.sendEmail(message.getClientEmail(), message.getMessageText(), message.getSubject());
             }
-
-        }).start();
+        }
     }
-
-
 }

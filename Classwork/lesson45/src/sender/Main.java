@@ -1,8 +1,10 @@
 package sender;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.ArrayBlockingQueue;
-
-import static sender.EmailSender.INSTANCE;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Main {
 
@@ -11,19 +13,28 @@ public class Main {
 //        emailSender.sendEmail();
 
         ArrayBlockingQueue<EmailMessage> queue = new ArrayBlockingQueue<>(10);
+
+        ExecutorService executorService = Executors.newFixedThreadPool(3);
         EmailProducer producer = new EmailProducer(queue);
 
-        EmailConsumer consumer1 = new EmailConsumer(queue);
-        EmailConsumer consumer2 = new EmailConsumer(queue);
-        EmailConsumer consumer3 = new EmailConsumer(queue);
-
-        producer.start();
-
-        consumer1.start();
-        consumer2.start();
-        consumer3.start();
+        executorService.execute(new EmailConsumer(queue));
+        executorService.execute(new EmailConsumer(queue));
+        executorService.execute(new EmailConsumer(queue));
 
 
-        Thread.sleep(10000);
+        List<EmailMessage> messageList = Arrays.asList(
+                new EmailMessage("vorotnikovanton888@gmail.com", "Hello Kitty", "Hello Kitty"),
+                new EmailMessage("dp190792kdg@gmail.com", "Hello Kitty", "home"),
+                new EmailMessage("dp190792kdg@gmail.com", "Hello Kitty", "visit"),
+                new EmailMessage("dmitrij.kuzmenko@privatbank.ua", "Hello Kitty", "Hello Kitty"),
+                new EmailMessage("dmitrij.kuzmenko@privatbank.ua", "Hello Kitty", "home"),
+                new EmailMessage("dmitrij.kuzmenko@privatbank.ua", "Hello Kitty", "visit"));
+
+        producer.sendMessage(messageList);
+
+
+
+
+       executorService.shutdown();
     }
 }
