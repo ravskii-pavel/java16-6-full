@@ -22,21 +22,25 @@ public class App {
         try (SessionFactory sessionFactory = getSessionFactory();
              Session session = sessionFactory.openSession();) {
 
-            Query<Department> departmentQuery = session.createQuery("from Department where id = :id", Department.class);
+            /* ---1) Query<Department> departmentQuery = session.createQuery("from Department where id = :id", Department.class);
             departmentQuery.setParameter("id", 1L);
             Department department = departmentQuery.uniqueResult();
+
+            ---2) Query<Department> departmentQuery = session.createQuery("from Department where id = ?", Department.class);
+            departmentQuery.setParameter(0, 1L);
+            Department department = departmentQuery.uniqueResult()
 
             Query<Post> postQuery = session.createQuery("from Post where id = :id", Post.class);
             postQuery.setParameter("id", 9L);
             Post post = postQuery.uniqueResult();
 
-            /*Query<WorkDay> workDayQuery = session.createQuery("from WorkDay where id = :id", WorkDay.class);
+            *//*Query<WorkDay> workDayQuery = session.createQuery("from WorkDay where id = :id", WorkDay.class);
             workDayQuery.setParameter("id", 22L);
             WorkDay workDay = workDayQuery.uniqueResult();
 
             Query<Salary> salaryQuery = session.createQuery("from Salary where id = :id", Salary.class);
             salaryQuery.setParameter("id", 23L);
-            Salary salary = salaryQuery.uniqueResult();*/
+            Salary salary = salaryQuery.uniqueResult();*//*
 
             Employee employee = new Employee("Andrey2", "Ivanov2", "Robertovich2", 470, department, post);
 
@@ -60,26 +64,34 @@ public class App {
             session.save(tangible);
 
 
-            /*session.save(phoneNumber);
-            session.save(phoneNumber);*/
+            *//*session.save(phoneNumber);
+            session.save(phoneNumber);*//*
 
 
             session.update(employee);
             session.update(tangible);
-            transaction.commit();
+            transaction.commit();*/
 
-            Query<Employee> query = session.createQuery("from Employee", Employee.class);
+            /*Query<Employee> query = session.createQuery("from Employee", Employee.class);
             List<Employee> list = query.list();
 
             for (Employee e : list) {
                 System.out.println(e);
-            }
+            }*/
 
-            Query<Tangible> queryT = session.createQuery("from Tangible", Tangible.class);
+      /*      Query<Tangible> queryT = session.createQuery("from Tangible", Tangible.class);
             List<Tangible> listT = queryT.list();
 
             for (Tangible e : listT) {
                 System.out.println(e);
+            }*/
+            HQL
+
+            Query<Course> courseQuery = session.createQuery("from Course WHERE title like \'%Ubuntu%\' and price > 500", Course.class);
+            List<Course> listC = courseQuery.list();
+
+            for (Course course : listC) {
+                System.out.println(course);
             }
 
         } finally {
