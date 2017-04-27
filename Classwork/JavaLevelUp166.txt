@@ -1,0 +1,25 @@
+email: levelup.java.16.6@gmail.com
+password: JavaLevelUp166
+
+
+Alexandr (18:51):
+https://mvnrepository.com/artifact/javax.activation/activation/1.1.1
+https://mvnrepository.com/artifact/javax.mail/mail/1.4
+Alexandr (18:57):
+email: levelup.java.16.6@gmail.com
+password: JavaLevelUp166
+
+Андрей (19:00):
+new javax.mail.Authenticator() {
+    protected PasswordAuthentication getPasswordAuthentication() {
+        return new PasswordAuthentication(from, password);
+    }
+});
+
+Dmitriy (19:06):
+http://devcolibri.com/1972
+Андрей (19:07):
+props.put("mail.smtp.auth", "true");
+props.put("mail.smtp.starttls.enable", "true");
+props.put("mail.smtp.host", "smtp.gmail.com");
+props.put("mail.smtp.port", "587");
