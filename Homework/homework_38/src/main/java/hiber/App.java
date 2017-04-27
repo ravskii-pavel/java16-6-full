@@ -1,6 +1,7 @@
 package hiber;
 import javax.persistence.*;
 
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -85,7 +86,7 @@ public class App {
             for (Tangible e : listT) {
                 System.out.println(e);
             }*/
-            HQL
+            Criteria criteria = session.createCriteria(someClass.class);
 
             Query<Course> courseQuery = session.createQuery("from Course WHERE title like \'%Ubuntu%\' and price > 500", Course.class);
             List<Course> listC = courseQuery.list();
