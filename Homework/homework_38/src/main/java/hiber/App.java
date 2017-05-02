@@ -1,5 +1,6 @@
 package hiber;
 import javax.persistence.*;
+import javax.persistence.criteria.CriteriaBuilder;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
@@ -86,10 +87,15 @@ public class App {
             for (Tangible e : listT) {
                 System.out.println(e);
             }*/
-            Criteria criteria = session.createCriteria(someClass.class);
 
             Query<Course> courseQuery = session.createQuery("from Course WHERE title like \'%Ubuntu%\' and price > 500", Course.class);
             List<Course> listC = courseQuery.list();
+
+
+            CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
+            CriteriaQuery<> criteriaQuery = criteriaBuilder.createQuery(.class);
+            Root<> yachtRoot = criteriaQuery.from(.class);
+
 
             for (Course course : listC) {
                 System.out.println(course);
