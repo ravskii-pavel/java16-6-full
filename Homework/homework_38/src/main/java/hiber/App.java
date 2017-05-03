@@ -21,6 +21,7 @@ public class App {
 
     public static void main(String[] args) throws ClassNotFoundException {
 
+
         try (SessionFactory sessionFactory = getSessionFactory();
              Session session = sessionFactory.openSession();) {
 
