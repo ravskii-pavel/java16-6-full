@@ -25,6 +25,10 @@ public class App {
         try (SessionFactory sessionFactory = getSessionFactory();
              Session session = sessionFactory.openSession();) {
 
+            EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory();
+            EntityManager entityManager = entityManagerFactory.createEntityManager();
+            CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+
             /* ---1) Query<Department> departmentQuery = session.createQuery("from Department where id = :id", Department.class);
             departmentQuery.setParameter("id", 1L);
             Department department = departmentQuery.uniqueResult();
