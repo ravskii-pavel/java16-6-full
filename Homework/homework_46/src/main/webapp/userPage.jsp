@@ -8,9 +8,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>$Title$</title>
+    <title>User Info</title>
+
 </head>
 <body>
-$END$
+    <span>User name: ${userName}</span><br>
+    <span>User name: ${userLogin}</span><br>
+    <span>User name: ${userEmail}</span><br>
+    <span>User name: ${userPassword}</span><br>
+
 </body>
 </html>

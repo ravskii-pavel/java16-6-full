@@ -36,6 +36,6 @@ public class HomeServlet extends HttpServlet {
         else if(req.getParameter("registration").equals("Registration")){
             req.getRequestDispatcher("registration.jsp").forward(req, resp);
         }*/
-        req.getRequestDispatcher("login.jsp").forward(req, resp);
+        req.getRequestDispatcher("userPage.jsp").forward(req, resp);
     }
 }

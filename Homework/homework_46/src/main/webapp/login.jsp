@@ -8,14 +8,18 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Login</title>
+    <title>Sign in</title>
+    <style>
+        <%@include file='css/main.css' %>
+    </style>
 </head>
-<body>
+<body style="margin: 20px 35% 20px 35%;">
 
-    <form action="/" method="post">
-        <input name="email" placeholder="login / email" type="text">
-        <input name="password" placeholder="password" type="password">
-        <input name="register" type="Confirm">
+    <form class="form" action="/login" method="post">
+        <div class="legend">Введите Ваш логин и пароль</div>
+        <input class="textButton" name="email" placeholder="login / email" type="text">
+        <input class="textButton" name="password" placeholder="password" type="password"> <br>
+        <input class="button" name="signIn" value="Sign in"  type="submit">
     </form>
 
 </body>

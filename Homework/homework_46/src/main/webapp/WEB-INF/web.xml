@@ -27,10 +27,10 @@ http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
     </servlet-mapping>
 
 
-    <servlet>
+  <servlet>
         <servlet-name>loginServlet</servlet-name>
         <servlet-class>web.RegistrationServlet</servlet-class>
-        <load-on-startup>2</load-on-startup>
+        <load-on-startup>3</load-on-startup>
     </servlet>
 
     <servlet-mapping>

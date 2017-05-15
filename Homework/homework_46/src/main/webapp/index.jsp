@@ -5,19 +5,24 @@
   Time: 20:31
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%--<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">
+--%>
+<%@page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
-    <title>User info</title>
+    <title>Main Page</title>
+    <style>
+        <%@include file='css/main.css' %>
+    </style>
 </head>
-<body>
-
-<form action="/" method="post">
-    <a href="/login"> Sign in </a><br>
-    <a href="/registration"> Register </a>
-    <!--<input type="submit" name="login" value="Sign in">
-    <input type="submit" name="login" value="Registration">-->
-</form>
-
+<body style="margin: 20px 35% 20px 35%;">
+        <div class="form">
+            <div class="legend">Вход в систему</div>
+            <a class="button" href="/login"> Sign in </a>
+            <a class="button" href="/registration"> Registration </a>
+        </div>
 </body>
 </html>
