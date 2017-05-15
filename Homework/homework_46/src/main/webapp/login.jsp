@@ -17,8 +17,8 @@
 
     <form class="form" action="/login" method="post">
         <div class="legend">Введите Ваш логин и пароль</div>
-        <input class="textButton" name="email" placeholder="login / email" type="text">
-        <input class="textButton" name="password" placeholder="password" type="password"> <br>
+        <input class="textButton" name="enterEmail" placeholder="login / email" type="text">
+        <input class="textButton" name="enterPassword" placeholder="password" type="password"> <br>
         <input class="button" name="signIn" value="Sign in"  type="submit">
     </form>
 

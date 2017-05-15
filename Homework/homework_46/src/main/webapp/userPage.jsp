@@ -9,13 +9,17 @@
 <html>
 <head>
     <title>User Info</title>
+    <style>
+        <%@include file='css/main.css' %>
+    </style>
 
 </head>
 <body>
     <span>User name: ${userName}</span><br>
-    <span>User name: ${userLogin}</span><br>
-    <span>User name: ${userEmail}</span><br>
-    <span>User name: ${userPassword}</span><br>
+    <span>User login: ${userLogin}</span><br>
+    <span>User email: ${userEmail}</span><br>
+    <span>User password: ${userPassword}</span><br><br>
+    <a class="button" href="/"> Home </a>
 
 </body>
 </html>

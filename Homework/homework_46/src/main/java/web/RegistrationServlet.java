@@ -4,6 +4,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -27,33 +28,32 @@ public class RegistrationServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String path = req.getServletPath();
-//        PrintWriter writer = resp.getWriter();
-//        writer.println("<h1>Hello World!</h1>");
+        HttpSession session = req.getSession(true);
         if (path.contains("registration")) {
             String name = req.getParameter("name");
             String login = req.getParameter("login");
             String email = req.getParameter("email");
             String password = req.getParameter("password");
 
-            req.setAttribute("userName", name);
-            req.setAttribute("userLogin", login);
-            req.setAttribute("userEmail", email);
-            req.setAttribute("userPassword", password);
-            req.getRequestDispatcher("index.jsp").forward(req, resp);
-        }
-        else {
+            session.setAttribute("userName", name);
+            session.setAttribute("userLogin", login);
+            session.setAttribute("userEmail", email);
+            session.setAttribute("userPassword", password);
 
-           // req.setAttribute("userName", req.getAttribute("userName"));
             req.getRequestDispatcher("userPage.jsp").forward(req, resp);
         }
+        else {
+            String oldEmail = (String)session.getAttribute("userEmail");
+            if(req.getParameter("enterEmail").equals(oldEmail)) {
+                req.getRequestDispatcher("userPage.jsp").forward(req, resp);
+            }
+            else {
+                PrintWriter writer = resp.getWriter();
+                writer.println("Логин или пароль не совпадают");
+                req.getRequestDispatcher("login.jsp").forward(req, resp);
 
-
-//        PrintWriter writer = resp.getWriter();
-//        writer.println(String.format("Hello, %s! Your password length is: %d", login, password.length()));
-
-        //req.setAttribute("userName", login);
-        //req.setAttribute("balance", "100$");
-
+            }
+        }
 
     }
 }
