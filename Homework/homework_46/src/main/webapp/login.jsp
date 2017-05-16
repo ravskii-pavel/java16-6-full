@@ -16,8 +16,8 @@
 <body style="margin: 20px 35% 20px 35%;">
 
     <form class="form" action="/login" method="post">
-        <div class="legend">Введите Ваш логин и пароль</div>
-        <input class="textButton" name="enterEmail" placeholder="login / email" type="text">
+        <div class="legend">${enterSystem}</div>
+        <input class="textButton" name="enterEmail" placeholder="email" type="text">
         <input class="textButton" name="enterPassword" placeholder="password" type="password"> <br>
         <input class="button" name="signIn" value="Sign in"  type="submit">
     </form>

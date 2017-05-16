@@ -14,12 +14,13 @@
     </style>
 
 </head>
-<body>
-    <span>User name: ${userName}</span><br>
-    <span>User login: ${userLogin}</span><br>
-    <span>User email: ${userEmail}</span><br>
-    <span>User password: ${userPassword}</span><br><br>
-    <a class="button" href="/"> Home </a>
-
+<body style="margin: 20px 35% 20px 35%;">
+    <div class="form">
+        <span>User name: ${userName}</span><br>
+        <span>User login: ${userLogin}</span><br>
+        <span>User email: ${userEmail}</span><br>
+        <span>User password: ${userPassword}</span><br><br>
+        <a class="button" href="/"> Home </a>
+    </div>
 </body>
 </html>
