@@ -10,6 +10,7 @@
 link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">
 --%>
 <%@page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix = "b" uri = "http://java.sun.com/jsp/jstl/core" %>
 
 <html>
 <head>
@@ -19,10 +20,11 @@ link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">
     </style>
 </head>
 <body style="margin: 20px 35% 20px 35%;">
+        <%--<img src="../${pageContext.request.contextPath}/css/black-diamond-logo.png"/>--%>
         <div class="form">
             <div class="legend">Вход в систему</div>
-            <a class="button" href="/login"> Sign in </a>
-            <a class="button" href="/registration"> Registration </a>
+            <a class="button" href="<%=request.getServletContext().getContextPath()%>/login"> Sign in </a>
+            <a class="button" href="<%=request.getServletContext().getContextPath()%>/registration"> Registration </a>
         </div>
 </body>
 </html>

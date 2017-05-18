@@ -1,6 +1,7 @@
 .form{
     font: 18px Helvetica, Arial;
-    background-color: #f5f5f5;
+    /*background-color: #f5f5f5;*/
+    /*background-image: url(/css/black-diamond-logo.png);*/
     min-height: 20px;
     padding: 19px;
     border: 1px solid #e3e3e3;

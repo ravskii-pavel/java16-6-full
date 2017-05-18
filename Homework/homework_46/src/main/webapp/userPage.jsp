@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>User Info</title>
@@ -15,12 +16,13 @@
 
 </head>
 <body style="margin: 20px 35% 20px 35%;">
+    <img src="../css/black-diamond-logo.png"/>
     <div class="form">
         <span>User name: ${userName}</span><br>
         <span>User login: ${userLogin}</span><br>
         <span>User email: ${userEmail}</span><br>
         <span>User password: ${userPassword}</span><br><br>
-        <a class="button" href="/"> Home </a>
+        <a class="button" href="<%=request.getServletContext().getContextPath()%>/"> Home </a>
     </div>
 </body>
 </html>
