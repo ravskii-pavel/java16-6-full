@@ -15,8 +15,8 @@
     </style>
 </head>
 <body style="margin: 20px 35% 20px 35%;">
-    <%--<img src="../css/black-diamond-logo.png"/>--%>
-    <img src="..<d:url value="/css/black-diamond-logo.png"/>" alt="login preview">
+    <img src="css/black-diamond-logo.png"/>
+    <%--<img src="<d:url value="css/black-diamond-logo.png"/>" alt="login preview">--%>
     <form class="form" action="<%=request.getServletContext().getContextPath()%>/registration" method="post">
         <div class="legend">Зпролните поля формы</div>
         <input class="textButton" name="name" placeholder="full name" type="text">
