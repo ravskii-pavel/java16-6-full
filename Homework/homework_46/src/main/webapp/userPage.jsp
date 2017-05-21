@@ -16,7 +16,7 @@
 
 </head>
 <body style="margin: 20px 35% 20px 35%;">
-    <img src="css/black-diamond-logo.png"/>
+    <img src="../css/black-diamond-logo.png"/>
     <div class="form">
         <span>User name: ${userName}</span><br>
         <span>User login: ${userLogin}</span><br>
