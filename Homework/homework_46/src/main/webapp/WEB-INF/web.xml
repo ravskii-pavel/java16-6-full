@@ -12,7 +12,7 @@ http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
     <servlet-mapping>
         <servlet-name>homeServlet</servlet-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern></url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -29,7 +29,7 @@ http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
   <servlet>
         <servlet-name>loginServlet</servlet-name>
-        <servlet-class>web.RegistrationServlet</servlet-class>
+        <servlet-class>web.LoginServlet</servlet-class>
         <load-on-startup>3</load-on-startup>
     </servlet>
 
