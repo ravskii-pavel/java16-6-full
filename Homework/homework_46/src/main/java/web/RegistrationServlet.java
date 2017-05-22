@@ -1,6 +1,7 @@
 package web;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,6 +14,7 @@ import static java.awt.Color.red;
 /**
  * Created by java on 12.05.2017.
  */
+@WebServlet(urlPatterns = {"/registration"})
 public class RegistrationServlet extends HttpServlet {
 
     @Override

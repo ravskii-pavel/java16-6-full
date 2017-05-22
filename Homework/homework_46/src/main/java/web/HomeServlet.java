@@ -11,6 +11,8 @@ import java.io.PrintWriter;
 /**
  * Created by java on 12.05.2017.
  */
+
+@WebServlet(urlPatterns = {""})
 public class HomeServlet extends HttpServlet {
 
     @Override
