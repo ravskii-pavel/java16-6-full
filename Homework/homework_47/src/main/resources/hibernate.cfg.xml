@@ -1,0 +1,17 @@
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/web</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">Canada020888</property>
+        <property name="connection.pool_size">10</property>
+        <property name="dialect">org.hibernate.dialect.MySQL57Dialect</property>
+        <property name="show_sql">true</property>
+        <property name="hbm2ddl.auto">update</property>
+        <property name="hibernate.connection.autocommit">true</property>
+        <!--<property name="generatedByDatabase" generated="always"/> />-->
+        <mapping class="web.entity.User" />
+        <mapping class="web.entity.Role" />
+
+    </session-factory>
+</hibernate-configuration>

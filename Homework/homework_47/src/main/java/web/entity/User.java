@@ -23,7 +23,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Column(name = "login")
+    @Column(name = "login", nullable = false, unique = true)
     private String login;
 
     @Column(name = "fullName")
@@ -32,17 +32,17 @@ public class User {
     @Column(name = "age")
     private int age;
 
-    @Column(name = "phone")
+    @Column(name = "phone", nullable = false, unique = true)
     private String phoneNumber;
 
-    @Column(name = "email")
+    @Column(name = "email", nullable = false, unique = true)
     private String email;
 
     /*@Column(name = "STATUS_ID")
     @Enumerated(EnumType.ORDINAL )*/
 
-    @Column(name = "role")
+    @Column(name = "role", nullable = false)
     @Enumerated(EnumType.STRING)
-    private Role role = Role.GUEST;
+    private Role role;
 
 }

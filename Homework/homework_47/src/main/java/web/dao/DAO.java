@@ -1,6 +1,7 @@
 package web.dao;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 /**
  * Created by Ravskiy Pavel on 21.05.2017.
@@ -8,7 +9,7 @@ import java.util.ArrayList;
 public interface DAO<T> {
 
     void create(T t);
-    ArrayList<T> read();
+    Map<String, T> read();
     void update(T t);
     void delete(T t);
     T getOneById(long id);
