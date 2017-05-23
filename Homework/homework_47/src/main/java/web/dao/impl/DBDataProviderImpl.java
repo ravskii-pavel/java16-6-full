@@ -17,7 +17,7 @@ public class DBDataProviderImpl implements DataProvider {
     private SessionFactory sessionFactory = getSessionFactory();
     private Session session = sessionFactory.openSession();
     //ConnectionType connectionType = ConnectionType.MYSQL;
-    Session getSession (){
+    public Session getSession (){
         return session;
     }
 
