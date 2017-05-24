@@ -1,5 +1,7 @@
 package web.dao;
 
+import web.entity.Role;
+
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -9,10 +11,10 @@ import java.util.Map;
 public interface DAO<T> {
 
     void create(T t);
-    Map<String, T> read();
+    ArrayList<T> read();
     void update(T t);
-    void delete(T t);
-    T getOneById(long id);
-    T getOneByEmail(long id);
-    T getOneByLogin(String login);
+    void delete(long t);
+    /*T getOneById(long id);*/
+    ArrayList <T> getByLogin(String searchLogin);
+    ArrayList <T> getByPhone(String searchPhone);
 }

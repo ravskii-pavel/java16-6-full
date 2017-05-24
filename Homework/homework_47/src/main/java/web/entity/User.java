@@ -1,8 +1,7 @@
 package web.entity;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+
+import lombok.*;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
@@ -12,11 +11,13 @@ import javax.persistence.*;
  * Created by Ravskiy Pavel on 21.05.2017.
  */
 
+@Entity
+@Table(name = "users", indexes = {
+        @Index(columnList = "id, login, email", name = "user_idx")
+})
 @Getter
 @Setter
 @NoArgsConstructor
-@Entity
-@Table(name = "users")
 public class User {
 
     @Id
@@ -45,4 +46,23 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Role role;
 
+/*    public User(String login, String fullName, int age, String phoneNumber, String email) {
+        this.login = login;
+        this.fullName = fullName;
+        this.age = age;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+    }
+
+    public User(String login, String fullName, int age, String phoneNumber, String email, Role role) {
+        this.login = login;
+        this.fullName = fullName;
+        this.age = age;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.role = role;
+    }*/
+
+//    public User() {
+//    }
 }

@@ -5,8 +5,11 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import web.dao.DAO;
 import web.dao.DataProvider;
+import web.entity.Role;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -23,13 +26,17 @@ public class UserDAOImpl<User> implements DAO<User> {
 
     @Override
     public void create(User user) {
-        
+        Transaction transaction = session.getTransaction();
+        transaction.begin();
+        session.save(user);
+        /*session.update(user);*/
+        transaction.commit();
     }
 
     @Override
-    public Map<String, User> read() {
+    public ArrayList<User> read() {
         String login;
-        Map<String, User> users;
+        ArrayList<User> users = new ArrayList<>();
         return users;
     }
 
@@ -38,43 +45,50 @@ public class UserDAOImpl<User> implements DAO<User> {
 
         Transaction transaction = session.getTransaction();
         transaction.begin();
+
+        Query query = session.createQuery("update User set fullName = :userFullName" +
+                "where stockCode = :stockCode");
+        query.setParameter("userFullName", user.);
+        query.setParameter("stockCode", "7277");
+        int result = query.executeUpdate();
         /*Employee employee = new Employee("Iosiph", "Stalin", "Moiseevich", 55000, department, post);
-            employee.setSex(Sex.MALE);
-            employee.setCity("Dnepr");
-            employee.setZipCode("49000");
-            employee.setStreetName("Gagarina");
-           */
-
-
+         employee.setSex(Sex.MALE);
+         employee.setCity("Dnepr");
+         employee.setZipCode("49000");
+         employee.setStreetName("Gagarina");
+        */
         session.save(user);
-        user.setPhoneNumber(phoneNumber);
-        user.setCar(car);
-        session.update(user);
-
-        session.save(yacht);
         transaction.commit();
-        Query<User> userQuery = session.createQuery("update User where id = :id", Department.class);
+        Query<User> userQuery = session.createQuery("update User set where id = :id", Department.class);
         departmentQuery.setParameter("id", 1L);
         Department department = departmentQuery.uniqueResult()
     }
 
     @Override
-    public void delete(Object o) {
-
+    public void delete(long userId) {
+        Query<User> userQuery = session.createQuery("delete User WHERE id = :id", User.class);
+        userQuery.setParameter("id", userId).executeUpdate();
+        /*session.delete();*/
     }
 
-    @Override
+    /*@Override
     public Object getOneById(long id) {
         return null;
+    }*/
+
+    @Override
+    public ArrayList<User> getByLogin(String searchLogin) {
+        Query<User> userQuery = session.createQuery("from User WHERE login like (\'%\' + :login + \'%\')", User.class);
+        userQuery.setParameter("login", searchLogin);
+        List<User> listUsers = userQuery.list();
+        return (ArrayList<User>)listUsers;
     }
 
     @Override
-    public Object getOneByEmail(long id) {
-        return null;
-    }
-
-    @Override
-    public Object getOneByLogin(String login) {
-        return null;
+    public  ArrayList<User> getByPhone(String searchPhone) {
+        Query<User> userQuery = session.createQuery("from User WHERE phoneNumber like (\'%\' + :phone + \'%\')", User.class);
+        userQuery.setParameter("phone", searchPhone);
+        List<User> listUsers = userQuery.list();
+        return (ArrayList<User>) listUsers;
     }
 }
