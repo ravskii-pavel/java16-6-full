@@ -23,6 +23,7 @@
         <span>User email: ${userEmail}</span><br>
         <span>User password: ${userPassword}</span><br><br>
         <a class="button" href="<%=request.getServletContext().getContextPath()%>/"> Home </a>
+        <a class="button" href="<%=request.getServletContext().getContextPath()%>/"> Change </a>
     </div>
 </body>
 </html>

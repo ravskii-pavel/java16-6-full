@@ -1,5 +1,7 @@
 package web;
 
+import web.dao.DAO;
+import web.dao.DataProvider;
 import web.dao.impl.DBDataProviderImpl;
 import web.dao.impl.UserDAOImpl;
 import web.entity.Role;
@@ -22,19 +24,12 @@ import static java.awt.Color.red;
 
 @WebServlet(urlPatterns = {"/registration"})
 public class RegistrationServlet extends HttpServlet {
+    DataProvider dataProvider = new DBDataProviderImpl();
+    DAO<User> userDAO = new UserDAOImpl(dataProvider);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         req.getRequestDispatcher("registration.jsp").forward(req, resp);
-        //String path = req.getServletPath();
-        //req.setAttribute("enterSystem", enter);
-        /*if (path.contains("registration")) {
-            req.getRequestDispatcher("registration.jsp").forward(req, resp);
-        }
-        else {
-            req.getRequestDispatcher("login.jsp").forward(req, resp);
-        }*/
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -58,10 +53,7 @@ public class RegistrationServlet extends HttpServlet {
         String password = req.getParameter("password");
         Role role = Role.valueOf(req.getParameter("role"));
 
-        UserDAOImpl userDAO = new UserDAOImpl(new DBDataProviderImpl());
-        User user = new User(login, name, age, phone, email, password, role);
-        userDAO.create(user);
-
+        userDAO.create(new User(login, name, age, phone, email, password, role));
         req.getRequestDispatcher("userPage.jsp").forward(req, resp);
      }
 }

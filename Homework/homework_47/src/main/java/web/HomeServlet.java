@@ -20,8 +20,8 @@ public class HomeServlet extends HttpServlet {
         req.getRequestDispatcher("index.jsp").forward(req, resp);
     }
 
-    @Override
+   /* @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher("userPage.jsp").forward(req, resp);
-    }
+    }*/
 }
