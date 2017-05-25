@@ -24,7 +24,7 @@ link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">
         <div class="form">
             <div class="legend">Вход в систему</div>
             <a class="button" href="<%=request.getServletContext().getContextPath()%>/login"> Sign in </a>
-            <a class="button" href="<%=request.getServletContext().getContextPath()%>/registration"> Registration </a>
+            <%-- <a class="button" href="<%=request.getServletContext().getContextPath()%>/registration"> Registration </a>--%>
         </div>
 </body>
 </html>

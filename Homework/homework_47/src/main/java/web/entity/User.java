@@ -34,6 +34,9 @@ public class User {
     @Column(name = "email", nullable = false, unique = true)
     private String email;
 
+    @Column(name = "password", nullable = false, unique = false)
+    private String password;
+
     /*@Column(name = "STATUS_ID")
     @Enumerated(EnumType.ORDINAL )*/
 
@@ -45,25 +48,23 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Role role;
 
-/*    public User(String login, String fullName, int age, String phoneNumber, String email) {
+    public User(String login, String fullName, int age, String phoneNumber, String email, String password, Role role) {
         this.login = login;
         this.fullName = fullName;
         this.age = age;
         this.phoneNumber = phoneNumber;
         this.email = email;
-    }
-
-    public User(String login, String fullName, int age, String phoneNumber, String email, Role role) {
-        this.login = login;
-        this.fullName = fullName;
-        this.age = age;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
+        this.password = password;
         this.role = role;
-    }*/
-
-//    public User() {
-//    }
+    }
+    public User(String login, String fullName, int age, String phoneNumber, String email, String password) {
+        this.login = login;
+        this.fullName = fullName;
+        this.age = age;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.password = password;
+    }
 
     public String getLogin() { return login; }
     public void setLogin(String login){ this.login = login; }
@@ -82,4 +83,7 @@ public class User {
 
     public Role getRole() { return role; }
     public void setRole(Role role) { this.role = role; }
+
+    public String getPassword() { return password; }
+    public void setPassword(String password) { this.password = password; }
 }

@@ -15,15 +15,21 @@
     </style>
 </head>
 <body style="margin: 20px 35% 20px 35%;">
-    <%--<img src="../css/black-diamond-logo.png"/>--%>
-    <img src="..<d:url value="/css/black-diamond-logo.png"/>" alt="login preview">
-    <form class="form" action="<%=request.getServletContext().getContextPath()%>/registration" method="post">
-        <div class="legend">Зпролните поля формы</div>
-        <input class="textButton" name="name" placeholder="full name" type="text">
-        <input class="textButton" name="login" placeholder="login" type="text">
-        <input class="textButton" name="email" placeholder="email" type="text">
-        <input class="textButton" name="password" placeholder="password" type="password"> <br>
-        <input class="button" name="register" value="Confirm" type="submit">
-    </form>
+<%--<img src="../css/black-diamond-logo.png"/>--%>
+<img src="..<d:url value="/css/black-diamond-logo.png"/>" alt="login preview">
+<form class="form" action="<%=request.getServletContext().getContextPath()%>/registration" method="post">
+    <div class="legend">Зпролните поля формы</div>
+    <input class="textButton" name="login" placeholder="login" type="text">
+    <input class="textButton" name="fullName" placeholder="full name" type="text">
+    <input class="textButton" name="age" placeholder="age" type="text">
+    <input class="textButton" name="phone" placeholder="phone number" type="text">
+    <input class="textButton" name="email" placeholder="email" type="text">
+    <input class="textButton" name="password" placeholder="password" type="password"> <br>
+    <select name="role" id="role">
+        <option value="GUEST">Guest</option>
+        <option value="ADMIN">Admin</option>
+    </select>
+    <input class="button" name="register" value="Confirm" type="submit">
+</form>
 </body>
 </html>

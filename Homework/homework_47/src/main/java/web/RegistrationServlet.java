@@ -1,5 +1,10 @@
 package web;
 
+import web.dao.impl.DBDataProviderImpl;
+import web.dao.impl.UserDAOImpl;
+import web.entity.Role;
+import web.entity.User;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,17 +39,29 @@ public class RegistrationServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
      /*   String path = req.getServletPath();
-        if (path.contains("registration")) {*/
-        HttpSession session = req.getSession(true);
-
-        String name = req.getParameter("name");
-        String login = req.getParameter("login");
-        String email = req.getParameter("email");
-        String password = req.getParameter("password");
+        if (path.contains("registration")) {
+        //HttpSession session = req.getSession(true);
         session.setAttribute("userName", name);
         session.setAttribute("userLogin", login);
         session.setAttribute("userEmail", email);
         session.setAttribute("userPassword", password);
+
+        int age1 = Integer.valueOf(req.getParameter("age"));
+        int age1 = Integer.valueOf(req.getParameter("age")).intValue() // intValue;
+        int age2 = new Integer(req.getParameter("age"));*/
+
+        String login = req.getParameter("login");
+        String name = req.getParameter("fullName");
+        int age = Integer.parseInt(req.getParameter("age"));
+        String phone = req.getParameter("phone");
+        String email = req.getParameter("email");
+        String password = req.getParameter("password");
+        Role role = Role.valueOf(req.getParameter("role"));
+
+        UserDAOImpl userDAO = new UserDAOImpl(new DBDataProviderImpl());
+        User user = new User(login, name, age, phone, email, password, role);
+        userDAO.create(user);
+
         req.getRequestDispatcher("userPage.jsp").forward(req, resp);
      }
 }

@@ -31,7 +31,7 @@ public class UserDAOImpl extends AbstractDBDAO<User> {
     public void update(User user) {
         Transaction transaction = session.getTransaction();
         transaction.begin();
-        Query userQuery = session.createQuery("update User set fullName = :userFullName, age = :userAge," +
+         Query userQuery = session.createQuery("update User set fullName = :userFullName, age = :userAge," +
                 "phoneNumber = :userPhone, email = :userEmail where login = :userLogin", User.class);
         userQuery.setParameter("userFullName", user.getFullName());
         userQuery.setParameter("userAge", user.getAge());
