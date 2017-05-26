@@ -15,15 +15,15 @@ http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
         <url-pattern>/welcome</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>CheckBalanceServlet</servlet-name>
-        <servlet-class>web.CheckBalanceServlet</servlet-class>
-        <load-on-startup>2</load-on-startup>
-    </servlet>
+    <!--<servlet>-->
+        <!--<servlet-name>CheckBalanceServlet</servlet-name>-->
+        <!--<servlet-class>web.CheckBalanceServlet</servlet-class>-->
+        <!--<load-on-startup>2</load-on-startup>-->
+    <!--</servlet>-->
 
-    <servlet-mapping>
-        <servlet-name>CheckBalanceServlet</servlet-name>
-        <url-pattern>/</url-pattern>
-    </servlet-mapping>
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>CheckBalanceServlet</servlet-name>-->
+        <!--<url-pattern>/</url-pattern>-->
+    <!--</servlet-mapping>-->
 
 </web-app>

@@ -49,16 +49,16 @@ public class UserDAOImpl extends AbstractDBDAO<User> {
 
     @Override
     public ArrayList<User> getByLogin(String searchLogin) {
-        Query<User> userQuery = session.createQuery("from User WHERE login like (\'%\' + :login + \'%\')", User.class);
-        userQuery.setParameter("login", searchLogin);
+        Query<User> userQuery = session.createQuery("from User WHERE login like :login", User.class);
+        userQuery.setParameter("login", "%" + searchLogin + "%");
         List<User> listUsers = userQuery.list();
         return (ArrayList<User>)listUsers;
     }
 
     @Override
     public  ArrayList<User> getByPhone(String searchPhone) {
-        Query<User> userQuery = session.createQuery("from User WHERE phoneNumber like (\'%\' + :phone + \'%\')", User.class);
-        userQuery.setParameter("phone", searchPhone);
+        Query<User> userQuery = session.createQuery("from User WHERE phoneNumber like :phone", User.class);
+        userQuery.setParameter("phone", "%" + searchPhone + "%");
         List<User> listUsers = userQuery.list();
         return (ArrayList<User>) listUsers;
     }

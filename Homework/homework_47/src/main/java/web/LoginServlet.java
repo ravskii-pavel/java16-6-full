@@ -24,9 +24,9 @@ import java.util.ArrayList;
 
 @WebServlet(urlPatterns = {"/login"})
 public class LoginServlet extends HttpServlet {
-    DataProvider dataProvider = new DBDataProviderImpl();
-    DAO<User> userDAO = new UserDAOImpl(dataProvider);
-    String enter = "Введите Ваш логин и пароль";
+    private DataProvider dataProvider = new DBDataProviderImpl();
+    private DAO<User> userDAO = new UserDAOImpl(dataProvider);
+    private String enter = "Введите Ваш логин и пароль";
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -45,14 +45,16 @@ public class LoginServlet extends HttpServlet {
 
         if(login.equals(loginDB) &&  password.equals(passwordDB)) {
            if (userFromDB.getRole().equals(Role.GUEST)){
+               req.setAttribute("userList", listUsers);
                req.getRequestDispatcher("userPage.jsp").forward(req, resp);
+           }
+           else{
+
            }
         }
         else {
             req.setAttribute("enterSystem", "<span style='color: red;'>Incorrect email or password</span>");
             req.getRequestDispatcher("login.jsp").forward(req, resp);
         }
-
     }
-
 }
