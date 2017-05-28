@@ -31,12 +31,13 @@ public class UserDAOImpl extends AbstractDBDAO<User> {
     public void update(User user) {
         Transaction transaction = session.getTransaction();
         transaction.begin();
-         Query userQuery = session.createQuery("update User set fullName = :userFullName, age = :userAge," +
-                "phoneNumber = :userPhone, email = :userEmail where login = :userLogin", User.class);
+        Query userQuery = session.createQuery("update User set fullName = :userFullName, age = :userAge," +
+                "phoneNumber = :userPhone, email = :userEmail where login = :userLogin");
         userQuery.setParameter("userFullName", user.getFullName());
         userQuery.setParameter("userAge", user.getAge());
         userQuery.setParameter("userPhone", user.getPhoneNumber());
         userQuery.setParameter("userEmail", user.getEmail());
+        userQuery.setParameter("userLogin", user.getLogin());
         userQuery.executeUpdate();
         transaction.commit();
     }

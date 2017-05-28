@@ -21,24 +21,25 @@
 </head>
 <body style="margin: 20px 35% 20px 35%;">
     <img src="../css/black-diamond-logo.png"/>
-    <form class="form" id = "change-form">
+    <form class="form" id = "change-form" action="/userpage" method="post">
+        <c:set var="userFromJSP" value="${userList}" scope="session"/>
         <c:forEach var="v" items="${userList}">
-            <input class="textButton" name="login" id="login" value="${v.login}" type="text" disabled>
-            <input class="textButton" name="fullName" value="${v.fullName}" type="text" disabled>
-            <input class="textButton" name="age" value="${v.age}" type="text" disabled>
-            <input class="textButton" name="phone" value="${v.phoneNumber}" type="text" disabled>
-            <input class="textButton" id="email" name="email" value="${v.email}" type="text" disabled>
-            <input class="textButton" name="password" type="password" disabled> <br>
-            <a href="<%=request.getServletContext().getContextPath()%>/changepass">change password</a> <br>
-
+            <p name="id" id="id"> ${v.id} </p>
+            <p name="login" id="login"> ${v.login} </p>
+            <input class="textButton" name="fullName" id="name" value="${v.fullName}" type="text" disabled>
+            <input class="textButton" name="age" id="age" value="${v.age}" type="text" disabled>
+            <input class="textButton" name="phone" id="phone" value="${v.phoneNumber}" type="text" disabled>
+            <input class="textButton" name="email" id="email" value="${v.email}" type="text" disabled>
+            <input class="textButton" name="password" id="password" value="${v.password}" type="password" disabled> <br>
+            <a class="pointer" id="changePass" onclick="changePassword()">change password</a> <br><br>
         </c:forEach>
 
         <a class="button" href="<%=request.getServletContext().getContextPath()%>/"> Home </a>
         <a class="button" id="changeUserData"> Change </a>
-        <input class="button" id ="save" name="signIn" value="Save" type="submit" hidden>
+        <input class="button" id="save" name="save" value="Save" type="submit"<%--onclick="sendUser()"--%> hidden />
         <a class="button" id="cancel" hidden> Cancel </a>
     </form>
 
-    <script src="js/main.js"></script>
+    <script src="js/user.js"></script>
 </body>
 </html>

@@ -21,11 +21,6 @@ public abstract class AbstractDBDAO<T> implements DAO<T> {
         this.session = dbDataProvider.getSession();
     }
 
-    public DBDataProviderImpl getDbDataProvider() { return dbDataProvider; }
-
-    public Session getSession() { return session; }
-    /*    public AbstractDBDAO() {}*/
-
     @Override
     public void create(T t) {
         Transaction transaction = session.getTransaction();

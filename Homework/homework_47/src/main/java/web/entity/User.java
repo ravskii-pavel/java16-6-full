@@ -13,6 +13,7 @@ import javax.persistence.*;
         @Index(columnList = "id, login, email", name = "user_idx")
 })
 @NoArgsConstructor
+@AllArgsConstructor
 public class User {
 
     @Id
@@ -57,6 +58,7 @@ public class User {
         this.password = password;
         this.role = role;
     }
+
     public User(String login, String fullName, int age, String phoneNumber, String email, String password) {
         this.login = login;
         this.fullName = fullName;
@@ -65,6 +67,8 @@ public class User {
         this.email = email;
         this.password = password;
     }
+
+    public long getId() {return id;}
 
     public String getLogin() { return login; }
     public void setLogin(String login){ this.login = login; }

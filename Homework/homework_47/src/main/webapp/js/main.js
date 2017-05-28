@@ -37,29 +37,12 @@ function resetLoginField(){
     document.getElementById("login").classList.remove('red-border');
 }
 
-function allowChangeData(event) {
-    event.preventDefault();
-    document.getElementById("changeUserData").hidden = true;
-    document.getElementById("save").hidden = false;
-    document.getElementById("cancel").hidden = false;
-
-    var inputs = document.getElementsByClassName('textButton');
-    for(var i = 0; i < inputs.length; i++) {
-        if (inputs[i].name === 'login'){
-            inputs[i].disabled = true;
-        }
-        else{
-            inputs[i].disabled = false;
-        }
-    }
-}
 document.getElementById("loginBtn").addEventListener('click', validateLogin);
 document.getElementById("registrBtn").addEventListener('click', validateEmail);
 
 document.getElementById("login").addEventListener("focus", resetLoginField);
 document.getElementById("email").addEventListener("focus", resetEmailField);
 
-document.getElementById("changeUserData").addEventListener('click', allowChangeData);
 
 /*document.getElementById('my-input-id').disabled = false;
 

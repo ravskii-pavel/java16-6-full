@@ -15,13 +15,12 @@
     </style>
 </head>
 <body style="margin: 20px 35% 20px 35%;">
-
     <form class="form" action="<%=request.getServletContext().getContextPath()%>/login" method="post">
         <div class="legend">${enterSystem}</div>
         <input class="textButton" name="enterLogin" id="login" placeholder="login" type="text">
         <input class="textButton" name="enterPassword" placeholder="password" type="password"> <br>
         <input class="button" name="signIn" value="Sign in" id="loginBtn" type="submit">
     </form>
-    <script src="js/main.js"></script>
+    <%--<script src="js/user.js"></script>--%>
 </body>
 </html>

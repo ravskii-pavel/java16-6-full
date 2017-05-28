@@ -44,13 +44,14 @@ public class LoginServlet extends HttpServlet {
         String passwordDB = userFromDB.getPassword();
 
         if(login.equals(loginDB) &&  password.equals(passwordDB)) {
-           if (userFromDB.getRole().equals(Role.GUEST)){
-               req.setAttribute("userList", listUsers);
-               req.getRequestDispatcher("userPage.jsp").forward(req, resp);
-           }
-           else{
+            if (userFromDB.getRole().equals(Role.GUEST)){
+                req.getSession().setAttribute("userList", listUsers);
+                req.getSession().setAttribute("authUser", true);
+                resp.sendRedirect("/userpage");
+            }
+            else{
 
-           }
+            }
         }
         else {
             req.setAttribute("enterSystem", "<span style='color: red;'>Incorrect email or password</span>");
