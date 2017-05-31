@@ -1,6 +1,7 @@
 document.getElementById("changeUserData").addEventListener('click', allowChangeData);
 document.getElementById("cancel").addEventListener('click', disallowChangeData);
 document.getElementById("changePass").addEventListener('click', changePassword);
+document.getElementById("save").addEventListener('click', sendUser);
 
 function allowChangeData(event) {
     event.preventDefault();
@@ -28,16 +29,6 @@ function disallowChangeData(event) {
     document.getElementById('change-form').reset();
 }
 
-/*   function rememberForm(event){
-    var fullName = (document.getElementById("fullName")).value;
-    var email = (document.getElementById("email")).value;
-    var password = (document.getElementById("password")).value;
-    var age = (document.getElementById("age")).value;
-    var phone = (document.getElementById("phone")).value;
-
-    return [fullName, email, password, age, phone];
-}*/
-
 function changePassword(event) {
     event.preventDefault();
     if (document.getElementById("password").disabled == false) {
@@ -46,53 +37,51 @@ function changePassword(event) {
     else {document.getElementById("password").disabled = false;}
 }
 
-
 function sendUser() {
-    let user = getFormData();
+    //var user = getFormData();
+    //let requestParams = `login=${user.login}&name=${user.fullName}&email=${user.email}&age=${user.age}&phone=${user.phone}&password=${user.password}`;
 
-    var form = new FormData();
-    form.append('login', user.login);
-    form.append('email', user.email);
-    form.append('age', user.age);
-    //form.append('role', user.role);
+    var login = document.getElementById('login').value;
+    var fullName = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var age = document.getElementById('age').value;
+    var phone= document.getElementById('phone').value;
+    var password = document.getElementById('password').value;
+    var requestParams = "login=" + login +"&name=" + fullName + "&email=" + email +
+        "&age=" + age + "&phone=" + phone + "&password=" + password;
+    /*var headers = new Headers({
+        'Content-Type':'application/x-www-form-urlencoded'
+        // 'Access-Control-Allow-Origin': '*'
+    });*/
 
-    fetch("http://localhost:8080/login", {
-        method: "POST",
-        headers: {"Content-Type": "multipart/form-data;  charset=UTF-8"},
-        body: form
-    })
-        .then(function(response) {
-            console.log(response.headers.get('Content-Type'));
-            console.log(response.headers.get('Date'));
-            console.log(response.status);
-            console.log(response.statusText);
-            console.log(response.type);
-            console.log(response.url);
-        })
-        .then(function (data) {
-            console.log('Request succeeded with JSON response', data);
-        })
-        .catch(function (error) {
-            console.log('Request failed', error);
-        });
+    fetch('http://localhost:8080/userpage', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
+            'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+        },
+        body: requestParams
+    }).catch(alert);
+
+    /*
+        .then(function (response) {
+            console.log(response);
+        })*/
+
 }
 
 function getFormData() {
-    let id = document.getElementById('id').value;
-    let login = document.getElementById('login').value;
-    let email = document.getElementById('email').value;
-    let age = document.getElementById('age').value;
+    var login = document.getElementById('login').value;
+    var fullName = document.getElementById('name').value;
+    var phone = document.getElementById('phone').value;
+    var email = document.getElementById('email').value;
+    var age = document.getElementById('age').value;
+    var password = document.getElementById('password').value;
     //let roleSelect = document.getElementById('role');
-
     //let role = roleSelect.options[roleSelect.selectedIndex].text;
     //let gender = document.getElementById('gender').value;
-
-    return {id, login, email, age};
+    return {login, fullName, phone,  email, age, password};
 }
-        /*.then(function (response) {
-            console.log(response);
-        })
-        .catch(alert);*/
 
 /* fetch('/user/registration', {
  method: 'POST',
@@ -102,4 +91,8 @@ function getFormData() {
  .then(function (response) {
  console.log(response);
  })
+ var form = new FormData();
+ form.append('login', user.login);
+ form.append('email', user.email);
+ form.append('age', user.age);
  .catch(alert);*/

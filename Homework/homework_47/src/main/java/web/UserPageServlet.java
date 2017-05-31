@@ -34,32 +34,21 @@ public class UserPageServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        User oldUser = ((ArrayList<User>)req.getSession().getAttribute("userFromJSP")).get(0);
-        String loginOldUser = oldUser.getLogin();
-        String name = req.getParameter("fullName");
+        //--------- for request update user through javascript
+        resp.setHeader("Access-Control-Allow-Origin", "*");
+
+        //User oldUser = ((ArrayList<User>)req.getSession().getAttribute("userFromJSP")).get(0);
+        String login = req.getParameter("login");
+        String name = req.getParameter("name");
         int age = Integer.parseInt(req.getParameter("age"));
         String phone = req.getParameter("phone");
         String email = req.getParameter("email");
         String password = req.getParameter("password");
-        ArrayList<User> updateUser = new ArrayList<>();
-        updateUser.add(new User(loginOldUser, name, age, phone, email, password));
-        userDAO.update(updateUser.get(0));
-        req.getSession().setAttribute("userList", updateUser);
+        User updateUser = new User(login, name, age, phone, email, password);
+        userDAO.update(updateUser);
+        //req.getSession().setAttribute("userList", updateUser);
         //resp.sendRedirect("/userpage");
-        req.getRequestDispatcher("userPage.jsp").forward(req, resp);
-
-        //ArrayList<User> listUsers = userDAO.getByLogin(login); //Exception if haven't user
-
-        //User userFromDB = listUsers.get(0);
-        //String loginDB = userFromDB.getLogin();
-        //String passwordDB = userFromDB.getPassword();
-
         //req.getRequestDispatcher("userPage.jsp").forward(req, resp);
-      /*  ArrayList<User> userList = (ArrayList<User>)req.getSession().getAttribute("userjsp");
-        System.out.println(userList.get(0).getLogin());
-        System.out.println(userList.get(0).getId());
-        int age = Integer.parseInt(req.getParameter("age"));
-        System.out.println(age);
-        req.getRequestDispatcher("userPage.jsp").forward(req, resp);*/
+
     }
 }

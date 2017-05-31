@@ -25,7 +25,7 @@
         <c:set var="userFromJSP" value="${userList}" scope="session"/>
         <c:forEach var="v" items="${userList}">
             <p name="id" id="id"> ${v.id} </p>
-            <p name="login" id="login"> ${v.login} </p>
+            <input class="textButton" name="login" id="login" value="${v.login}" type="text" readonly>
             <input class="textButton" name="fullName" id="name" value="${v.fullName}" type="text" disabled>
             <input class="textButton" name="age" id="age" value="${v.age}" type="text" disabled>
             <input class="textButton" name="phone" id="phone" value="${v.phoneNumber}" type="text" disabled>
@@ -36,7 +36,7 @@
 
         <a class="button" href="<%=request.getServletContext().getContextPath()%>/"> Home </a>
         <a class="button" id="changeUserData"> Change </a>
-        <input class="button" id="save" name="save" value="Save" type="submit"<%--onclick="sendUser()"--%> hidden />
+        <a class="button" id="save" hidden> Save </a>
         <a class="button" id="cancel" hidden> Cancel </a>
     </form>
 
