@@ -23,13 +23,9 @@ function findPerson() {
  	fetch(link)
 	.then(resp => resp.json())
 	.then(data => {
-			console.log(data);
 			let $name = document.createElement('p');
 			$name.innerText = "NAME: " + data.name;
 			fragment.appendChild($name);
-
-			console.log(fragment);
-
 			let films = data.films.map(filmURL => fetch(filmURL)
 		 			.then(resp => resp.json())
 					.catch(e => console.error(e))
@@ -38,7 +34,7 @@ function findPerson() {
 		 			.then(resp => resp.json())
 					.catch(e => console.error(e))
 		 		);
-				return{fragment: fragment, films: Promise.all(films), species: Promise.all(species)};
+				return{films: Promise.all(films), species: Promise.all(species)};
 		})
 		.then(data => {
 			let $allFilms = document.createElement('p');
@@ -52,10 +48,9 @@ function findPerson() {
 					.join(", "))
 				.then(films => {
 					$allFilms.innerText = "FILMS: " + films;
-					data.fragment.appendChild($allFilms);
-					console.log(fragment);
+					fragment.appendChild($allFilms);
 				});
-
+				
 			let speciesNameAndLanguage = data.species
 				.then(resp => { return resp; })
 				.then(arrSpecies => arrSpecies
@@ -63,11 +58,10 @@ function findPerson() {
 				.then(nameAndLanguage => {
 					$speciesPerson.innerText = "SPECIES: " + (nameAndLanguage[0].split(','))[0];
 					$languagePerson.innerText = "LANGUAGE: " + (nameAndLanguage[0].split(','))[1];
-					data.fragment.appendChild($speciesPerson);
-					data.fragment.appendChild($languagePerson);
-					console.log(fragment);
+					fragment.appendChild($speciesPerson);
+					fragment.appendChild($languagePerson);
 				});
-
+				
 			let sameOrigin = data.species
 				.then(resp => {return resp[0]; })
 				.then(data => {
@@ -85,8 +79,7 @@ function findPerson() {
 						.join(", "))
 					.then(allNamePeople => {
 						$sameOriginPerson.innerText = "SAME ORIGIN PERSON: " + allNamePeople;
-						data.fragment.appendChild($sameOriginPerson);
-						console.log(fragment);
+						fragment.appendChild($sameOriginPerson);
 						document.getElementById("searchInfo").innerHTML = '';
 						document.getElementById("searchInfo").appendChild(fragment);
 					})
@@ -94,6 +87,5 @@ function findPerson() {
 		})
 }
 </script>
-
 </body>
 </html>
