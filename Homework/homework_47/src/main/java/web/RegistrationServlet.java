@@ -4,6 +4,7 @@ import web.dao.DAO;
 import web.dao.DataProvider;
 import web.dao.impl.DBDataProviderImpl;
 import web.dao.impl.UserDAOImpl;
+import web.entity.Gender;
 import web.entity.Role;
 import web.entity.User;
 
@@ -24,8 +25,8 @@ import static java.awt.Color.red;
 
 @WebServlet(urlPatterns = {"/registration"})
 public class RegistrationServlet extends HttpServlet {
-    DataProvider dataProvider = new DBDataProviderImpl();
-    DAO<User> userDAO = new UserDAOImpl(dataProvider);
+    /*DataProvider dataProvider = new DBDataProviderImpl();*/
+    DAO<User> userDAO = new UserDAOImpl();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -52,8 +53,9 @@ public class RegistrationServlet extends HttpServlet {
         String email = req.getParameter("email");
         String password = req.getParameter("password");
         Role role = Role.valueOf(req.getParameter("role"));
+        Gender gender = Gender.valueOf(req.getParameter("gender"));
 
-        userDAO.create(new User(login, name, age, phone, email, password, role));
+        userDAO.create(new User(login, name, age, phone, email, password, role, gender));
         req.getRequestDispatcher("userPage.jsp").forward(req, resp);
      }
 }

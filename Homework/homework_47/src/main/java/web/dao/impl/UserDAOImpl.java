@@ -20,47 +20,67 @@ public class UserDAOImpl extends AbstractDBDAO<User> {
         super(dataProvider);
     }
 
+    public UserDAOImpl(){
+        super();
+    }
+
     @Override
     public ArrayList<User> read() {
-       Query<User> userQuery = session.createQuery("from User", User.class);
+       Transaction transaction = dbDataProvider.getSession().getTransaction();
+       transaction.begin();
+       Query<User> userQuery = dbDataProvider.getSession().createQuery("from User", User.class);
        List<User> listUsers = userQuery.list();
+       //session.flush(для синхронизации данных объекта в кеше уровня сессий с БД);
+       transaction.commit();
        return (ArrayList<User>)listUsers;
     }
 
     @Override
     public void update(User user) {
-        Transaction transaction = session.getTransaction();
+        Transaction transaction = dbDataProvider.getSession().getTransaction();
         transaction.begin();
-        Query userQuery = session.createQuery("update User set fullName = :userFullName, age = :userAge," +
-                "phoneNumber = :userPhone, email = :userEmail where login = :userLogin");
+        Query userQuery = dbDataProvider.getSession().createQuery("update User set fullName = :userFullName, age = :userAge," +
+                "phoneNumber = :userPhone, email = :userEmail, password = :userPassword where login = :userLogin");
         userQuery.setParameter("userFullName", user.getFullName());
         userQuery.setParameter("userAge", user.getAge());
         userQuery.setParameter("userPhone", user.getPhoneNumber());
         userQuery.setParameter("userEmail", user.getEmail());
+        userQuery.setParameter("userPassword", user.getPassword());
         userQuery.setParameter("userLogin", user.getLogin());
         userQuery.executeUpdate();
+        //session.flush(для синхронизации данных объекта в кеше уровня сессий с БД);
         transaction.commit();
     }
 
     @Override
     public void delete(long userId) {
-        Query<User> userQuery = session.createQuery("delete User WHERE id = :id", User.class);
+        Transaction transaction = dbDataProvider.getSession().getTransaction();
+        Query<User> userQuery = dbDataProvider.getSession().createQuery("delete User WHERE id = :id", User.class);
         userQuery.setParameter("id", userId).executeUpdate();
+        //session.flush(для синхронизации данных объекта в кеше уровня сессий с БД);
+        transaction.commit();
     }
 
     @Override
     public ArrayList<User> getByLogin(String searchLogin) {
-        Query<User> userQuery = session.createQuery("from User WHERE login like :login", User.class);
+        Transaction transaction = dbDataProvider.getSession().getTransaction();
+        transaction.begin();
+        Query<User> userQuery = dbDataProvider.getSession().createQuery("from User WHERE login like :login", User.class);
         userQuery.setParameter("login", "%" + searchLogin + "%");
-        List<User> listUsers = userQuery.list();
+        List<User> listUsers = userQuery.getResultList();
+        //session.flush(для синхронизации данных объекта в кеше уровня сессий с БД);
+        transaction.commit();
         return (ArrayList<User>)listUsers;
     }
 
     @Override
     public  ArrayList<User> getByPhone(String searchPhone) {
-        Query<User> userQuery = session.createQuery("from User WHERE phoneNumber like :phone", User.class);
+        Transaction transaction = dbDataProvider.getSession().getTransaction();
+        Query<User> userQuery = dbDataProvider.getSession().createQuery("from User WHERE phoneNumber like :phone", User.class);
         userQuery.setParameter("phone", "%" + searchPhone + "%");
         List<User> listUsers = userQuery.list();
-        return (ArrayList<User>) listUsers;
+        //session.flush(); (для синхронизации данных объекта в кеше уровня сессий с БД)
+        transaction.commit();
+        return (ArrayList<User>)listUsers;
     }
 }

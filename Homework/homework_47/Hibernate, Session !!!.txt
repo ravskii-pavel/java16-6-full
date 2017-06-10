@@ -1,0 +1,42 @@
+у Hibernate - существует 3 уровня кеша :
+- на уровне сессий
+- на уровне страницы
+- на уровне запроса
+1) если создать сессию из фабрики сессий методом (openSession()) - тогда необходимо обновлять кеш (синхронизировать данные объекта кеша с БД с помощью метода flush(), (Объект Session кэширует у себя загруженные объекты; при загрузке объекта из БД в первую очередь проверяется кэш. Для того, чтобы удалить объект из кэша и отсоединить от сессии, используется session.evict(Object). Метод session.clear() применит evict() ко всем объектам в сессии.)) + также необходимо вручную и закрывать сессию после commita транзакции.
+
+2) если создать сессию из фабрики сессий методом (getCurrentSession()) - то в процессе commita транзакции Hibernate сам беспокоится о закрытии сессии и синхронизации данных в кеше с данными которые находятся в БД (т.е. поl капотом он производит сам тот же метод flush()).
+
+
+Методы сессии:
+flush() — синхронизирует объекты сессии с БД и в то же время обновляет сам кеш сессии.
+evict() — нужен для удаления объекта из кеша cессии.
+contains() — определяет находится ли объект в кеше сессии или нет.
+clear() — очищает весь кеш.
+
+
+Объект Session кэширует у себя загруженные объекты; при загрузке объекта из БД в первую очередь проверяется кэш. Для того, чтобы удалить объект из кэша и отсоединить от сессии, используется session.evict(Object). Метод session.clear() применит evict() ко всем объектам в сессии.
+
+
+https://habrahabr.ru/post/271115/
+
+https://habrahabr.ru/post/135176/
+
+http://www.java2blog.com/2016/07/difference-opensession-getcurrentsession-hibernate.html
+
+
+You need to add following property to hibernate.cfg.xml to use getCurrentSession method.
+
+<session-factory>
+<!--  Put other elements here -->
+<property name="hibernate.current_session_context_class">
+          thread
+</property>
+</session-factory>
+ 
+If you do not configure above property, you will get error as below.
+
+Exception in thread "main" org.hibernate.HibernateException: No CurrentSessionContext configured!
+    at org.hibernate.internal.SessionFactoryImpl.getCurrentSession(SessionFactoryImpl.java:1012)
+    at com.arpit.java2blog.hibernate.HibernateSessionExample.main(HibernateSessionExample.java:14)
+
+ 

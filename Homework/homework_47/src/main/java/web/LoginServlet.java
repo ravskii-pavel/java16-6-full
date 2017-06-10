@@ -24,8 +24,8 @@ import java.util.ArrayList;
 
 @WebServlet(urlPatterns = {"/login"})
 public class LoginServlet extends HttpServlet {
-    private DataProvider dataProvider = new DBDataProviderImpl();
-    private DAO<User> userDAO = new UserDAOImpl(dataProvider);
+   /* private DataProvider dataProvider = new DBDataProviderImpl();*/
+    private DAO<User> userDAO = new UserDAOImpl();
     private String enter = "Введите Ваш логин и пароль";
 
     @Override
@@ -40,17 +40,26 @@ public class LoginServlet extends HttpServlet {
         String password = req.getParameter("enterPassword");
         ArrayList<User> listUsers = userDAO.getByLogin(login); //Exception if haven't user
         User userFromDB = listUsers.get(0);
+        Role userRole = userFromDB.getRole();
         String loginDB = userFromDB.getLogin();
         String passwordDB = userFromDB.getPassword();
 
         if(login.equals(loginDB) &&  password.equals(passwordDB)) {
-            if (userFromDB.getRole().equals(Role.GUEST)){
-                req.getSession().setAttribute("userList", listUsers);
+            if (userRole.equals(Role.GUEST)){
+                req.getSession().setAttribute("user", listUsers);
+                req.getSession().setAttribute("userLogin", loginDB);
+                req.getSession().setAttribute("userRole", userRole);
                 req.getSession().setAttribute("authUser", true);
                 resp.sendRedirect("/userpage");
             }
-            else{
-
+            else if (userRole.equals(Role.ADMIN)){
+                ArrayList<User> allUsers = userDAO.read();
+                req.getSession().setAttribute("user", listUsers);
+                req.getSession().setAttribute("allUsersList", allUsers);
+                req.getSession().setAttribute("userLogin", loginDB);
+                req.getSession().setAttribute("userRole", userRole);
+                req.getSession().setAttribute("authUser", true);
+                resp.sendRedirect("/adminpage");
             }
         }
         else {

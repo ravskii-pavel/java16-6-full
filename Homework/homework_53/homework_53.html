@@ -1,0 +1,97 @@
+<html>
+<head>
+	<title>Homework 53 - swapi.co</title>
+</head>
+<body>
+<input id = "personNumber" type="text">
+<button onclick="findPerson()"> Find </button>
+
+<script type="text/javascript">
+	
+function findPerson() {
+	let fragment = document.createDocumentFragment();
+	var numPerson = document.getElementById('personNumber').value;
+	var link = "http://swapi.co/api/people/" + numPerson;
+
+	if (numPerson < 1 || numPerson > 87) {
+		document.getElementById('personNumber').value = "";
+		alert("Person with id: " + numPerson + " is not found, please enter id between (1 - 87)");
+		return;
+	}
+ 	fetch(link)
+	.then(resp => resp.json())
+	.then(data => {
+			console.log(data);
+			let $name = document.createElement('p');
+			$name.innerText = "NAME: " + data.name;
+			fragment.appendChild($name);
+
+			console.log(fragment);
+
+			let films = data.films.map(filmURL => fetch(filmURL)
+		 			.then(resp => resp.json())
+					.catch(e => console.error(e))
+		 		);
+			let species = data.species.map(species => fetch(species)
+		 			.then(resp => resp.json())
+					.catch(e => console.error(e))
+		 		);
+				return{fragment: fragment, films: Promise.all(films), species: Promise.all(species)};
+		})
+		.then(data => {
+			let $allFilms = document.createElement('p');
+			let $speciesPerson = document.createElement('p');
+			let $languagePerson = document.createElement('p');
+			let $sameOriginPerson = document.createElement('p');
+			let	films = data.films
+				.then(resp => { return resp; })
+				.then(arrFilms => arrFilms
+					.map(film => film.title)
+					.join(", "))
+				.then(films => {
+					$allFilms.innerText = "FILMS: " + films;
+					data.fragment.appendChild($allFilms);
+					console.log(fragment);
+				});
+
+			let speciesNameAndLanguage = data.species
+				.then(resp => { return resp; })
+				.then(arrSpecies => arrSpecies
+					.map(species => species.name + "," + species.language))
+				.then(nameAndLanguage => {
+					$speciesPerson.innerText = "SPECIES: " + (nameAndLanguage[0].split(','))[0];
+					$languagePerson.innerText = "LANGUAGE: " + (nameAndLanguage[0].split(','))[1];
+					data.fragment.appendChild($speciesPerson);
+					data.fragment.appendChild($languagePerson);
+					console.log(fragment);
+				});
+
+			let sameOrigin = data.species
+				.then(resp => {return resp[0]; })
+				.then(data => {
+						console.log(data);
+						let allPeople = data.people.map(peopleURL => fetch(peopleURL)
+							.then(resp => resp.json())
+							.catch(e => console.error(e))
+		 				);
+		 				return{arrPeople: Promise.all(allPeople)};
+		 		})
+				.then(people => {
+					let allPeople = people.arrPeople
+					.then(resp => { return resp; })
+					.then(arrPeople => arrPeople.map(people => people.name)
+						.join(", "))
+					.then(allNamePeople => {
+						$sameOriginPerson.innerText = "SAME ORIGIN PERSON: " + allNamePeople;
+						data.fragment.appendChild($sameOriginPerson);
+						console.log(fragment);
+						document.getElementById("searchInfo").innerHTML = '';
+						document.getElementById("searchInfo").appendChild(fragment);
+					})
+				});
+		})
+}
+</script>
+<div id = "searchInfo"></div>
+</body>
+</html>

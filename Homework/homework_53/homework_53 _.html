@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<div>
+    <input type="text" id="number"/><span>
+    <button onclick="search()">Find</button></span>
+</div>
+
+
+
+<table class="table table-bordered">
+    <tr>
+      <th>Имя</th>
+      <th>Эпизоды</th>
+      <th>Планета</th>
+      <th>Другие представители этой планеты</th>
+    </tr>
+  </thead>
+  <tbody id="user-table">
+
+  </tbody>
+</table>
+
+<script type="text/javascript">
+function search(){
+	var REQid = document.getElementById("number").value;
+	// alert(REQid);
+	if (REQid < 1 || REQid > 87) {
+		alert("Person with id: " + REQid + " is not found");
+		return;
+	}
+var user;
+fetch("http://swapi.co/api/people/"+REQid)
+	.then(function (response) {
+            return response.json();
+    })
+	.then(resp => {
+    	console.log(resp);
+    	user = resp;
+		return resp;
+	})
+	.then(r => {
+		user.filmsList = "";
+		r.films.forEach(function (url){
+				fetch(url)
+				.then(function (response) {
+            	return response.json();
+        	})
+        	.then(resp => {
+        		console.log(resp.title);
+        		user.filmsList = user.filmsList + resp.title;
+        		user.filmsList = user.filmsList + ", ";
+        	});
+		})
+		return user;
+	})
+	.then(r => {
+		fetch(user.homeworld)
+		.then(function (response) {
+            	return response.json();
+        	})
+        	.then(resp => {
+			user.planet = resp;
+			user.planet.giteli = "";
+			resp.residents.forEach(function (url){
+				fetch(url)
+				.then(function (response) {
+            	return response.json();
+        	})
+        	.then(resp => {
+        		user.planet.giteli = user.planet.giteli + resp.name;
+        		user.planet.giteli = user.planet.giteli + ", ";
+        	});
+			})
+		});
+		return user;
+	})
+	.then(r => {
+		alert("Данные загружаются, ожидайте обновление таблицы");
+			setTimeout(function a(){
+			console.log(user);
+			fillTable(r);
+		}, 100);
+		
+	})
+	.catch(error => console.error(error)); 
+}
+function fillTable(resp) {
+    var userTable = document.getElementById("user-table");
+    // clearTable(userTable);
+        var row = userTable.insertRow();
+        var name = row.insertCell(0);
+        var epizods = row.insertCell(1);
+        var planet = row.insertCell(2);
+        var drugiePrestaviteli = row.insertCell(3);
+        name.innerHTML = resp.name;
+        epizods.innerHTML = resp.filmsList;
+        planet.innerHTML = resp.planet.name;
+        drugiePrestaviteli.innerHTML = resp.planet.giteli;
+}
+	
+</script>
+
+</body>
+</html>

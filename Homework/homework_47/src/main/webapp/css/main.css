@@ -1,3 +1,7 @@
+p{
+    margin: 0;
+    text-align: left;
+}
 .form{
     font: 18px Helvetica, Arial;
     /*background-color: #f5f5f5;*/
@@ -38,4 +42,25 @@
 }
 .pointer{
     cursor: pointer;
+}
+table{
+    border: 2px solid black;
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+td{
+    border: 1px solid gray;
+    text-align: center;
+}
+.adminTextButton {
+    color: black;
+    background-color: white;
+    border: none;
+   /* border-radius: 5px;*/
+    text-decoration: none;
+    width: 100%;
+    padding: 10px;
+}
+.textButtonBorder{
+    border: 1px solid lightgrey;
 }

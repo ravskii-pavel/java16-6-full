@@ -15,18 +15,15 @@ import static web.dao.impl.HibernateUtil.getSessionFactory;
 public class DBDataProviderImpl implements DataProvider {
 
     private SessionFactory sessionFactory = getSessionFactory();
-    private Session session = sessionFactory.openSession();
+    private Session session = sessionFactory.getCurrentSession();
     //ConnectionType connectionType = ConnectionType.MYSQL;
     public Session getSession (){
-        return session;
+        return sessionFactory.getCurrentSession();
     }
 
     @Override
     public void openConnection() {
-        if (session.isOpen()){}
-        else {
-            session = sessionFactory.openSession();
-        }
+            session = sessionFactory.getCurrentSession();
     }
 
     @Override

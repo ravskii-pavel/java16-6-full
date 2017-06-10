@@ -14,18 +14,20 @@ import java.util.List;
 public abstract class AbstractDBDAO<T> implements DAO<T> {
 
     protected final DBDataProviderImpl dbDataProvider;
-    protected final Session session;
+
+    public AbstractDBDAO(){
+        dbDataProvider = new DBDataProviderImpl();
+    }
 
     public AbstractDBDAO(DataProvider dataProvider) {
         this.dbDataProvider = (DBDataProviderImpl) dataProvider;
-        this.session = dbDataProvider.getSession();
     }
 
     @Override
     public void create(T t) {
-        Transaction transaction = session.getTransaction();
+        Transaction transaction = dbDataProvider.getSession().getTransaction();
         transaction.begin();
-        session.save(t);/*session.update(user);*/
+        dbDataProvider.getSession().save(t);/*session.update(user);*/
         transaction.commit();
     }
 }

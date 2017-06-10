@@ -14,6 +14,8 @@ import javax.persistence.*;
 })
 @NoArgsConstructor
 @AllArgsConstructor
+@Setter
+@Getter
 public class User {
 
     @Id
@@ -49,7 +51,12 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    public User(String login, String fullName, int age, String phoneNumber, String email, String password, Role role) {
+    @Column(table = "users", name = "gender", nullable = true)
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
+
+    public User(String login, String fullName, int age, String phoneNumber, String email,
+                String password, Role role, Gender gender) {
         this.login = login;
         this.fullName = fullName;
         this.age = age;
@@ -57,9 +64,31 @@ public class User {
         this.email = email;
         this.password = password;
         this.role = role;
+        this.gender = gender;
     }
 
-    public User(String login, String fullName, int age, String phoneNumber, String email, String password) {
+    public User(String login, String fullName, int age, String phoneNumber, String email,
+                String password, Gender gender) {
+        this.login = login;
+        this.fullName = fullName;
+        this.age = age;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.password = password;
+        this.gender = gender;
+    }
+    public User(String login, String fullName, int age, String phoneNumber, String email,
+                String password) {
+        this.login = login;
+        this.fullName = fullName;
+        this.age = age;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.password = password;
+    }
+    public User(long id, String login, String fullName, int age, String phoneNumber, String email,
+                String password) {
+        this.id = id;
         this.login = login;
         this.fullName = fullName;
         this.age = age;
@@ -68,7 +97,7 @@ public class User {
         this.password = password;
     }
 
-    public long getId() {return id;}
+/*    public long getId() {return id;}
 
     public String getLogin() { return login; }
     public void setLogin(String login){ this.login = login; }
@@ -90,4 +119,8 @@ public class User {
 
     public String getPassword() { return password; }
     public void setPassword(String password) { this.password = password; }
+
+    public Gender getGender() {return gender;}
+
+    public void setGender(Gender gender) {this.gender = gender;}*/
 }
