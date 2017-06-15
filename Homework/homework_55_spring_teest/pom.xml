@@ -16,39 +16,6 @@
         <failOnMissingWebXml>false</failOnMissingWebXml>
     </properties>
 
-    <!--    <build>
-            <finalName>home-servlet-extended</finalName>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.5.1</version>
-                    <configuration>
-
-                        <target>${java.version}</target>
-                        <source>${java.version}</source>
-                        <annotationProcessorPaths>
-                            <path>
-                                <groupId>org.projectlombok</groupId>
-                                <artifactId>lombok</artifactId>
-                                <version>1.16.12</version>
-                            </path>
-                        </annotationProcessorPaths>
-                    </configuration>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-war-plugin</artifactId>
-                    <version>2.6</version>
-                    &lt;!&ndash;<configuration>
-                        <failOnMissingWebXml>true</failOnMissingWebXml>
-                    </configuration>&ndash;&gt;
-                </plugin>
-
-            </plugins>
-        </build>-->
-
     <dependencies>
 
         <!-- Spring 3 dependencies -->
@@ -70,13 +37,11 @@
             <version>4.3.8.RELEASE</version>
         </dependency>
 
-
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.41</version>
         </dependency>
-
 
         <!-- Hibernate -->
         <dependency>
@@ -85,23 +50,6 @@
             <version>${hibernate.version}</version>
         </dependency>
 
-<!--        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-core</artifactId>
-            <version>2.5.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.5.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-annotations</artifactId>
-            <version>2.5.0</version>
-        </dependency>-->
-
     </dependencies>
-
 
 </project>

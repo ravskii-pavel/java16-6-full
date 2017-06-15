@@ -24,7 +24,8 @@ public class Car {
     public String toJson() throws IllegalAccessException {
         Class c = this.getClass();
         Field[] fieldsClass = c.getDeclaredFields();
-        String result = this.getClass().getSimpleName() + ":\n" + "{\n\t";
+        /*String result = this.getClass().getSimpleName() + ":\n" + "{\n\t";*/
+        String result = "{\n\t";
         for(int i = 0; i < fieldsClass.length; i++){
             if(i == fieldsClass.length - 1){
                 result = result +"\""+fieldsClass[i].getName()+"\": " + fieldsClass[i].get(this)+ "\n}";
