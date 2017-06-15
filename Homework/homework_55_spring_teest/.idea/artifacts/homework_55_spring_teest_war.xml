@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="homework_55_spring_teest:war">
     <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="spring-test-home-1.0-SNAPSHOT.war">
+    <root id="archive" name="home-servlet-extended.war">
       <element id="artifact" artifact-name="homework_55_spring_teest:war exploded" />
     </root>
   </artifact>
