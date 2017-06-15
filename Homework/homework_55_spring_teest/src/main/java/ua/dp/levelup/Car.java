@@ -1,6 +1,7 @@
 package ua.dp.levelup;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * Created by Ravskiy Pavel on 14.06.2017.
@@ -21,10 +22,9 @@ public class Car {
     public void setModel(String model) { this.model = model; }
     public void setColor(Color color) { this.color = color; }
 
-    public String toJson() throws IllegalAccessException {
+    public String toJson() throws IllegalAccessException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException {
         Class c = this.getClass();
         Field[] fieldsClass = c.getDeclaredFields();
-        /*String result = this.getClass().getSimpleName() + ":\n" + "{\n\t";*/
         String result = "{\n\t";
         for(int i = 0; i < fieldsClass.length; i++){
             if(i == fieldsClass.length - 1){

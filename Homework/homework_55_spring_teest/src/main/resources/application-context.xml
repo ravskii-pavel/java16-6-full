@@ -17,13 +17,13 @@
     <bean id="carBean" class="ua.dp.levelup.Car">
         <property name="maxSpeed" value="300" />
         <property name="model" value="BMW" />
-        <property name="color" value="RED" />
+        <property name="color" ref="colorRedBean" />
     </bean>
 
     <bean id="carConstructorBean" class="ua.dp.levelup.Car">
         <constructor-arg name="maxSpeed" value="280.00D" />
         <constructor-arg name="model" value="BMW" />
-        <constructor-arg name="color" value="BLACK" />
+        <constructor-arg name="color" ref="colorWhiteBean" />
     </bean>
 
 </beans>
