@@ -12,20 +12,21 @@ import javax.persistence.*;
 @Table(name = "users", indexes = {
         @Index(columnList = "id, login, email", name = "user_idx")
 })
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Setter
 @Getter
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", unique = true, nullable = false)
     private long id;
 
     @Column(name = "login", nullable = false, unique = true)
     private String login;
 
-    @Column(name = "fullName")
+    @Column(name = "fullname")
     private String fullName;
 
     @Column(name = "age")
@@ -40,30 +41,23 @@ public class User {
     @Column(name = "password", nullable = false, unique = false)
     private String password;
 
-    /*@Column(name = "STATUS_ID")
-    @Enumerated(EnumType.ORDINAL )*/
-
-/*    @Column(table = "EMPLOYEE_DETAILS")
+    @Column(table = "users", name = "roleUser", nullable = false)
     @Enumerated(EnumType.STRING)
-    private Sex sex = Sex.UNKNOWN;*/
+    private Role roleUser; //нельзя использовать имя role - т.к. в СУБД это ключевое слово = (будет exception, данные в базу не попадут)
 
-    @Column(table = "users", name = "role", nullable = false)
-    @Enumerated(EnumType.STRING)
-    private Role role;
-
-    @Column(table = "users", name = "gender", nullable = true)
+    @Column(table = "users", name = "gender", nullable = false)
     @Enumerated(EnumType.STRING)
     private Gender gender;
 
     public User(String login, String fullName, int age, String phoneNumber, String email,
-                String password, Role role, Gender gender) {
+                String password, Role roleUser, Gender gender) {
         this.login = login;
         this.fullName = fullName;
         this.age = age;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.password = password;
-        this.role = role;
+        this.roleUser = roleUser;
         this.gender = gender;
     }
 
@@ -96,31 +90,4 @@ public class User {
         this.email = email;
         this.password = password;
     }
-
-/*    public long getId() {return id;}
-
-    public String getLogin() { return login; }
-    public void setLogin(String login){ this.login = login; }
-
-    public String getFullName() {return fullName;}
-    public void setFullName(String fullName) { this.fullName = fullName; }
-
-    public int getAge() { return age; }
-    public void setAge(int age) { this.age = age; }
-
-    public String getPhoneNumber() { return phoneNumber; }
-    public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
-
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
-
-    public Role getRole() { return role; }
-    public void setRole(Role role) { this.role = role; }
-
-    public String getPassword() { return password; }
-    public void setPassword(String password) { this.password = password; }
-
-    public Gender getGender() {return gender;}
-
-    public void setGender(Gender gender) {this.gender = gender;}*/
 }

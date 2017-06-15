@@ -64,3 +64,13 @@ td{
 .textButtonBorder{
     border: 1px solid lightgrey;
 }
+.red-border{
+    border: 2px solid red;
+}
+.border{
+    border: 1px solid lightgray;
+}
+
+div#genderName, #roleUserName{
+    text-align: left;
+}

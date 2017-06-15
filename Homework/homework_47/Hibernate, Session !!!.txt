@@ -13,6 +13,10 @@ evict() Ч нужен дл€ удалени€ объекта из кеша cессии.
 contains() Ч определ€ет находитс€ ли объект в кеше сессии или нет.
 clear() Ч очищает весь кеш.
 
+!!!!!!!!!!!!! 
+https://stackoverflow.com/questions/16275928/hibernate-session-save-does-not-reflect-in-database
+
+<property name="hibernate.connection.autocommit">false</property> <!--session.save(user); - чтобы работало нужно true, если false тогда нужно через insert-->
 
 ќбъект Session кэширует у себ€ загруженные объекты; при загрузке объекта из Ѕƒ в первую очередь провер€етс€ кэш. ƒл€ того, чтобы удалить объект из кэша и отсоединить от сессии, используетс€ session.evict(Object). ћетод session.clear() применит evict() ко всем объектам в сессии.
 

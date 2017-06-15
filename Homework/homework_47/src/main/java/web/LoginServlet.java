@@ -24,7 +24,6 @@ import java.util.ArrayList;
 
 @WebServlet(urlPatterns = {"/login"})
 public class LoginServlet extends HttpServlet {
-   /* private DataProvider dataProvider = new DBDataProviderImpl();*/
     private DAO<User> userDAO = new UserDAOImpl();
     private String enter = "Введите Ваш логин и пароль";
 
@@ -39,8 +38,9 @@ public class LoginServlet extends HttpServlet {
         String login = req.getParameter("enterLogin");
         String password = req.getParameter("enterPassword");
         ArrayList<User> listUsers = userDAO.getByLogin(login); //Exception if haven't user
+        //ArrayList<User> allUsers = userDAO.read();
         User userFromDB = listUsers.get(0);
-        Role userRole = userFromDB.getRole();
+        Role userRole = userFromDB.getRoleUser();
         String loginDB = userFromDB.getLogin();
         String passwordDB = userFromDB.getPassword();
 
@@ -53,9 +53,7 @@ public class LoginServlet extends HttpServlet {
                 resp.sendRedirect("/userpage");
             }
             else if (userRole.equals(Role.ADMIN)){
-                ArrayList<User> allUsers = userDAO.read();
                 req.getSession().setAttribute("user", listUsers);
-                req.getSession().setAttribute("allUsersList", allUsers);
                 req.getSession().setAttribute("userLogin", loginDB);
                 req.getSession().setAttribute("userRole", userRole);
                 req.getSession().setAttribute("authUser", true);
@@ -68,3 +66,6 @@ public class LoginServlet extends HttpServlet {
         }
     }
 }
+
+/*
+session.invalidate();*/

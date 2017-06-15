@@ -32,7 +32,7 @@
         width: 100px
     }
 
-    #role-column {
+    #roleUser-column {
         width: 100px
     }
 
@@ -49,7 +49,7 @@
             <td><input type="email" id="email" placeholder="Email" name="email"></td>
             <td><input type="text" id="age" placeholder="Age" name="age"></td>
             <td>
-                <select id="role">
+                <select id="roleUser">
                     <option value="SIMPLE">Simple</option>
                     <option value="ADMIN">Administrator</option>
                 </select>
@@ -79,7 +79,7 @@
             <td id="login-column">Login</td>
             <td id="email-column">Email</td>
             <td id="age-column">Age</td>
-            <td id="role-column">Role</td>
+            <td id="roleUser-column">Role</td>
             <td id="gender-column">Gender</td>
         </tr>
         </thead>
@@ -91,7 +91,7 @@
             <td name = "login">Alex</td>
             <td name = "email">alex@yopmail.com</td>
             <td name = "age">26</td>
-            <td name = "role">Administrator</td>
+            <td name = "roleUser">Administrator</td>
             <td name = "gender">Male</td>
             <td><button data-id="1" style="display: inline-block;" onclick="editUser(this)">Edit</button></td>
         </tr>
@@ -118,7 +118,7 @@
         let login = currentRow.querySelector('td[name="login"]');
         let email = currentRow.querySelector('td[name="email"]');
         let age = currentRow.querySelector('td[name="age"]');
-        let role = currentRow.querySelector('td[name="role"]');
+        let roleUser = currentRow.querySelector('td[name="roleUser"]');
         let gender = currentRow.querySelector('td[name="gender"]');
 
         let user = getFormData();
@@ -126,7 +126,7 @@
         login.innerHTML = user.login;
         email.innerHTML = user.email;
         age.innerHTML = user.age;
-        role.innerHTML = user.role;
+        roleUser.innerHTML = user.roleUser;
         gender.innerHTML = user.gender;
     }
 
@@ -141,21 +141,21 @@
         let login = currentRow.querySelector('td[name="login"]').innerHTML;
         let email = currentRow.querySelector('td[name="email"]').innerHTML;
         let age = currentRow.querySelector('td[name="age"]').innerHTML;
-        let role = currentRow.querySelector('td[name="role"]').innerHTML;
+        let roleUser = currentRow.querySelector('td[name="roleUser"]').innerHTML;
         let gender = currentRow.querySelector('td[name="gender"]').innerHTML;
 
         document.getElementById('id').value = id;
         document.getElementById('login').value = login;
         document.getElementById('email').value = email;
         document.getElementById('age').value = age;
-        document.getElementById('role').value = role;
+        document.getElementById('roleUser').value = roleUser;
         document.getElementById('gender').value = gender;
 
-        let roleSelect = document.getElementById('role').options;
+        let roleSelect = document.getElementById('roleUser').options;
 
         for(let i = roleSelect.length - 1; i >= 0; i--){
             let opt = roleSelect[i];
-            if (role === opt.innerHTML) {
+            if (roleUser === opt.innerHTML) {
                 roleSelect[i].selected = true;
             }
             else{
@@ -188,11 +188,11 @@
         let email = document.getElementById('email').value;
         let age = document.getElementById('age').value;
 
-        let roleSelect = document.getElementById('role');
-        let role = roleSelect.options[roleSelect.selectedIndex].text;
+        let roleSelect = document.getElementById('roleUser');
+        let roleUser = roleSelect.options[roleSelect.selectedIndex].text;
         let gender = document.getElementById('gender').value;
 
-        return {id, login, email, age, role, gender};
+        return {id, login, email, age, roleUser, gender};
     }
 
 

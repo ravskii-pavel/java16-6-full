@@ -21,43 +21,23 @@
 </head>
 <body style="margin: 20px 2% 20px 2%;">
     <%--<img src="../css/black-diamond-logo.png"/>--%>
+    <button id = "showAddForm" onclick="showAddForm()">Add user</button>
+    <button id = "showFindForm" onclick="showFindForm()">Find user</button>
+    <button id = "hideForm" onclick="hideForm()" hidden>Hide form</button>
 
-    <%--<div id="edit-form">
-        <table class="table">
-            <tr style="vertical-align: top;">
-                <td><input type="text" id="id" placeholder="Id" name="id"></td>
-                <td><input type="text" id="login" placeholder="Login" name="login"></td>
-                <td><input type="email" id="email" placeholder="Email" name="email"></td>
-                <td><input type="text" id="age" placeholder="Age" name="age"></td>
-                <td>
-                    <select id="role">
-                        <option value="SIMPLE">User</option>
-                        <option value="ADMIN">Administrator</option>
-                    </select>
-                </td>
-                <td>
-                    <div id="gender">
-                        <option type="radio" name="gender" checked value="NOT_SPECIFIED">Not cpecified</option>
-                        <p><option type="radio" name="gender" value="MALE">Male</option></p>
-                        <p><option type="radio" name="gender" value="FEMALE">Female</option></p>
-                        <&lt;%&ndash;select id="role">
-                            <option value="MALE">Male</option>
-                            <option value="FEMALE">Female</option>
-                        </select>&ndash;%&gt;
-                    </div>
-            </tr>
-				<span>
-					<td><button hidden id="save-btn" onclick="saveUser(this)">Save</button></td>
-				</span>
-				<span>
-					<td><button hidden id="send-btn" onclick="sendUser()">Send</button></td>
-				</span>
-        </table>
-    </div>--%>
+    <div id = "addFindForm" style = "margin: 10px 0px 20px 0px" hidden>
+        <p style = "margin: 10px 0px 20px 0px">Find user</p>
+        <select id="findUser" size="1">
+            <option value="findByEmail" selected> Find By Email </option>
+            <option value="findPhone"> Find By Phone </option>
+            <button id="find" onclick="findUser(this)" >Edit</button>
+        </select>
+
+    </div>
 
     <div id = "addUserForm" style = "margin: 10px 0px 20px 0px" hidden>
         <p style = "margin: 10px 0px 20px 0px" id = "addNewUser">Add new user</p>
-        <table cellspacing="0">
+        <table cellspacing="0" id ="addUserFormTable">
             <thead><!-- <th scope="row"></th> -->
             <tr>
                 <td id="new-login-column">Login</td>
@@ -67,7 +47,7 @@
                 <td id="new-age-column">Age</td>
                 <td id="new-password-column">Password</td>
                 <td id="new-gender-column">Gender</td>
-                <td id="new-role-column" style="width: auto">Role</td>
+                <td id="new-roleUser-column" style="width: auto">Role</td>
                 <td id="new-save-column">Edit</td>
                 <td id="new-cancel-column">Cancel</td>
             </tr>
@@ -79,34 +59,32 @@
                     <td name="fullName"> <input class="adminTextButton textButtonBorder" id="new-fullName" type="text"> </td>
                     <td name="email"> <input class="adminTextButton textButtonBorder" id="new-email" type="text" required> </td>
                     <td name="phone"> <input class="adminTextButton textButtonBorder" id="new-phone" type="text" required> </td>
-                    <td name="age"> <input class="adminTextButton textButtonBorder" name="age" id="new-age" type="text"> </td>
+                    <td name="age"> <input class="adminTextButton textButtonBorder" id="new-age" type="text"> </td>
                     <td name="password"> <input class="adminTextButton textButtonBorder" id="new-password" type="password" required> </td>
-                    <td id="gender" style="width: 100px;">
-                        <p><input name="gender" type="radio" value="MALE" checked> Male </p>
-                        <p><input name="gender" type="radio" value="FEMALE"> Female </p>
+                    <td id="new-gender" style="width: 100px;">
+                        <p><input name="new-gender" type="radio" value="MALE" checked> Male </p>
+                        <p><input name="new-gender" type="radio" value="FEMALE"> Female </p>
                     </td>
-                    <td name="role" style="width: auto">
-                        <select id="new-role" size="1">
-                            <option value="USER" selected> User </option>
+                    <td name="new-roleUser" style="width: auto">
+                        <select id="new-roleUser" size="1">
+                            <option value="GUEST" selected> Guest </option>
                             <option value="ADMIN"> Admin </option>
                         </select>
                     </td>
                     <td style="width: auto">
-                        <button id="addUser" onclick="saveUser(this)">Save</button>
+                        <button id="addUser" name="add">Save</button>
                     </td>
                     <td style="width: auto">
-                        <button id="cancelAddUser" onclick="cancelUser(this)" >Cancel</button>
+                        <button id="cancelAddUser">Cancel</button>
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
-    <button id = "showForm" onclick="showAddForm()">Add user</button>
-    <button id = "hideForm" onclick="showAddForm()" hidden>Hide form</button>
 
     <div style = "margin: 10px 0px 20px 0px" class="tableContainer">
         <p style = "margin: 10px 0px 20px 0px" id = "allUsers">All users table</p>
-        <table cellspacing="0">
+        <table cellspacing="0" id = "tableWithUsersData">
             <thead><!-- <th scope="row"></th> -->
                 <tr>
                     <td style="width: auto;" id="id-column">ID</td>
@@ -117,7 +95,7 @@
                     <td id="age-column">Age</td>
                     <td id="password-column">Password</td>
                     <td id="gender-column">Gender</td>
-                    <td style="width: auto" id="role-column">Role</td>
+                    <td style="width: auto" id="roleUser-column">Role</td>
                     <td id="edit">Edit</td>
                     <td id="cancel-column">Cancel</td>
                 </tr>
@@ -126,7 +104,7 @@
             <tbody id="user-table">
                <c:forEach var="v" items="${userListAll}">
                 <tr>
-                    <td <%--style="width: auto;"--%> name="id"> ${v.id} </td>
+                    <td <%--style="width: auto;"--%> name="id"> <p id = "id"> ${v.id} </p></td>
                     <td name="login">
                         <input class="adminTextButton" name="login" id="login" value="${v.login}" type="text" readonly>
                     </td>
@@ -134,33 +112,37 @@
                         <input class="adminTextButton" name="fullName" id="name" value="${v.fullName}" type="text" disabled>
                     </td>
                     <td name="email">
-                        <input class="adminTextButton" name="email" id="email" value="${v.email}" type="text" disabled>
+                        <input class="adminTextButton" name="email" id="email" value="${v.email}" type="text" disabled required>
                     </td>
                     <td name="phone">
-                        <input class="adminTextButton" name="phone" id="phone" value="${v.phoneNumber}" type="text" disabled>
+                        <input class="adminTextButton" name="phone" id="phone" value="${v.phoneNumber}" type="text" disabled required>
                     </td>
                     <td name="age">
                         <input class="adminTextButton" name="age" id="age" value="${v.age}" type="text" disabled>
                     </td>
                     <td>
-                        <input class="adminTextButton" name="password" id="password" value="${v.password}" type="password" disabled>
+                        <input class="adminTextButton" name="password" id="password" value="${v.password}" type="password" disabled required>
                     </td>
-                    <td style="width: 100px;" name="gender">
-                        <p><input name="gender" type="radio" value="MALE"> Male </p>
-                        <p><input name="gender" type="radio" value="FEMALE"> Female </p>
+                    <td style="width: 100px;">
+                        <div id = "genderName" >${v.gender}</div>
+                        <div id="gender" hidden>
+                            <p><input name="gender" type="radio" value="MALE"> Male </p>
+                            <p><input name="gender" type="radio" value="FEMALE"> Female </p>
+                        </div>
                     </td>
-                    <td style="width: auto" name="role">
-                        <select id="role" size="1" name="role">
-                            <option value="USER" selected> User </option>
+                    <td style="width: auto">
+                        <div id = "roleUserName">${v.roleUser}</div>
+                        <select id = "roleUser" size="1" name="roleUser" hidden>
+                            <option value="GUEST"> Guest </option>
                             <option value="ADMIN"> Admin </option>
                         </select>
                     </td>
                     <td>
-                        <button id="1" onclick="editUser(this)">Edit</button>
-                        <button id="2" onclick="saveUser(this)" hidden >Save</button>
+                        <button id="editUser" onclick="editUser(this)" >Edit</button>
+                        <button id="saveEditUser" onclick="saveEditUser(this)" name="update" hidden >Update</button>
                     </td>
                     <td style="width: auto">
-                        <button id="3" onclick="cancelUser(this)" >Cancel</button>
+                        <button id="cancelEditUser" onclick="cancelEditUser(this)" hidden>Cancel</button>
                     </td>
                 </tr>
                 </c:forEach>
@@ -200,7 +182,7 @@
 
         function sendUser() {
             let user = getFormData();
-            let requestParams = `login=${user.login}&email=${user.email}&age=${user.age}&user-role=${user.role}`;
+            let requestParams = `login=${user.login}&email=${user.email}&age=${user.age}&user-roleUser=${user.roleUser}`;
             let headers = new Headers({
                 'Content-Type':'application/x-www-form-urlencoded'
                 // 'Access-Control-Allow-Origin': '*'
@@ -224,7 +206,7 @@
             let login = currentRow.querySelector('td[name="login"]');
             let email = currentRow.querySelector('td[name="email"]');
             let age = currentRow.querySelector('td[name="age"]');
-            let role = currentRow.querySelector('td[name="role"]');
+            let roleUser = currentRow.querySelector('td[name="roleUser"]');
             let gender = currentRow.querySelector('td[name="gender"]');
             let user = getFormData();
 
@@ -232,7 +214,7 @@
             login.innerHTML = user.login;
             email.innerHTML = user.email;
             age.innerHTML = user.age;
-            role.innerHTML = user.role;
+            roleUser.innerHTML = user.roleUser;
             gender.innerHTML = user.gender;
         }
 
@@ -244,7 +226,7 @@
             let login = currentRow.querySelector('td[name="login"]').innerHTML;
             let email = currentRow.querySelector('td[name="email"]').innerHTML;
             let age = currentRow.querySelector('td[name="age"]').innerHTML;
-            let role = currentRow.querySelector('td[name="role"]').innerHTML;
+            let roleUser = currentRow.querySelector('td[name="roleUser"]').innerHTML;
             let gender = currentRow.querySelector('td[name="gender"]').innerHTML;
 
             document.getElementById('id').value = id;
@@ -252,11 +234,11 @@
             document.getElementById('email').value = email;
             document.getElementById('age').value = age;
 
-            let roleSelect = document.getElementById('role').options;
+            let roleSelect = document.getElementById('roleUser').options;
             for(let i = roleSelect.length - 1; i >= 0; i--) {
                 let opt = roleSelect[i];
 
-                if(role === opt.innerHTML) {
+                if(roleUser === opt.innerHTML) {
                     roleSelect[i].selected = true
                 } else roleSelect[i].selected = false;
             }
@@ -271,14 +253,13 @@
             let login = document.getElementById('login').value;
             let email = document.getElementById('email').value;
             let age = document.getElementById('age').value;
-            let roleSelect = document.getElementById('role');
-            let role = roleSelect.options[roleSelect.selectedIndex].text;
+            let roleSelect = document.getElementById('roleUser');
+            let roleUser = roleSelect.options[roleSelect.selectedIndex].text;
             let gender = document.getElementById('gender').value;
 
-            return {id, login, email, age, role, gender};
+            return {id, login, email, age, roleUser, gender};
         }
     </script>--%>
-
     <script src="js/admin.js"></script>
 </body>
 </html>

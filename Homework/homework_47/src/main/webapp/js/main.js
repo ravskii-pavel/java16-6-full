@@ -1,8 +1,8 @@
-
+//document.getElementById("new-login").addEventListener('click', validateEmail);
 function validateEmail(event){
 
     event.preventDefault();
-    var email = document.getElementById("email");
+    var email = document.getElementById("new-email");
     var emailText = email.value;
 
     if(emailText.length === 0 || emailText.includes(" ") || emailText.indexOf("@") === -1){
@@ -16,32 +16,33 @@ function validateEmail(event){
 function validateLogin(event){
 
     event.preventDefault();
-    var login = document.getElementById("login");
+    var login = document.getElementById("new-login");
     var loginText = login.value;
 
     if(loginText.length === 0 || loginText.includes(" ")){
         login.classList.add('red-border');
     }
     else {
-        document.getElementsByTagName("form")[0].submit();
+        sendUser;
+        /*document.getElementsByTagName("form")[0].submit();*/
     }
 }
 
 function resetEmailField(){
     /*document.getElementById("email").style = "";*/
-    document.getElementById("email").classList.remove('red-border');
+    document.getElementById("new-email").classList.remove('red-border');
 }
 
 function resetLoginField(){
     /*document.getElementById("email").style = "";*/
-    document.getElementById("login").classList.remove('red-border');
+    document.getElementById("new-login").classList.remove('red-border');
 }
 
 document.getElementById("loginBtn").addEventListener('click', validateLogin);
 document.getElementById("registrBtn").addEventListener('click', validateEmail);
 
-document.getElementById("login").addEventListener("focus", resetLoginField);
-document.getElementById("email").addEventListener("focus", resetEmailField);
+document.getElementById("new-login").addEventListener("focus", resetLoginField);
+document.getElementById("new-email").addEventListener("focus", resetEmailField);
 
 
 /*document.getElementById('my-input-id').disabled = false;

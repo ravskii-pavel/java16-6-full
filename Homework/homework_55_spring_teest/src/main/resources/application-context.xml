@@ -1,0 +1,29 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="greetingBean" class="ua.dp.levelup.Greeting">
+        <property name="messege" value="Hello World !!! -" />  <!-- - этот вариант предпочтительней-->
+    </bean>
+
+    <bean id="colorWhiteBean" class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
+        <property name="staticField" value="ua.dp.levelup.Color.WHITE" />
+    </bean>
+    <bean id="colorRedBean" class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
+        <property name="staticField" value="ua.dp.levelup.Color.RED" />
+    </bean>
+
+    <bean id="carBean" class="ua.dp.levelup.Car">
+        <property name="maxSpeed" value="300" />
+        <property name="model" value="BMW" />
+        <property name="color" value="RED" />
+    </bean>
+
+    <bean id="carConstructorBean" class="ua.dp.levelup.Car">
+        <constructor-arg name="maxSpeed" value="280.00D" />
+        <constructor-arg name="model" value="BMW" />
+        <constructor-arg name="color" value="BLACK" />
+    </bean>
+
+</beans>

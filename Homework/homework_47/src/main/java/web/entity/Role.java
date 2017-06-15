@@ -8,5 +8,5 @@ import javax.persistence.*;
 
 public enum Role {
     ADMIN,
-    GUEST;
+    GUEST
 }

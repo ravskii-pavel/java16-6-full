@@ -40,13 +40,15 @@ public class UserDAOImpl extends AbstractDBDAO<User> {
         Transaction transaction = dbDataProvider.getSession().getTransaction();
         transaction.begin();
         Query userQuery = dbDataProvider.getSession().createQuery("update User set fullName = :userFullName, age = :userAge," +
-                "phoneNumber = :userPhone, email = :userEmail, password = :userPassword where login = :userLogin");
+                "phoneNumber = :userPhone, email = :userEmail, password = :userPassword, gender = :userGender, roleUser = :userRoleUser where login = :userLogin");
         userQuery.setParameter("userFullName", user.getFullName());
         userQuery.setParameter("userAge", user.getAge());
         userQuery.setParameter("userPhone", user.getPhoneNumber());
         userQuery.setParameter("userEmail", user.getEmail());
         userQuery.setParameter("userPassword", user.getPassword());
         userQuery.setParameter("userLogin", user.getLogin());
+        userQuery.setParameter("userGender", user.getGender());
+        userQuery.setParameter("userRoleUser", user.getRoleUser());
         userQuery.executeUpdate();
         //session.flush(для синхронизации данных объекта в кеше уровня сессий с БД);
         transaction.commit();
@@ -78,9 +80,18 @@ public class UserDAOImpl extends AbstractDBDAO<User> {
         Transaction transaction = dbDataProvider.getSession().getTransaction();
         Query<User> userQuery = dbDataProvider.getSession().createQuery("from User WHERE phoneNumber like :phone", User.class);
         userQuery.setParameter("phone", "%" + searchPhone + "%");
-        List<User> listUsers = userQuery.list();
+        List<User> listUsers = userQuery.getResultList();
+        /*List<User> listUsers = userQuery.list();*/
         //session.flush(); (для синхронизации данных объекта в кеше уровня сессий с БД)
         transaction.commit();
         return (ArrayList<User>)listUsers;
+    }
+
+    @Override
+    public void create(User user) {
+        Transaction transaction = dbDataProvider.getSession().getTransaction();
+        transaction.begin();
+        dbDataProvider.getSession().save(user);/*session.update(user); */
+        transaction.commit();
     }
 }

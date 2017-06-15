@@ -8,8 +8,6 @@ public interface DataProvider {
     enum ConnectionType {
         MYSQL, JSON
     }
-
     void openConnection();
     void closeConnection();
-
 }

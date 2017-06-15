@@ -33,7 +33,7 @@
 			width: 100px
 		}
 
-		#role-column {
+		#roleUser-column {
 			width: 100px
 		}
 
@@ -51,7 +51,7 @@
 				<td><input type="email" id="email" placeholder="Email" name="email"></td>
 				<td><input type="text" id="age" placeholder="Age" name="age"></td>
 				<td>
-					<select id="role">
+					<select id="roleUser">
 						<option value="SIMPLE">Simple</option>
 						<option value="ADMIN">Administrator</option>
 					</select>
@@ -82,7 +82,7 @@
 						<td id="login-column">Login</td>
 						<td id="email-column">Email</td>
 						<td id="age-column">Age</td>
-						<td id="role-column">Role</td>
+						<td id="roleUser-column">Role</td>
 						<td id="gender-column">Gender</td>
 					</tr>
 				</thead>
@@ -94,7 +94,7 @@
 						<td name="login">Alex</td>
 						<td name="email">alex@yopmail.com</td>
 						<td name="age">26</td>
-						<td name="role">Administrator</td>
+						<td name="roleUser">Administrator</td>
 						<td name="gender">Male</td>
 
 						<td><button data-id="1" style="display: inline-block;" onclick="editUser(this)">Edit</button></td>
@@ -105,7 +105,7 @@
 						<td name="login">Tom</td>
 						<td name="email">tom@yopmail.com</td>
 						<td name="age">37</td>
-						<td name="role">Simple</td>
+						<td name="roleUser">Simple</td>
 						<td name="gender">Male</td>
 
 						<td><button data-id="1" style="display: inline-block;" onclick="editUser(this)">Edit</button></td>
@@ -130,7 +130,7 @@
 		function sendUser() {
 			let user = getFormData();
 
-			let requestParams = `login=${user.login}&email=${user.email}&age=${user.age}&user-role=${user.role}`;
+			let requestParams = `login=${user.login}&email=${user.email}&age=${user.age}&user-roleUser=${user.roleUser}`;
 
 			let headers = new Headers({
 				'Content-Type':'application/x-www-form-urlencoded'
@@ -158,7 +158,7 @@
 			let login = currentRow.querySelector('td[name="login"]');
 			let email = currentRow.querySelector('td[name="email"]');
 			let age = currentRow.querySelector('td[name="age"]');
-			let role = currentRow.querySelector('td[name="role"]');
+			let roleUser = currentRow.querySelector('td[name="roleUser"]');
 			let gender = currentRow.querySelector('td[name="gender"]');
 
 
@@ -168,7 +168,7 @@
 			login.innerHTML = user.login;
 			email.innerHTML = user.email;
 			age.innerHTML = user.age;
-			role.innerHTML = user.role;
+			roleUser.innerHTML = user.roleUser;
 			gender.innerHTML = user.gender;
 		}
 
@@ -184,7 +184,7 @@
 			let login = currentRow.querySelector('td[name="login"]').innerHTML;
 			let email = currentRow.querySelector('td[name="email"]').innerHTML;
 			let age = currentRow.querySelector('td[name="age"]').innerHTML;
-			let role = currentRow.querySelector('td[name="role"]').innerHTML;
+			let roleUser = currentRow.querySelector('td[name="roleUser"]').innerHTML;
 			let gender = currentRow.querySelector('td[name="gender"]').innerHTML;
 
 
@@ -193,12 +193,12 @@
 			document.getElementById('email').value = email;
 			document.getElementById('age').value = age;
 
-			let roleSelect = document.getElementById('role').options;
+			let roleSelect = document.getElementById('roleUser').options;
 
 			for(let i = roleSelect.length - 1; i >= 0; i--) {
 				let opt = roleSelect[i];
 
-				if(role === opt.innerHTML) {
+				if(roleUser === opt.innerHTML) {
 					roleSelect[i].selected = true
 				} else roleSelect[i].selected = false;
 			}
@@ -217,12 +217,12 @@
 			let login = document.getElementById('login').value;
 			let email = document.getElementById('email').value;
 			let age = document.getElementById('age').value;
-			let roleSelect = document.getElementById('role');
+			let roleSelect = document.getElementById('roleUser');
 
-			let role = roleSelect.options[roleSelect.selectedIndex].text;
+			let roleUser = roleSelect.options[roleSelect.selectedIndex].text;
 			let gender = document.getElementById('gender').value;
 
-			return {id, login, email, age, role, gender};
+			return {id, login, email, age, roleUser, gender};
 		}
 
 
@@ -246,7 +246,7 @@
 			// 	let login = document.getElementById("login").value;
 			// 	let email = document.getElementById("email").value;
 			// 	let age = document.getElementById("age").value;
-			// 	let role = document.getElementById("role").value;
+			// 	let roleUser = document.getElementById("roleUser").value;
 			// 	let gender = document.querySelector('input[name="gender"]:checked').value;
 
 			// 	let table = document.getElementById("user-table");
@@ -257,7 +257,7 @@
 			// 	row.insertCell(1).innerHTML = login;
 			// 	row.insertCell(2).innerHTML = email;
 			// 	row.insertCell(3).innerHTML = age;
-			// 	row.insertCell(4).innerHTML = role;
+			// 	row.insertCell(4).innerHTML = roleUser;
 			// 	row.insertCell(5).innerHTML = gender;
 
 			// 	table.appendChild(row);

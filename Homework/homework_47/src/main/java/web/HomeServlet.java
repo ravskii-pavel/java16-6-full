@@ -1,5 +1,9 @@
 package web;
 
+import web.dao.DAO;
+import web.dao.impl.UserDAOImpl;
+import web.entity.User;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,6 +18,7 @@ import java.io.PrintWriter;
 
 @WebServlet(urlPatterns = {""})
 public class HomeServlet extends HttpServlet {
+    private DAO<User> userDAO = new UserDAOImpl();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

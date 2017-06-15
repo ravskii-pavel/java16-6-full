@@ -25,7 +25,7 @@
     <input class="textButton" name="phone" placeholder="phone number" type="text" required>
     <input class="textButton" name="email" placeholder="email" type="text" required>
     <input class="textButton" name="password" placeholder="password" type="password" required> <br>
-    <select name="role" id="role">
+    <select name="roleUser" id="roleUser">
         <option value="GUEST">Guest</option>
         <option value="ADMIN">Admin</option>
     </select>

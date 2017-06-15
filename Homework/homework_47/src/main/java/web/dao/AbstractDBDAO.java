@@ -23,11 +23,11 @@ public abstract class AbstractDBDAO<T> implements DAO<T> {
         this.dbDataProvider = (DBDataProviderImpl) dataProvider;
     }
 
-    @Override
+/*    @Override
     public void create(T t) {
         Transaction transaction = dbDataProvider.getSession().getTransaction();
         transaction.begin();
-        dbDataProvider.getSession().save(t);/*session.update(user);*/
+        dbDataProvider.getSession().save(t);*//*session.update(user); чтобы работало нужно true, если false тогда нужно через insert--> *//*
         transaction.commit();
-    }
+    }*/
 }

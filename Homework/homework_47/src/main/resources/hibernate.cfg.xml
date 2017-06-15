@@ -8,11 +8,12 @@
         <property name="dialect">org.hibernate.dialect.MySQL57Dialect</property>
         <property name="show_sql">true</property>
         <property name="hbm2ddl.auto">update</property>
-        <property name="hibernate.connection.autocommit">false</property>
+        <property name="hibernate.connection.autocommit">true</property> <!--session.save(user); чтобы работало нужно true, если false тогда нужно через insert-->
         <property name="hibernate.current_session_context_class">thread</property> <!--для того чтобы можно было делать getCurrentSession-->
         <!--<property name="generatedByDatabase" generated="always"/> />-->
         <mapping class="web.entity.User" />
         <mapping class="web.entity.Role" />
+        <mapping class="web.entity.Gender" />
 
     </session-factory>
 </hibernate-configuration>
