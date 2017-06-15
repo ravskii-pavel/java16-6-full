@@ -28,13 +28,12 @@ public class Car {
         String result = "{\n\t";
         for(int i = 0; i < fieldsClass.length; i++){
             if(i == fieldsClass.length - 1){
-                result = result +"\""+fieldsClass[i].getName()+"\": " + fieldsClass[i].get(this)+ "\n}";
+                result = result +"\""+fieldsClass[i].getName()+"\": " + "\""+ fieldsClass[i].get(this) + "\""+ "\n}";
             }
-            else result = result +"\""+fieldsClass[i].getName()+"\": " + fieldsClass[i].get(this)+ ",\n\t";
+            else result = result +"\""+fieldsClass[i].getName()+"\": " + "\""+ fieldsClass[i].get(this) + "\"" + ",\n\t";
         }
         return result;
     }
-
     public void printFields(){
         System.out.println(maxSpeed);
         System.out.println(model);
