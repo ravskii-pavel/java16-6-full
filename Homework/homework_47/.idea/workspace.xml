@@ -5,25 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2d5d04e-a17c-469c-9c59-472a4dfc9e2d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/-.html" afterPath="$PROJECT_DIR$/-.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hibernate, Session !!!.txt" afterPath="$PROJECT_DIR$/Hibernate, Session !!!.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/web/AdminPageServlet.java" afterPath="$PROJECT_DIR$/src/main/java/web/AdminPageServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/web/HomeServlet.java" afterPath="$PROJECT_DIR$/src/main/java/web/HomeServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/web/LoginServlet.java" afterPath="$PROJECT_DIR$/src/main/java/web/LoginServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/web/dao/AbstractDBDAO.java" afterPath="$PROJECT_DIR$/src/main/java/web/dao/AbstractDBDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/web/dao/DataProvider.java" afterPath="$PROJECT_DIR$/src/main/java/web/dao/DataProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/web/dao/impl/HibernateUtil.java" afterPath="$PROJECT_DIR$/src/main/java/web/dao/impl/HibernateUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/web/dao/impl/UserDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/web/dao/impl/UserDAOImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/web/entity/Role.java" afterPath="$PROJECT_DIR$/src/main/java/web/entity/Role.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/web/entity/User.java" afterPath="$PROJECT_DIR$/src/main/java/web/entity/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/adminPage.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/adminPage.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/css/main.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/admin.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/admin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/main.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/registration.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/registration.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/userTable.html" afterPath="$PROJECT_DIR$/src/main/webapp/userTable.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../homework_55_spring_teest/src/main/java/ua/dp/levelup/AbstractDBDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../homework_55_spring_teest/src/main/java/ua/dp/levelup/DAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../homework_55_spring_teest/src/main/java/ua/dp/levelup/DBDataProvider.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../homework_55_spring_teest/src/main/java/ua/dp/levelup/UserDAOImpl.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../homework_55_spring_teest/src/main/java/ua/dp/levelup/dao/AbstractDBDAO.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../homework_55_spring_teest/src/main/java/ua/dp/levelup/dao/DAO.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../homework_55_spring_teest/src/main/java/ua/dp/levelup/dao/DataProvider.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../homework_55_spring_teest/src/main/java/ua/dp/levelup/dao/impl/DBDataProviderImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../homework_55_spring_teest/src/main/java/ua/dp/levelup/dao/impl/HibernateUtil.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../homework_55_spring_teest/src/main/java/ua/dp/levelup/dao/impl/UserDAOImpl.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../homework_55_spring_teest/.idea/artifacts/homework_55_spring_teest_war_exploded.xml" afterPath="$PROJECT_DIR$/../homework_55_spring_teest/.idea/artifacts/homework_55_spring_teest_war_exploded.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../homework_55_spring_teest/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../homework_55_spring_teest/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../homework_55_spring_teest/homework_55_spring_teest.iml" afterPath="$PROJECT_DIR$/../homework_55_spring_teest/homework_55_spring_teest.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../homework_55_spring_teest/pom.xml" afterPath="$PROJECT_DIR$/../homework_55_spring_teest/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../homework_55_spring_teest/src/main/resources/applicationContext-persistence.xml" afterPath="$PROJECT_DIR$/../homework_55_spring_teest/src/main/resources/applicationContext-persistence.xml" />
     </list>
     <ignored path="homework_47.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -106,7 +102,7 @@
       <file leaf-file-name="UserDAOImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/web/dao/impl/UserDAOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7311828">
+            <state vertical-scroll-proportion="1.3429084">
               <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -271,6 +267,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -451,9 +450,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1156,11 +1152,12 @@
       <workItem from="1497109556390" duration="28862000" />
       <workItem from="1497190219980" duration="78518000" />
       <workItem from="1497455737456" duration="31000" />
+      <workItem from="1497654337920" duration="522000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="368066000" />
+    <option name="totallyTimeSpent" value="368588000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1734,7 +1731,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/web/dao/impl/UserDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7311828">
+        <state vertical-scroll-proportion="1.3429084">
           <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
