@@ -1,0 +1,11 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="greetingBean" class="ua.dp.levelup.Greeting">
+        <constructor-arg name="messege" value="Hello World !!! - constructor" />
+        <property name="messege" value="Hello World !!! -" />  <!-- - этот вариант предпочтительней-->
+    </bean>
+
+</beans>

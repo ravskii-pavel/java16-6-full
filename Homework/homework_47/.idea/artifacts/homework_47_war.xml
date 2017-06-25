@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="homework_47:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="home-servlet-extended.war">
-      <element id="artifact" artifact-name="homework_47:war exploded" />
-    </root>
-  </artifact>
-</component>

@@ -1,0 +1,5 @@
+http://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC
+
+https://github.com/Giphy/GiphyAPI#trending-gifs-endpoint
+
+http://api.giphy.com/

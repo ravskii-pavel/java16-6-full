@@ -1,0 +1,78 @@
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context = "http://www.springframework.org/schema/context"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <context:annotation-config/>
+    <bean id = "profilingBeanPostProcessor" class="ua.dp.levelup.ProfilingBeanPostProcessor" />
+    <!--<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>-->
+
+    <!--<bean id="userService" class="ua.dp.levelup.UserServiceImplImpl">
+    </bean>-->
+
+    <bean id="userService" class="ua.dp.levelup.service.impl.UserServiceImpl">
+        <property name="userDAO" ref="userDao" />
+    </bean>
+
+    <bean id="greetingBean" class="ua.dp.levelup.Greeting">
+        <property name="messege" value="Hello World !!! -" />  <!-- - этот вариант предпочтительней-->
+    </bean>
+    <bean id="greetingBeanPrototype" scope="prototype" class="ua.dp.levelup.Greeting">
+        <property name="messege" value="Hello World from Prototype Scope -" />
+    </bean>
+
+    <bean id="singleton-message" scope="singleton" class="ua.dp.levelup.Message">
+        <property name="message" value="Hello It is Message Singleton Bean" />
+    </bean>
+    <bean id="prototype-message" scope="prototype" class="ua.dp.levelup.Message">
+        <property name="message" value="Hello It is Message Prototype Bean" />
+    </bean>
+
+    <bean id = "userDao" class="ua.dp.levelup.DAO.impl.UserDAOImpl" init-method="init"/>
+
+<!--    <bean id="greetingBeanRequest" scope="request" class="ua.dp.levelup.Greeting">
+        <property name="messege" value="Hello World from Prototype Scope -" />
+    </bean>
+
+    <bean id="greetingBeanSession" scope="session" class="ua.dp.levelup.Greeting">
+        <property name="messege" value="Hello World from Sesssion Scope -" />
+    </bean>-->
+
+<!--    <bean id="colorWhiteBean" class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
+        <property name="staticField" value="ua.dp.levelup.Color.WHITE" />
+    </bean>
+    <bean id="colorRedBean" class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
+        <property name="staticField" value="ua.dp.levelup.Color.RED" />
+    </bean>-->
+
+<!--    <bean id="carBean" class="ua.dp.levelup.Car">
+        <property name="maxSpeed" value="300" />
+        <property name="model" value="BMW" />
+        <property name="color" ref="colorRedBean" />
+    </bean>-->
+    <!--
+        <bean id="carConstructorBean" class="ua.dp.levelup.Car">
+            <constructor-arg name="maxSpeed" value="280.00D" />
+            <constructor-arg name="model" value="BMW" />
+            <constructor-arg name="color" ref="colorWhiteBean" />
+        </bean>
+
+        <bean id="user" class="ua.dp.levelup.User">
+            <property name="name" value="Pavel" />
+        </bean>
+
+        <bean id="pcBean" class="ua.dp.levelup.PC">
+            <property name="hdd" value="500Gb" />
+            <property name="ram" value="8Gb" />
+            <property name="owner" ref="user" />
+        </bean>-->
+
+<!--
+config -> BeanFactory(newInstace) -> BeanPostProc
+BeanPostProc (Proxy)-> BeanFactory
+-->
+
+</beans>

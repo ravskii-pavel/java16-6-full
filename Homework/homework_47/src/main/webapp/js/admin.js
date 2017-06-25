@@ -90,7 +90,7 @@ function saveUser() {
         body: requestParams
     }).catch(alert);
     clearFormData();
-    setTimeout(reloadWindow, 100);
+    setTimeout(reloadWindow, 200);
 }
 
 function editUser(data){
@@ -160,7 +160,13 @@ function cancelEditUser(){
             }
         }
         else if ((allInputs[k].name).localeCompare("gender") === 0){
+            var gender;
+            var genderCheck = editingRow.querySelectorAll('[name="gender"]');
+            for(var i = 0; i < genderCheck.length; i++) {
+                if(genderCheck[i].checked) gender = genderCheck[i].value;
+            }
             allInputs[k].removeAttribute('checked');
+            editingRow.querySelector('[id="genderName"]').innerHTML = gender;
         }
     }
     editingRow.removeAttribute('saveEnable');
@@ -170,8 +176,10 @@ function cancelEditUser(){
     editingRow.querySelector('[id="gender"]').setAttribute("hidden", true);
     editingRow.querySelector('[id="genderName"]').removeAttribute("hidden");
     editingRow.querySelector('[id="roleUser"]').setAttribute("hidden", true);
-    editingRow.querySelector('[id="roleUserName"]').removeAttribute("hidden");
+    editingRow.querySelector('[id="roleUserName"]').removeAttribute("hidden")
+    /*editingRow.querySelector('[id="roleUserName"]').innerHTML = ;*/
     editingRow.removeAttribute('in-editing');
+    /*setTimeout(reloadWindow, 100);*/
 }
 
 function enabledForm(data){

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+fetch("http://swapi.co/api/people/1")
+.then(response => response.json())
+.then(resp => {
+	console.log(resp)
+	return fetch(resp.homeworld);
+})
+.then(r => r.json())
+.then(data => {
+
+	console.log(data)
+
+	let homeworld = data.name;
+	let residents = data.residents.map(residentURL => fetch(residentURL)
+		.then(resp => resp.json())
+		.catch(e => console.error(e))
+		); // применяется к каждому элементу масива (то что в скобках)
+
+		return {planetName: homeworld, residents: Promise.all(residents)};
+		/*return{planetName: homeworld, residents}*/
+})
+/*.then(data => console.log(data))*/
+
+.then(data => {
+
+	let persons = data.residents
+/*	.then(resp => {
+		console.log(resp)
+		return resp;
+	})*/
+	.then(arr => arr.find(person => person.name === "C-3PO"))
+	.then(robot => console.log(robot))
+/*	.then(arr => arr
+		.map(person => person.name)
+		.join())
+	.then(persons => console.log(data.planetName + ": ", persons));*/
+})
+.catch(error => console.error(error))
+
+
+
+/*.then(person => {
+	console.log("name", person.name)
+	console.log("birthYear", person.birth_year)
+	console.log("height", person.height)
+	console.log("homeWorld", person.homeworld)
+})*/
+</script>
+
+</body>
+</html>

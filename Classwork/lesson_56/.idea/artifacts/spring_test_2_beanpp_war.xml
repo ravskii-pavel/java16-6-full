@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="spring-test-2-beanpp:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="home-servlet-extended.war">
+      <element id="artifact" artifact-name="spring-test-2-beanpp:war exploded" />
+    </root>
+  </artifact>
+</component>

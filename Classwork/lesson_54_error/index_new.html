@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>indexPage</title>
+</head>
+<body>
+
+<style type="text/css">
+	div.container{
+		height: 100px;
+		display: inline-flex;
+	}
+
+	#image-container{
+		position: absolute;
+		bottom: 0;
+	}
+	#message-container{
+		
+		width: 500px;
+		height: 500px;
+		background-image: url('https://core.telegram.org/file/811140603/1/c6O6wQAyOcE/711a1908109a1a32ae');
+	}
+
+</style>
+
+
+<div id="message-container">
+
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</div>
+<div></div>
+<div></div>
+<div></div>
+
+
+
+<div id="image-container">
+	<div class="container" id="images"></div>
+</div>
+
+<script type="text/javascript">
+	
+	var	API_URL = "http://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC";
+
+	(function createGiphBar() {
+		fetch(API_URL)
+		.then(resp => resp.json())
+		.then(resp =>{
+			console.log(resp);
+
+			let fragment = document.createDocumentFragment();
+
+			resp.data.map(giph => {
+				let giphUrl = giph.images.fixed_height_small.url;
+				let $img = document.createElement('img');
+
+				$img.src = giphUrl;
+
+				fragment.appendChild($img);
+
+				/*document.getElementById("images").appendChild($img);*/ //не производительно - каждый раз перерисовует страничку
+			})
+			document.getElementById("images").appendChild(fragment);
+		})
+		.catch(e => console.error(e));
+	})()// - самовызывающаяся функция 
+
+	//setInterval()
+
+	/*setTimeout(createGiphBar, 200);*/ //вызов функции автоматом при загрузке странице
+
+</script>
+
+</body>
+</html>
