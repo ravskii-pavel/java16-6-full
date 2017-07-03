@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <context:annotation-config/>
+
+    <!--<context:component-scan base-package=""/>-->
+    <context:property-placeholder location="classpath*:db.config.properties"/>
+
+    <!--<bean class="ua.dp.levelup.ProfilingBeanPostProcessor" id="profilingBeanPostProcessor"/>-->
+
+   <!-- <bean id="userDao" class="dao.impl.UserDaoImpl" init-method="init">
+        &lt;!&ndash;<constructor-arg name="filePath" value="D://data/users.json"/>&ndash;&gt;
+    </bean>-->
+
+    <!--DAO-->
+    <bean id="userDao" class="dao.impl.UserDaoImpl">
+        <property name="hibernateTemplate" ref="hibernateTemplate"/>
+    </bean>
+
+    <bean id="filmDao" class="dao.impl.FilmDaoImpl">
+        <property name="hibernateTemplate" ref="hibernateTemplate"/>
+    </bean>
+
+    <bean id="movieSessionDao" class="dao.impl.MovieSessionDaoImpl">
+        <property name="hibernateTemplate" ref="hibernateTemplate"/>
+    </bean>
+
+    <bean id="hallDao" class="dao.impl.HallDaoImpl">
+        <property name="hibernateTemplate" ref="hibernateTemplate"/>
+    </bean>
+
+    <bean id="orderDao" class="dao.impl.OrderDaoImpl">
+        <property name="hibernateTemplate" ref="hibernateTemplate"/>
+    </bean>
+
+    <bean id="ticketDao" class="dao.impl.TicketDaoImpl">
+        <property name="hibernateTemplate" ref="hibernateTemplate"/>
+    </bean>
+
+    <!--SERVICES-->
+
+    <bean id="userService" class="service.impl.UserServiceImpl">
+        <property name="userDao" ref="userDao"/>
+    </bean>
+    <bean  id="orderService" class="service.impl.OrderServiceImpl">
+        <property name="orderDao" ref="orderDao"/>
+    </bean>
+
+    <bean id="ticketService" class="service.impl.TicketServiceImpl" >
+        <property name="ticketDao" ref="ticketDao"/>
+    </bean>
+
+    <bean id="filmService" class="service.impl.FilmServiceImpl" >
+        <property name="filmDao" ref="filmDao"/>
+    </bean>
+
+    <bean id="movieSessionService" class="service.impl.MovieSessionServiceImpl" >
+        <property name="movieSessionDao" ref="movieSessionDao"/>
+    </bean>
+
+    <bean id="hallService" class="service.impl.HallServiceImpl" >
+        <property name="hallDao" ref="hallDao"/>
+    </bean>
+
+
+    <!--DATASOURCE, sessionFactory-->
+
+    <tx:annotation-driven transaction-manager="transactionManager" />
+
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="packagesToScan" value="core.model"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.connection.Charset">${hibernate.charset}</prop>
+                <prop key="hibernate.connection.CharacterEncoding">${hibernate.encoding}</prop>
+                <prop key="hibernate.connection.Useunicode">${hibernate.unicode}</prop>
+                <prop key="hibernate.dialect">${hibernate.dialect}</prop>
+                <prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+                <prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+                <prop key="hibernate.connection.autocommit">${hibernate.connection.autocommit}</prop>
+                <prop key="hibernate.connection.pool.size">${hibernate.connection.pool.size}</prop>
+                <prop key="hibernate.jdbc.time.zone">${hibernate.jdbc.time.zone}</prop>
+                <!--<prop key="hibernate.enable.lazy.load.no.trans">${hibernate.enable.lazy.load.no.trans}</prop>-->
+            </props>
+        </property>
+    </bean>
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="url" value="${hibernate.url}"/>
+        <property name="username" value="${hibernate.username}"/>
+        <property name="password" value="${hibernate.password}"/>
+        <property name="driverClassName" value="${hibernate.driver}"/>
+    </bean>
+
+    <bean class="org.springframework.orm.hibernate5.HibernateTemplate" id="hibernateTemplate">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean class="org.springframework.orm.hibernate5.HibernateTransactionManager" id="transactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+
+</beans>
