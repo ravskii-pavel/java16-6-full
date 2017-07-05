@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>UserTable</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <script  src="https://code.jquery.com/jquery-3.2.1.min.js"  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="  crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+
+
+<style type="text/css">
+    #id-column {
+        width: 25px
+    }
+
+    #login-column {
+        width: 100px
+    }
+
+    #email-column {
+        width: 100px
+    }
+
+    #age-column {
+        width: 100px
+    }
+
+    #roleUser-column {
+        width: 100px
+    }
+
+    #gender-column {
+        width: 100px
+    }
+</style>
+<body>
+<div id="edit-form" hidden>
+    <table class="table">
+        <tr style="vertical-align: top;">
+            <td><input type="text" id="id" placeholder="Id" name="id"></td>
+            <td><input type="text" id="login" placeholder="Login" name="login"></td>
+            <td><input type="email" id="email" placeholder="Email" name="email"></td>
+            <td><input type="text" id="age" placeholder="Age" name="age"></td>
+            <td>
+                <select id="roleUser">
+                    <option value="SIMPLE">Simple</option>
+                    <option value="ADMIN">Administrator</option>
+                </select>
+            </td>
+            <td>
+                <div id="gender">
+                    <input type="radio" name="gender" checked value="NOT_SPECIFIED">Not cpecified</option>
+                    <p><input type="radio" name="gender" value="MALE">Male</option></p>
+                    <p><input type="radio" name="gender" value="FEMALE">Female</option></p>
+                </div>
+        </tr>
+				<span>
+					<td><button id="save-btn" onclick="saveUser(this)">Save</button></td>
+				</span>
+        	    <span>
+					<td><button hidden id="send-btn" onclick="sendUser()">Send</button></td>
+				</span>
+    </table>
+</div>
+
+<div class="container">
+    <table class="table table-hover table-bordered">
+        <thead>
+        <!-- <th scope="row"></th> -->
+        <tr>
+            <td id="id-column">#</td>
+            <td id="login-column">Login</td>
+            <td id="email-column">Email</td>
+            <td id="age-column">Age</td>
+            <td id="roleUser-column">Role</td>
+            <td id="gender-column">Gender</td>
+        </tr>
+        </thead>
+
+        <tbody id="user-table">
+
+        <tr>
+            <td name = "id">1</td>
+            <td name = "login">Alex</td>
+            <td name = "email">alex@yopmail.com</td>
+            <td name = "age">26</td>
+            <td name = "roleUser">Administrator</td>
+            <td name = "gender">Male</td>
+            <td><button data-id="1" style="display: inline-block;" onclick="editUser(this)">Edit</button></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<button onclick="editUser()">Add User</button>
+
+<script type="text/javascript">
+
+    function showAddForm(){
+        showEditForm();
+        document.getElementById('send-btn').removeAttribute('hidden');
+        document.getElementById('save-btn').hidden = true;
+    }
+
+    function saveUser(data){
+        let currentRow = document.querySelector('tr[in-editing]');
+
+        currentRow.removeAttribute('in-editing');
+
+        let id = currentRow.querySelector('td[name="id"]');
+        let login = currentRow.querySelector('td[name="login"]');
+        let email = currentRow.querySelector('td[name="email"]');
+        let age = currentRow.querySelector('td[name="age"]');
+        let roleUser = currentRow.querySelector('td[name="roleUser"]');
+        let gender = currentRow.querySelector('td[name="gender"]');
+
+        let user = getFormData();
+        id.innerHTML = user.id;
+        login.innerHTML = user.login;
+        email.innerHTML = user.email;
+        age.innerHTML = user.age;
+        roleUser.innerHTML = user.roleUser;
+        gender.innerHTML = user.gender;
+    }
+
+    function editUser(data){
+        /*document.getElementById('edit-form').hidden = false;*/
+        showEditForm();
+        let currentRow = data.parentNode.parentNode;
+
+        currentRow.setAttribute('in-editing', '');
+        /*data.parentNode.parentNode.children[0]*/
+        let id = currentRow.querySelector('td[name="id"]').innerHTML;
+        let login = currentRow.querySelector('td[name="login"]').innerHTML;
+        let email = currentRow.querySelector('td[name="email"]').innerHTML;
+        let age = currentRow.querySelector('td[name="age"]').innerHTML;
+        let roleUser = currentRow.querySelector('td[name="roleUser"]').innerHTML;
+        let gender = currentRow.querySelector('td[name="gender"]').innerHTML;
+
+        document.getElementById('id').value = id;
+        document.getElementById('login').value = login;
+        document.getElementById('email').value = email;
+        document.getElementById('age').value = age;
+        document.getElementById('roleUser').value = roleUser;
+        document.getElementById('gender').value = gender;
+
+        let roleSelect = document.getElementById('roleUser').options;
+
+        for(let i = roleSelect.length - 1; i >= 0; i--){
+            let opt = roleSelect[i];
+            if (roleUser === opt.innerHTML) {
+                roleSelect[i].selected = true;
+            }
+            else{
+                roleSelect[i].selected = false;
+            }
+        }
+    }
+    function sendUser() {
+        let user = getFormData();
+
+
+
+        fetch('/search', {
+            method: 'POST',
+            headers: {'Content-Type':'application/x-www-form-urlencoded'},
+            body: 'query=' + query
+        })
+                .then(function (response) {
+                    return response;
+                })
+                .catch(alert);
+    }
+    function showEditForm(){
+        document.getElementById('edit-form').removeAttribute('hidden');
+    }
+
+    function getFormData(){
+        let id = document.getElementById('id').value;
+        let login = document.getElementById('login').value;
+        let email = document.getElementById('email').value;
+        let age = document.getElementById('age').value;
+
+        let roleSelect = document.getElementById('roleUser');
+        let roleUser = roleSelect.options[roleSelect.selectedIndex].text;
+        let gender = document.getElementById('gender').value;
+
+        return {id, login, email, age, roleUser, gender};
+    }
+
+
+</script>
+</body>
+</html>

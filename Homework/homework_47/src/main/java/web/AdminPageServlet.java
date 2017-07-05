@@ -28,6 +28,12 @@ public class AdminPageServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+ /*       if(req.getSession().getAttribute("actionUser") != null &&
+                ((boolean)req.getSession().getAttribute("actionUser") != false) &&
+                req.getSession().getAttribute("actionUser").equals("find")){
+
+        }*/
         if (req.getSession().getAttribute("authUser") != null &&
                 ((boolean)req.getSession().getAttribute("authUser") != false) &&
                 (req.getSession().getAttribute("userRole")).equals(Role.ADMIN)) {

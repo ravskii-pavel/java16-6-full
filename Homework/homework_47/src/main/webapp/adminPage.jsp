@@ -30,8 +30,9 @@
         <select id="findUser" size="1">
             <option value="findByEmail" selected> Find By Email </option>
             <option value="findPhone"> Find By Phone </option>
-            <button id="find" onclick="findUser(this)" >Edit</button>
+            <%--<button id="find" onclick="findUser(this)" >Edit</button>--%>
         </select>
+        <input id = "filterData" type="text">
 
     </div>
 
