@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @NoArgsConstructor
@@ -24,10 +25,10 @@ public class Seat {
     private int numberSeat;
 
     @OneToMany(mappedBy = "seat")
-    private Set<SessionSeat> sessionSeatSet;
+    private List<ReservedSeat> reservedSeatList;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+/*    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "hall_id", nullable = false)
-    private Hall hall;
+    private Hall hall;*/
 
 }

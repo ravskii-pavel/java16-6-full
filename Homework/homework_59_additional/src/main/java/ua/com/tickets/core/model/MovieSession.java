@@ -33,12 +33,10 @@ public class MovieSession{
     @JoinColumn(name = "film_id", nullable = false)
     private Film film;
 
-/*    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "sessionDate", nullable = false)
-    private Date sessionStartDate;   */
-/*    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "sessionTime", nullable = false)
-    private Date sessionStartTime;*/
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "hall_id", nullable = false)
+    private Hall hall;
 
     @Type(type = "calendarDataType")
     private Calendar sessionStartDate;
@@ -46,15 +44,8 @@ public class MovieSession{
     @Type(type = "calendarTimeType")
     private Calendar sessionStartTime;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "hall_id", nullable = false)
-    private Hall hall;
-
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "movieSession", cascade = CascadeType.ALL)
-    private List<Ticket> ticketList;
-
     @OneToMany(mappedBy = "movieSession")
-    private Set<SessionSeat> sessionSeatSet;
+    private List<ReservedSeat> reservedSeatList;
 
     @Column(name = "comfortPrice", nullable = false)
     private int priceTicketComfort;
@@ -84,3 +75,15 @@ public class MovieSession{
                 '}';
     }
 }
+
+/*    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "sessionTime", nullable = false)
+    private Date sessionStartTime;*/
+
+
+    /*    @Temporal(TemporalType.TIMESTAMP)
+        @Column(name = "sessionDate", nullable = false)
+        private Date sessionStartDate;   */
+
+    /*    @OneToMany(fetch = FetchType.EAGER, mappedBy = "movieSession", cascade = CascadeType.ALL)
+    private List<Ticket> ticketList;*/

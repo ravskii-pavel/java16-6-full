@@ -3,6 +3,7 @@ package ua.com.tickets.core.model;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -23,20 +24,18 @@ public class Ticket {
     @Column(name = "price", nullable = false)
     private int price;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "movieSession_id", nullable = false)
-    private  MovieSession movieSession;
+    @OneToOne(mappedBy = "ticket", cascade = CascadeType.ALL)
+    private ReservedSeat reservedSeat;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne
     @JoinColumn(name = "order_id", nullable = false)
     private Order order;
 
-    int numberSeat;
-    int numberRow;
+    private int numberSeat;
+    private int numberRow;
 
     public Ticket(long number, MovieSession movieSession, Order order, int numberSeat, int numberRow) {
         this.number = number;
-        this.movieSession = movieSession;
         this.order = order;
         this.numberSeat = numberSeat;
         this.numberRow = numberRow;
@@ -44,7 +43,6 @@ public class Ticket {
 
     public Ticket(long number, MovieSession movieSession, Order order, int numberSeat, int numberRow, int price) {
         this.number = number;
-        this.movieSession = movieSession;
         this.order = order;
         this.numberSeat = numberSeat;
         this.numberRow = numberRow;

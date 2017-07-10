@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="homework_59_additional" />
+        <module name="tickets-online-hw-59-add" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="homework_59_additional" target="1.8" />
+      <module name="tickets-online-hw-59-add" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

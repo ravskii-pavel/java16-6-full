@@ -31,7 +31,7 @@ public class User {
     @Column(name = "phoneNumber", nullable = false, unique = true)
     private String phoneNumber;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
     private List<Order> orderList;
 
     @Column(table = "users", name = "roleUser", nullable = false)
