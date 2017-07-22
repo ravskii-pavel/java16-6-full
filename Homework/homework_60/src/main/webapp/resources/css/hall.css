@@ -1,0 +1,30 @@
+.switch {
+    display: inline-block;
+    width:30px;
+    height:30px;
+    border-radius:5px;
+    background:#abb9fd;
+    /*box-shadow:
+            0 0 0 2px rgba(0, 0, 0, 0.1) inset,
+            0 0 4px rgba(0, 0, 0, 0.5) inset,
+            0 5px 4px 1px rgba(0, 0, 0, 0.3) inset,
+            0 27px 0 rgba(0, 0, 0, 0.07) inset;*/
+}
+.switch-check {
+    position:absolute;
+    /*opacity:0;*/
+}
+.switch-label {
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    display: block;
+}
+.switch:hover, .checked-seat{
+    width: 32px;
+    height: 32px;
+    border-radius: 5px;
+    background: red;
+    margin-top: -10px;
+}
