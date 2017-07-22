@@ -10,8 +10,8 @@ import javax.persistence.*;
 /**
  * @author Alexandr Shegeda on 23.06.17.
  */
-@Getter
-@Setter
+/*@Getter
+@Setter*/
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -28,6 +28,38 @@ public class Film {
   public Film(String name, String description, double duration) {
     this.name = name;
     this.description = description;
+    this.duration = duration;
+  }
+
+  public Long getFilmId() {
+    return filmId;
+  }
+
+  public void setFilmId(Long filmId) {
+    this.filmId = filmId;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  public double getDuration() {
+    return duration;
+  }
+
+  public void setDuration(double duration) {
     this.duration = duration;
   }
 }

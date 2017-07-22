@@ -1,5 +1,7 @@
 package ua.com.tickets.core.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 
 @Entity
@@ -12,6 +14,7 @@ public class SessionSeat {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "session_id")
+    @JsonManagedReference
     private MovieSession movieSession;
 
     @ManyToOne(cascade = CascadeType.ALL)

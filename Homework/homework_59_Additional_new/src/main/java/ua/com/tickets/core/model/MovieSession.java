@@ -4,10 +4,9 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Set;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.*;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 import org.hibernate.type.CalendarDateType;
@@ -31,6 +30,7 @@ public class MovieSession{
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "film_id", nullable = false)
+    @JsonManagedReference
     private Film film;
 
 /*    @Temporal(TemporalType.TIMESTAMP)
@@ -48,13 +48,12 @@ public class MovieSession{
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "hall_id", nullable = false)
+    @JsonManagedReference
     private Hall hall;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "movieSession", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "movieSession", cascade = CascadeType.ALL)
+    @JsonBackReference
     private List<Ticket> ticketList;
-
-    @OneToMany(mappedBy = "movieSession")
-    private Set<SessionSeat> sessionSeatSet;
 
     @Column(name = "comfortPrice", nullable = false)
     private int priceTicketComfort;

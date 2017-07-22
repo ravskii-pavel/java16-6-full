@@ -1,5 +1,6 @@
 package ua.com.tickets.core.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -25,6 +26,7 @@ public class Ticket {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "movieSession_id", nullable = false)
+    @JsonManagedReference
     private  MovieSession movieSession;
 
     @ManyToOne(fetch = FetchType.EAGER)

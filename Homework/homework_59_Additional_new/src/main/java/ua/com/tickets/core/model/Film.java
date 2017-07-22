@@ -1,15 +1,17 @@
 package ua.com.tickets.core.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.*;
+
+
 import javax.persistence.*;
 import java.util.List;
 
 
 @Getter
 @Setter
+@ToString(exclude = "sessionList")
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -29,6 +31,8 @@ public class Film{
     @Column(name = "duration")
     private double duration;
 
+    //@JsonIgnore //@JsonIgnore выполняет аналогичные функции, но ниже аннотации предпочтительнее.
+    @JsonBackReference
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "film", cascade = CascadeType.ALL)
     private List<MovieSession> sessionList;
 
@@ -38,7 +42,7 @@ public class Film{
         this.duration = duration;
     }
 
-    @Override
+/*    @Override
     public String toString() {
         return "Film{" +
             "id=" + id +
@@ -46,5 +50,7 @@ public class Film{
             ", description='" + description + '\'' +
             ", duration=" + duration +
             '}';
-    }
+    }*/
+//    @JsonManagedReference -> Manages the forward part of the reference and the fields marked by this annotation are the ones that get Serialised
+//    @JsonBackReference -> Manages the reverse part of the reference and the fields/collections marked with this annotation are not serialised.
 }

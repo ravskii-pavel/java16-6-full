@@ -1,7 +1,8 @@
 package ua.com.tickets.core.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
-
 import javax.persistence.*;
 import java.util.List;
 import java.util.Set;
@@ -28,6 +29,7 @@ public class Hall{
     private int totalSeats;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "hall", cascade = CascadeType.ALL)
+    @JsonBackReference
     private List<MovieSession> movieSessions;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "hall", cascade = CascadeType.ALL)

@@ -55,8 +55,10 @@ public class MovieSessionController {
 
     @RequestMapping("")
     @ResponseBody
-    public Film film() {
-        return new Film("Bla", "Bla-bla", 24D);
+    public MovieSession movieSession() {
+//        return new Film("Bla", "Bla-bla", 24D);
+        MovieSession sessionById = movieSessionService.getSessionById(42L);
+        return sessionById;
     }
 
     @RequestMapping("/welcome")
